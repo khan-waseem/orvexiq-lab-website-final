@@ -1,0 +1,467 @@
+/* SystemSection Component Styles — 100% Token Governance & Exact Figma Geometry */
+.systemSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--orv-surface-system);
+  padding-top: 72px;
+  padding-bottom: 96px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background Radial Glow */
+.systemGlow {
+  position: absolute;
+  top: 40px;
+  left: 880px;
+  width: 620px;
+  height: 620px;
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.glowImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contentContainer {
+  position: relative;
+  z-index: var(--orv-z-floating);
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-40);
+  width: 100%;
+}
+
+/* Custom Eyebrow with Figma 30px Dash */
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-16);
+}
+
+.eyebrowDash {
+  width: 30px;
+  height: 1px;
+  background-color: var(--orv-brand-400);
+  flex-shrink: 0;
+}
+
+.eyebrowText {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-semibold);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.headlineText {
+  font-family: var(--orv-font-family-primary);
+  font-size: 28px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 38px;
+  letter-spacing: -0.56px;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 760px;
+  margin: 0;
+}
+
+/* 3-Stage Architecture Flow Band */
+.systemBand {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0;
+}
+
+.stageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stageSm {
+  width: 268px;
+  flex-shrink: 0;
+}
+
+.stageMd {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.stageLg {
+  width: 458px;
+  flex-shrink: 0;
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.stageNumber {
+  font-family: var(--orv-font-family-primary);
+  font-weight: var(--orv-font-weight-bold);
+  color: var(--orv-brand-400);
+  letter-spacing: 1.1px;
+}
+
+.stageName {
+  font-family: var(--orv-font-family-primary);
+  font-weight: var(--orv-font-weight-semibold);
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 1.54px;
+  text-transform: uppercase;
+}
+
+.stageCaption {
+  font-family: var(--orv-font-family-primary);
+  font-size: 12px;
+  font-weight: var(--orv-font-weight-medium);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cardContent {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Directional Flow Connector Item */
+.flowArrow {
+  width: 72px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 28px; /* Offset for stage header height */
+}
+
+.flowImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Stage 01 Graphics */
+.labelSmall {
+  position: absolute;
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.colorGrid {
+  position: absolute;
+  top: 33px;
+  left: 17px;
+  display: grid;
+  grid-template-columns: repeat(4, 44px);
+  gap: 8px 8px;
+}
+
+.colorSwatch {
+  height: 26px;
+  border-radius: 6px;
+}
+
+.spaceList {
+  position: absolute;
+  top: 123px;
+  left: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.spaceBarRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spaceBar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.spaceLabel {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.radiusGrid {
+  position: absolute;
+  top: 223px;
+  left: 17px;
+  display: flex;
+  gap: 8px;
+}
+
+.radiusBox {
+  width: 26px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.typeRow {
+  position: absolute;
+  top: 219px;
+  left: 161px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+/* Stage 02 Graphics */
+.buttonRow {
+  position: absolute;
+  top: 19px;
+  left: 17px;
+  display: flex;
+  gap: 10px;
+}
+
+.miniPrimaryBtn {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: linear-gradient(162deg, rgb(155, 111, 230) 2.8%, rgb(124, 58, 237) 68%);
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.miniSecondaryBtn {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.miniInput {
+  position: absolute;
+  top: 67px;
+  left: 17px;
+  width: 222px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(155, 111, 230, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.inputCursor {
+  width: 1px;
+  height: 16px;
+  background-color: var(--orv-brand-400);
+  margin-left: 2px;
+}
+
+.badgeRow {
+  position: absolute;
+  top: 117px;
+  left: 17px;
+  display: flex;
+  gap: 8px;
+}
+
+.miniCard {
+  position: absolute;
+  top: 151px;
+  left: 17px;
+  width: 264px;
+  height: 66px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 11px 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toggleRow {
+  position: absolute;
+  top: 231px;
+  left: 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Stage 03 Graphics */
+.consoleHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 5px;
+}
+
+.dotsGroup {
+  display: flex;
+  gap: 5px;
+  margin-right: 16px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.consoleTitle {
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.consoleBody {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  height: 272px;
+  display: grid;
+  grid-template-columns: 84px 1fr;
+}
+
+.sidebar {
+  background: rgba(255, 255, 255, 0.03);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 19px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebarItem {
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sidebarItemActive {
+  background: rgba(124, 58, 237, 0.26);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.mainPanel {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kpiRow {
+  display: flex;
+  gap: 8px;
+}
+
+.kpiCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 7px 9px;
+  flex: 1;
+}
+
+.chartContainer {
+  height: 80px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.chartBar {
+  width: 24px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, rgba(155, 111, 230, 0.95), rgba(124, 58, 237, 0.32));
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  .systemGlow {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .headlineText {
+    max-width: 100%;
+  }
+
+  .systemBand {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .flowArrow {
+    transform: rotate(90deg);
+    height: 48px;
+    margin-top: 0;
+  }
+
+  .stageSm,
+  .stageMd,
+  .stageLg {
+    width: 100%;
+    max-width: 458px;
+  }
+}
+
+@media (max-width: 640px) {
+  .systemSection {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .stageSm,
+  .stageMd,
+  .stageLg {
+    max-width: 100%;
+  }
+}

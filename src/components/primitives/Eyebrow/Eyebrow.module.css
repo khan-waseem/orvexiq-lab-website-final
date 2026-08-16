@@ -1,0 +1,32 @@
+/* Eyebrow Component Styles — 100% Token Governance */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-16);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-eyebrow-font-size);
+  font-weight: var(--orv-font-weight-semibold);
+  letter-spacing: var(--orv-eyebrow-letter-spacing);
+  color: var(--orv-eyebrow-text-color);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.dash {
+  width: var(--orv-eyebrow-dash-width);
+  height: var(--orv-eyebrow-dash-height);
+  background-color: var(--orv-eyebrow-dash-color);
+  flex-shrink: 0;
+}
+
+.text {
+  color: inherit;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}

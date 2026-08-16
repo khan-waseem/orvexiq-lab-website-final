@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="72" height="300" viewBox="0 0 72 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="flow">
+<rect id="Rectangle" x="14" y="150" width="44" height="1" fill="url(#paint0_linear_241_731)"/>
+<path id="Vector" d="M58 146L65 150.5L58 155V146Z" fill="#9B6FE6" fill-opacity="0.9"/>
+<circle id="Ellipse" cx="14.5" cy="150.5" r="2.5" fill="#9B6FE6" fill-opacity="0.5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_241_731" x1="14" y1="150.5" x2="58" y2="150.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9B6FE6" stop-opacity="0.15"/>
+<stop offset="0.5" stop-color="#9B6FE6" stop-opacity="0.9"/>
+<stop offset="1" stop-color="#9B6FE6" stop-opacity="0.9"/>
+</linearGradient>
+</defs>
+</svg>

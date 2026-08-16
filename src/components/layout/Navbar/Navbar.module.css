@@ -1,0 +1,187 @@
+/* Navbar Component Styles — 100% Token Governance */
+.header {
+  position: absolute;
+  top: var(--orv-space-40);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: var(--orv-z-sticky);
+  display: flex;
+  justify-content: center;
+  padding-left: var(--orv-layout-page-margin);
+  padding-right: var(--orv-layout-page-margin);
+  box-sizing: border-box;
+}
+
+.navPill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--orv-nav-width-max);
+  height: var(--orv-nav-height);
+  background-color: var(--orv-nav-bg);
+  backdrop-filter: var(--orv-blur-nav);
+  -webkit-backdrop-filter: var(--orv-blur-nav);
+  border-radius: var(--orv-nav-radius);
+  padding-left: var(--orv-nav-padding-x);
+  padding-right: var(--orv-nav-padding-x);
+  box-sizing: border-box;
+}
+
+/* Logo Lockup */
+.brandLink {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  text-decoration: none;
+}
+
+.logoMark {
+  width: var(--orv-space-40);
+  height: var(--orv-space-40);
+  background-color: var(--orv-brand-500);
+  border-radius: var(--orv-radius-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orv-text-on-brand);
+  font-weight: var(--orv-font-weight-bold);
+  font-size: var(--orv-font-size-20);
+}
+
+.brandText {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-24);
+  font-weight: var(--orv-font-weight-regular);
+  color: var(--orv-text-primary);
+  white-space: nowrap;
+}
+
+/* Navigation Links List */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-24);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+.link {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  color: var(--orv-text-primary);
+  text-decoration: none;
+  padding: var(--orv-space-12) var(--orv-space-16);
+  border-radius: var(--orv-radius-full);
+  transition: opacity var(--orv-duration-fast) var(--orv-ease-default),
+              background-color var(--orv-duration-fast) var(--orv-ease-default);
+  outline: none;
+  white-space: nowrap;
+}
+
+.link:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+}
+
+.link:hover {
+  opacity: 0.85;
+}
+
+/* Active Nav Item Indicator */
+.activeLink {
+  background-color: var(--orv-nav-pill-active-bg);
+  border-radius: var(--orv-nav-pill-active-radius);
+  font-weight: var(--orv-font-weight-bold);
+  opacity: 1;
+}
+
+/* Mobile Toggle Button */
+.mobileToggle {
+  display: none;
+  width: var(--orv-space-40);
+  height: var(--orv-space-40);
+  align-items: center;
+  justify-content: center;
+  color: var(--orv-text-primary);
+  background: var(--orv-color-alpha-white-12);
+  border-radius: var(--orv-radius-full);
+  cursor: pointer;
+}
+
+.hamburgerIcon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Mobile Drawer Overlay */
+.mobileDrawer {
+  display: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .header {
+    top: var(--orv-space-16);
+    padding-left: var(--orv-space-24);
+    padding-right: var(--orv-space-24);
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .ctaDesktop {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+
+  .mobileDrawer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(var(--orv-nav-height) + var(--orv-space-12));
+    left: var(--orv-space-24);
+    right: var(--orv-space-24);
+    background: var(--orv-surface-system);
+    border: var(--orv-border-width-default) solid var(--orv-border-glass);
+    border-radius: var(--orv-radius-24);
+    padding: var(--orv-space-24);
+    gap: var(--orv-space-16);
+    z-index: var(--orv-z-modal);
+    box-shadow: var(--orv-shadow-card);
+  }
+
+  .mobileNavList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--orv-space-12);
+    list-style: none;
+  }
+
+  .mobileLink {
+    display: block;
+    font-size: var(--orv-font-size-18);
+    font-weight: var(--orv-font-weight-medium);
+    color: var(--orv-text-primary);
+    padding: var(--orv-space-12) var(--orv-space-16);
+    border-radius: var(--orv-radius-12);
+  }
+
+  .mobileActiveLink {
+    background-color: var(--orv-color-alpha-white-12);
+    font-weight: var(--orv-font-weight-bold);
+  }
+}

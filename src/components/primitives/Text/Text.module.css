@@ -1,0 +1,70 @@
+/* Text Component Styles — 100% Token Governance */
+.text {
+  font-family: var(--orv-font-family-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Size Variants */
+.sizeCaption {
+  font-size: var(--orv-font-size-12);
+  line-height: var(--orv-line-height-normal);
+}
+
+.sizeSm {
+  font-size: var(--orv-font-size-13);
+  line-height: var(--orv-line-height-normal);
+}
+
+.sizeBase {
+  font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-26);
+}
+
+.sizeLg {
+  font-size: var(--orv-font-size-18);
+  line-height: var(--orv-line-height-30);
+}
+
+.sizeXl {
+  font-size: var(--orv-font-size-20);
+  line-height: var(--orv-line-height-28);
+}
+
+/* Color Variants */
+.colorPrimary {
+  color: var(--orv-text-primary);
+}
+
+.colorSecondary {
+  color: var(--orv-text-secondary);
+}
+
+.colorTertiary {
+  color: var(--orv-text-tertiary);
+}
+
+.colorBrand {
+  color: var(--orv-text-brand-accent);
+}
+
+/* Weight Variants */
+.weightLight {
+  font-weight: var(--orv-font-weight-light);
+}
+
+.weightRegular {
+  font-weight: var(--orv-font-weight-regular);
+}
+
+.weightMedium {
+  font-weight: var(--orv-font-weight-medium);
+}
+
+.weightSemibold {
+  font-weight: var(--orv-font-weight-semibold);
+}
+
+.weightBold {
+  font-weight: var(--orv-font-weight-bold);
+}

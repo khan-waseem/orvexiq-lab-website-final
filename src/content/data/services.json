@@ -1,0 +1,62 @@
+[
+  {
+    "id": "srv-1",
+    "slug": "product-strategy",
+    "title": "Product Strategy",
+    "shortDescription": "Business goals, user needs and system constraints mapped into one direction the whole team can build against.",
+    "iconAssetUrl": "/assets/services/service-icon-strategy.png",
+    "displayOrder": 1,
+    "published": true,
+    "capabilities": [
+      { "id": "cap-1", "label": "Product discovery" },
+      { "id": "cap-2", "label": "UX research" },
+      { "id": "cap-3", "label": "Workflow mapping" },
+      { "id": "cap-4", "label": "Information architecture" }
+    ]
+  },
+  {
+    "id": "srv-2",
+    "slug": "ux-ui-product-design",
+    "title": "UX / UI Product Design",
+    "shortDescription": "Interface systems for products that do not get simpler over time — dashboards, complex flows, and the apps beside them.",
+    "iconAssetUrl": "/assets/services/service-icon-uxui.png",
+    "displayOrder": 2,
+    "published": true,
+    "capabilities": [
+      { "id": "cap-5", "label": "Enterprise dashboards" },
+      { "id": "cap-6", "label": "Mobile app design" },
+      { "id": "cap-7", "label": "Interactive prototypes" },
+      { "id": "cap-8", "label": "Accessibility review" }
+    ]
+  },
+  {
+    "id": "srv-3",
+    "slug": "design-systems",
+    "title": "Design Systems",
+    "shortDescription": "Tokens, components and governance shipped into your repository, so the product stays coherent after we leave.",
+    "iconAssetUrl": "/assets/services/service-icon-systems.png",
+    "displayOrder": 3,
+    "published": true,
+    "capabilities": [
+      { "id": "cap-9", "label": "Design system audit" },
+      { "id": "cap-10", "label": "Token architecture" },
+      { "id": "cap-11", "label": "Component library" },
+      { "id": "cap-12", "label": "Governance" }
+    ]
+  },
+  {
+    "id": "srv-4",
+    "slug": "ai-experiences-automation",
+    "title": "AI Experiences & Automation",
+    "shortDescription": "AI only helps when people trust it. We design the layer that makes automated decisions legible and correctable.",
+    "iconAssetUrl": "/assets/services/service-icon-ai.png",
+    "displayOrder": 4,
+    "published": true,
+    "capabilities": [
+      { "id": "cap-13", "label": "AI assistants" },
+      { "id": "cap-14", "label": "Intelligent workflows" },
+      { "id": "cap-15", "label": "Model output UX" },
+      { "id": "cap-16", "label": "Human-in-the-loop design" }
+    ]
+  }
+]

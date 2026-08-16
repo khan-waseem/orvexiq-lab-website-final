@@ -1,0 +1,15 @@
+[
+  {
+    "id": "test-1",
+    "quote": "They did not hand us screens and leave. They sat with our engineers until the thing actually shipped — and the design system they left behind is still what every new feature is built on, two years later.",
+    "authorName": "Head of Product",
+    "authorRole": "Head of Product",
+    "clientCompanyProfile": "Enterprise lending platform · 40,000 brokers",
+    "avatarAssetUrl": "/assets/testimonials/avatar-purple-sphere.svg",
+    "published": true,
+    "verification": {
+      "isVerified": false,
+      "verificationNotes": "Figma layout quote structure placeholder. UNVERIFIED - Do not publish as real client identity."
+    }
+  }
+]

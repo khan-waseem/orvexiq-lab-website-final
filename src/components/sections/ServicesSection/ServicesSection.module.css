@@ -1,0 +1,181 @@
+/* ServicesSection Component Styles — 100% Token Governance & Exact Figma Geometry */
+.servicesSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--orv-surface-canvas);
+  padding-top: var(--orv-layout-section-padding-lg);
+  padding-bottom: var(--orv-layout-section-padding-lg);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background Ambient Glow */
+.servicesGlow {
+  position: absolute;
+  top: 60px;
+  left: 700px;
+  width: 880px;
+  height: 880px;
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.glowImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contentContainer {
+  position: relative;
+  z-index: var(--orv-z-floating);
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-32);
+  width: 100%;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  max-width: 704px;
+}
+
+.headlineText {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-48);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-56);
+  letter-spacing: var(--orv-letter-spacing-tight-48);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* 2x2 Desktop Service Cards Grid */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--orv-layout-gutter);
+  width: 100%;
+}
+
+.cardInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 352px;
+  padding: var(--orv-space-32);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cardTextContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 348px;
+  z-index: 2;
+}
+
+.cardTitle {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-24);
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+.cardDescription {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Capabilities Semantic List */
+.capabilitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.capabilityItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-regular);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.capabilityDash {
+  width: 10px;
+  height: 1px;
+  background-color: var(--orv-brand-400);
+  flex-shrink: 0;
+}
+
+/* 3D Icon Bottom Right Positioning */
+.iconWrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 226px;
+  height: 226px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.iconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .servicesGlow {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .headlineText {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--orv-space-24);
+  }
+
+  .cardInner {
+    min-height: auto;
+  }
+
+  .cardTextContent {
+    max-width: 100%;
+  }
+
+  .iconWrapper {
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 640px) {
+  .headlineText {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .cardInner {
+    padding: var(--orv-space-24);
+  }
+}

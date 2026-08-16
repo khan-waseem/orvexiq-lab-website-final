@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "eyebrow": "PRODUCT DESIGN & DESIGN SYSTEMS",
+    "headline": "We design enterprise products — and the design systems underneath them.",
+    "subdescription": "Orvexiq Lab is a product studio for fintech, logistics and other businesses where the software is complicated and the mistakes are expensive.",
+    "primaryCtaText": "Start a Project",
+    "secondaryCtaText": "Explore Case Studies",
+    "heroIconAssetUrl": "/assets/hero-icon.png"
+  },
+  "sectorsSection": {
+    "eyebrow": "SECTORS WE BUILD IN",
+    "sectors": [
+      { "id": "sec-1", "name": "LENDING", "displayOrder": 1 },
+      { "id": "sec-2", "name": "LOGISTICS", "displayOrder": 2 },
+      { "id": "sec-3", "name": "COMMERCE", "displayOrder": 3 },
+      { "id": "sec-4", "name": "TREASURY", "displayOrder": 4 },
+      { "id": "sec-5", "name": "WAREHOUSE", "displayOrder": 5 },
+      { "id": "sec-6", "name": "SUPPORT AI", "displayOrder": 6 }
+    ]
+  },
+  "systemSection": {
+    "eyebrow": "HOW THE WORK HOLDS UP",
+    "headline": "We do not hand over screens. We hand over the system underneath them.",
+    "stages": [
+      {
+        "stageNumber": "01",
+        "stageName": "TOKENS",
+        "caption": "Primitive & semantic design token architecture",
+        "verification": {
+          "isVerified": false,
+          "source": "Figma structural design system mockup",
+          "notes": "Exact quantity of primitives is unverified placeholder content"
+        }
+      },
+      {
+        "stageNumber": "02",
+        "stageName": "COMPONENTS",
+        "caption": "Component architecture, variants & theme modes",
+        "verification": {
+          "isVerified": false,
+          "source": "Figma structural design system mockup",
+          "notes": "Component count and variant stats are unverified placeholders"
+        }
+      },
+      {
+        "stageNumber": "03",
+        "stageName": "PRODUCT",
+        "caption": "Enterprise application console design",
+        "verification": {
+          "isVerified": false,
+          "source": "Figma structural design system mockup",
+          "notes": "Console dashboard metrics (+64%, 23, 17m, 3%) are unverified visual UI placeholders"
+        }
+      }
+    ]
+  },
+  "selectedWorkSection": {
+    "eyebrow": "SELECTED WORK",
+    "headlineLine1": "Real problems.",
+    "headlineLine2": "Measured outcomes.",
+    "viewAllText": "View all case studies"
+  },
+  "servicesSection": {
+    "eyebrow": "WHAT WE DO",
+    "headlineLine1": "Strategy, Design, Systems",
+    "headlineLine2": "and AI as one practice."
+  },
+  "approachSection": {
+    "eyebrow": "HOW WE WORK",
+    "headline": "Four stages. No surprises.",
+    "subdescription": "Every engagement runs the same way, so you always know what is happening and what comes next.",
+    "steps": [
+      {
+        "id": "step-1",
+        "stepNumber": "01",
+        "title": "Discover",
+        "description": "We map the problem space, talk to the people who use the product, and audit what already exists."
+      },
+      {
+        "id": "step-2",
+        "stepNumber": "02",
+        "title": "Define",
+        "description": "Findings become a product direction — scoped, prioritised, and agreed before anyone opens Figma."
+      },
+      {
+        "id": "step-3",
+        "stepNumber": "03",
+        "title": "Design",
+        "description": "Flows, interfaces and a design system built so the work survives handoff instead of drifting."
+      },
+      {
+        "id": "step-4",
+        "stepNumber": "04",
+        "title": "Deliver",
+        "description": "We stay through build. What ships is what was designed, not an approximation of it."
+      }
+    ]
+  },
+  "ctaSection": {
+    "eyebrow": "LET'S BUILD",
+    "headlineLine1": "Ready to build software",
+    "headlineLine2": "that holds up?",
+    "subdescriptionLine1": "Tell us about your product, your timeline, or the system that needs fixing.",
+    "subdescriptionLine2": "We reply within 24 hours.",
+    "primaryCtaText": "Start a Conversation",
+    "emailCtaText": "hello@orvexiqlab.com"
+  },
+  "seo": {
+    "title": "Orvexiq Lab — Product Studio & Enterprise Design Systems",
+    "description": "Orvexiq Lab designs enterprise products and scalable design systems for fintech, logistics, and complex software."
+  }
+}

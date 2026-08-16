@@ -1,0 +1,66 @@
+/**
+ * ORVEXIQ LAB DESIGN SYSTEM — TIER 2: SEMANTIC TOKENS
+ * Source of Truth: Figma File (Node 218:261)
+ *
+ * Semantic tokens assign intent and functional roles to primitive tokens.
+ * (e.g. background/canvas, text/primary, border/glass, state/success).
+ */
+
+:root {
+  /* ==========================================
+   * 1. CANVAS & SURFACE SEMANTICS
+   * ========================================== */
+  --orv-surface-canvas: var(--orv-color-raw-dark-900);
+  --orv-surface-system: var(--orv-color-raw-dark-800);
+  --orv-surface-card-glass: var(--orv-gradient-glass-133);
+  --orv-surface-glass-blur: var(--orv-blur-card);
+
+  /* ==========================================
+   * 2. TEXT & CONTENT SEMANTICS
+   * ========================================== */
+  --orv-text-primary: var(--orv-color-raw-gray-100);
+  --orv-text-secondary: var(--orv-color-raw-gray-300);
+  --orv-text-tertiary: var(--orv-color-raw-gray-400);
+  --orv-text-on-brand: var(--orv-color-raw-white);
+  --orv-text-brand-accent: var(--orv-color-raw-purple-400);
+  --orv-text-brand-primary: var(--orv-color-raw-purple-500);
+
+  /* ==========================================
+   * 3. BORDER & DIVIDER SEMANTICS
+   * ========================================== */
+  --orv-border-subtle: var(--orv-color-raw-gray-700);
+  --orv-border-glass: var(--orv-color-alpha-white-14);
+  --orv-border-active: var(--orv-color-raw-purple-400);
+  --orv-border-width-default: 1px;
+
+  /* ==========================================
+   * 4. BRAND & ACCENT SEMANTICS
+   * ========================================== */
+  --orv-brand-400: var(--orv-color-raw-purple-400);
+  --orv-brand-500: var(--orv-color-raw-purple-500);
+  --orv-brand-300: var(--orv-color-raw-purple-300);
+
+  /* ==========================================
+   * 5. STATE SEMANTICS
+   * ========================================== */
+  --orv-state-success-bg: var(--orv-color-alpha-green-18);
+  --orv-state-success-text: var(--orv-color-raw-green-500);
+  --orv-state-review-bg: var(--orv-color-alpha-purple-18);
+  --orv-state-review-text: var(--orv-color-raw-purple-400);
+  --orv-state-blocked-bg: var(--orv-color-alpha-red-18);
+  --orv-state-blocked-text: var(--orv-color-raw-red-500);
+
+  /* ==========================================
+   * 6. LAYOUT & GRID SEMANTICS
+   * ========================================== */
+  --orv-layout-page-margin: var(--orv-space-96);
+  --orv-layout-gutter: var(--orv-space-24);
+  --orv-layout-card-gap: var(--orv-space-24);
+  --orv-layout-section-padding-sm: var(--orv-space-72);
+  --orv-layout-section-padding-md: var(--orv-space-96);
+  --orv-layout-section-padding-lg: var(--orv-space-128);
+
+  /* Mobile Layout Fallbacks */
+  --orv-layout-page-margin-mobile: var(--orv-space-24);
+  --orv-layout-section-padding-mobile: var(--orv-space-48);
+}

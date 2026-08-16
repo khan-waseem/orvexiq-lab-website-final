@@ -1,0 +1,30 @@
+/**
+ * ORVEXIQ LAB DESIGN SYSTEM — TYPOGRAPHY & FONT SETUP
+ * Primary font is loaded via Next.js next/font/google in layout.tsx (--font-manrope).
+ */
+
+/* Typography Utility Classes mapping strict tokens */
+.font-light {
+  font-family: var(--orv-font-family-primary);
+  font-weight: var(--orv-font-weight-light);
+}
+
+.font-regular {
+  font-family: var(--orv-font-family-primary);
+  font-weight: var(--orv-font-weight-regular);
+}
+
+.font-medium {
+  font-family: var(--orv-font-family-primary);
+  font-weight: var(--orv-font-weight-medium);
+}
+
+.font-semibold {
+  font-family: var(--orv-font-family-primary);
+  font-weight: var(--orv-font-weight-semibold);
+}
+
+.font-bold {
+  font-family: var(--orv-font-family-primary);
+  font-weight: var(--orv-font-weight-bold);
+}

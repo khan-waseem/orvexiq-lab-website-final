@@ -1,0 +1,70 @@
+/* SectorsSection Component Styles — 100% Token Governance */
+.sectorsSection {
+  width: 100%;
+  background-color: var(--orv-surface-canvas);
+  padding-top: var(--orv-space-96);
+  padding-bottom: var(--orv-space-96);
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--orv-space-32);
+  width: 100%;
+}
+
+.eyebrowText {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-semibold);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  color: var(--orv-text-tertiary);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sectorsList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--orv-layout-gutter);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.sectorItem {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-bold);
+  letter-spacing: var(--orv-letter-spacing-wide-120);
+  color: var(--orv-text-secondary);
+  opacity: 0.45;
+  white-space: nowrap;
+}
+
+/* Responsive Reflow behavior (no horizontal scrollbar) */
+@media (max-width: 1024px) {
+  .sectorsList {
+    justify-content: center;
+    gap: var(--orv-space-32);
+  }
+}
+
+@media (max-width: 640px) {
+  .sectorsSection {
+    padding-top: var(--orv-space-48);
+    padding-bottom: var(--orv-space-48);
+  }
+
+  .sectorsList {
+    gap: var(--orv-space-24);
+  }
+
+  .sectorItem {
+    font-size: var(--orv-font-size-16);
+  }
+}

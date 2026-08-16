@@ -1,0 +1,84 @@
+/* Button Component Styles — 100% Token Governance */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-button-primary-font-size);
+  font-weight: var(--orv-button-primary-font-weight);
+  color: var(--orv-button-primary-text-color);
+  height: var(--orv-button-primary-height);
+  padding-left: var(--orv-space-32);
+  padding-right: var(--orv-space-32);
+  border-radius: var(--orv-button-primary-radius);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: opacity var(--orv-duration-fast) var(--orv-ease-default),
+              transform var(--orv-duration-fast) var(--orv-ease-default),
+              box-shadow var(--orv-duration-fast) var(--orv-ease-default);
+  outline: none;
+  user-select: none;
+}
+
+.button:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+.button:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary Variant */
+.primary {
+  background: var(--orv-button-primary-bg);
+  color: var(--orv-text-primary);
+}
+
+/* Secondary Glass Variant */
+.secondary {
+  background: var(--orv-button-secondary-bg);
+  border: var(--orv-button-secondary-border);
+  backdrop-filter: var(--orv-button-secondary-blur);
+  -webkit-backdrop-filter: var(--orv-button-secondary-blur);
+  box-shadow: var(--orv-button-secondary-shadow);
+  color: var(--orv-text-primary);
+  border-radius: var(--orv-button-secondary-radius);
+}
+
+/* Nav Variant */
+.nav {
+  background: var(--orv-button-primary-bg);
+  height: var(--orv-button-primary-height);
+  font-weight: var(--orv-font-weight-semibold);
+  font-size: var(--orv-font-size-20);
+  padding-left: var(--orv-space-24);
+  padding-right: var(--orv-space-24);
+  border-radius: var(--orv-button-primary-radius);
+}
+
+/* CTA Email Variant */
+.email {
+  background: var(--orv-color-alpha-white-4);
+  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  color: var(--orv-text-primary);
+  font-weight: var(--orv-font-weight-medium);
+  font-size: var(--orv-font-size-16);
+  padding-left: var(--orv-space-32);
+  padding-right: var(--orv-space-32);
+  border-radius: var(--orv-radius-full);
+}

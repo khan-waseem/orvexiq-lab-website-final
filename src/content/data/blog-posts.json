@@ -1,0 +1,15 @@
+[
+  {
+    "id": "blog-1",
+    "slug": "architecting-enterprise-design-system-tokens",
+    "title": "Architecting Enterprise Design System Tokens",
+    "excerpt": "How a 3-Tier design token system keeps complex product suites visually coherent across multi-repo teams.",
+    "contentMarkdown": "# Architecting Enterprise Design System Tokens\n\nTokens bridge the gap between design software and code repositories.",
+    "authorName": "Orvexiq Engineering",
+    "authorRole": "Product Architecture",
+    "category": "Design Systems",
+    "readTimeMinutes": 6,
+    "publishedAt": "2026-02-01",
+    "published": true
+  }
+]

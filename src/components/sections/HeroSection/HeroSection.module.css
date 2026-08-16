@@ -1,0 +1,156 @@
+/* HeroSection Component Styles — 100% Token Governance */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: var(--orv-size-hero-height);
+  background-color: var(--orv-surface-canvas);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 140px; /* Offset for floating fixed Navbar */
+  padding-bottom: var(--orv-layout-section-padding-md);
+  box-sizing: border-box;
+}
+
+/* Background Ambient Glow */
+.heroGlow {
+  position: absolute;
+  top: -154px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 650px;
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.glowImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Background Grid Vector Overlay */
+.vectorOverlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--orv-size-container-max);
+  height: 100%;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.gridImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Composition */
+.heroLayout {
+  position: relative;
+  z-index: var(--orv-z-floating);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: var(--orv-layout-gutter);
+  width: 100%;
+}
+
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrowMargin {
+  margin-bottom: var(--orv-space-16);
+}
+
+.headingMargin {
+  margin-bottom: var(--orv-space-24);
+  max-width: 680px;
+}
+
+.descriptionMargin {
+  margin-bottom: var(--orv-space-40);
+  max-width: 620px;
+}
+
+.actionsGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-24);
+  flex-wrap: wrap;
+}
+
+/* Visual 3D Icon Column */
+.visualColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.heroIconWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 613px;
+  aspect-ratio: 613 / 548;
+}
+
+.heroIconImage {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .heroSection {
+    min-height: auto;
+    padding-top: 160px;
+  }
+
+  .heroLayout {
+    grid-template-columns: 1fr;
+    gap: var(--orv-space-48);
+  }
+
+  .contentColumn {
+    align-items: center;
+    text-align: center;
+  }
+
+  .headingMargin,
+  .descriptionMargin {
+    text-align: center;
+  }
+
+  .actionsGroup {
+    justify-content: center;
+  }
+
+  .visualColumn {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroSection {
+    padding-top: 140px;
+  }
+
+  .actionsGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actionsGroup > * {
+    width: 100%;
+  }
+}

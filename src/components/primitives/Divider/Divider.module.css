@@ -1,0 +1,18 @@
+/* Divider Component Styles — 100% Token Governance */
+.divider {
+  background-color: var(--orv-border-subtle);
+  border: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.horizontal {
+  width: 100%;
+  height: var(--orv-border-width-default);
+}
+
+.vertical {
+  width: var(--orv-border-width-default);
+  height: 72px;
+}

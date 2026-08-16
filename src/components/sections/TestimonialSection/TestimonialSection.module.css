@@ -1,0 +1,186 @@
+/* TestimonialSection Component Styles — 100% Token Governance & Exact Figma Node 218:600 Geometry */
+.testimonialSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--orv-surface-canvas);
+  padding-top: var(--orv-space-128);
+  padding-bottom: var(--orv-space-128);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background Ambient Glow (Node 218:601) */
+.testimonialGlow {
+  position: absolute;
+  top: -90px;
+  left: 640px;
+  width: 860px;
+  height: 860px;
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.glowImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contentContainer {
+  position: relative;
+  z-index: var(--orv-z-floating);
+  width: 100%;
+}
+
+/* Exact Figma Testimonial Glass Card (Node 218:602) */
+.quoteCard {
+  position: relative;
+  width: 100%;
+  padding: var(--orv-space-96);
+  border-radius: var(--orv-radius-24);
+  background: linear-gradient(156.76deg, rgba(255, 255, 255, 0.09) 14.64%, rgba(255, 255, 255, 0.02) 85.36%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0px 20px 44px -16px rgba(5, 1, 15, 0.45);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Opening Quote Mark (Node 218:603) */
+.openingQuoteMark {
+  font-family: var(--orv-font-family-primary);
+  font-size: 96px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 72px;
+  color: var(--orv-brand-400);
+  margin: 0 0 var(--orv-space-24) 0;
+  user-select: none;
+}
+
+/* Closing Quote Mark (Node 218:611) */
+.closingQuoteMark {
+  position: absolute;
+  right: var(--orv-space-96);
+  bottom: 80px;
+  font-family: var(--orv-font-family-primary);
+  font-size: 96px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 72px;
+  color: var(--orv-brand-400);
+  transform: rotate(180deg) scaleY(-1);
+  user-select: none;
+  pointer-events: none;
+}
+
+.innerContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-64);
+  width: 100%;
+  max-width: 1056px;
+}
+
+/* Quote Text Typography (Node 218:605) */
+.quoteText {
+  font-family: var(--orv-font-family-primary);
+  font-size: 32px;
+  font-weight: var(--orv-font-weight-medium);
+  line-height: 48px;
+  letter-spacing: -0.32px;
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Author Row Layout (Node 218:606) */
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-24);
+  width: 100%;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--orv-radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authorMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+}
+
+.authorName {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-18);
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+.authorRole {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+/* Responsive Reflow Media Queries */
+@media (max-width: 1024px) {
+  .quoteCard {
+    padding: var(--orv-space-64);
+  }
+
+  .quoteText {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .closingQuoteMark {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonialSection {
+    padding-top: var(--orv-space-64);
+    padding-bottom: var(--orv-space-64);
+  }
+
+  .quoteCard {
+    padding: var(--orv-space-32);
+    border-radius: var(--orv-radius-16);
+  }
+
+  .quoteText {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .openingQuoteMark {
+    font-size: 64px;
+    line-height: 48px;
+    margin-bottom: var(--orv-space-16);
+  }
+
+  .authorRow {
+    gap: var(--orv-space-16);
+  }
+
+  .avatarWrapper {
+    width: 48px;
+    height: 48px;
+  }
+}

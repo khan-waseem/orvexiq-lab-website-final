@@ -1,0 +1,209 @@
+/**
+ * ORVEXIQ LAB DESIGN SYSTEM — TIER 1: PRIMITIVE TOKENS
+ * Source of Truth: Figma File (Node 218:261)
+ *
+ * Primitive tokens define the raw visual building blocks (colors, font properties,
+ * spacing steps, radius sizes, borders, blurs, shadows, and motion properties).
+ * NO COMPONENT SHOULD DIRECTLY CONSUME PRIMITIVE TOKENS EXCEPT VIA SEMANTICS.
+ */
+
+:root {
+  /* ==========================================
+   * 1. COLOR PRIMITIVES
+   * ========================================== */
+  --orv-color-raw-dark-950: #05010f;
+  --orv-color-raw-dark-900: #080211;
+  --orv-color-raw-dark-800: #15102b;
+  --orv-color-raw-purple-700: #1a0a3d;
+  --orv-color-raw-purple-600: #33176b;
+  --orv-color-raw-purple-500: #7c3aed;
+  --orv-color-raw-purple-400: #9b6fe6;
+  --orv-color-raw-purple-300: #a855f7;
+  --orv-color-raw-purple-200: #dacfff;
+  --orv-color-raw-blue-500: #3b4cca;
+  --orv-color-raw-green-500: #2fd26b;
+  --orv-color-raw-red-500: #d95959;
+
+  --orv-color-raw-white: #ffffff;
+  --orv-color-raw-gray-100: #fafafa;
+  --orv-color-raw-gray-300: #d4d4d4;
+  --orv-color-raw-gray-400: #b0b0b0;
+  --orv-color-raw-gray-700: #3b3b3b;
+
+  /* Alpha Channel Primitives */
+  --orv-color-alpha-white-4: rgba(255, 255, 255, 0.04);
+  --orv-color-alpha-white-5: rgba(255, 255, 255, 0.05);
+  --orv-color-alpha-white-8: rgba(255, 255, 255, 0.08);
+  --orv-color-alpha-white-10: rgba(255, 255, 255, 0.10);
+  --orv-color-alpha-white-12: rgba(255, 255, 255, 0.12);
+  --orv-color-alpha-white-14: rgba(255, 255, 255, 0.14);
+  --orv-color-alpha-white-16: rgba(255, 255, 255, 0.16);
+  --orv-color-alpha-white-18: rgba(255, 255, 255, 0.18);
+  --orv-color-alpha-white-22: rgba(255, 255, 255, 0.22);
+  --orv-color-alpha-purple-18: rgba(155, 111, 230, 0.18);
+  --orv-color-alpha-purple-26: rgba(124, 58, 237, 0.26);
+  --orv-color-alpha-green-18: rgba(47, 210, 107, 0.18);
+  --orv-color-alpha-red-18: rgba(217, 89, 89, 0.18);
+
+  /* ==========================================
+   * 2. TYPOGRAPHY PRIMITIVES
+   * ========================================== */
+  --orv-font-family-primary: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --orv-font-weight-light: 300;
+  --orv-font-weight-regular: 400;
+  --orv-font-weight-medium: 500;
+  --orv-font-weight-semibold: 600;
+  --orv-font-weight-bold: 700;
+
+  --orv-font-size-7: 7px;
+  --orv-font-size-8: 8px;
+  --orv-font-size-9: 9px;
+  --orv-font-size-10: 10px;
+  --orv-font-size-11: 11px;
+  --orv-font-size-12: 12px;
+  --orv-font-size-13: 13px;
+  --orv-font-size-14: 14px;
+  --orv-font-size-15: 15px;
+  --orv-font-size-16: 16px;
+  --orv-font-size-18: 18px;
+  --orv-font-size-20: 20px;
+  --orv-font-size-22: 22px;
+  --orv-font-size-24: 24px;
+  --orv-font-size-28: 28px;
+  --orv-font-size-32: 32px;
+  --orv-font-size-40: 40px;
+  --orv-font-size-48: 48px;
+  --orv-font-size-56: 56px;
+  --orv-font-size-64: 64px;
+  --orv-font-size-96: 96px;
+
+  --orv-line-height-tight: 1.1;
+  --orv-line-height-normal: normal;
+  --orv-line-height-24: 24px;
+  --orv-line-height-25: 25px;
+  --orv-line-height-26: 26px;
+  --orv-line-height-28: 28px;
+  --orv-line-height-30: 30px;
+  --orv-line-height-38: 38px;
+  --orv-line-height-48: 48px;
+  --orv-line-height-56: 56px;
+  --orv-line-height-64: 64px;
+  --orv-line-height-72: 72px;
+
+  --orv-letter-spacing-tight-192: -1.92px;
+  --orv-letter-spacing-tight-112: -1.12px;
+  --orv-letter-spacing-tight-096: -0.96px;
+  --orv-letter-spacing-tight-080: -0.8px;
+  --orv-letter-spacing-tight-056: -0.56px;
+  --orv-letter-spacing-tight-032: -0.32px;
+  --orv-letter-spacing-tight-028: -0.28px;
+  --orv-letter-spacing-normal: 0px;
+  --orv-letter-spacing-wide-110: 1.1px;
+  --orv-letter-spacing-wide-120: 1.2px;
+  --orv-letter-spacing-wide-130: 1.3px;
+  --orv-letter-spacing-wide-132: 1.32px;
+  --orv-letter-spacing-wide-154: 1.54px;
+  --orv-letter-spacing-wide-168: 1.68px;
+
+  /* ==========================================
+   * 3. SPACING SCALE PRIMITIVES (8pt / 4pt grid)
+   * ========================================== */
+  --orv-space-0: 0px;
+  --orv-space-2: 2px;
+  --orv-space-4: 4px;
+  --orv-space-6: 6px;
+  --orv-space-8: 8px;
+  --orv-space-10: 10px;
+  --orv-space-12: 12px;
+  --orv-space-14: 14px;
+  --orv-space-16: 16px;
+  --orv-space-20: 20px;
+  --orv-space-24: 24px;
+  --orv-space-32: 32px;
+  --orv-space-40: 40px;
+  --orv-space-48: 48px;
+  --orv-space-64: 64px;
+  --orv-space-72: 72px;
+  --orv-space-96: 96px;
+  --orv-space-128: 128px;
+
+  /* ==========================================
+   * 4. SIZING & LAYOUT PRIMITIVES
+   * ========================================== */
+  --orv-size-container-max: 1440px;
+  --orv-size-nav-max: 1250px;
+  --orv-size-hero-height: 789px;
+  --orv-size-system-card-sm: 268px;
+  --orv-size-system-card-md: 300px;
+  --orv-size-system-card-lg: 458px;
+  --orv-size-service-card-height: 352px;
+  --orv-size-step-card-height: 277px;
+  --orv-size-cta-container-height: 818px;
+
+  /* ==========================================
+   * 5. RADIUS PRIMITIVES
+   * ========================================== */
+  --orv-radius-0: 0px;
+  --orv-radius-2: 2px;
+  --orv-radius-3: 3px;
+  --orv-radius-4: 4px;
+  --orv-radius-6: 6px;
+  --orv-radius-7: 7px;
+  --orv-radius-8: 8px;
+  --orv-radius-9: 9px;
+  --orv-radius-10: 10px;
+  --orv-radius-12: 12px;
+  --orv-radius-16: 16px;
+  --orv-radius-24: 24px;
+  --orv-radius-26: 26.5px;
+  --orv-radius-38: 38px;
+  --orv-radius-62: 62px;
+  --orv-radius-full: 9999px;
+
+  /* ==========================================
+   * 6. SHADOW & BLUR PRIMITIVES
+   * ========================================== */
+  --orv-shadow-card: 0px 20px 44px -16px rgba(5, 1, 15, 0.45);
+  --orv-shadow-button: 0px 8px 20px -6px rgba(5, 1, 15, 0.4);
+  --orv-shadow-drop-service: 0px 20px 22px rgba(5, 1, 15, 0.45);
+
+  --orv-blur-nav: blur(9px);
+  --orv-blur-stage: blur(11px);
+  --orv-blur-card: blur(14px);
+  --orv-blur-testimonial: blur(18px);
+  --orv-blur-ambient: 220px;
+
+  /* ==========================================
+   * 7. GRADIENT PRIMITIVES
+   * ========================================== */
+  --orv-gradient-primary: linear-gradient(98.5deg, #a855f7 5.18%, #7c3aed 89.96%);
+  --orv-gradient-secondary-glass: linear-gradient(168.9deg, rgba(255, 255, 255, 0.16) 14.6%, rgba(255, 255, 255, 0.05) 85.4%);
+  --orv-gradient-glass-131: linear-gradient(131.8deg, rgba(255, 255, 255, 0.09) 14.6%, rgba(255, 255, 255, 0.02) 85.4%);
+  --orv-gradient-glass-133: linear-gradient(133deg, rgba(255, 255, 255, 0.1) 14.6%, rgba(255, 255, 255, 0.025) 85.4%);
+  --orv-gradient-glass-135: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 14.6%, rgba(255, 255, 255, 0.02) 85.4%);
+  --orv-gradient-glass-136: linear-gradient(136.7deg, rgba(255, 255, 255, 0.08) 14.6%, rgba(255, 255, 255, 0.02) 85.4%);
+  --orv-gradient-glass-146: linear-gradient(146.8deg, rgba(255, 255, 255, 0.09) 14.6%, rgba(255, 255, 255, 0.02) 85.4%);
+  --orv-gradient-glass-150: linear-gradient(150deg, rgba(255, 255, 255, 0.1) 14.6%, rgba(255, 255, 255, 0.025) 85.4%);
+  --orv-gradient-glass-156: linear-gradient(156.8deg, rgba(255, 255, 255, 0.09) 14.6%, rgba(255, 255, 255, 0.02) 85.4%);
+  --orv-gradient-cta-card: linear-gradient(146.1deg, rgba(124, 58, 237, 0.22) 0%, rgba(95, 25, 216, 0.05) 73.5%);
+  --orv-gradient-cta-primary: linear-gradient(to right, #7c3aed, #5f19d8);
+
+  /* ==========================================
+   * 8. MOTION PRIMITIVES
+   * ========================================== */
+  --orv-duration-fast: 150ms;
+  --orv-duration-normal: 250ms;
+  --orv-duration-slow: 400ms;
+  --orv-ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ==========================================
+   * 9. Z-INDEX PRIMITIVES
+   * ========================================== */
+  --orv-z-back: -1;
+  --orv-z-normal: 1;
+  --orv-z-floating: 10;
+  --orv-z-sticky: 100;
+  --orv-z-overlay: 500;
+  --orv-z-modal: 1000;
+}

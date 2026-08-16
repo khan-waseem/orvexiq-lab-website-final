@@ -1,0 +1,61 @@
+/* Heading Component Styles — 100% Token Governance */
+.heading {
+  font-family: var(--orv-font-family-primary);
+  color: var(--orv-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Level Styles */
+.h1 {
+  font-size: var(--orv-font-size-48);
+  line-height: var(--orv-line-height-64);
+  letter-spacing: var(--orv-letter-spacing-tight-096);
+  font-weight: var(--orv-font-weight-bold);
+}
+
+.h2 {
+  font-size: var(--orv-font-size-40);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-080);
+  font-weight: var(--orv-font-weight-semibold);
+}
+
+.h3 {
+  font-size: var(--orv-font-size-28);
+  line-height: var(--orv-line-height-38);
+  letter-spacing: var(--orv-letter-spacing-tight-056);
+  font-weight: var(--orv-font-weight-bold);
+}
+
+.h4 {
+  font-size: var(--orv-font-size-22);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-normal);
+  font-weight: var(--orv-font-weight-bold);
+}
+
+.h5 {
+  font-size: var(--orv-font-size-18);
+  line-height: var(--orv-line-height-normal);
+  font-weight: var(--orv-font-weight-semibold);
+}
+
+.h6 {
+  font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-normal);
+  font-weight: var(--orv-font-weight-semibold);
+}
+
+/* Alignment Styles */
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}

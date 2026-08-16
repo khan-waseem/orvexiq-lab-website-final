@@ -1,0 +1,74 @@
+[
+  {
+    "id": "cs-1",
+    "slug": "lending-platform-rebuild",
+    "category": "FINTECH",
+    "title": "Loan origination redesign",
+    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "servicesProvided": ["Product Design", "Design System"],
+    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "featured": true,
+    "displayOrder": 1,
+    "verification": {
+      "isVerified": false,
+      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+    },
+    "publishedAt": "2026-01-01",
+    "published": true
+  },
+  {
+    "id": "cs-2",
+    "slug": "lending-platform-rebuild-2",
+    "category": "FINTECH",
+    "title": "Loan origination redesign",
+    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "servicesProvided": ["Product Design", "Design System"],
+    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "featured": true,
+    "displayOrder": 2,
+    "verification": {
+      "isVerified": false,
+      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+    },
+    "publishedAt": "2026-01-01",
+    "published": true
+  },
+  {
+    "id": "cs-3",
+    "slug": "lending-platform-rebuild-3",
+    "category": "FINTECH",
+    "title": "Loan origination redesign",
+    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "servicesProvided": ["Product Design", "Design System"],
+    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "featured": true,
+    "displayOrder": 3,
+    "verification": {
+      "isVerified": false,
+      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+    },
+    "publishedAt": "2026-01-01",
+    "published": true
+  },
+  {
+    "id": "cs-4",
+    "slug": "lending-platform-rebuild-4",
+    "category": "FINTECH",
+    "title": "Loan origination redesign",
+    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
+    "servicesProvided": ["Product Design", "Design System"],
+    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "featured": true,
+    "displayOrder": 4,
+    "verification": {
+      "isVerified": false,
+      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+    },
+    "publishedAt": "2026-01-01",
+    "published": true
+  }
+]

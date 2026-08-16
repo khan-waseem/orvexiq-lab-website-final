@@ -1,0 +1,39 @@
+/* Tag Component Styles — 100% Token Governance */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--orv-tag-padding-x);
+  padding-right: var(--orv-tag-padding-x);
+  padding-top: var(--orv-tag-padding-y);
+  padding-bottom: var(--orv-tag-padding-y);
+  border-radius: var(--orv-tag-radius);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-tag-font-size);
+  font-weight: var(--orv-font-weight-semibold);
+  letter-spacing: var(--orv-tag-letter-spacing);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Category Pill (Figma Default) */
+.category {
+  background-color: var(--orv-tag-bg);
+  color: var(--orv-text-brand-accent);
+}
+
+/* Status Variants (Figma System Stage) */
+.statusApproved {
+  background-color: var(--orv-state-success-bg);
+  color: var(--orv-state-success-text);
+}
+
+.statusReview {
+  background-color: var(--orv-state-review-bg);
+  color: var(--orv-state-review-text);
+}
+
+.statusBlocked {
+  background-color: var(--orv-state-blocked-bg);
+  color: var(--orv-state-blocked-text);
+}

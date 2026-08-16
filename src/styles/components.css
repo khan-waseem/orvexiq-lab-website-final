@@ -1,0 +1,99 @@
+/**
+ * ORVEXIQ LAB DESIGN SYSTEM — TIER 3: COMPONENT TOKENS
+ * Source of Truth: Figma File (Node 218:261)
+ *
+ * Component tokens scope semantic tokens specifically to individual UI components
+ * (e.g. Navbar, Primary Button, Glass Cards, Service Cards, Inputs, Footer).
+ */
+
+:root {
+  /* ==========================================
+   * 1. NAVBAR COMPONENT TOKENS
+   * ========================================== */
+  --orv-nav-width-max: var(--orv-size-nav-max);
+  --orv-nav-height: 83px;
+  --orv-nav-bg: var(--orv-color-alpha-white-12);
+  --orv-nav-radius: var(--orv-radius-62);
+  --orv-nav-padding-x: var(--orv-space-32);
+  --orv-nav-pill-active-bg: var(--orv-color-alpha-white-12);
+  --orv-nav-pill-active-radius: var(--orv-radius-26);
+
+  /* ==========================================
+   * 2. BUTTON COMPONENT TOKENS
+   * ========================================== */
+  /* Primary Button */
+  --orv-button-primary-bg: var(--orv-gradient-primary);
+  --orv-button-primary-radius: var(--orv-radius-38);
+  --orv-button-primary-height: 48px;
+  --orv-button-primary-text-color: var(--orv-text-primary);
+  --orv-button-primary-font-size: var(--orv-font-size-18);
+  --orv-button-primary-font-weight: var(--orv-font-weight-medium);
+
+  /* Secondary Glass Button */
+  --orv-button-secondary-bg: var(--orv-gradient-secondary-glass);
+  --orv-button-secondary-border: var(--orv-border-width-default) solid var(--orv-color-alpha-white-22);
+  --orv-button-secondary-blur: var(--orv-blur-nav);
+  --orv-button-secondary-radius: var(--orv-radius-38);
+  --orv-button-secondary-shadow: var(--orv-shadow-button);
+
+  /* ==========================================
+   * 3. GLASS CARD COMPONENT TOKENS
+   * ========================================== */
+  --orv-card-glass-bg: var(--orv-gradient-glass-133);
+  --orv-card-glass-border: var(--orv-border-width-default) solid var(--orv-border-glass);
+  --orv-card-glass-blur: var(--orv-blur-card);
+  --orv-card-glass-radius: var(--orv-radius-16);
+  --orv-card-glass-shadow: var(--orv-shadow-card);
+  --orv-card-glass-padding: var(--orv-space-32);
+
+  /* ==========================================
+   * 4. SERVICE CARD TOKENS
+   * ========================================== */
+  --orv-service-card-bg: var(--orv-gradient-glass-150);
+  --orv-service-card-height: var(--orv-size-service-card-height);
+  --orv-service-card-radius: var(--orv-radius-24);
+  --orv-service-card-shadow: var(--orv-shadow-drop-service);
+  --orv-service-card-padding-x: var(--orv-space-32);
+  --orv-service-card-padding-y: var(--orv-space-32);
+
+  /* ==========================================
+   * 5. TAG COMPONENT TOKENS
+   * ========================================== */
+  --orv-tag-bg: var(--orv-color-alpha-white-8);
+  --orv-tag-radius: var(--orv-radius-full);
+  --orv-tag-padding-x: 14px;
+  --orv-tag-padding-y: 6px;
+  --orv-tag-font-size: var(--orv-font-size-11);
+  --orv-tag-letter-spacing: var(--orv-letter-spacing-wide-132);
+
+  /* ==========================================
+   * 6. EYEBROW COMPONENT TOKENS
+   * ========================================== */
+  --orv-eyebrow-dash-width: 30px;
+  --orv-eyebrow-dash-height: 1px;
+  --orv-eyebrow-dash-color: var(--orv-brand-400);
+  --orv-eyebrow-text-color: var(--orv-text-on-brand);
+  --orv-eyebrow-font-size: var(--orv-font-size-12);
+  --orv-eyebrow-letter-spacing: var(--orv-letter-spacing-wide-168);
+
+  /* ==========================================
+   * 7. TESTIMONIAL QUOTE CARD TOKENS
+   * ========================================== */
+  --orv-testimonial-card-bg: var(--orv-gradient-glass-156);
+  --orv-testimonial-card-blur: var(--orv-blur-testimonial);
+  --orv-testimonial-card-radius: var(--orv-radius-24);
+  --orv-testimonial-card-padding: var(--orv-space-96);
+
+  /* ==========================================
+   * 8. CTA SECTION CARD TOKENS
+   * ========================================== */
+  --orv-cta-card-bg: var(--orv-gradient-cta-card);
+  --orv-cta-card-padding: var(--orv-space-96);
+
+  /* ==========================================
+   * 9. FOOTER COMPONENT TOKENS
+   * ========================================== */
+  --orv-footer-padding-top: var(--orv-space-96);
+  --orv-footer-padding-bottom: var(--orv-space-48);
+  --orv-footer-gap: var(--orv-space-64);
+}
