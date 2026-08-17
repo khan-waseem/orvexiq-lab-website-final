@@ -1,0 +1,238 @@
+/* Legal page — Figma nodes 36:2 / 37:2 */
+
+/* ---------- Page Hero (36:16) — 339 tall incl. the 124 nav band ---------- */
+.heroSection {
+  position: relative;
+  padding-top: 220px;
+  padding-bottom: var(--orv-space-48);
+}
+
+.breadcrumb {
+  margin-bottom: var(--orv-space-16);
+}
+
+.crumbList {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+}
+
+.crumbLink {
+  color: var(--orv-text-tertiary);
+  text-decoration: none;
+  outline: none;
+  transition: color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.crumbLink:hover {
+  color: var(--orv-text-primary);
+}
+
+.crumbLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+  border-radius: var(--orv-radius-4);
+}
+
+.crumbSep {
+  color: var(--orv-text-tertiary);
+}
+
+.crumbCurrent {
+  color: var(--orv-brand-400);
+}
+
+/* Figma 36:20 — 56px Bold, tracking -1.12 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-56);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-112);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+/* Figma 36:21 — 15px, tertiary */
+.updated {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+/* ---------- Legal Body (36:23) ---------- */
+.bodySection {
+  position: relative;
+  padding-top: var(--orv-space-48);
+  padding-bottom: var(--orv-layout-section-padding-lg);
+}
+
+/* Figma 36:24 — contents card | gap 96 | clauses */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+}
+
+/* Figma 36:25 — glass contents card, r16, padding 24 */
+.toc {
+  position: sticky;
+  top: var(--orv-space-96);
+  width: 300px;
+  flex-shrink: 0;
+  padding: var(--orv-space-24);
+  border-radius: var(--orv-radius-16);
+  background: var(--orv-card-glass-bg);
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-sizing: border-box;
+}
+
+.tocLabel {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-wide-132);
+  color: var(--orv-text-tertiary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+.tocList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tocLink {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-secondary);
+  text-decoration: none;
+  outline: none;
+  transition: color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.tocLink:hover {
+  color: var(--orv-brand-400);
+}
+
+.tocLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+  border-radius: var(--orv-radius-4);
+}
+
+.content {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Figma 36:32 — clause blocks, 48px apart */
+.clause {
+  margin-bottom: var(--orv-space-48);
+  /* clears the overlaid navbar when jumping from the contents list */
+  scroll-margin-top: 140px;
+}
+
+.clause:last-child {
+  margin-bottom: 0;
+}
+
+/* Figma 36:33 — 24px Bold */
+.clauseTitle {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-24);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+/* Figma 36:34 — 16px / 28px Regular, secondary */
+.clauseBody {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-12) 0;
+}
+
+.clauseBody:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .row {
+    gap: var(--orv-space-64);
+  }
+
+  .title {
+    font-size: var(--orv-font-size-48);
+    letter-spacing: var(--orv-letter-spacing-tight-096);
+  }
+}
+
+/* Below tablet landscape the contents card stops being a useful rail and
+   becomes a normal block above the clauses. */
+@media (max-width: 1120px) {
+  .heroSection {
+    padding-top: 188px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: var(--orv-space-40);
+  }
+
+  .toc {
+    position: static;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroSection {
+    padding-top: 152px;
+  }
+
+  .title {
+    font-size: var(--orv-font-size-32);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+
+  .clauseTitle {
+    font-size: var(--orv-font-size-20);
+  }
+
+  .clause {
+    margin-bottom: var(--orv-space-40);
+  }
+}

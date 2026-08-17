@@ -12,6 +12,10 @@ export const caseStudySchema = z.object({
   category: z.enum(['FINTECH', 'LOGISTICS', 'COMMERCE', 'TREASURY', 'AI', 'GENERAL']),
   title: z.string(),
   subtitle: z.string(),
+  /** Anonymised client descriptor shown beside the category tag (Figma 44:46) */
+  clientDescriptor: z.string().optional(),
+  /** Engagement year shown in the card meta line (Figma 44:49) */
+  year: z.string().optional(),
   description: z.string(),
   servicesProvided: z.array(z.string()),
   coverScreenAssetUrl: z.string(),

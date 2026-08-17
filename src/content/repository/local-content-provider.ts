@@ -1,5 +1,15 @@
 import { IContentRepository } from './content-repository.interface';
 import { homepageContentSchema, HomepageContent } from '../schemas/homepage.schema';
+import { servicesPageContentSchema, ServicesPageContent } from '../schemas/services-page.schema';
+import { caseStudiesPageContentSchema, CaseStudiesPageContent } from '../schemas/case-studies-page.schema';
+import { blogPageContentSchema, BlogPageContent } from '../schemas/blog-page.schema';
+import { aboutPageContentSchema, AboutPageContent } from '../schemas/about-page.schema';
+import { contactPageContentSchema, ContactPageContent } from '../schemas/contact-page.schema';
+import { notFoundPageContentSchema, NotFoundPageContent } from '../schemas/not-found-page.schema';
+import { serviceDetailCollectionSchema, ServiceDetailPage } from '../schemas/service-detail.schema';
+import { legalPageCollectionSchema, LegalPage } from '../schemas/legal-page.schema';
+import { careersPageContentSchema, jobRoleCollectionSchema, CareersPageContent, JobRole } from '../schemas/careers-page.schema';
+import { caseStudyDetailCollectionSchema, CaseStudyDetail } from '../schemas/case-study-detail.schema';
 import { serviceSchema, ServiceItem } from '../schemas/service.schema';
 import { caseStudySchema, CaseStudyItem } from '../schemas/case-study.schema';
 import { blogPostSchema, BlogPostItem } from '../schemas/blog.schema';
@@ -7,6 +17,17 @@ import { impactStatSchema, ImpactStatItem } from '../schemas/impact-stat.schema'
 import { testimonialSchema, TestimonialData } from '../schemas/testimonial.schema';
 
 import homepageData from '../data/homepage.json';
+import servicesPageData from '../data/services-page.json';
+import caseStudiesPageData from '../data/case-studies-page.json';
+import blogPageData from '../data/blog-page.json';
+import aboutPageData from '../data/about-page.json';
+import contactPageData from '../data/contact-page.json';
+import notFoundPageData from '../data/not-found-page.json';
+import serviceDetailData from '../data/service-details.json';
+import legalPageData from '../data/legal-pages.json';
+import careersPageData from '../data/careers-page.json';
+import jobRoleData from '../data/job-roles.json';
+import caseStudyDetailData from '../data/case-study-details.json';
 import servicesData from '../data/services.json';
 import caseStudiesData from '../data/case-studies.json';
 import blogPostsData from '../data/blog-posts.json';
@@ -21,6 +42,68 @@ import testimonialsData from '../data/testimonials.json';
 export class LocalContentProvider implements IContentRepository {
   async getHomepageData(): Promise<HomepageContent> {
     return homepageContentSchema.parse(homepageData);
+  }
+
+  async getServicesPageData(): Promise<ServicesPageContent> {
+    return servicesPageContentSchema.parse(servicesPageData);
+  }
+
+  async getCaseStudiesPageData(): Promise<CaseStudiesPageContent> {
+    return caseStudiesPageContentSchema.parse(caseStudiesPageData);
+  }
+
+  async getBlogPageData(): Promise<BlogPageContent> {
+    return blogPageContentSchema.parse(blogPageData);
+  }
+
+  async getAboutPageData(): Promise<AboutPageContent> {
+    return aboutPageContentSchema.parse(aboutPageData);
+  }
+
+  async getContactPageData(): Promise<ContactPageContent> {
+    return contactPageContentSchema.parse(contactPageData);
+  }
+
+  async getNotFoundPageData(): Promise<NotFoundPageContent> {
+    return notFoundPageContentSchema.parse(notFoundPageData);
+  }
+
+  async getServiceDetailPages(): Promise<ServiceDetailPage[]> {
+    return serviceDetailCollectionSchema.parse(serviceDetailData);
+  }
+
+  async getServiceDetailBySlug(slug: string): Promise<ServiceDetailPage | null> {
+    const pages = await this.getServiceDetailPages();
+    return pages.find((p) => p.slug === slug) ?? null;
+  }
+
+  async getLegalPageBySlug(slug: string): Promise<LegalPage | null> {
+    const pages = legalPageCollectionSchema.parse(legalPageData);
+    return pages.find((p) => p.slug === slug) ?? null;
+  }
+
+  async getCareersPageData(): Promise<CareersPageContent> {
+    return careersPageContentSchema.parse(careersPageData);
+  }
+
+  async getJobRoles(): Promise<JobRole[]> {
+    return jobRoleCollectionSchema
+      .parse(jobRoleData)
+      .sort((a, b) => a.displayOrder - b.displayOrder);
+  }
+
+  async getJobRoleBySlug(slug: string): Promise<JobRole | null> {
+    const roles = await this.getJobRoles();
+    return roles.find((r) => r.slug === slug) ?? null;
+  }
+
+  async getCaseStudyDetails(): Promise<CaseStudyDetail[]> {
+    return caseStudyDetailCollectionSchema.parse(caseStudyDetailData);
+  }
+
+  async getCaseStudyDetailBySlug(slug: string): Promise<CaseStudyDetail | null> {
+    const pages = await this.getCaseStudyDetails();
+    return pages.find((p) => p.slug === slug) ?? null;
   }
 
   async getServices(): Promise<ServiceItem[]> {

@@ -1,0 +1,361 @@
+/* Job Detail — Figma node 38:4 */
+
+/* ---------- Job Hero (38:18) ---------- */
+.heroSection {
+  position: relative;
+  overflow: hidden;
+  padding-top: 220px;
+  padding-bottom: var(--orv-space-48);
+}
+
+.heroGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(120%, 1730px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -60%);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(48, 7, 84, 0.8) 0%,
+    rgba(48, 7, 84, 0.45) 37.5%,
+    rgba(48, 7, 84, 0.2) 58.3%,
+    rgba(48, 7, 84, 0) 100%
+  );
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.heroContainer {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.breadcrumb {
+  margin-bottom: var(--orv-space-16);
+}
+
+.crumbList {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+}
+
+.crumbLink {
+  color: var(--orv-text-tertiary);
+  text-decoration: none;
+  outline: none;
+  transition: color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.crumbLink:hover {
+  color: var(--orv-text-primary);
+}
+
+.crumbLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+  border-radius: var(--orv-radius-4);
+}
+
+.crumbSep {
+  color: var(--orv-text-tertiary);
+}
+
+.crumbCurrent {
+  color: var(--orv-brand-400);
+}
+
+/* Figma 38:24 — 48px Bold, tracking -0.96 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-48);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-096);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 38:25 — meta pills, alpha-white-8, r-full */
+.metaPills {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.metaPill {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--orv-space-8) var(--orv-space-16);
+  border-radius: var(--orv-radius-full);
+  background-color: var(--orv-color-alpha-white-8);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-secondary);
+  white-space: nowrap;
+}
+
+/* ---------- Job Body (38:36) ---------- */
+.bodySection {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-layout-section-padding-lg);
+}
+
+/* Figma 38:36 — description column | gap 96 | 360 apply rail */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+}
+
+.main {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.block {
+  margin-bottom: var(--orv-space-48);
+}
+
+.block:last-child {
+  margin-bottom: 0;
+}
+
+/* Figma 38:39 — 24px Bold */
+.blockHeading {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-24);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+/* Figma 38:40 — 16px / 28px Regular, secondary */
+.blockBody {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+.bulletList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Figma 38:46 — 16px dash rule + label */
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-16);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+}
+
+.dash {
+  width: 16px;
+  height: var(--orv-border-width-default);
+  margin-top: 13px;
+  background-color: var(--orv-brand-400);
+  flex-shrink: 0;
+}
+
+/* Figma 38:98 — sticky apply card, 360 wide, glass, r16, padding 32 */
+.applyCard {
+  position: sticky;
+  top: var(--orv-space-96);
+  width: 360px;
+  flex-shrink: 0;
+  padding: var(--orv-space-32);
+  border-radius: var(--orv-radius-16);
+  background: var(--orv-card-glass-bg);
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  box-sizing: border-box;
+}
+
+.applyHeading {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-22);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-12) 0;
+}
+
+.applyBody {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 38:104 — full-width brand pill */
+.applyCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: var(--orv-space-16) var(--orv-space-32);
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-gradient-cta-primary);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-on-brand);
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: opacity var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.applyCta:hover {
+  opacity: 0.92;
+}
+
+.applyCta:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+/* Figma 38:107 — key/value rows under a divider */
+.detailList {
+  margin: var(--orv-space-24) 0 0 0;
+  padding-top: var(--orv-space-24);
+  border-top: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+}
+
+.detailRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--orv-space-16);
+}
+
+.detailKey {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+.detailValue {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0;
+  text-align: right;
+}
+
+.shareRow {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: var(--orv-space-24) 0 0 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .row {
+    gap: var(--orv-space-64);
+  }
+
+  .applyCard {
+    width: 320px;
+  }
+}
+
+/* Below tablet landscape the apply rail leads instead of sitting beside the
+   description, so the primary action is not buried under the whole spec. */
+@media (max-width: 1120px) {
+  .heroSection {
+    padding-top: 188px;
+  }
+
+  .row {
+    flex-direction: column-reverse;
+    gap: var(--orv-space-48);
+  }
+
+  .applyCard {
+    position: static;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroSection {
+    padding-top: 152px;
+  }
+
+  .title {
+    font-size: var(--orv-font-size-32);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+
+  .applyCard {
+    padding: var(--orv-space-24);
+  }
+
+  .blockHeading {
+    font-size: var(--orv-font-size-20);
+  }
+
+  .detailRow {
+    flex-direction: column;
+    gap: var(--orv-space-4);
+  }
+
+  .detailValue {
+    text-align: left;
+  }
+}

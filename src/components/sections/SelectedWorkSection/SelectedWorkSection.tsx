@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { Eyebrow } from '@/components/primitives/Eyebrow';
+import { Heading } from '@/components/primitives/Heading';
 import { Tag } from '@/components/primitives/Tag';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { CaseStudy } from '@/content/schemas/case-study.schema';
@@ -28,18 +29,26 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
   caseStudies,
 }) => {
   return (
-    <SectionWrapper theme="canvas" padding="lg" id="work">
+    <SectionWrapper theme="canvas" padding="lg" id="work" className={styles.selectedWorkSection}>
+      {/* Ambient Glows — Figma 203:186 / 203:187 */}
+      <div className={styles.workGlowA} aria-hidden="true">
+        <Image src="/assets/services/services-glow.svg" alt="" width={1350} height={1350} className={styles.glowImage} />
+      </div>
+      <div className={styles.workGlowB} aria-hidden="true">
+        <Image src="/assets/services/services-glow.svg" alt="" width={1230} height={1230} className={styles.glowImage} />
+      </div>
+
       <PageContainer>
         <div className={styles.contentContainer}>
           {/* Header Row Composition */}
           <div className={styles.headerRow}>
             <div className={styles.titleGroup}>
               <Eyebrow align="left">{content.eyebrow}</Eyebrow>
-              <h2 className={styles.headlineText}>
+              <Heading level="h2" align="left">
                 {content.headlineLine1}
                 <br />
                 {content.headlineLine2}
-              </h2>
+              </Heading>
             </div>
 
             {/* View All Case Studies Link */}

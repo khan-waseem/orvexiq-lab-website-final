@@ -1,30 +1,42 @@
-/* Heading Component Styles — 100% Token Governance */
+/* Heading Component Styles — 100% Token Governance
+ *
+ * Values are read from Figma (file avQE4kOAF7Z42Az2RnNFvE):
+ *   h1  — Hero 183:11        48px / 64px, SemiBold, tracking normal
+ *   h2  — Section headlines  48px / 56px, Bold, tracking -0.96px  (86:823, 86:870, 86:928)
+ *   h3  — 28px / 38px, Bold, tracking -0.28px  (103:9 System headline, 86:835 case title)
+ *   h4  — 22px, Bold  (141:5 service card title)
+ *
+ * The responsive steps below are NOT in Figma (which is drawn at 1440 only).
+ * They follow the same breakpoint ladder declared in semantics.css so that
+ * type, page margins and section padding scale together.
+ */
 .heading {
   font-family: var(--orv-font-family-primary);
   color: var(--orv-text-primary);
   margin: 0;
   padding: 0;
+  /* No text-wrap balancing: Figma's line breaks are the source of truth. */
 }
 
-/* Level Styles */
+/* Level Styles — 1440 reference */
 .h1 {
   font-size: var(--orv-font-size-48);
   line-height: var(--orv-line-height-64);
-  letter-spacing: var(--orv-letter-spacing-tight-096);
-  font-weight: var(--orv-font-weight-bold);
+  letter-spacing: var(--orv-letter-spacing-normal);
+  font-weight: var(--orv-font-weight-semibold);
 }
 
 .h2 {
-  font-size: var(--orv-font-size-40);
-  line-height: var(--orv-line-height-normal);
-  letter-spacing: var(--orv-letter-spacing-tight-080);
-  font-weight: var(--orv-font-weight-semibold);
+  font-size: var(--orv-font-size-48);
+  line-height: var(--orv-line-height-56);
+  letter-spacing: var(--orv-letter-spacing-tight-096);
+  font-weight: var(--orv-font-weight-bold);
 }
 
 .h3 {
   font-size: var(--orv-font-size-28);
   line-height: var(--orv-line-height-38);
-  letter-spacing: var(--orv-letter-spacing-tight-056);
+  letter-spacing: var(--orv-letter-spacing-tight-028);
   font-weight: var(--orv-font-weight-bold);
 }
 
@@ -58,4 +70,72 @@
 
 .alignRight {
   text-align: right;
+}
+
+/* ==========================================
+ * RESPONSIVE TYPE SCALE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .h1 {
+    font-size: var(--orv-font-size-40);
+    line-height: var(--orv-line-height-56);
+  }
+
+  .h2 {
+    font-size: var(--orv-font-size-40);
+    line-height: var(--orv-line-height-48);
+    letter-spacing: var(--orv-letter-spacing-tight-080);
+  }
+}
+
+@media (max-width: 1120px) {
+  .h1 {
+    font-size: var(--orv-font-size-40);
+    line-height: var(--orv-line-height-48);
+  }
+
+  .h2 {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-48);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+
+  .h3 {
+    font-size: var(--orv-font-size-24);
+    line-height: var(--orv-line-height-30);
+  }
+}
+
+@media (max-width: 900px) {
+  .h1 {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-48);
+    letter-spacing: var(--orv-letter-spacing-tight-032);
+  }
+
+  .h2 {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-032);
+  }
+}
+
+@media (max-width: 600px) {
+  .h1 {
+    font-size: var(--orv-font-size-28);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+
+  .h2 {
+    font-size: var(--orv-font-size-28);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+
+  .h3 {
+    font-size: var(--orv-font-size-22);
+    line-height: var(--orv-line-height-30);
+    letter-spacing: var(--orv-letter-spacing-normal);
+  }
 }

@@ -2,10 +2,12 @@ import React, { HTMLAttributes } from 'react';
 import styles from './Eyebrow.module.css';
 
 export type EyebrowAlignment = 'left' | 'center';
+export type EyebrowTone = 'default' | 'muted';
 
 export interface EyebrowProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   align?: EyebrowAlignment;
+  tone?: EyebrowTone;
   className?: string;
 }
 
@@ -20,12 +22,19 @@ export interface EyebrowProps extends HTMLAttributes<HTMLDivElement> {
 export const Eyebrow: React.FC<EyebrowProps> = ({
   children,
   align = 'left',
+  tone = 'default',
   className = '',
   ...props
 }) => {
+  const toneClassMap: Record<EyebrowTone, string> = {
+    default: styles.toneDefault,
+    muted: styles.toneMuted,
+  };
+
   const combinedClassName = [
     styles.eyebrow,
     styles[align],
+    toneClassMap[tone],
     className,
   ].filter(Boolean).join(' ');
 

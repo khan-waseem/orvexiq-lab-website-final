@@ -1,0 +1,209 @@
+{
+  "hero": {
+    "headlineLine1": "What we do, and how far",
+    "headlineLine2": "we take it.",
+    "subdescription": "Four capabilities that usually arrive together. Most engagements start with one and grow into the rest.",
+    "heroIconAssetUrl": "/assets/services/services-hero-icon.png"
+  },
+  "serviceDetail": {
+    "blocks": [
+      {
+        "id": "svc-01",
+        "slug": "product-strategy",
+        "stepNumber": "01",
+        "title": "Product Strategy",
+        "description": "We start before the interface. Business goals, user needs and system constraints get mapped into one direction the whole team can build against.",
+        "readMoreLabel": "Explore product strategy",
+        "deliverables": [
+          {
+            "id": "svc-01-d1",
+            "label": "Product discovery"
+          },
+          {
+            "id": "svc-01-d2",
+            "label": "UX research"
+          },
+          {
+            "id": "svc-01-d3",
+            "label": "Workflow mapping"
+          },
+          {
+            "id": "svc-01-d4",
+            "label": "Information architecture"
+          },
+          {
+            "id": "svc-01-d5",
+            "label": "Roadmap definition"
+          },
+          {
+            "id": "svc-01-d6",
+            "label": "Success metrics"
+          }
+        ]
+      },
+      {
+        "id": "svc-02",
+        "slug": "ux-ui-product-design",
+        "stepNumber": "02",
+        "title": "UX / UI Product Design",
+        "description": "Interface systems for products that do not get simpler over time — enterprise dashboards, complex flows, and the mobile apps that sit alongside them.",
+        "readMoreLabel": "Explore UX / UI product design",
+        "deliverables": [
+          {
+            "id": "svc-02-d1",
+            "label": "Website design"
+          },
+          {
+            "id": "svc-02-d2",
+            "label": "Mobile app design"
+          },
+          {
+            "id": "svc-02-d3",
+            "label": "Enterprise dashboards"
+          },
+          {
+            "id": "svc-02-d4",
+            "label": "Design QA in build"
+          },
+          {
+            "id": "svc-02-d5",
+            "label": "Interactive prototypes"
+          },
+          {
+            "id": "svc-02-d6",
+            "label": "Accessibility review"
+          }
+        ]
+      },
+      {
+        "id": "svc-03",
+        "slug": "design-systems",
+        "stepNumber": "03",
+        "title": "Design Systems",
+        "description": "The layer underneath the screens. Tokens, components and governance shipped into your repository, versioned and documented, so the product stays coherent after we leave.",
+        "readMoreLabel": "Explore design systems",
+        "deliverables": [
+          {
+            "id": "svc-03-d1",
+            "label": "Design system audit"
+          },
+          {
+            "id": "svc-03-d2",
+            "label": "Token architecture"
+          },
+          {
+            "id": "svc-03-d3",
+            "label": "Component library"
+          },
+          {
+            "id": "svc-03-d4",
+            "label": "Governance model"
+          },
+          {
+            "id": "svc-03-d5",
+            "label": "Multi-brand theming"
+          },
+          {
+            "id": "svc-03-d6",
+            "label": "Accessibility integration"
+          }
+        ]
+      },
+      {
+        "id": "svc-04",
+        "slug": "ai-experiences-automation",
+        "stepNumber": "04",
+        "title": "AI Experiences & Automation",
+        "description": "AI only helps when people trust it. We design the interface layer that makes automated decisions legible, correctable and worth relying on.",
+        "readMoreLabel": "Explore AI & automation",
+        "deliverables": [
+          {
+            "id": "svc-04-d1",
+            "label": "AI assistants"
+          },
+          {
+            "id": "svc-04-d2",
+            "label": "Intelligent workflows"
+          },
+          {
+            "id": "svc-04-d3",
+            "label": "Process automation"
+          },
+          {
+            "id": "svc-04-d4",
+            "label": "AI-powered products"
+          },
+          {
+            "id": "svc-04-d5",
+            "label": "Model output UX"
+          },
+          {
+            "id": "svc-04-d6",
+            "label": "Human-in-the-loop design"
+          }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "QUESTIONS WE GET ASKED",
+    "headlineLine1": "Before you send",
+    "headlineLine2": "the first message.",
+    "note": "If something here is not answered, ask it directly — we would rather have the conversation than have you guess.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "How long does a design system take?",
+        "answer": "Between six weeks and four months, depending on how much product already exists. A greenfield system for one product is fast. Extracting a system from four years of accumulated screens is not — most of that time goes into deciding what to keep."
+      },
+      {
+        "id": "faq-2",
+        "question": "Do you work with our engineers, or hand over and leave?",
+        "answer": "We stay through build. Design thrown over a wall arrives as something else. In practice that means tokens and components shipped into your repository, not a Figma file your team drifts from within a quarter."
+      },
+      {
+        "id": "faq-3",
+        "question": "What does an engagement cost?",
+        "answer": "It depends on scope and length, and we would rather scope it properly than quote a range that means nothing. Tell us the problem and we will come back with an approach and a number."
+      },
+      {
+        "id": "faq-4",
+        "question": "What is the smallest project you take?",
+        "answer": "A four to six week discovery, or a design system audit. Below that we are probably the wrong shape — you would mostly be paying for onboarding."
+      },
+      {
+        "id": "faq-5",
+        "question": "Do you only work in fintech?",
+        "answer": "No. Most of our work has been in regulated or operationally complex products — lending, logistics, treasury, warehouse — because that is where a design system earns its keep. The constraints matter more than the industry."
+      },
+      {
+        "id": "faq-6",
+        "question": "What is the difference between a design system and a component library?",
+        "answer": "A component library is the components. A design system is those components plus the tokens underneath them, the rules for adding new ones, and documentation good enough that someone who was not there still makes the right decision."
+      },
+      {
+        "id": "faq-7",
+        "question": "Can you work with our existing design system?",
+        "answer": "Usually. We audit what is there first. Often the problem is not the components — it is that nothing governs how they get used."
+      },
+      {
+        "id": "faq-8",
+        "question": "Do you sign NDAs?",
+        "answer": "Yes. Several projects on this site are described without client names for exactly that reason."
+      }
+    ]
+  },
+  "ctaSection": {
+    "eyebrow": "START A PROJECT",
+    "headlineLine1": "Have something complex",
+    "headlineLine2": "to build?",
+    "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+    "subdescriptionLine2": "not a pitch deck.",
+    "primaryCtaText": "Start a Project",
+    "emailCtaText": "hello@orvexiq.com"
+  },
+  "seo": {
+    "title": "Services — Orvexiq Lab",
+    "description": "Product strategy, UX/UI product design, design systems and AI experiences for complex enterprise software."
+  }
+}

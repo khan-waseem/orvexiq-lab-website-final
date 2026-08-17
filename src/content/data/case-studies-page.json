@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "headline": "Work we can talk about.",
+    "subdescription": "Six engagements, all still in production. Some clients we can name, some we cannot — the numbers are real either way.",
+    "heroIconAssetUrl": "/assets/case-studies/case-studies-hero-icon.png"
+  },
+  "grid": {
+    "filters": [
+      {
+        "id": "f-all",
+        "label": "All work",
+        "value": null
+      },
+      {
+        "id": "f-fintech",
+        "label": "Fintech",
+        "value": "FINTECH"
+      },
+      {
+        "id": "f-logistics",
+        "label": "Logistics",
+        "value": "LOGISTICS"
+      },
+      {
+        "id": "f-commerce",
+        "label": "Commerce",
+        "value": "COMMERCE"
+      },
+      {
+        "id": "f-ai",
+        "label": "AI",
+        "value": "AI"
+      }
+    ],
+    "countLabelSingular": "project",
+    "countLabelPlural": "projects",
+    "visualPlaceholderLabel": "Project visual",
+    "emptyLabel": "No projects in this category yet."
+  },
+  "ctaSection": {
+    "eyebrow": "START A PROJECT",
+    "headlineLine1": "Have something complex",
+    "headlineLine2": "to build?",
+    "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+    "subdescriptionLine2": "not a pitch deck.",
+    "primaryCtaText": "Start a Project",
+    "emailCtaText": "hello@orvexiq.com"
+  },
+  "seo": {
+    "title": "Case Studies — Orvexiq Lab",
+    "description": "Enterprise product work in lending, logistics, commerce and AI — what the problem was and what shipped."
+  }
+}

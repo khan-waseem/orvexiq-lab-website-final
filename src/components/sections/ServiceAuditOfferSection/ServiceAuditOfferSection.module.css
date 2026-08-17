@@ -1,0 +1,147 @@
+/* ServiceAuditOfferSection — Figma node 139:71 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
+}
+
+/* Figma 139:72 — glass card, r24, padding 64, two columns with a 96 gap */
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+  padding: var(--orv-space-64);
+  border-radius: var(--orv-radius-24);
+  background: var(--orv-card-glass-bg);
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Figma 139:74 — 12px SemiBold, brand-400, tracking 1.68 */
+.eyebrow {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  color: var(--orv-brand-400);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+/* Figma 139:75 — 32px Bold */
+.headline {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-32);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: -0.64px;
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+/* Figma 139:76 — 17px / 28px Regular, secondary */
+.body {
+  font-family: var(--orv-font-family-primary);
+  font-size: 17px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-16) 0;
+}
+
+/* Figma 139:77 — 15px / 25px, tertiary */
+.priceNote {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-25);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  flex: 1 1 0;
+  min-width: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-16);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  margin-top: 10px;
+  border-radius: var(--orv-radius-full);
+  background-color: var(--orv-brand-400);
+  flex-shrink: 0;
+}
+
+.itemText {
+  font-family: var(--orv-font-family-primary);
+  font-size: 17px;
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+  min-width: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .card {
+    gap: var(--orv-space-64);
+    padding: var(--orv-space-48);
+  }
+}
+
+@media (max-width: 1120px) {
+  .card {
+    flex-direction: column;
+    gap: var(--orv-space-32);
+  }
+
+  .copy,
+  .list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: var(--orv-space-24);
+    border-radius: var(--orv-radius-16);
+  }
+
+  .headline {
+    font-size: var(--orv-font-size-28);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+
+  .body,
+  .itemText {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-26);
+  }
+}

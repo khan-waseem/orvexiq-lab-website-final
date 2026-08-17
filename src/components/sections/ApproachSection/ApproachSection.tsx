@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { Eyebrow } from '@/components/primitives/Eyebrow';
+import { Heading } from '@/components/primitives/Heading';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import styles from './ApproachSection.module.css';
 
@@ -22,7 +23,7 @@ export interface ApproachSectionProps {
  */
 export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => {
   return (
-    <SectionWrapper theme="canvas" padding="lg" id="process">
+    <SectionWrapper theme="canvas" padding="lg" id="process" className={styles.approachSection}>
       {/* Ambient Top-Left Purple Glow (Node 218:556) */}
       <div className={styles.approachGlow} aria-hidden="true">
         <Image
@@ -39,7 +40,9 @@ export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => 
           {/* Header Block (Node 218:557) */}
           <div className={styles.headerBlock}>
             <Eyebrow align="left">{content.eyebrow}</Eyebrow>
-            <h2 className={styles.headlineText}>{content.headline}</h2>
+            <Heading level="h2" align="left" className={styles.headlineText}>
+              {content.headline}
+            </Heading>
             <p className={styles.supportingText}>{content.subdescription}</p>
           </div>
 

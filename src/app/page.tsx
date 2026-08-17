@@ -7,6 +7,7 @@ import { ServicesSection } from '@/components/sections/ServicesSection';
 import { ApproachSection } from '@/components/sections/ApproachSection';
 import { ImpactSection } from '@/components/sections/ImpactSection';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
+import { CtaSection } from '@/components/sections/CtaSection';
 
 export default async function HomePage() {
   const [homepageData, featuredCaseStudies, services, impactStats, testimonials] = await Promise.all([
@@ -16,6 +17,16 @@ export default async function HomePage() {
     contentRepository.getImpactStats(),
     contentRepository.getTestimonials(),
   ]);
+
+  /*
+   * Only publishable testimonials are handed to the page. The component also
+   * gates on this, but filtering here matters: an unfiltered array is
+   * serialized into the RSC payload, which would keep the unverified quote in
+   * the public HTML source even though nothing renders it.
+   */
+  const publishableTestimonials = testimonials.filter(
+    (t) => t.published && t.verification?.isVerified === true
+  );
 
   return (
     <>
@@ -46,8 +57,12 @@ export default async function HomePage() {
       {/* Phase 5G: Impact Stats Section */}
       <ImpactSection stats={impactStats} />
 
-      {/* Phase 5H: Testimonial Section */}
-      <TestimonialSection testimonials={testimonials} />
+      {/* Phase 5H: Testimonial Section — renders only when a verified,
+          published testimonial exists (Figma marks the quote [PLACEHOLDER QUOTE]) */}
+      <TestimonialSection testimonials={publishableTestimonials} />
+
+      {/* Phase 5I: CTA Section — Figma node 86:978 */}
+      <CtaSection content={homepageData.ctaSection} />
     </>
   );
 }

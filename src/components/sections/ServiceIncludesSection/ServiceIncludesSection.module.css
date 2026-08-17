@@ -1,0 +1,59 @@
+/* ServiceIncludesSection — Figma node 124:47 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
+}
+
+.eyebrowRow {
+  margin-bottom: var(--orv-space-48);
+}
+
+/* Figma 124:51 — 3 columns, 24px gutters, 48px row gap */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--orv-layout-gutter);
+  row-gap: var(--orv-space-48);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Figma 124:52 — 2px brand rule on top, 24px padding, 12px gap */
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+  padding-top: var(--orv-space-24);
+  border-top: 2px solid var(--orv-brand-400);
+}
+
+/* Figma 124:53 — 20px Bold */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 124:54 — 15px / 25px Regular, secondary */
+.body {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-25);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* 3 -> 2 -> 1 */
+@media (max-width: 1120px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--orv-space-40); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: minmax(0, 1fr); row-gap: var(--orv-space-32); }
+}

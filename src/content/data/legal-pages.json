@@ -1,0 +1,183 @@
+[
+  {
+    "slug": "privacy",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated · 09 August 2026",
+    "tocLabel": "ON THIS PAGE",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Overview",
+        "paragraphs": [
+          "This policy explains what information Orvexiq Lab collects when you use our website or work with us, why we collect it, and what choices you have.",
+          "It applies to orvexiq.com and to information shared with us during a client engagement."
+        ]
+      },
+      {
+        "id": "information-we-collect",
+        "title": "Information we collect",
+        "paragraphs": [
+          "Information you give us: name, email address, company and anything you write in a contact form or send by email.",
+          "Information collected automatically: pages visited, approximate location derived from IP address, browser and device type.",
+          "We do not collect special category data, and we do not ask for payment details through this website."
+        ]
+      },
+      {
+        "id": "how-we-use-information",
+        "title": "How we use information",
+        "paragraphs": [
+          "To reply to enquiries and scope potential work.",
+          "To deliver and improve services under an agreed contract.",
+          "To understand which pages are useful so we can improve the site."
+        ]
+      },
+      {
+        "id": "legal-basis",
+        "title": "Legal basis",
+        "paragraphs": [
+          "Where required, we rely on legitimate interest for responding to enquiries and running the site, contract necessity for delivering agreed work, and consent for any optional analytics or marketing."
+        ]
+      },
+      {
+        "id": "sharing",
+        "title": "Sharing",
+        "paragraphs": [
+          "We do not sell personal information. We share it only with service providers who help us operate — hosting, email and analytics — under agreements that restrict how they may use it, or where the law requires it."
+        ]
+      },
+      {
+        "id": "retention",
+        "title": "Retention",
+        "paragraphs": [
+          "Enquiry correspondence is kept for two years. Client project records are kept for the duration of the engagement plus seven years where required for tax and legal purposes. Analytics data is retained for fourteen months."
+        ]
+      },
+      {
+        "id": "your-rights",
+        "title": "Your rights",
+        "paragraphs": [
+          "Depending on where you live you may request access, correction, deletion, restriction or portability of your information, and may object to processing based on legitimate interest.",
+          "To exercise any of these, email hello@orvexiq.com. We respond within thirty days."
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "Cookies",
+        "paragraphs": [
+          "We use essential cookies to run the site and, with consent, analytics cookies to understand usage. You can withdraw consent at any time through your browser settings."
+        ]
+      },
+      {
+        "id": "security",
+        "title": "Security",
+        "paragraphs": [
+          "We use encryption in transit, access controls and least-privilege permissions. No system is perfectly secure, and we will notify affected people and regulators of a qualifying breach without undue delay."
+        ]
+      },
+      {
+        "id": "changes-and-contact",
+        "title": "Changes and contact",
+        "paragraphs": [
+          "We update this policy when our practices change and revise the date above. Material changes will be highlighted on this page.",
+          "Questions: hello@orvexiq.com."
+        ]
+      }
+    ],
+    "seo": {
+      "title": "Privacy Policy — Orvexiq Lab",
+      "description": "How Orvexiq Lab collects, uses and protects personal information."
+    }
+  },
+  {
+    "slug": "terms",
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated · 09 August 2026",
+    "tocLabel": "ON THIS PAGE",
+    "sections": [
+      {
+        "id": "agreement",
+        "title": "Agreement",
+        "paragraphs": [
+          "These terms govern your use of orvexiq.com and any services provided by Orvexiq Lab unless a signed statement of work says otherwise.",
+          "Where a signed agreement and these terms conflict, the signed agreement wins."
+        ]
+      },
+      {
+        "id": "services",
+        "title": "Services",
+        "paragraphs": [
+          "We provide product strategy, design and related engineering support. Scope, deliverables, timeline and fees are defined per engagement in a written statement of work.",
+          "Anything not listed in that statement is out of scope until both parties agree otherwise in writing."
+        ]
+      },
+      {
+        "id": "client-responsibilities",
+        "title": "Client responsibilities",
+        "paragraphs": [
+          "You agree to provide timely access to people, systems and information we reasonably need, and to nominate one person who can make decisions on your behalf.",
+          "Delays in feedback or access shift the timeline by the same period."
+        ]
+      },
+      {
+        "id": "fees-and-payment",
+        "title": "Fees and payment",
+        "paragraphs": [
+          "Fees are stated in the statement of work. Invoices are due within fourteen days unless agreed otherwise.",
+          "Late payment beyond thirty days entitles us to pause work until the account is settled."
+        ]
+      },
+      {
+        "id": "intellectual-property",
+        "title": "Intellectual property",
+        "paragraphs": [
+          "On full payment, ownership of final deliverables produced specifically for you transfers to you.",
+          "We retain ownership of pre-existing tools, frameworks, design systems and know-how used to produce them, and grant you a perpetual licence to use those elements within the delivered work.",
+          "We may reference the engagement and show non-confidential work in our portfolio unless you tell us in writing not to."
+        ]
+      },
+      {
+        "id": "confidentiality",
+        "title": "Confidentiality",
+        "paragraphs": [
+          "Each party keeps the other confidential information private and uses it only to perform the agreement. This obligation continues for three years after the engagement ends."
+        ]
+      },
+      {
+        "id": "warranties",
+        "title": "Warranties",
+        "paragraphs": [
+          "We perform services with reasonable skill and care consistent with professional standards. We do not warrant that any design will achieve a specific commercial result."
+        ]
+      },
+      {
+        "id": "limitation-of-liability",
+        "title": "Limitation of liability",
+        "paragraphs": [
+          "Neither party is liable for indirect, incidental or consequential loss, including loss of profit or data.",
+          "Our total liability for any claim is limited to the fees paid for the engagement giving rise to it.",
+          "Nothing here limits liability that cannot be limited by law."
+        ]
+      },
+      {
+        "id": "termination",
+        "title": "Termination",
+        "paragraphs": [
+          "Either party may terminate with thirty days written notice. You pay for work completed and costs committed up to the termination date.",
+          "Either party may terminate immediately for material breach that is not remedied within fourteen days of notice."
+        ]
+      },
+      {
+        "id": "governing-law-and-contact",
+        "title": "Governing law and contact",
+        "paragraphs": [
+          "These terms are governed by the laws of the jurisdiction stated in the statement of work, and the courts there have exclusive jurisdiction.",
+          "Questions: hello@orvexiq.com."
+        ]
+      }
+    ],
+    "seo": {
+      "title": "Terms & Conditions — Orvexiq Lab",
+      "description": "The terms that govern use of orvexiq.com and services provided by Orvexiq Lab."
+    }
+  }
+]

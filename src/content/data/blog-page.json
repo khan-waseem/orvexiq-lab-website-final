@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "headline": "Notes from the work.",
+    "subdescription": "What we learned building design systems and products for regulated businesses. Written by the people who did the work, not a content team.",
+    "heroIconAssetUrl": "/assets/blog/blog-hero-icon.png"
+  },
+  "featured": {
+    "eyebrow": "FEATURED",
+    "readMoreLabel": "Read the post",
+    "imagePlaceholderLabel": "Featured image"
+  },
+  "grid": {
+    "filters": [
+      {
+        "id": "bf-all",
+        "label": "All posts",
+        "value": null
+      },
+      {
+        "id": "bf-ds",
+        "label": "Design systems",
+        "value": "Design systems"
+      },
+      {
+        "id": "bf-pd",
+        "label": "Product design",
+        "value": "Product design"
+      },
+      {
+        "id": "bf-process",
+        "label": "Process",
+        "value": "Process"
+      },
+      {
+        "id": "bf-research",
+        "label": "Research",
+        "value": "Research"
+      }
+    ],
+    "imagePlaceholderLabel": "Post image",
+    "emptyLabel": "No posts in this category yet."
+  },
+  "newsletter": {
+    "headline": "One post a month. No newsletter filler.",
+    "subdescription": "We write when we have something worth saying, which is roughly monthly. Unsubscribe in one click.",
+    "inputPlaceholder": "you@company.com",
+    "submitLabel": "Subscribe"
+  },
+  "ctaSection": {
+    "eyebrow": "START A PROJECT",
+    "headlineLine1": "Have something complex",
+    "headlineLine2": "to build?",
+    "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+    "subdescriptionLine2": "not a pitch deck.",
+    "primaryCtaText": "Start a Project",
+    "emailCtaText": "hello@orvexiq.com"
+  },
+  "seo": {
+    "title": "Blog — Orvexiq Lab",
+    "description": "Notes on design systems, product design and research from the team doing the work."
+  }
+}

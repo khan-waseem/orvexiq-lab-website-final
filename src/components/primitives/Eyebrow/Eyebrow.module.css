@@ -6,6 +6,7 @@
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-eyebrow-font-size);
   font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
   letter-spacing: var(--orv-eyebrow-letter-spacing);
   color: var(--orv-eyebrow-text-color);
   text-transform: uppercase;
@@ -29,4 +30,13 @@
 
 .center {
   justify-content: center;
+}
+
+/* Tone variants — the CTA eyebrow (Figma 86:982) is tertiary, section eyebrows are white */
+.toneDefault {
+  color: var(--orv-eyebrow-text-color);
+}
+
+.toneMuted {
+  color: var(--orv-text-tertiary);
 }

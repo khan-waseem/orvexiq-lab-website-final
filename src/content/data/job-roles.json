@@ -1,0 +1,182 @@
+[
+  {
+    "id": "role-1",
+    "slug": "senior-product-designer",
+    "title": "Senior Product Designer",
+    "department": "Design",
+    "summary": "Lead engagements end to end, from first workshop to shipped product.",
+    "location": "Remote · GMT+5 overlap",
+    "employmentType": "Full-time",
+    "postedOn": "Posted 04 Aug 2026",
+    "salaryNote": "Shared on the intro call",
+    "reportsTo": "Design Director",
+    "open": true,
+    "displayOrder": 1,
+    "detail": {
+      "aboutHeading": "About the role",
+      "aboutParagraphs": [
+        "You will lead engagements end to end — sitting in the first workshop, shaping the product direction, designing the interface system, and staying through build until it ships.",
+        "Most of our work is enterprise: lending platforms, fleet systems, internal tools with twelve years of accumulated logic. The interesting problem is rarely the screen. It is the model underneath it."
+      ],
+      "groups": [
+        {
+          "id": "what-you-will-do",
+          "heading": "What you will do",
+          "items": [
+            "Run discovery with users who are hard to reach and busier than you",
+            "Turn messy domain logic into product direction a team can act on",
+            "Design interface systems, not one-off screens — components, tokens, states",
+            "Work directly with client engineers through build, not over a handoff wall",
+            "Help shape how the studio itself works as we grow"
+          ]
+        },
+        {
+          "id": "what-we-are-looking-for",
+          "heading": "What we are looking for",
+          "items": [
+            "Six or more years designing digital products, some of it on complex B2B or enterprise work",
+            "A portfolio that shows systems thinking, not only polished visuals",
+            "Comfort with ambiguity — most engagements start before the problem is clearly stated",
+            "Ability to explain a design decision to an engineer, a CFO and a user in three different ways",
+            "Fluency in Figma including variables, components and auto-layout"
+          ]
+        },
+        {
+          "id": "nice-to-have",
+          "heading": "Nice to have",
+          "items": [
+            "Experience building or maintaining a design system used by more than one product",
+            "Front-end literacy — you do not have to ship code, but you should be able to read it",
+            "Fintech, logistics or regulated industry background"
+          ]
+        },
+        {
+          "id": "how-we-hire",
+          "heading": "How we hire",
+          "items": [
+            "Intro call — 30 minutes, mutual fit",
+            "Portfolio walkthrough — one project, in depth, your choice",
+            "Paid design exercise — a real problem, about four hours, we pay for your time",
+            "Team conversation — meet the people you would work with"
+          ],
+          "intro": "Four steps, about two weeks end to end. We tell you where you stand after every one."
+        }
+      ],
+      "applyHeading": "Apply for this role",
+      "applyBody": "Send your portfolio and a short note about a system you are proud of. No cover letter needed.",
+      "applyCtaLabel": "Apply now",
+      "shareLabel": "Share this role"
+    }
+  },
+  {
+    "id": "role-2",
+    "slug": "design-systems-engineer",
+    "title": "Design Systems Engineer",
+    "department": "Engineering",
+    "summary": "Own the token pipeline and component library every project builds on.",
+    "location": "Remote · GMT+5 overlap",
+    "employmentType": "Full-time",
+    "postedOn": "Posted 04 Aug 2026",
+    "salaryNote": "Shared on the intro call",
+    "reportsTo": "Design Director",
+    "open": true,
+    "displayOrder": 2,
+    "detail": {
+      "aboutHeading": "About the role",
+      "aboutParagraphs": [
+        "Own the token pipeline and component library every project builds on."
+      ],
+      "groups": [
+        {
+          "id": "how-we-hire",
+          "heading": "How we hire",
+          "items": [
+            "Intro call — 30 minutes, mutual fit",
+            "Portfolio walkthrough — one project, in depth, your choice",
+            "Paid design exercise — a real problem, about four hours, we pay for your time",
+            "Team conversation — meet the people you would work with"
+          ],
+          "intro": "Four steps, about two weeks end to end. We tell you where you stand after every one."
+        }
+      ],
+      "applyHeading": "Apply for this role",
+      "applyBody": "Send your portfolio and a short note about a system you are proud of. No cover letter needed.",
+      "applyCtaLabel": "Apply now",
+      "shareLabel": "Share this role"
+    }
+  },
+  {
+    "id": "role-3",
+    "slug": "ux-researcher",
+    "title": "UX Researcher",
+    "department": "Research",
+    "summary": "Run discovery for enterprise products where users are hard to reach.",
+    "location": "Remote · GMT+5 overlap",
+    "employmentType": "Contract",
+    "postedOn": "Posted 04 Aug 2026",
+    "salaryNote": "Shared on the intro call",
+    "reportsTo": "Design Director",
+    "open": true,
+    "displayOrder": 3,
+    "detail": {
+      "aboutHeading": "About the role",
+      "aboutParagraphs": [
+        "Run discovery for enterprise products where users are hard to reach."
+      ],
+      "groups": [
+        {
+          "id": "how-we-hire",
+          "heading": "How we hire",
+          "items": [
+            "Intro call — 30 minutes, mutual fit",
+            "Portfolio walkthrough — one project, in depth, your choice",
+            "Paid design exercise — a real problem, about four hours, we pay for your time",
+            "Team conversation — meet the people you would work with"
+          ],
+          "intro": "Four steps, about two weeks end to end. We tell you where you stand after every one."
+        }
+      ],
+      "applyHeading": "Apply for this role",
+      "applyBody": "Send your portfolio and a short note about a system you are proud of. No cover letter needed.",
+      "applyCtaLabel": "Apply now",
+      "shareLabel": "Share this role"
+    }
+  },
+  {
+    "id": "role-4",
+    "slug": "frontend-engineer",
+    "title": "Frontend Engineer",
+    "department": "Engineering",
+    "summary": "Turn design systems into production code designers can actually read.",
+    "location": "Remote · GMT+5 overlap",
+    "employmentType": "Full-time",
+    "postedOn": "Posted 04 Aug 2026",
+    "salaryNote": "Shared on the intro call",
+    "reportsTo": "Design Director",
+    "open": true,
+    "displayOrder": 4,
+    "detail": {
+      "aboutHeading": "About the role",
+      "aboutParagraphs": [
+        "Turn design systems into production code designers can actually read."
+      ],
+      "groups": [
+        {
+          "id": "how-we-hire",
+          "heading": "How we hire",
+          "items": [
+            "Intro call — 30 minutes, mutual fit",
+            "Portfolio walkthrough — one project, in depth, your choice",
+            "Paid design exercise — a real problem, about four hours, we pay for your time",
+            "Team conversation — meet the people you would work with"
+          ],
+          "intro": "Four steps, about two weeks end to end. We tell you where you stand after every one."
+        }
+      ],
+      "applyHeading": "Apply for this role",
+      "applyBody": "Send your portfolio and a short note about a system you are proud of. No cover letter needed.",
+      "applyCtaLabel": "Apply now",
+      "shareLabel": "Share this role"
+    }
+  }
+]

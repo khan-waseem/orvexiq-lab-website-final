@@ -1,21 +1,24 @@
-/* ServicesSection Component Styles — 100% Token Governance & Exact Figma Geometry */
+/* ServicesSection Component Styles — Figma node 86:866
+ *
+ * 1440 reference (section height 924, zero vertical padding):
+ *   eyebrow y=0 (28) -> gap 32 -> headline y=60 -> gap 32 -> cards y=196 (728)
+ *   card 612x352: padding 32 / 232 / 32 / 32, gap 16, icon 226 at right 13 bottom 5
+ */
 .servicesSection {
   position: relative;
   width: 100%;
   background-color: var(--orv-surface-canvas);
-  padding-top: var(--orv-layout-section-padding-lg);
-  padding-bottom: var(--orv-layout-section-padding-lg);
   overflow: hidden;
   box-sizing: border-box;
 }
 
-/* Background Ambient Glow */
+/* Background Ambient Glow — Figma ellipse 203:188 (880 square at x700 y60) */
 .servicesGlow {
   position: absolute;
-  top: 60px;
-  left: 700px;
-  width: 880px;
-  height: 880px;
+  top: -160px;
+  left: 33.33%;
+  width: min(91.67%, 1320px);
+  aspect-ratio: 1;
   pointer-events: none;
   z-index: var(--orv-z-normal);
 }
@@ -38,25 +41,52 @@
 .titleGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--orv-space-16);
+  gap: var(--orv-space-32);
   max-width: 704px;
 }
 
-.headlineText {
+/* Figma 86:867 — 29.64px dash, 13px gap, 20px Light label in a 28px box */
+.servicesEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  height: 28px;
+}
+
+.servicesEyebrowDash {
+  width: 29.64px;
+  height: var(--orv-border-width-default);
+  background-color: var(--orv-brand-400);
+  flex-shrink: 0;
+}
+
+.servicesEyebrowLabel {
   font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-48);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-56);
-  letter-spacing: var(--orv-letter-spacing-tight-48);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-light);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-on-brand);
+}
+
+/* Figma 86:870 — 40px SemiBold. The node is 104 tall over two lines, i.e.
+   52px per line; the browser's `normal` for Manrope is ~54.6, so the leading
+   is set explicitly to keep the card grid on Figma's y=196. */
+.titleGroup .headlineText {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-40);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-52);
+  letter-spacing: var(--orv-letter-spacing-normal);
   color: var(--orv-text-primary);
   margin: 0;
+  max-width: 704px;
 }
 
 /* 2x2 Desktop Service Cards Grid */
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--orv-layout-gutter);
+  gap: var(--orv-layout-card-gap);
   width: 100%;
 }
 
@@ -64,69 +94,74 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: var(--orv-space-16);
   width: 100%;
-  min-height: 352px;
-  padding: var(--orv-space-32);
+  min-height: calc(var(--orv-service-card-height) - 2 * var(--orv-border-width-default));
+  padding: var(--orv-service-card-padding-y) 232px var(--orv-service-card-padding-y) var(--orv-service-card-padding-x);
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .cardTextContent {
   display: flex;
   flex-direction: column;
-  max-width: 348px;
+  gap: var(--orv-space-16);
   z-index: 2;
 }
 
+/* Figma 141:5 — 22px Bold */
 .cardTitle {
   font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-24);
-  font-weight: var(--orv-font-weight-semibold);
+  font-size: var(--orv-font-size-22);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
   color: var(--orv-text-primary);
-  margin: 0 0 var(--orv-space-16) 0;
+  margin: 0;
 }
 
+/* Figma 141:6 — 15px / 25px Regular */
 .cardDescription {
   font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-16);
+  font-size: var(--orv-font-size-15);
   font-weight: var(--orv-font-weight-regular);
-  line-height: var(--orv-line-height-24);
+  line-height: var(--orv-line-height-25);
   color: var(--orv-text-secondary);
-  margin: 0 0 var(--orv-space-24) 0;
+  margin: 0;
 }
 
-/* Capabilities Semantic List */
+/* Figma 141:7 — capabilities, padding-top 8, gap 8 */
 .capabilitiesList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--orv-space-8);
+  padding-top: var(--orv-space-8);
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 
+/* Figma 141:8 — item gap 12, label 13px Medium */
 .capabilityItem {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--orv-space-12);
   font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-14);
-  font-weight: var(--orv-font-weight-regular);
-  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-secondary);
 }
 
 .capabilityDash {
   width: 10px;
-  height: 1px;
+  height: var(--orv-border-width-default);
   background-color: var(--orv-brand-400);
   flex-shrink: 0;
 }
 
-/* 3D Icon Bottom Right Positioning */
+/* Figma 141:20 — 226px icon at card-relative right 13 / bottom 5 */
 .iconWrapper {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 5px;
+  right: 13px;
   width: 226px;
   height: 226px;
   pointer-events: none;
@@ -139,43 +174,94 @@
   object-fit: contain;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1024px) {
-  .servicesGlow {
-    left: 50%;
-    transform: translateX(-50%);
+/* ==========================================
+ * RESPONSIVE
+ * The 2-column grid is held through tablet landscape; it only collapses at
+ * tablet portrait, where a 612-wide card can no longer hold its icon column.
+ * ========================================== */
+@media (max-width: 1400px) {
+  .cardInner {
+    padding-right: 200px;
   }
 
-  .headlineText {
-    font-size: 36px;
-    line-height: 44px;
+  .iconWrapper {
+    width: 196px;
+    height: 196px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .titleGroup {
+    gap: var(--orv-space-24);
   }
 
-  .cardsGrid {
-    grid-template-columns: 1fr;
+  .titleGroup .headlineText {
+    font-size: var(--orv-font-size-32);
+  }
+
+  .servicesEyebrowLabel {
+    font-size: var(--orv-font-size-18);
+  }
+
+  .contentContainer {
     gap: var(--orv-space-24);
   }
 
   .cardInner {
-    min-height: auto;
-  }
-
-  .cardTextContent {
-    max-width: 100%;
+    padding-right: 168px;
   }
 
   .iconWrapper {
-    opacity: 0.25;
+    width: 160px;
+    height: 160px;
+    right: var(--orv-space-8);
+    bottom: var(--orv-space-8);
   }
 }
 
-@media (max-width: 640px) {
-  .headlineText {
-    font-size: 28px;
-    line-height: 36px;
+/* Tablet portrait: single column, icon becomes a right-aligned accent rather
+   than a background wash, so the card keeps a deliberate composition. */
+@media (max-width: 900px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .servicesGlow {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+
+  .cardInner {
+    min-height: 0;
+    padding-right: 180px;
+  }
+
+  .iconWrapper {
+    width: 176px;
+    height: 176px;
+  }
+}
+
+@media (max-width: 600px) {
+  .titleGroup .headlineText {
+    font-size: var(--orv-font-size-28);
+  }
+
+  .servicesEyebrowLabel {
+    font-size: var(--orv-font-size-16);
   }
 
   .cardInner {
     padding: var(--orv-space-24);
+    padding-bottom: 132px;
+  }
+
+  .iconWrapper {
+    width: 132px;
+    height: 132px;
+    right: var(--orv-space-4);
+    bottom: var(--orv-space-4);
+    opacity: 0.9;
   }
 }

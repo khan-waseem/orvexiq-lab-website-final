@@ -1,15 +1,191 @@
 [
   {
     "id": "blog-1",
-    "slug": "architecting-enterprise-design-system-tokens",
-    "title": "Architecting Enterprise Design System Tokens",
-    "excerpt": "How a 3-Tier design token system keeps complex product suites visually coherent across multi-repo teams.",
-    "contentMarkdown": "# Architecting Enterprise Design System Tokens\n\nTokens bridge the gap between design software and code repositories.",
-    "authorName": "Orvexiq Engineering",
-    "authorRole": "Product Architecture",
-    "category": "Design Systems",
+    "slug": "brand-colour-does-not-belong-in-your-primitives",
+    "title": "Brand colour does not belong in your primitives",
+    "excerpt": "Extracting brand into its own collection is thirty minutes of work that saves a rebuild the first time a client asks for their own palette.",
+    "contentMarkdown": "",
+    "authorName": "Orvexiq Lab",
+    "category": "Design systems",
+    "featured": true,
+    "displayOrder": 0,
+    "coverImageUrl": "",
+    "readTimeMinutes": 8,
+    "publishedAt": "2026-07-12",
+    "published": true,
+    "authorRole": "Design lead, Orvexiq Lab",
+    "authorBio": "Design lead at Orvexiq Lab. Builds design systems and product interfaces for regulated businesses — mostly fintech and logistics.",
+    "body": [
+      {
+        "type": "lead",
+        "text": "Almost every design system I audit puts the brand blue in the primitive layer, named something like Color/Brand/Primary/500. It looks tidy. It is the single decision that makes the system impossible to reuse."
+      },
+      {
+        "type": "heading",
+        "text": "What a primitive actually is"
+      },
+      {
+        "type": "paragraph",
+        "text": "A primitive is a raw value with no opinion about where it is used. Blue/500 is a primitive. Brand/Primary/500 is not — the word \"primary\" is already a decision about role, and \"brand\" is already a decision about ownership. You have smuggled two layers of meaning into the layer that is supposed to have none."
+      },
+      {
+        "type": "paragraph",
+        "text": "This matters the moment you have a second brand. A client, a sub-product, a white-label deployment. If brand lives in primitives, every semantic token that points at it now points at something that has to change, and you are editing the foundation to serve one customer."
+      },
+      {
+        "type": "heading",
+        "text": "The moment it breaks"
+      },
+      {
+        "type": "paragraph",
+        "text": "On a recent build we had 52 semantic tokens referencing the brand ramp from inside Primitives. The client asked, reasonably, whether their own palette could be swapped in without touching anything else. The honest answer at that point was no."
+      },
+      {
+        "type": "quote",
+        "text": "\"If brand lives in your primitives, every client engagement becomes a fork of your foundation.\""
+      },
+      {
+        "type": "heading",
+        "text": "The fix is one collection"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pull the brand ramp out of Primitives into its own collection with a single mode. Repoint the semantic tokens at it. Primitives keep every hue as raw chromatic values; Brand holds only the ramp that carries identity; Semantics reference Brand, never the raw hue."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Primitives lose nothing — the hues were already there under Chromatic.",
+          "Brand becomes one collection you swap per client, per product, or per season.",
+          "Charts must never source from Brand, or every chart changes colour when the brand does.",
+          "A collection has exactly one mode axis, so brand, theme and density each need their own."
+        ]
+      },
+      {
+        "type": "figure",
+        "placeholder": "Diagram — token layers",
+        "caption": "Primitives hold raw hues. Brand holds only what carries identity. Semantics never reach past Brand."
+      },
+      {
+        "type": "heading",
+        "text": "What it costs"
+      },
+      {
+        "type": "paragraph",
+        "text": "On that build the migration was 52 references and took under an hour, with zero visual regression — the resolved values were identical, only the path changed. Doing it after the system had shipped to three products would have been a different afternoon entirely."
+      },
+      {
+        "type": "paragraph",
+        "text": "The rule I would give anyone starting: if a token name contains your company name, it does not belong in the foundation layer."
+      }
+    ]
+  },
+  {
+    "id": "blog-2",
+    "slug": "case-study-format-that-wins-enterprise-work",
+    "title": "The case study format that actually wins enterprise work",
+    "excerpt": "A single unattributed number reads as marketing. The same number broken into four components reads as an audit.",
+    "contentMarkdown": "",
+    "authorName": "Orvexiq Lab",
+    "category": "Process",
+    "featured": false,
+    "displayOrder": 1,
+    "coverImageUrl": "",
     "readTimeMinutes": 6,
-    "publishedAt": "2026-02-01",
-    "published": true
+    "publishedAt": "2026-06-28",
+    "published": true,
+    "authorRole": "Design lead, Orvexiq Lab",
+    "authorBio": "Design lead at Orvexiq Lab. Builds design systems and product interfaces for regulated businesses — mostly fintech and logistics.",
+    "body": []
+  },
+  {
+    "id": "blog-3",
+    "slug": "what-survives-when-you-ship-a-design-system",
+    "title": "What survives when you ship a design system into someone else's repo.",
+    "excerpt": "Handing over a Figma file is not a handover. What we changed after watching three systems drift.",
+    "contentMarkdown": "",
+    "authorName": "Orvexiq Lab",
+    "category": "Design systems",
+    "featured": false,
+    "displayOrder": 2,
+    "coverImageUrl": "",
+    "readTimeMinutes": 11,
+    "publishedAt": "2026-06-14",
+    "published": true,
+    "authorRole": "Design lead, Orvexiq Lab",
+    "authorBio": "Design lead at Orvexiq Lab. Builds design systems and product interfaces for regulated businesses — mostly fintech and logistics.",
+    "body": []
+  },
+  {
+    "id": "blog-4",
+    "slug": "forty-seconds-is-not-a-loading-state",
+    "title": "Forty seconds is not a loading state",
+    "excerpt": "When a legacy service cannot be made faster, the design problem stops being the spinner and starts being the wait.",
+    "contentMarkdown": "",
+    "authorName": "Orvexiq Lab",
+    "category": "Product design",
+    "featured": false,
+    "displayOrder": 3,
+    "coverImageUrl": "",
+    "readTimeMinutes": 5,
+    "publishedAt": "2026-05-30",
+    "published": true,
+    "authorRole": "Design lead, Orvexiq Lab",
+    "authorBio": "Design lead at Orvexiq Lab. Builds design systems and product interfaces for regulated businesses — mostly fintech and logistics.",
+    "body": []
+  },
+  {
+    "id": "blog-5",
+    "slug": "stop-testing-your-prototype-on-designers",
+    "title": "Stop testing your prototype on designers",
+    "excerpt": "Our first prototype tested beautifully in the studio and made real brokers slower. What we changed about recruiting.",
+    "contentMarkdown": "",
+    "authorName": "Orvexiq Lab",
+    "category": "Research",
+    "featured": false,
+    "displayOrder": 4,
+    "coverImageUrl": "",
+    "readTimeMinutes": 7,
+    "publishedAt": "2026-05-16",
+    "published": true,
+    "authorRole": "Design lead, Orvexiq Lab",
+    "authorBio": "Design lead at Orvexiq Lab. Builds design systems and product interfaces for regulated businesses — mostly fintech and logistics.",
+    "body": []
+  },
+  {
+    "id": "blog-6",
+    "slug": "one-mode-axis-per-collection",
+    "title": "One mode axis per collection, and why that ruins your plan",
+    "excerpt": "Brand, theme, density and breakpoint each need their own collection. Most token architectures find this out too late.",
+    "contentMarkdown": "",
+    "authorName": "Orvexiq Lab",
+    "category": "Design systems",
+    "featured": false,
+    "displayOrder": 5,
+    "coverImageUrl": "",
+    "readTimeMinutes": 9,
+    "publishedAt": "2026-05-02",
+    "published": true,
+    "authorRole": "Design lead, Orvexiq Lab",
+    "authorBio": "Design lead at Orvexiq Lab. Builds design systems and product interfaces for regulated businesses — mostly fintech and logistics.",
+    "body": []
+  },
+  {
+    "id": "blog-7",
+    "slug": "what-a-40-minute-workflow-actually-costs",
+    "title": "What a 40-minute workflow actually costs",
+    "excerpt": "Nobody signs off a redesign to save eight minutes. Multiply it by 340 people and 250 days and the number changes the conversation.",
+    "contentMarkdown": "",
+    "authorName": "Orvexiq Lab",
+    "category": "Product design",
+    "featured": false,
+    "displayOrder": 6,
+    "coverImageUrl": "",
+    "readTimeMinutes": 6,
+    "publishedAt": "2026-04-18",
+    "published": true,
+    "authorRole": "Design lead, Orvexiq Lab",
+    "authorBio": "Design lead at Orvexiq Lab. Builds design systems and product interfaces for regulated businesses — mostly fintech and logistics.",
+    "body": []
   }
 ]

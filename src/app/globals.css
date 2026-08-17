@@ -21,8 +21,13 @@ html, body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
+
+/*
+ * overflow-x is deliberately NOT hidden here. Hiding it masks real layout
+ * overflow instead of fixing it; decorative glows are clipped by their own
+ * section's overflow:hidden.
+ */
 
 a {
   color: inherit;

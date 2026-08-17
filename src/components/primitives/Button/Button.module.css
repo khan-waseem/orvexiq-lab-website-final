@@ -71,14 +71,27 @@
   border-radius: var(--orv-button-primary-radius);
 }
 
-/* CTA Email Variant */
+/* CTA Primary Variant — Figma 86:987 */
+.ctaPrimary {
+  background: var(--orv-button-cta-primary-bg);
+  color: var(--orv-text-on-brand);
+  height: var(--orv-button-cta-height);
+  font-size: var(--orv-button-cta-font-size);
+  font-weight: var(--orv-font-weight-semibold);
+  padding-left: var(--orv-button-cta-padding-x);
+  padding-right: var(--orv-button-cta-padding-x);
+  border-radius: var(--orv-radius-full);
+}
+
+/* CTA Email Variant — Figma 86:989 */
 .email {
-  background: var(--orv-color-alpha-white-4);
-  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  background: var(--orv-button-cta-email-bg);
+  border: var(--orv-button-cta-email-border);
   color: var(--orv-text-primary);
+  height: var(--orv-button-cta-height);
   font-weight: var(--orv-font-weight-medium);
-  font-size: var(--orv-font-size-16);
-  padding-left: var(--orv-space-32);
-  padding-right: var(--orv-space-32);
+  font-size: var(--orv-button-cta-font-size);
+  padding-left: var(--orv-button-cta-padding-x);
+  padding-right: var(--orv-button-cta-padding-x);
   border-radius: var(--orv-radius-full);
 }

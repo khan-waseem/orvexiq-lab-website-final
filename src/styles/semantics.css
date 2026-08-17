@@ -21,6 +21,8 @@
   --orv-text-primary: var(--orv-color-raw-gray-100);
   --orv-text-secondary: var(--orv-color-raw-gray-300);
   --orv-text-tertiary: var(--orv-color-raw-gray-400);
+  /* Form placeholder — sampled #b0b0b0, i.e. the same value as tertiary */
+  --orv-text-placeholder: var(--orv-color-raw-gray-400);
   --orv-text-on-brand: var(--orv-color-raw-white);
   --orv-text-brand-accent: var(--orv-color-raw-purple-400);
   --orv-text-brand-primary: var(--orv-color-raw-purple-500);
@@ -29,6 +31,8 @@
    * 3. BORDER & DIVIDER SEMANTICS
    * ========================================== */
   --orv-border-subtle: var(--orv-color-raw-gray-700);
+  /* Form control border — sampled #545454 from the Figma Contact render (33:32) */
+  --orv-border-default: var(--orv-color-raw-gray-600);
   --orv-border-glass: var(--orv-color-alpha-white-14);
   --orv-border-active: var(--orv-color-raw-purple-400);
   --orv-border-width-default: 1px;
@@ -63,4 +67,47 @@
   /* Mobile Layout Fallbacks */
   --orv-layout-page-margin-mobile: var(--orv-space-24);
   --orv-layout-section-padding-mobile: var(--orv-space-48);
+}
+
+/* ==========================================
+ * 7. RESPONSIVE LAYOUT SCALE
+ * The breakpoint ladder is declared once, here, so that PageContainer,
+ * SectionWrapper and every section inherit a single consistent rhythm
+ * instead of each re-declaring its own margins and vertical padding.
+ * 1440 (Figma reference) / 1200 laptop / 1024 tablet-landscape / 768 tablet / <=480 mobile
+ * ========================================== */
+@media (max-width: 1400px) {
+  :root {
+    --orv-layout-page-margin: var(--orv-space-64);
+    --orv-layout-section-padding-sm: var(--orv-space-64);
+    --orv-layout-section-padding-md: var(--orv-space-72);
+    --orv-layout-section-padding-lg: 112px;
+  }
+}
+
+@media (max-width: 1120px) {
+  :root {
+    --orv-layout-page-margin: var(--orv-space-48);
+    --orv-layout-section-padding-sm: var(--orv-space-48);
+    --orv-layout-section-padding-md: var(--orv-space-64);
+    --orv-layout-section-padding-lg: var(--orv-space-96);
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --orv-layout-page-margin: var(--orv-space-40);
+    --orv-layout-section-padding-sm: var(--orv-space-40);
+    --orv-layout-section-padding-md: var(--orv-space-48);
+    --orv-layout-section-padding-lg: var(--orv-space-72);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --orv-layout-page-margin: var(--orv-space-24);
+    --orv-layout-section-padding-sm: var(--orv-space-32);
+    --orv-layout-section-padding-md: var(--orv-space-40);
+    --orv-layout-section-padding-lg: var(--orv-space-64);
+  }
 }

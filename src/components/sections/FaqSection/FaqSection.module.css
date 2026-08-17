@@ -1,0 +1,151 @@
+/* FaqSection — Figma node 123:2 */
+.section {
+  position: relative;
+  padding-top: var(--orv-layout-section-padding-md);
+  padding-bottom: var(--orv-layout-section-padding-md);
+}
+
+/* Figma 123:3 — intro 576 | gap 96 | list 576 */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+}
+
+/* Figma 123:4 — column, 24px gaps */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-24);
+  width: 576px;
+  flex-shrink: 0;
+}
+
+/* Figma 123:8 — 36px / 44px Bold, tracking -0.72 */
+.headline {
+  font-family: var(--orv-font-family-primary);
+  font-size: 36px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 44px;
+  letter-spacing: -0.72px;
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 123:9 — 16px / 26px Regular, secondary */
+.note {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* Figma 123:10 — stacked Q/A items divided by hairlines */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+
+.faqItem {
+  padding-top: var(--orv-space-24);
+  padding-bottom: var(--orv-space-24);
+  border-top: var(--orv-border-width-default) solid var(--orv-border-subtle);
+}
+
+.faqItem:first-child {
+  border-top: none;
+}
+
+/* Figma 123:12 — 18px SemiBold / 26px */
+.question {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-18);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 123:13 — 16px Regular / 26px, secondary, 12px below the question */
+.answer {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+  margin: var(--orv-space-12) 0 0 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * The intro column is a sticky sidebar while there is room for two columns,
+ * so the heading stays with the questions instead of scrolling away; below
+ * tablet landscape it becomes a normal stacked header.
+ * ========================================== */
+@media (min-width: 1121px) {
+  .intro {
+    position: sticky;
+    top: var(--orv-space-96);
+  }
+}
+
+@media (max-width: 1400px) {
+  .row {
+    gap: var(--orv-space-64);
+  }
+
+  .intro {
+    width: 460px;
+  }
+
+  .headline {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+}
+
+@media (max-width: 1120px) {
+  .row {
+    flex-direction: column;
+    gap: var(--orv-space-40);
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .faqList {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: var(--orv-font-size-28);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+
+  .headline br {
+    display: none;
+  }
+
+  .faqItem {
+    padding-top: var(--orv-space-20);
+    padding-bottom: var(--orv-space-20);
+  }
+
+  .question {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-24);
+  }
+}

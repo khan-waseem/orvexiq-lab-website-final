@@ -1,0 +1,104 @@
+/* RelatedWorkSection — Figma node 124:95 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
+}
+
+.eyebrowRow {
+  margin-bottom: var(--orv-space-24);
+}
+
+/* Figma 124:98 — glass card, r24, padding 48, arrow pinned right */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--orv-space-32);
+  width: 100%;
+  padding: var(--orv-space-48);
+  border-radius: var(--orv-radius-24);
+  background: var(--orv-card-glass-bg);
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
+              transform var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--orv-border-active);
+  transform: translateY(-4px);
+}
+
+.card:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+  min-width: 0;
+}
+
+/* Figma 124:100 — 26px Bold, tracking -0.26 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: 26px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: -0.26px;
+  color: var(--orv-text-primary);
+}
+
+/* Figma 124:101 — 16px / 26px Regular, secondary */
+.body {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+}
+
+.arrow {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  color: var(--orv-brand-400);
+  flex-shrink: 0;
+  transition: transform var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 900px) {
+  .card {
+    padding: var(--orv-space-32);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--orv-space-16);
+    padding: var(--orv-space-24);
+    border-radius: var(--orv-radius-16);
+  }
+
+  .title {
+    font-size: var(--orv-font-size-22);
+    letter-spacing: var(--orv-letter-spacing-normal);
+  }
+}

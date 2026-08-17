@@ -1,0 +1,282 @@
+/* CaseGridSection — Figma node 44:24 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-32);
+  padding-bottom: var(--orv-space-128);
+}
+
+/* Figma 44:25 — pills left, count right, 12px gaps */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  width: 100%;
+  min-height: 43px;
+  margin-bottom: var(--orv-space-48);
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+/* Figma 44:28 — inactive pill: alpha-white-4 + subtle border, 14px Medium */
+.filter {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--orv-space-12) var(--orv-space-24);
+  border-radius: var(--orv-radius-full);
+  background-color: var(--orv-color-alpha-white-4);
+  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-secondary);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--orv-duration-fast) var(--orv-ease-default),
+              color var(--orv-duration-fast) var(--orv-ease-default),
+              border-color var(--orv-duration-fast) var(--orv-ease-default);
+  outline: none;
+}
+
+.filter:hover {
+  color: var(--orv-text-primary);
+  border-color: var(--orv-border-glass);
+}
+
+.filter:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+/* Figma 44:26 — active pill: alpha-white-8, no border, 14px SemiBold, primary */
+.filterActive {
+  background-color: var(--orv-color-alpha-white-8);
+  border-color: transparent;
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-text-primary);
+}
+
+/* Figma 44:36 — 14px Medium, tertiary, right aligned */
+.count {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: right;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+.empty {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+  padding: var(--orv-space-48) 0;
+}
+
+/* Figma 44:37 — 2-up grid, 24px gutters */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--orv-layout-card-gap);
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gridItem {
+  display: flex;
+}
+
+/* Figma 44:39 — glass card, gradient 139.27deg, 1px alpha-white-14, r16 */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-decoration: none;
+  background: linear-gradient(
+    139.27deg,
+    rgba(255, 255, 255, 0.1) 14.6%,
+    rgba(255, 255, 255, 0.025) 85.4%
+  );
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  border-radius: var(--orv-card-glass-radius);
+  box-shadow: var(--orv-card-glass-shadow);
+  overflow: hidden;
+  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
+              transform var(--orv-duration-normal) var(--orv-ease-default),
+              box-shadow var(--orv-duration-normal) var(--orv-ease-default);
+  outline: none;
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--orv-border-active);
+  transform: translateY(-4px);
+  box-shadow: var(--orv-shadow-glass-lg);
+}
+
+.card:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+/* Figma 44:40 — 320px visual band, gradient 152.4deg, centred placeholder */
+.visual {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    152.4deg,
+    rgba(124, 58, 237, 0.3) 0%,
+    rgba(8, 2, 17, 0.9) 71.43%
+  );
+  flex-shrink: 0;
+}
+
+.visualImage {
+  object-fit: cover;
+}
+
+/* Figma 44:41 — 13px Medium tertiary at 50% */
+.visualPlaceholder {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  opacity: 0.5;
+}
+
+/* Figma 44:42 — padding 32, gap 12 */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+  padding: var(--orv-space-32);
+  flex: 1;
+}
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  width: 100%;
+}
+
+/* Figma 44:46 — 14px Medium, tertiary */
+.client {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  min-width: 0;
+}
+
+/* Figma 44:47 — 26px Bold, tracking -0.26 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: 26px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: -0.26px;
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 44:48 — 16px / 26px Regular, secondary */
+.outcome {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* Figma 44:49 — 13px Medium, tertiary */
+.meta {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+  margin-top: auto;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * The 2-up grid is held through tablet landscape — these are picture-led
+ * tiles and read well at half width — then goes single column.
+ * ========================================== */
+@media (max-width: 1120px) {
+  .visual {
+    height: 260px;
+  }
+
+  .body {
+    padding: var(--orv-space-24);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--orv-space-32);
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--orv-space-16);
+  }
+
+  .count {
+    flex: none;
+    text-align: left;
+  }
+
+  /* touch-friendly pills */
+  .filter {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-bottom: var(--orv-space-64);
+  }
+
+  .visual {
+    height: 200px;
+  }
+
+  .title {
+    font-size: var(--orv-font-size-22);
+    letter-spacing: var(--orv-letter-spacing-normal);
+  }
+
+  .tagRow {
+    flex-wrap: wrap;
+    gap: var(--orv-space-8);
+  }
+}

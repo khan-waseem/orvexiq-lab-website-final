@@ -3,19 +3,21 @@
   position: relative;
   width: 100%;
   background-color: var(--orv-surface-system);
-  padding-top: 72px;
-  padding-bottom: 96px;
+  padding-top: var(--orv-layout-section-padding-sm);
+  padding-bottom: var(--orv-layout-section-padding-md);
   overflow: hidden;
   box-sizing: border-box;
 }
 
 /* Background Radial Glow */
+/* Figma 215:186 — 620 ellipse at (880,40); asset is pre-blurred to 1060,
+   so it is drawn at natural size centred on (1190, 350). */
 .systemGlow {
   position: absolute;
-  top: 40px;
-  left: 880px;
-  width: 620px;
-  height: 620px;
+  top: -180px;
+  left: 45.83%;
+  width: min(73.61%, 1060px);
+  aspect-ratio: 1;
   pointer-events: none;
   z-index: var(--orv-z-normal);
 }
@@ -53,12 +55,13 @@
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-12);
   font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
   letter-spacing: var(--orv-letter-spacing-wide-168);
-  color: #ffffff;
+  color: var(--orv-text-on-brand);
   text-transform: uppercase;
 }
 
-.headlineText {
+.contentContainer .headlineText {
   font-family: var(--orv-font-family-primary);
   font-size: 28px;
   font-weight: var(--orv-font-weight-bold);
@@ -73,7 +76,7 @@
 .systemBand {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   gap: 0;
 }
@@ -104,6 +107,7 @@
   align-items: center;
   gap: 10px;
   font-size: 11px;
+  line-height: var(--orv-line-height-normal);
   white-space: nowrap;
 }
 
@@ -287,36 +291,132 @@
 
 .badgeRow {
   position: absolute;
-  top: 117px;
-  left: 17px;
+  top: 118px;
+  left: 18px;
   display: flex;
   gap: 8px;
 }
 
+/* Figma 103:63/65/67 — 20px pills, 12px sentence-case label */
+.miniBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: var(--orv-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badgeApproved {
+  background: var(--orv-state-success-bg);
+  color: var(--orv-state-success-text);
+}
+
+.badgeReview {
+  background: var(--orv-state-review-bg);
+  color: var(--orv-state-review-text);
+}
+
+.badgeBlocked {
+  background: var(--orv-state-blocked-bg);
+  color: var(--orv-state-blocked-text);
+}
+
 .miniCard {
   position: absolute;
-  top: 151px;
-  left: 17px;
+  top: 152px;
+  left: 18px;
   width: 264px;
   height: 66px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 11px 13px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+
+.miniCardTitle {
+  font-size: 11px;
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.miniCardMeta {
+  margin-top: 2px;
+  font-size: 9px;
+  line-height: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.miniProgressTrack {
+  margin-top: 6px;
+  width: 150px;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.miniProgressFill {
+  width: 104px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--orv-brand-400);
 }
 
 .toggleRow {
   position: absolute;
-  top: 231px;
-  left: 17px;
+  top: 232px;
+  left: 18px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+}
+
+.toggleLabel {
   font-size: 10px;
+  line-height: 14px;
   color: rgba(255, 255, 255, 0.55);
+  margin-right: 8px;
+}
+
+/* Figma 103:74 — 40x22 switch, on */
+.switchTrack {
+  width: 40px;
+  height: 22px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-brand-500);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 3px;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.switchThumb {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-white);
+}
+
+/* Figma 103:77 — 18px checkbox */
+.checkBox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: var(--orv-brand-400);
+  color: var(--orv-color-raw-white);
+  font-size: 10px;
+  font-weight: var(--orv-font-weight-bold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 /* Stage 03 Graphics */
@@ -360,16 +460,17 @@
   width: 100%;
   height: 272px;
   display: grid;
-  grid-template-columns: 84px 1fr;
+  grid-template-columns: 84px minmax(0, 1fr);
+  overflow: hidden;
 }
 
 .sidebar {
   background: rgba(255, 255, 255, 0.03);
   border-right: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 19px 12px;
+  padding: 19px 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .sidebarItem {
@@ -383,37 +484,103 @@
   color: rgba(255, 255, 255, 0.9);
   padding: 4px 8px;
   border-radius: 6px;
+  font-size: 8px;
+  line-height: 10px;
   font-weight: 600;
+  align-self: flex-start;
+  margin: -4px -8px;
 }
 
 .mainPanel {
   padding: 14px 18px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.panelTitle {
+  font-size: 11px;
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Figma 103:106 — +64% badge and comparison label */
+.deltaRow {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deltaBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 17px;
+  padding: 0 10px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-state-success-bg);
+  color: var(--orv-state-success-text);
+  font-size: 9px;
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: 1;
+}
+
+.deltaLabel {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .kpiRow {
+  margin-top: 10px;
   display: flex;
   gap: 8px;
+}
+
+.kpiLabel {
+  font-size: 8px;
+  line-height: 10px;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.kpiValue {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .kpiCard {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  padding: 7px 9px;
-  flex: 1;
+  padding: 8px 10px;
+  height: 42px;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .chartContainer {
-  height: 80px;
+  margin-top: 14px;
+  height: 93px;
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.chartCol {
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .chartBar {
@@ -422,8 +589,90 @@
   background: linear-gradient(to bottom, rgba(155, 111, 230, 0.95), rgba(124, 58, 237, 0.32));
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1200px) {
+.chartCol::after {
+  content: '';
+}
+
+.chartDay {
+  margin-top: 4px;
+  font-size: 8px;
+  line-height: 10px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Figma 103:134 — application rows under a hairline */
+.rowList {
+  margin-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.appRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.appId {
+  font-size: 9px;
+  line-height: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.rowBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  padding: 0 7px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: var(--orv-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rowTrack {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.appTime {
+  font-size: 8px;
+  line-height: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * The three stages are a left-to-right pipeline, so below the point where all
+ * three fit the connectors rotate and the flow becomes vertical rather than
+ * the arrows simply disappearing.
+ * ========================================== */
+@media (max-width: 1400px) {
+  .systemBand {
+    justify-content: space-between;
+  }
+
+  .stageLg {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+  }
+}
+
+@media (max-width: 1120px) {
   .systemGlow {
     left: 50%;
     transform: translateX(-50%);
@@ -453,15 +702,61 @@
   }
 }
 
-@media (max-width: 640px) {
-  .systemSection {
-    padding-top: 48px;
-    padding-bottom: 64px;
-  }
-
+@media (max-width: 600px) {
   .stageSm,
   .stageMd,
   .stageLg {
     max-width: 100%;
+  }
+
+  /* Below ~600 the stage card is narrower than the 458px the console mock was
+     drawn at, so its fixed tile heights clipped the KPI values and the last
+     chart bar fell outside the panel. These rules only tighten the mock's own
+     internals on small screens; the 1440 composition is untouched. */
+  .kpiRow {
+    gap: 6px;
+  }
+
+  .kpiCard {
+    height: auto;
+    min-height: 42px;
+    padding: 6px 8px;
+  }
+
+  .kpiLabel {
+    font-size: 7px;
+    line-height: 9px;
+  }
+
+  .kpiValue {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .chartContainer {
+    margin-top: 10px;
+    height: 84px;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .chartCol {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .chartBar {
+    width: 62%;
+    max-width: 24px;
+  }
+
+  .rowList {
+    margin-top: 8px;
+  }
+
+  /* The stage interiors are fixed-width mock UIs; clip rather than reflow so
+     they keep their designed proportions on a phone. */
+  .cardContent {
+    overflow: hidden;
   }
 }

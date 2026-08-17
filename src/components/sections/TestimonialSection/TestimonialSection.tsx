@@ -10,24 +10,36 @@ export interface TestimonialSectionProps {
 }
 
 /**
- * TestimonialSection Component (1:1 Figma Match — Node 218:600)
+ * TestimonialSection Component — Figma node 86:967
  *
  * Requirements:
  * - Decoupled content repository consumption (TestimonialData[])
- * - Exact 1:1 Figma quote card styling (96px padding, 24px radius, 18px blur, 32px quote font, 48px line height)
- * - Opening & closing quote marks in brand accent (#9b6fe6)
+ * - Figma quote card styling (96px padding, 24px radius, 18px blur, 32px/48px quote)
+ * - Opening & closing quote marks in brand accent
  * - Reuses SectionWrapper, PageContainer primitives
- * - 100% token governance
+ *
+ * PUBLICATION GATE
+ * The Figma frame is named "[PLACEHOLDER QUOTE]" and the only testimonial in the
+ * content repository carries `verification.isVerified: false`. A quote attributed
+ * to a named role at a named client is a factual claim, so this section renders
+ * nothing until a testimonial is BOTH published AND verified.
+ *
+ * This is a content gate, not a teardown: the component, its styles and the
+ * schema are unchanged, so flipping `isVerified` to true on a real, attributable
+ * testimonial in `src/content/data/testimonials.json` restores the section in
+ * its Figma-matched form with no code change.
  */
 export const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimonials }) => {
-  const activeTestimonial = testimonials.find((t) => t.published) || testimonials[0];
+  const activeTestimonial = testimonials.find(
+    (t) => t.published && t.verification?.isVerified === true
+  );
 
   if (!activeTestimonial) {
     return null;
   }
 
   return (
-    <SectionWrapper theme="canvas" padding="lg" id="testimonials">
+    <SectionWrapper theme="canvas" padding="lg" id="testimonials" className={styles.testimonialSection}>
       {/* Background Radial Purple Glow */}
       <div className={styles.testimonialGlow} aria-hidden="true">
         <Image

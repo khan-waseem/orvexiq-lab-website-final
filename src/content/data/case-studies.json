@@ -1,72 +1,138 @@
 [
   {
     "id": "cs-1",
-    "slug": "lending-platform-rebuild",
+    "slug": "loan-origination-redesign",
     "category": "FINTECH",
     "title": "Loan origination redesign",
     "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
     "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "servicesProvided": ["Product Design", "Design System"],
-    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "clientDescriptor": "A UK lending platform",
+    "year": "2025",
+    "servicesProvided": [
+      "Product Design",
+      "Design System"
+    ],
+    "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 1,
     "verification": {
       "isVerified": false,
-      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
     },
-    "publishedAt": "2026-01-01",
+    "publishedAt": "2025-01-01",
     "published": true
   },
   {
     "id": "cs-2",
-    "slug": "lending-platform-rebuild-2",
-    "category": "FINTECH",
-    "title": "Loan origination redesign",
-    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "servicesProvided": ["Product Design", "Design System"],
-    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "slug": "fleet-dispatch-software",
+    "category": "LOGISTICS",
+    "title": "Fleet dispatch software",
+    "subtitle": "Cut average dispatch time by 34% across a fleet of 1,200 vehicles.",
+    "description": "Cut average dispatch time by 34% across a fleet of 1,200 vehicles.",
+    "clientDescriptor": "A European fleet operator",
+    "year": "2025",
+    "servicesProvided": [
+      "UX Research",
+      "Product Design"
+    ],
+    "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 2,
     "verification": {
       "isVerified": false,
-      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
     },
-    "publishedAt": "2026-01-01",
+    "publishedAt": "2025-01-01",
     "published": true
   },
   {
     "id": "cs-3",
-    "slug": "lending-platform-rebuild-3",
-    "category": "FINTECH",
-    "title": "Loan origination redesign",
-    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "servicesProvided": ["Product Design", "Design System"],
-    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "slug": "ai-support-assistant",
+    "category": "AI",
+    "title": "AI support assistant",
+    "subtitle": "An assistant that now resolves 60% of inbound tickets without a human.",
+    "description": "An assistant that now resolves 60% of inbound tickets without a human.",
+    "clientDescriptor": "A B2B SaaS support team",
+    "year": "2026",
+    "servicesProvided": [
+      "AI Experience",
+      "Prototyping"
+    ],
+    "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 3,
     "verification": {
       "isVerified": false,
-      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
     },
     "publishedAt": "2026-01-01",
     "published": true
   },
   {
     "id": "cs-4",
-    "slug": "lending-platform-rebuild-4",
-    "category": "FINTECH",
-    "title": "Loan origination redesign",
-    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "servicesProvided": ["Product Design", "Design System"],
-    "coverScreenAssetUrl": "/assets/screens/case-screen-1.png",
+    "slug": "ecommerce-replatforming",
+    "category": "COMMERCE",
+    "title": "Ecommerce replatforming",
+    "subtitle": "Merged six regional storefronts into one commerce platform.",
+    "description": "Merged six regional storefronts into one commerce platform.",
+    "clientDescriptor": "A multi-region retailer",
+    "year": "2024",
+    "servicesProvided": [
+      "Design System",
+      "Platform"
+    ],
+    "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 4,
     "verification": {
       "isVerified": false,
-      "verificationNotes": "Figma mockup structure placeholder. Unverified case study content."
+      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
+    },
+    "publishedAt": "2024-01-01",
+    "published": true
+  },
+  {
+    "id": "cs-5",
+    "slug": "treasury-dashboard-ux",
+    "category": "FINTECH",
+    "title": "Treasury dashboard UX",
+    "subtitle": "Gave finance teams one view of cash across eleven currencies.",
+    "description": "Gave finance teams one view of cash across eleven currencies.",
+    "clientDescriptor": "A treasury software company",
+    "year": "2024",
+    "servicesProvided": [
+      "Product Design"
+    ],
+    "coverScreenAssetUrl": "",
+    "featured": false,
+    "displayOrder": 5,
+    "verification": {
+      "isVerified": false,
+      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
+    },
+    "publishedAt": "2024-01-01",
+    "published": true
+  },
+  {
+    "id": "cs-6",
+    "slug": "trial-coordination",
+    "category": "GENERAL",
+    "title": "Trial coordination console",
+    "subtitle": "Making a missed visit window visible while it can still be prevented.",
+    "description": "Making a missed visit window visible while it can still be prevented.",
+    "clientDescriptor": "Self-initiated concept",
+    "year": "2026",
+    "servicesProvided": [
+      "Problem framing",
+      "Product Design",
+      "Design System"
+    ],
+    "coverScreenAssetUrl": "",
+    "featured": false,
+    "displayOrder": 6,
+    "verification": {
+      "isVerified": true,
+      "verificationNotes": "Self-initiated concept. States no client, no measured results and no proprietary data; the detail page declares its assumptions explicitly."
     },
     "publishedAt": "2026-01-01",
     "published": true

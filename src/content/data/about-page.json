@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "headlineLine1": "A small team that ships",
+    "headlineLine2": "large systems.",
+    "subdescription": "Orvexiq Lab is a product studio, not a staffing agency. We take a handful of clients at a time and embed deeply enough to be genuinely useful.",
+    "heroIconAssetUrl": "/assets/about/about-hero-icon.png"
+  },
+  "story": {
+    "eyebrow": "WHY WE EXIST",
+    "headlineLines": [
+      "Complex products",
+      "fail for the same",
+      "reasons."
+    ],
+    "paragraphs": [
+      "Not because nobody could design a good screen. Because the fiftieth screen was designed by someone who never saw the first ten, using values nobody wrote down.",
+      "We build the layer underneath — the tokens, the components, the decisions — so that the fiftieth screen costs a fraction of what the first one did and still looks like it belongs.",
+      "That is unglamorous work. It is also the difference between a product that stays coherent for years and one that needs a redesign every eighteen months."
+    ]
+  },
+  "principles": {
+    "headline": "How we actually work",
+    "items": [
+      {
+        "id": "pr-1",
+        "title": "Systems over screens",
+        "body": "A screen solves today. A system solves the next fifty — and keeps them consistent without anyone policing it."
+      },
+      {
+        "id": "pr-2",
+        "title": "Embedded, not external",
+        "body": "We sit with your engineers through build. Design that is thrown over a wall arrives as something else."
+      },
+      {
+        "id": "pr-3",
+        "title": "Proof over opinion",
+        "body": "Research and measurement settle arguments. The loudest person in the room is not a methodology."
+      },
+      {
+        "id": "pr-4",
+        "title": "Fewer clients, deeper work",
+        "body": "We take a handful at a time. Capacity is a design constraint like any other."
+      }
+    ]
+  },
+  "impact": {
+    "eyebrow": "IMPACT"
+  },
+  "ctaSection": {
+    "eyebrow": "START A PROJECT",
+    "headlineLine1": "Have something complex",
+    "headlineLine2": "to build?",
+    "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+    "subdescriptionLine2": "not a pitch deck.",
+    "primaryCtaText": "Start a Project",
+    "emailCtaText": "hello@orvexiq.com"
+  },
+  "seo": {
+    "title": "About — Orvexiq Lab",
+    "description": "A product studio that builds design systems and enterprise products for operationally complex businesses."
+  }
+}

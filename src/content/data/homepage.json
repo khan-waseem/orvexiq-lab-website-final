@@ -1,6 +1,6 @@
 {
   "hero": {
-    "eyebrow": "PRODUCT DESIGN & DESIGN SYSTEMS",
+    "eyebrow": "Product design & design systems",
     "headline": "We design enterprise products — and the design systems underneath them.",
     "subdescription": "Orvexiq Lab is a product studio for fintech, logistics and other businesses where the software is complicated and the mistakes are expensive.",
     "primaryCtaText": "Start a Project",
@@ -10,12 +10,36 @@
   "sectorsSection": {
     "eyebrow": "SECTORS WE BUILD IN",
     "sectors": [
-      { "id": "sec-1", "name": "LENDING", "displayOrder": 1 },
-      { "id": "sec-2", "name": "LOGISTICS", "displayOrder": 2 },
-      { "id": "sec-3", "name": "COMMERCE", "displayOrder": 3 },
-      { "id": "sec-4", "name": "TREASURY", "displayOrder": 4 },
-      { "id": "sec-5", "name": "WAREHOUSE", "displayOrder": 5 },
-      { "id": "sec-6", "name": "SUPPORT AI", "displayOrder": 6 }
+      {
+        "id": "sec-1",
+        "name": "LENDING",
+        "displayOrder": 1
+      },
+      {
+        "id": "sec-2",
+        "name": "LOGISTICS",
+        "displayOrder": 2
+      },
+      {
+        "id": "sec-3",
+        "name": "COMMERCE",
+        "displayOrder": 3
+      },
+      {
+        "id": "sec-4",
+        "name": "TREASURY",
+        "displayOrder": 4
+      },
+      {
+        "id": "sec-5",
+        "name": "WAREHOUSE",
+        "displayOrder": 5
+      },
+      {
+        "id": "sec-6",
+        "name": "SUPPORT AI",
+        "displayOrder": 6
+      }
     ]
   },
   "systemSection": {
@@ -97,13 +121,13 @@
     ]
   },
   "ctaSection": {
-    "eyebrow": "LET'S BUILD",
-    "headlineLine1": "Ready to build software",
-    "headlineLine2": "that holds up?",
-    "subdescriptionLine1": "Tell us about your product, your timeline, or the system that needs fixing.",
-    "subdescriptionLine2": "We reply within 24 hours.",
-    "primaryCtaText": "Start a Conversation",
-    "emailCtaText": "hello@orvexiqlab.com"
+    "eyebrow": "START A PROJECT",
+    "headlineLine1": "Have something complex",
+    "headlineLine2": "to build?",
+    "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+    "subdescriptionLine2": "not a pitch deck.",
+    "primaryCtaText": "Start a Project",
+    "emailCtaText": "hello@orvexiq.com"
   },
   "seo": {
     "title": "Orvexiq Lab — Product Studio & Enterprise Design Systems",

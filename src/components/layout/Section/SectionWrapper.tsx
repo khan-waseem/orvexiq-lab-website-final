@@ -1,7 +1,9 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './SectionWrapper.module.css';
 
-export type SectionPadding = 'none' | 'sm' | 'md' | 'lg';
+/** 'none' forces zero padding; 'custom' applies no padding class at all,
+ *  leaving the section's own stylesheet in sole control. */
+export type SectionPadding = 'none' | 'custom' | 'sm' | 'md' | 'lg';
 export type SectionTheme = 'canvas' | 'system';
 
 export interface SectionWrapperProps extends HTMLAttributes<HTMLElement> {
@@ -30,6 +32,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
 }) => {
   const paddingClassMap: Record<SectionPadding, string> = {
     none: styles.paddingNone,
+    custom: '',
     sm: styles.paddingSm,
     md: styles.paddingMd,
     lg: styles.paddingLg,

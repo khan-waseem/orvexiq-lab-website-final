@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import Link from 'next/link';
 import styles from './Button.module.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'nav' | 'email';
+export type ButtonVariant = 'primary' | 'secondary' | 'nav' | 'ctaPrimary' | 'email';
 
 type CommonProps = {
   variant?: ButtonVariant;

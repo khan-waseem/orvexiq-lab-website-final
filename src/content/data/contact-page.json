@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "headlineLine1": "Tell us what you",
+    "headlineLine2": "are building.",
+    "subdescription": "We read every message. If it is a fit you will hear back within two working days with a real response, not a calendar link.",
+    "heroIconAssetUrl": "/assets/contact/contact-hero-icon.png"
+  },
+  "form": {
+    "fields": [
+      {
+        "id": "f-name",
+        "name": "name",
+        "label": "Your name",
+        "placeholder": "Jane Cooper",
+        "type": "text",
+        "span": "half",
+        "autoComplete": "name"
+      },
+      {
+        "id": "f-email",
+        "name": "email",
+        "label": "Work email",
+        "placeholder": "jane@company.com",
+        "type": "email",
+        "span": "half",
+        "autoComplete": "email"
+      },
+      {
+        "id": "f-company",
+        "name": "company",
+        "label": "Company",
+        "placeholder": "Acme Inc.",
+        "type": "text",
+        "span": "half",
+        "autoComplete": "organization"
+      },
+      {
+        "id": "f-budget",
+        "name": "budget",
+        "label": "Budget range",
+        "placeholder": "Select a range",
+        "type": "text",
+        "span": "half"
+      },
+      {
+        "id": "f-brief",
+        "name": "brief",
+        "label": "What are you building?",
+        "placeholder": "A short description of the problem, who it is for, and where you are stuck.",
+        "type": "textarea",
+        "span": "full"
+      }
+    ],
+    "submitLabel": "Send message",
+    "unavailableNote": "This form is not connected yet — email us directly and we will pick it up."
+  },
+  "info": [
+    {
+      "id": "i-email",
+      "label": "EMAIL US DIRECTLY",
+      "value": "hello@orvexiq.com",
+      "body": "Fastest route. Goes to a person, not a queue.",
+      "email": "hello@orvexiq.com"
+    },
+    {
+      "id": "i-response",
+      "label": "RESPONSE TIME",
+      "value": "Within 2 working days",
+      "body": "If we are not the right fit we will say so, and point you somewhere better."
+    },
+    {
+      "id": "i-where",
+      "label": "WHERE WE WORK",
+      "value": "Remote, GMT+5 overlap",
+      "body": "We keep four hours of overlap with European and US East teams."
+    }
+  ],
+  "seo": {
+    "title": "Contact — Orvexiq Lab",
+    "description": "Tell us what you are building. We reply within two working days with a real response."
+  }
+}

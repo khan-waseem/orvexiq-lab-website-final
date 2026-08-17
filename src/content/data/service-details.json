@@ -1,0 +1,438 @@
+[
+  {
+    "slug": "product-strategy",
+    "breadcrumbLabel": "Product Strategy",
+    "hero": {
+      "headlineLine1": "Product strategy for",
+      "headlineLine2": "complex software.",
+      "subdescription": "Before the interface. We map business goals, user needs and system constraints into one direction the whole team can build against.",
+      "iconAssetUrl": "/assets/services/service-icon-strategy.png"
+    },
+    "why": {
+      "eyebrow": "WHY IT MATTERS",
+      "headlineLine1": "Most products do not fail",
+      "headlineLine2": "at the screen level.",
+      "paragraphs": [
+        "They fail because six teams held six different ideas of what the product was for, and nobody wrote the difference down. By the time that surfaces it looks like a design problem. It is not.",
+        "Strategy work is unglamorous: interviews, timing studies, arguments about scope. It is also the only part of the process that can save you from building the wrong thing well."
+      ]
+    },
+    "includes": {
+      "eyebrow": "WHAT THIS INCLUDES",
+      "items": [
+        {
+          "id": "ps-i1",
+          "title": "Product discovery",
+          "body": "Stakeholder interviews, existing-system audit, and a written account of what is actually true today rather than what the org believes."
+        },
+        {
+          "id": "ps-i2",
+          "title": "UX research",
+          "body": "We talk to the people who use the thing. On site where it matters — you learn more in an hour beside someone than a week of survey data."
+        },
+        {
+          "id": "ps-i3",
+          "title": "Workflow mapping",
+          "body": "Every step, every handoff, timed. This is where the eight-minute problems hiding behind the forty-minute complaint show up."
+        },
+        {
+          "id": "ps-i4",
+          "title": "Information architecture",
+          "body": "How the product is organised, named and navigated, decided before anyone argues about a menu."
+        },
+        {
+          "id": "ps-i5",
+          "title": "Roadmap definition",
+          "body": "Scoped and sequenced, with the reasoning attached so it survives the next reprioritisation."
+        },
+        {
+          "id": "ps-i6",
+          "title": "Success metrics",
+          "body": "What we agree to measure, and the baseline we measure it against. Without a baseline there is no result later."
+        }
+      ]
+    },
+    "deliverables": {
+      "eyebrow": "WHAT YOU END UP WITH",
+      "headlineLine1": "What you actually",
+      "headlineLine2": "hold at the end.",
+      "items": [
+        "A prioritised opportunity map, with the evidence behind each item",
+        "A product direction your engineering and business leads have both signed",
+        "Baseline measurements, so the work can be judged honestly afterwards",
+        "The research itself — recordings, notes and findings, not just a summary"
+      ]
+    },
+    "relatedWork": {
+      "eyebrow": "RELATED WORK",
+      "title": "Loan origination redesign",
+      "body": "Three weeks of shadowing found that 80% of handling time sat in three of six tools. That finding changed the whole engagement.",
+      "href": "/case-studies/loan-origination-redesign"
+    },
+    "faq": {
+      "eyebrow": "COMMON QUESTIONS",
+      "headlineLine1": "Asked often enough",
+      "headlineLine2": "to answer here.",
+      "items": [
+        {
+          "id": "ps-f1",
+          "question": "Is this worth it if we already know what to build?",
+          "answer": "Sometimes not, and we will say so. But \"we know what to build\" usually means one person knows. The value is in finding where that belief is not shared."
+        },
+        {
+          "id": "ps-f2",
+          "question": "How long does it take?",
+          "answer": "Four to six weeks for a focused product. Longer where users are hard to reach or several acquired systems are involved."
+        },
+        {
+          "id": "ps-f3",
+          "question": "Can this run alongside design?",
+          "answer": "It can, and often should. Discovery that stops the world for two months is rarely worth what it costs."
+        }
+      ]
+    },
+    "ctaSection": {
+      "eyebrow": "START A PROJECT",
+      "headlineLine1": "Have something complex",
+      "headlineLine2": "to build?",
+      "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+      "subdescriptionLine2": "not a pitch deck.",
+      "primaryCtaText": "Start a Project",
+      "emailCtaText": "hello@orvexiq.com"
+    },
+    "seo": {
+      "title": "Product Strategy — Orvexiq Lab",
+      "description": "Business goals, user needs and system constraints mapped into one direction the whole team can build against."
+    }
+  },
+  {
+    "slug": "ux-ui-product-design",
+    "breadcrumbLabel": "UX / UI Product Design",
+    "hero": {
+      "headlineLine1": "Enterprise UX and",
+      "headlineLine2": "UI design.",
+      "subdescription": "Interface systems for products that do not get simpler over time — dashboards, complex flows, and the mobile apps that sit beside them.",
+      "iconAssetUrl": "/assets/services/service-icon-uxui.png"
+    },
+    "why": {
+      "eyebrow": "WHY IT MATTERS",
+      "headlineLine1": "The fiftieth screen is",
+      "headlineLine2": "the one that hurts.",
+      "paragraphs": [
+        "Anyone can design a good first screen. The problem arrives at screen fifty, designed by someone who never saw the first ten, using values nobody wrote down.",
+        "We design the screens and the layer underneath them at the same time, so the product stays coherent after we leave rather than needing a redesign every eighteen months."
+      ]
+    },
+    "includes": {
+      "eyebrow": "WHAT THIS INCLUDES",
+      "items": [
+        {
+          "id": "ux-i1",
+          "title": "Enterprise dashboards",
+          "body": "Dense, data-heavy interfaces where the job is comprehension under time pressure, not decoration."
+        },
+        {
+          "id": "ux-i2",
+          "title": "Complex flows",
+          "body": "Multi-step, multi-actor processes with real failure states — partial saves, approvals, things that time out."
+        },
+        {
+          "id": "ux-i3",
+          "title": "Mobile app design",
+          "body": "iOS and Android, designed against the same tokens as the web product so they do not drift apart."
+        },
+        {
+          "id": "ux-i4",
+          "title": "Design systems",
+          "body": "Tokens, components and documentation shipped into your repository, versioned, with a contribution guide."
+        },
+        {
+          "id": "ux-i5",
+          "title": "Interactive prototypes",
+          "body": "Real enough to test with real users, because a static frame never reveals a broken flow."
+        },
+        {
+          "id": "ux-i6",
+          "title": "Accessibility review",
+          "body": "WCAG 2.2 AA as a working constraint, not an audit you fail at the end."
+        }
+      ]
+    },
+    "deliverables": {
+      "eyebrow": "WHAT YOU END UP WITH",
+      "headlineLine1": "What you actually",
+      "headlineLine2": "hold at the end.",
+      "items": [
+        "Production-ready screens covering the states that actually occur, not just the happy path",
+        "A design system in your repo — tokens, components, docs, contribution guide",
+        "Prototypes tested with your users, with the findings written down",
+        "An accessibility position you can defend to a procurement team"
+      ]
+    },
+    "relatedWork": {
+      "eyebrow": "RELATED WORK",
+      "title": "Fleet dispatch software",
+      "body": "A rebuilt dispatch interface cut average assignment time by 34% across 1,200 vehicles.",
+      "href": "/case-studies/fleet-dispatch-software"
+    },
+    "faq": {
+      "eyebrow": "COMMON QUESTIONS",
+      "headlineLine1": "Asked often enough",
+      "headlineLine2": "to answer here.",
+      "items": [
+        {
+          "id": "ux-f1",
+          "question": "Do you design for developers we do not employ yet?",
+          "answer": "Yes. Systems work best when they assume the team will change. That is most of the point."
+        },
+        {
+          "id": "ux-f2",
+          "question": "What if we already have a component library?",
+          "answer": "We audit it first. The problem is usually not the components — it is that nothing governs how they get used."
+        },
+        {
+          "id": "ux-f3",
+          "question": "Do you do brand and marketing design too?",
+          "answer": "No. We design products. A studio that does everything does none of it especially well."
+        }
+      ]
+    },
+    "ctaSection": {
+      "eyebrow": "START A PROJECT",
+      "headlineLine1": "Have something complex",
+      "headlineLine2": "to build?",
+      "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+      "subdescriptionLine2": "not a pitch deck.",
+      "primaryCtaText": "Start a Project",
+      "emailCtaText": "hello@orvexiq.com"
+    },
+    "seo": {
+      "title": "UX / UI Product Design — Orvexiq Lab",
+      "description": "Interface systems for enterprise dashboards, complex flows and the mobile apps beside them."
+    }
+  },
+  {
+    "slug": "ai-experiences-automation",
+    "breadcrumbLabel": "AI Experiences & Automation",
+    "hero": {
+      "headlineLine1": "AI product design and",
+      "headlineLine2": "automation UX.",
+      "subdescription": "AI only helps when people trust it. We design the interface layer that makes automated decisions legible, correctable and worth relying on.",
+      "iconAssetUrl": "/assets/services/service-icon-ai.png"
+    },
+    "why": {
+      "eyebrow": "WHY IT MATTERS",
+      "headlineLine1": "A model that nobody",
+      "headlineLine2": "trusts gets turned off.",
+      "paragraphs": [
+        "Most failed AI features do not fail on accuracy. They fail because the person on the other end could not tell why a decision was made, could not correct it, and stopped looking.",
+        "The design problem is not the model. It is confidence, correction and consequence — what the interface shows, what it lets you override, and what happens when it is wrong."
+      ]
+    },
+    "includes": {
+      "eyebrow": "WHAT THIS INCLUDES",
+      "items": [
+        {
+          "id": "ai-i1",
+          "title": "AI assistants",
+          "body": "Conversational and embedded assistants that show their working instead of asserting an answer."
+        },
+        {
+          "id": "ai-i2",
+          "title": "Intelligent workflows",
+          "body": "Automation that hands back to a person at the right moment, rather than at the moment it breaks."
+        },
+        {
+          "id": "ai-i3",
+          "title": "Process automation",
+          "body": "Where the repetitive work actually is, mapped before anything is automated."
+        },
+        {
+          "id": "ai-i4",
+          "title": "Model output UX",
+          "body": "Confidence, provenance and uncertainty made visible without turning every screen into a dashboard."
+        },
+        {
+          "id": "ai-i5",
+          "title": "Human-in-the-loop design",
+          "body": "Review and override paths designed as the primary flow, not an escape hatch."
+        },
+        {
+          "id": "ai-i6",
+          "title": "AI-powered products",
+          "body": "Products where the model is the product, and the interface has to carry the trust."
+        }
+      ]
+    },
+    "deliverables": {
+      "eyebrow": "WHAT YOU END UP WITH",
+      "headlineLine1": "What you actually",
+      "headlineLine2": "hold at the end.",
+      "items": [
+        "Interface patterns for confidence, provenance and correction",
+        "A defined escalation path for when the model is wrong — because it will be",
+        "Automation scoped to where it pays, with the rest left alone deliberately",
+        "Prototypes tested with the people who have to act on the output"
+      ]
+    },
+    "relatedWork": {
+      "eyebrow": "RELATED WORK",
+      "title": "AI support assistant",
+      "body": "An assistant that now resolves 60% of inbound tickets without a human — and hands over cleanly when it should.",
+      "href": "/case-studies/ai-support-assistant"
+    },
+    "faq": {
+      "eyebrow": "COMMON QUESTIONS",
+      "headlineLine1": "Asked often enough",
+      "headlineLine2": "to answer here.",
+      "items": [
+        {
+          "id": "ai-f1",
+          "question": "Do you build the model?",
+          "answer": "No. We design everything around it. If you need modelling we will tell you honestly that it is not us."
+        },
+        {
+          "id": "ai-f2",
+          "question": "Our AI feature launched and nobody uses it. Can you help?",
+          "answer": "That is the common case. Usually the answer is in what the interface never showed the user, not in the model."
+        },
+        {
+          "id": "ai-f3",
+          "question": "Is this only for chat interfaces?",
+          "answer": "No, and chat is often the wrong shape. Most useful automation is invisible until it needs a decision."
+        }
+      ]
+    },
+    "ctaSection": {
+      "eyebrow": "START A PROJECT",
+      "headlineLine1": "Have something complex",
+      "headlineLine2": "to build?",
+      "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+      "subdescriptionLine2": "not a pitch deck.",
+      "primaryCtaText": "Start a Project",
+      "emailCtaText": "hello@orvexiq.com"
+    },
+    "seo": {
+      "title": "AI Experiences & Automation — Orvexiq Lab",
+      "description": "Interface design for automated decisions: confidence, correction and consequence."
+    }
+  },
+  {
+    "slug": "design-systems",
+    "breadcrumbLabel": "Design Systems",
+    "hero": {
+      "headlineLine1": "Design systems that",
+      "headlineLine2": "survive handoff.",
+      "subdescription": "Tokens, components and governance shipped into your repository — versioned, documented, and usable by people who were never in the workshop.",
+      "iconAssetUrl": "/assets/services/service-icon-systems.png"
+    },
+    "why": {
+      "eyebrow": "WHY IT MATTERS",
+      "headlineLine1": "A component library",
+      "headlineLine2": "is not a design system.",
+      "paragraphs": [
+        "A component library is the components. A design system is those components, the tokens underneath them, the rules for adding new ones, and documentation good enough that someone who was not there still makes the right decision.",
+        "The difference shows up about a year in. One of them still governs how the product looks. The other has quietly become a folder people copy from."
+      ]
+    },
+    "includes": {
+      "eyebrow": "WHAT THIS INCLUDES",
+      "items": [
+        {
+          "id": "ds-i1",
+          "title": "Design system audit",
+          "body": "Where you are now, honestly: what exists, what actually gets used, and what gets bypassed. Usually the first thing worth buying."
+        },
+        {
+          "id": "ds-i2",
+          "title": "Token architecture",
+          "body": "Colour, space, type, radius and motion, structured so brand, theme and density stay independent instead of multiplying."
+        },
+        {
+          "id": "ds-i3",
+          "title": "Component library",
+          "body": "Built against the states that occur — empty, error, partial, loading — and shipped as code into your repository."
+        },
+        {
+          "id": "ds-i4",
+          "title": "Governance",
+          "body": "Contribution rules, review workflow, and the tooling that enforces them. Rules held in memory are not rules."
+        },
+        {
+          "id": "ds-i5",
+          "title": "Multi-brand and theming",
+          "body": "One foundation carrying several brands or themes, without duplicating everything for each."
+        },
+        {
+          "id": "ds-i6",
+          "title": "Accessibility built in",
+          "body": "WCAG 2.2 AA inside the components, so screens inherit it rather than failing an audit later."
+        }
+      ]
+    },
+    "auditOffer": {
+      "eyebrow": "START HERE",
+      "headline": "Design system audit",
+      "body": "Two weeks, fixed scope. The fastest way to find out whether you need a system, a rebuild, or a decision nobody has made yet.",
+      "priceNote": "Fixed price — ask us for the current figure. If it becomes a build, the audit fee comes off the first invoice.",
+      "items": [
+        "A map of what exists today — components, tokens, and where they diverge",
+        "Where the system gets bypassed, and why people bypass it",
+        "A prioritised list of gaps, costed",
+        "A written recommendation, including the option of doing nothing"
+      ]
+    },
+    "deliverables": {
+      "eyebrow": "WHAT YOU END UP WITH",
+      "headlineLine1": "What you actually",
+      "headlineLine2": "hold at the end.",
+      "items": [
+        "A token architecture with no cross-layer violations, and the documentation proving it",
+        "Components in your repository, versioned, covering the states that actually occur",
+        "A contribution guide written on the assumption that we are gone",
+        "A governance model your team can run without us"
+      ]
+    },
+    "relatedWork": {
+      "eyebrow": "RELATED WORK",
+      "title": "Loan origination redesign",
+      "body": "142 tokens and 38 components shipped into the client repository, with a contribution guide their team still adds to.",
+      "href": "/case-studies/loan-origination-redesign"
+    },
+    "faq": {
+      "eyebrow": "COMMON QUESTIONS",
+      "headlineLine1": "Asked often enough",
+      "headlineLine2": "to answer here.",
+      "items": [
+        {
+          "id": "ds-f1",
+          "question": "Do we need a design system yet?",
+          "answer": "If you have one product and two designers, probably not. The tipping point is usually the third team shipping screens nobody else reviews."
+        },
+        {
+          "id": "ds-f2",
+          "question": "We already have one and it is not working. Can you fix it?",
+          "answer": "That is the common case, and the answer is almost never more components. Start with the audit — the problem is usually governance, not inventory."
+        },
+        {
+          "id": "ds-f3",
+          "question": "Who maintains it after you leave?",
+          "answer": "Your team. That is the point, and it is why the contribution guide and the governance model matter more than the component count."
+        }
+      ]
+    },
+    "ctaSection": {
+      "eyebrow": "START A PROJECT",
+      "headlineLine1": "Have something complex",
+      "headlineLine2": "to build?",
+      "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+      "subdescriptionLine2": "not a pitch deck.",
+      "primaryCtaText": "Start a Project",
+      "emailCtaText": "hello@orvexiq.com"
+    },
+    "seo": {
+      "title": "Design Systems — Orvexiq Lab",
+      "description": "Tokens, components and governance shipped into your repository, built to survive handoff."
+    }
+  }
+]

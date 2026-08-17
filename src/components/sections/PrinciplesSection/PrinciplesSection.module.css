@@ -1,0 +1,95 @@
+/* PrinciplesSection — Figma node 32:34 */
+.section {
+  position: relative;
+  padding-top: var(--orv-layout-section-padding-md);
+  padding-bottom: var(--orv-layout-section-padding-lg);
+}
+
+/* Figma 32:35 — 48px Bold, tracking -0.96 */
+.headline {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-48);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-096);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-64) 0;
+}
+
+/* Figma 32:36 — 4 equal cards, 24px gutters */
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--orv-layout-card-gap);
+  align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Figma 32:37 — glass card, gradient 142.33deg, r16, padding 32, gap 16 */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  padding: var(--orv-space-32);
+  border-radius: var(--orv-radius-16);
+  background: linear-gradient(
+    142.33deg,
+    rgba(255, 255, 255, 0.1) 14.6%,
+    rgba(255, 255, 255, 0.025) 85.4%
+  );
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Figma 32:38 — 20px Bold */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 32:39 — 15px / 24px Regular, secondary */
+.body {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * 4 -> 4 -> 2 -> 2 -> 1, matching the homepage Approach ladder so the two
+ * four-card rows behave identically across the site.
+ * ========================================== */
+@media (max-width: 1120px) {
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: var(--orv-font-size-28);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+    margin-bottom: var(--orv-space-40);
+  }
+
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card {
+    padding: var(--orv-space-24);
+  }
+}

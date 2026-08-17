@@ -1,0 +1,277 @@
+[
+  {
+    "slug": "trial-coordination",
+    "breadcrumbLabel": "Self-initiated concept",
+    "kicker": "Self-initiated concept · Clinical trial operations",
+    "headlineLines": [
+      "Clinical sites miss visit windows.",
+      "The system tells them weeks later."
+    ],
+    "standfirst": "A concept for the person nobody designs for: the site study coordinator, whose whole job is keeping patients inside a date range that lives in a spreadsheet.",
+    "stats": [
+      {
+        "value": "±7 days",
+        "label": "the protocol window that decides everything"
+      },
+      {
+        "value": "Weeks",
+        "label": "typical lag before a missed window is found"
+      },
+      {
+        "value": "Site-first",
+        "label": "built for the coordinator, not the sponsor"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "visual",
+        "placeholder": "Coordinator console — concept screens"
+      },
+      {
+        "type": "meta",
+        "items": [
+          {
+            "key": "ORIGIN",
+            "value": "Self-initiated concept"
+          },
+          {
+            "key": "DOMAIN",
+            "value": "Clinical research operations"
+          },
+          {
+            "key": "YEAR",
+            "value": "2026"
+          },
+          {
+            "key": "SCOPE",
+            "value": "Problem framing · Product design · Design system"
+          },
+          {
+            "key": "STATUS",
+            "value": "Concept · not shipped"
+          },
+          {
+            "key": "TEAM",
+            "value": "1 designer"
+          }
+        ]
+      },
+      {
+        "type": "glance",
+        "cards": [
+          {
+            "tone": "danger",
+            "label": "THE PROBLEM",
+            "body": "Every trial patient must be seen inside a date range calculated from their own randomisation date. Sponsor systems record that a visit happened; they do not compute when the next one must. So coordinators keep that maths in a spreadsheet — and a spreadsheet cannot warn anyone."
+          },
+          {
+            "tone": "brand",
+            "label": "WHAT WE DID",
+            "body": "Rebuilt the day around the window rather than the record. A worklist instead of a dashboard, every date shown as a window with time remaining, and a justification captured at the moment a rule has to be broken."
+          },
+          {
+            "tone": "success",
+            "label": "WHAT IT WOULD CHANGE",
+            "body": "A missed window stops being something discovered at the next monitoring visit and becomes something visible while it can still be prevented. Not measured — this is a concept, and the section below states what we would test."
+          }
+        ]
+      },
+      {
+        "type": "narrative",
+        "eyebrow": "01 · THE PROBLEM",
+        "headlineLines": [
+          "The window is the job.",
+          "And it lives in a spreadsheet."
+        ],
+        "paragraphs": [
+          "Every visit in a clinical trial has to happen inside a date range calculated per patient — protocol day, plus or minus the allowed days, counted from that patient's own randomisation date. Miss it and the visit becomes a protocol deviation that has to be explained to the sponsor.",
+          "The sponsor's system records that a visit happened. It does not compute when the next one must. So the coordinator keeps that arithmetic in their own spreadsheet, alongside three or four other trials, each with a different sponsor, a different portal and a different login."
+        ],
+        "panel": {
+          "label": "ONE PATIENT · ONE MISSED WINDOW",
+          "tone": "danger",
+          "steps": [
+            {
+              "title": "Randomisation",
+              "note": "day zero"
+            },
+            {
+              "title": "Window calculated",
+              "note": "in Excel"
+            },
+            {
+              "title": "Visit falls due",
+              "note": "no alert"
+            },
+            {
+              "title": "No slot available",
+              "note": "phone + email"
+            },
+            {
+              "title": "Window closes",
+              "note": "silently"
+            },
+            {
+              "title": "Monitoring visit",
+              "note": "found here"
+            }
+          ],
+          "footnote": "Weeks between the miss and anyone knowing · by then it can only be documented, not prevented"
+        }
+      },
+      {
+        "type": "assumptions",
+        "eyebrow": "02 · WHAT THIS RESTS ON",
+        "headlineLines": [
+          "We interviewed nobody. So here is exactly what this is built",
+          "on — and what it assumes."
+        ],
+        "items": [
+          {
+            "key": "A1",
+            "body": "That coordinators, not sponsors, would be given a tool of their own. Commercially this is the hardest assumption, because the sponsor holds the budget."
+          },
+          {
+            "key": "A2",
+            "body": "That window arithmetic can be derived reliably from the protocol without manual configuration for every study."
+          },
+          {
+            "key": "A3",
+            "body": "That a justification captured at booking time is acceptable to sponsors and auditors as the deviation record itself."
+          },
+          {
+            "key": "A4",
+            "body": "That site staff will adopt one more system, when fewer systems is the thing they actually ask for."
+          }
+        ],
+        "note": "This is self-initiated work. There is no client, no user research and no proprietary data, and every number on the screens is illustrative. The problem framing comes from publicly documented pain in clinical research operations plus the four assumptions above. We would rather show you the reasoning and its holes than dress a concept up as a case study with invented results."
+      },
+      {
+        "type": "callout",
+        "tone": "warning",
+        "eyebrow": "WHAT WE GOT WRONG",
+        "headline": "Our first version was a dashboard. We threw it away.",
+        "paragraphs": [
+          "It was a good dashboard: enrollment against plan, site health, open queries, protocol deviations, all in one calm view. It also solved nothing. Every CTMS on the market already ships that screen, and it fails the same way they all do — it reports the problem accurately, after the problem has happened.",
+          "The fix was not a better dashboard. It was changing whose day the product is built around. A study manager needs oversight across many sites; a coordinator needs to get through today at one site. Same data, opposite job — and the interface follows whoever signs the contract. That rejected dashboard is still in the file, kept on purpose."
+        ]
+      },
+      {
+        "type": "constraints",
+        "eyebrow": "06 · WHAT COULD NOT BE CHANGED",
+        "headlineLines": [
+          "The constraints that shaped",
+          "every screen."
+        ],
+        "intro": "None of these are negotiable in clinical research, and each one removed an option a cleaner design would have taken.",
+        "items": [
+          {
+            "label": "REGULATORY",
+            "body": "Any change to submitted trial data needs an attributable, timestamped, permanent record. Nothing here can be silently edited — records are amended, never overwritten — and the audit trail is part of the interface rather than hidden behind an admin view."
+          },
+          {
+            "label": "LEGACY",
+            "body": "The sponsor's systems own the data and are not being replaced. This concept reads from and writes to them rather than becoming a system of record, which is also why it can never be the only place a coordinator works."
+          },
+          {
+            "label": "COMMERCIAL",
+            "body": "The sponsor holds the budget; the coordinator does the work. A tool designed for the site has to be paid for by someone who will never use it. That is the problem this design does not solve, and pretending otherwise would make everything else here less believable."
+          },
+          {
+            "label": "ACCESSIBILITY",
+            "body": "Window state is never carried by colour alone — every state also carries text and position. Site staff work long shifts on whatever hardware the hospital provides, often at small sizes on old displays."
+          }
+        ]
+      },
+      {
+        "type": "hypothesis",
+        "eyebrow": "07 · WHAT WE WOULD TEST — NOTHING HERE IS MEASURED",
+        "count": "1",
+        "countLabel": "hypothesis, written before any screen",
+        "headline": "A missed window should be visible the day it happens — not at the next monitoring visit.",
+        "body": "This section is where a client case study would put results. This is a concept, so instead it states what we would measure and what would have to be true for it to be worth building. Nothing below is a finding.",
+        "measuresLabel": "HOW WE WOULD TEST IT",
+        "measures": [
+          {
+            "key": "Missed windows per 100 visits, baselined against the site's own previous two quarters",
+            "value": "8 wks"
+          },
+          {
+            "key": "Elapsed time between a window closing and the deviation being filed",
+            "value": "per event"
+          },
+          {
+            "key": "Coordinator hours per week spent maintaining the tracking spreadsheet",
+            "value": "time diary"
+          },
+          {
+            "key": "Deviation records returned by the monitor as incomplete or unclear",
+            "value": "per visit"
+          }
+        ],
+        "criteria": [
+          {
+            "label": "Ship criterion",
+            "value": "−50%",
+            "note": "missed windows vs the site's own baseline"
+          },
+          {
+            "label": "Ship criterion",
+            "value": "same day",
+            "note": "from window closing to deviation filed"
+          },
+          {
+            "label": "Ship criterion",
+            "value": "0 hrs",
+            "note": "spreadsheet maintenance per week"
+          }
+        ],
+        "footnote": "No figure on this page is a measurement. The three criteria above are the thresholds we would agree with a site before building anything — stated up front so that the concept can fail honestly rather than be defended after the fact."
+      },
+      {
+        "type": "bet",
+        "quote": "Move the moment of discovery earlier. Show the window while it is still open — not the deviation after it has closed.",
+        "attributionTitle": "The design bet",
+        "attributionNote": "Written first · every screen was judged against it"
+      },
+      {
+        "type": "whatExists",
+        "eyebrow": "08 · WHAT EXISTS",
+        "headline": "Built as a concept, in full.",
+        "columns": [
+          {
+            "title": "Problem framing",
+            "body": "A written framing document: the user, the job to be done, four named failure moments, why the existing category misses them, the design bet, and the four assumptions this rests on — including the commercial one that would most likely kill it."
+          },
+          {
+            "title": "Product design",
+            "body": "Eight desktop screens at 1440 following one coordinator through one job — worklist, visit-window matrix, booking conflict, out-of-window justification, filed deviation with audit trail, and query resolution with source context. Wired into a clickable prototype with 21 connections."
+          },
+          {
+            "title": "Design system",
+            "body": "82 variables across four collections with light and dark modes, 14 text styles, 3 elevation styles, and a component library behind every screen. Checked programmatically: zero unbound fills or strokes across all eight screens."
+          }
+        ]
+      }
+    ],
+    "nextCase": {
+      "eyebrow": "MORE WORK",
+      "title": "See the rest of the work",
+      "body": "Further case studies are being written up.",
+      "href": "/case-studies"
+    },
+    "ctaSection": {
+      "eyebrow": "START A PROJECT",
+      "headlineLine1": "Have something complex",
+      "headlineLine2": "to build?",
+      "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+      "subdescriptionLine2": "not a pitch deck.",
+      "primaryCtaText": "Start a Project",
+      "emailCtaText": "hello@orvexiq.com"
+    },
+    "seo": {
+      "title": "Trial Coordination — Case Study — Orvexiq Lab",
+      "description": "A self-initiated concept for clinical trial site coordinators: making a missed visit window visible while it can still be prevented."
+    }
+  }
+]

@@ -1,0 +1,296 @@
+/* ContactBodySection — Figma node 33:28 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-layout-section-padding-lg);
+}
+
+/* Figma 33:28 — form fills | gap 96 | info 400 */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+}
+
+/* Figma 33:29 — glass card, gradient 143.77deg, r16, padding 48, gap 24 */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-24);
+  align-items: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--orv-space-48);
+  border-radius: var(--orv-radius-16);
+  background: linear-gradient(
+    143.77deg,
+    rgba(255, 255, 255, 0.1) 14.6%,
+    rgba(255, 255, 255, 0.025) 85.4%
+  );
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Figma 33:38 — paired half-width fields, 16px gap */
+.fieldRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-16);
+  width: 100%;
+}
+
+/* Figma 33:30 — label +8 input */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Figma 33:31 — 14px Medium, secondary */
+.label {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-secondary);
+}
+
+/* Figma 33:32 — alpha-white-4, 1px border-default, r8, padding 16 */
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--orv-space-16);
+  border-radius: var(--orv-radius-8);
+  background-color: var(--orv-color-alpha-white-4);
+  border: var(--orv-border-width-default) solid var(--orv-border-default);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--orv-text-placeholder);
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+  border-color: var(--orv-border-active);
+}
+
+/* Figma 33:50 — 140px tall */
+.textarea {
+  height: 140px;
+  resize: vertical;
+  min-height: 96px;
+}
+
+.submitRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-16);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Figma 33:52 — CTA gradient pill, 16px SemiBold */
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--orv-space-16) var(--orv-space-32);
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-gradient-cta-primary);
+  border: none;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-on-brand);
+  cursor: pointer;
+  outline: none;
+  transition: opacity var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.submit:hover:not(:disabled) {
+  opacity: 0.92;
+}
+
+.submit:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+.submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Not in Figma: states plainly that the form has no endpoint yet, rather than
+   presenting a control that silently does nothing. */
+.note {
+  flex: 1 1 240px;
+  min-width: 0;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+/* Figma 33:54 — 400 wide, 48px gaps */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-48);
+  width: 400px;
+  flex-shrink: 0;
+}
+
+/* Figma 33:55 — 8px gaps */
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+}
+
+/* Figma 33:56 — 12px SemiBold, tertiary, tracking 1.44 */
+.infoLabel {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: 1.44px;
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+/* Figma 33:57 — 22px Bold, primary */
+.infoValue,
+.infoValueLink {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-22);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+.infoValueLink {
+  text-decoration: none;
+  outline: none;
+  align-self: flex-start;
+  transition: color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.infoValueLink:hover {
+  color: var(--orv-brand-400);
+}
+
+.infoValueLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-4);
+  border-radius: var(--orv-radius-4);
+}
+
+/* Figma 33:58 — 15px / 24px Regular, secondary */
+.infoBody {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .row {
+    gap: var(--orv-space-64);
+  }
+
+  .info {
+    width: 340px;
+  }
+}
+
+/* Below tablet landscape the 400px info rail no longer earns its column, so it
+   moves beneath the form. */
+@media (max-width: 1120px) {
+  .row {
+    flex-direction: column;
+    gap: var(--orv-space-48);
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .info {
+    width: 100%;
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 900px) {
+  .form {
+    padding: var(--orv-space-32);
+  }
+
+  /* the info blocks read better side by side once they are full width */
+  .info {
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--orv-space-32);
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    padding: var(--orv-space-24);
+    gap: var(--orv-space-20);
+  }
+
+  /* paired fields stack rather than squeezing two inputs onto a phone row */
+  .fieldRow {
+    flex-direction: column;
+    gap: var(--orv-space-20);
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+  .submitRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--orv-space-12);
+  }
+
+  .info {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--orv-space-32);
+  }
+
+  .infoValue,
+  .infoValueLink {
+    font-size: var(--orv-font-size-20);
+  }
+}

@@ -1,0 +1,223 @@
+/* ServiceDetailSection — Figma node 31:2 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-128);
+}
+
+.blockList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blockItem {
+  display: block;
+}
+
+/* Figma 31:27 — 1px rule between blocks, 64px clear either side */
+.rule {
+  display: block;
+  height: var(--orv-border-width-default);
+  width: 100%;
+  background-color: var(--orv-border-subtle);
+  margin-top: var(--orv-space-64);
+  margin-bottom: var(--orv-space-64);
+}
+
+/* Figma 31:3 — intro 460 | gap 96 | deliverables fill */
+.block {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  width: 460px;
+  flex-shrink: 0;
+}
+
+/* Figma 31:5 — 20px Bold, brand-400, tracking 1.6 */
+.number {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: 1.6px;
+  color: var(--orv-brand-400);
+}
+
+/* Figma 31:6 — 40px Bold, tracking -0.8 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-40);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-080);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 31:7 — 17px / 28px Regular, secondary */
+.body {
+  font-family: var(--orv-font-family-primary);
+  font-size: 17px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* Figma 125:2 — 16px SemiBold, brand-400 */
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-brand-400);
+  text-decoration: none;
+  align-self: flex-start;
+  transition: color var(--orv-duration-normal) var(--orv-ease-default);
+  outline: none;
+}
+
+.readMore:hover,
+.readMore:focus-visible {
+  color: var(--orv-brand-300);
+}
+
+.readMore:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-4);
+  border-radius: var(--orv-radius-4);
+}
+
+.arrow {
+  transition: transform var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.readMore:hover .arrow,
+.readMore:focus-visible .arrow {
+  transform: translateX(4px);
+}
+
+/* Figma 31:8 — wrapping 2-up grid of 338x52 chips with 16px gaps */
+.deliverables {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--orv-space-16);
+  flex: 1 1 0;
+  min-width: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-content: start;
+}
+
+/* Figma 31:9 — alpha-white-4 fill, 1px subtle border, r16, 24/16 padding */
+.deliverable {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  min-height: 52px;
+  padding: var(--orv-space-16) var(--orv-space-24);
+  background-color: var(--orv-color-alpha-white-4);
+  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  border-radius: var(--orv-radius-16);
+  box-sizing: border-box;
+}
+
+.dot {
+  width: 16px;
+  height: var(--orv-border-width-default);
+  background-color: var(--orv-brand-400);
+  flex-shrink: 0;
+}
+
+/* Figma 31:11 — 15px Medium, primary */
+.deliverableLabel {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  min-width: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * The two-column block holds while the 460px intro and a 2-up chip grid both
+ * fit; below that the intro stacks above a chip grid that stays 2-up as long
+ * as the labels read comfortably, then goes single column.
+ * ========================================== */
+@media (max-width: 1400px) {
+  .block {
+    gap: var(--orv-space-64);
+  }
+
+  .intro {
+    width: 400px;
+  }
+
+  .title {
+    font-size: var(--orv-font-size-32);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+}
+
+@media (max-width: 1120px) {
+  .block {
+    flex-direction: column;
+    gap: var(--orv-space-32);
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .deliverables {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-top: var(--orv-space-48);
+    padding-bottom: var(--orv-space-72);
+  }
+
+  .rule {
+    margin-top: var(--orv-space-48);
+    margin-bottom: var(--orv-space-48);
+  }
+}
+
+@media (max-width: 600px) {
+  .deliverables {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--orv-space-12);
+  }
+
+  .title {
+    font-size: var(--orv-font-size-28);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+
+  .body {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-26);
+  }
+
+  .deliverable {
+    min-height: 48px;
+    padding: var(--orv-space-12) var(--orv-space-16);
+  }
+}

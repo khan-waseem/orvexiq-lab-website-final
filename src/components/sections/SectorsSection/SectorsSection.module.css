@@ -2,8 +2,8 @@
 .sectorsSection {
   width: 100%;
   background-color: var(--orv-surface-canvas);
-  padding-top: var(--orv-space-96);
-  padding-bottom: var(--orv-space-96);
+  padding-top: var(--orv-layout-section-padding-md);
+  padding-bottom: var(--orv-layout-section-padding-md);
 }
 
 .contentContainer {
@@ -18,6 +18,7 @@
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-12);
   font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
   letter-spacing: var(--orv-letter-spacing-wide-168);
   color: var(--orv-text-tertiary);
   text-align: center;
@@ -40,31 +41,52 @@
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-20);
   font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
   letter-spacing: var(--orv-letter-spacing-wide-120);
   color: var(--orv-text-secondary);
   opacity: 0.45;
   white-space: nowrap;
 }
 
-/* Responsive Reflow behavior (no horizontal scrollbar) */
-@media (max-width: 1024px) {
+/* ==========================================
+ * RESPONSIVE
+ * The band stays a single justified row while all six labels fit, then wraps
+ * to a centred cluster rather than becoming a vertical list.
+ * ========================================== */
+@media (max-width: 1400px) {
+  .sectorItem {
+    font-size: var(--orv-font-size-18);
+  }
+}
+
+@media (max-width: 1120px) {
   .sectorsList {
     justify-content: center;
     gap: var(--orv-space-32);
   }
-}
-
-@media (max-width: 640px) {
-  .sectorsSection {
-    padding-top: var(--orv-space-48);
-    padding-bottom: var(--orv-space-48);
-  }
-
-  .sectorsList {
-    gap: var(--orv-space-24);
-  }
 
   .sectorItem {
     font-size: var(--orv-font-size-16);
+  }
+}
+
+@media (max-width: 900px) {
+  .sectorsList {
+    gap: var(--orv-space-24) var(--orv-space-32);
+  }
+}
+
+@media (max-width: 600px) {
+  .contentContainer {
+    gap: var(--orv-space-24);
+  }
+
+  .sectorsList {
+    gap: var(--orv-space-16) var(--orv-space-24);
+  }
+
+  .sectorItem {
+    font-size: var(--orv-font-size-14);
+    letter-spacing: var(--orv-letter-spacing-wide-110);
   }
 }

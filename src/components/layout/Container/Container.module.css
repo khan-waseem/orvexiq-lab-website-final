@@ -9,17 +9,8 @@
   box-sizing: border-box;
 }
 
-/* Responsive Media Queries using Tokens */
-@media (max-width: 1024px) {
-  .container {
-    padding-left: var(--orv-space-48);
-    padding-right: var(--orv-space-48);
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    padding-left: var(--orv-layout-page-margin-mobile);
-    padding-right: var(--orv-layout-page-margin-mobile);
-  }
-}
+/*
+ * No local breakpoints: --orv-layout-page-margin is redefined across the
+ * breakpoint ladder in semantics.css, so the container scales automatically
+ * and every consumer stays in step.
+ */

@@ -3,9 +3,7 @@ import Image from 'next/image';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { Heading } from '@/components/primitives/Heading';
-import { Text } from '@/components/primitives/Text';
 import { GlassCard } from '@/components/primitives/GlassCard';
-import { Tag } from '@/components/primitives/Tag';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import styles from './SystemSection.module.css';
 
@@ -29,7 +27,9 @@ export const SystemSection: React.FC<SystemSectionProps> = ({ content }) => {
   const stage3 = content.stages[2];
 
   return (
-    <SectionWrapper theme="system" padding="md" id="system">
+    /* Figma 103:5 uses 72 top / 96 bottom, which the shared padding scale does
+       not express as a single value, so the section supplies its own. */
+    <SectionWrapper theme="system" padding="custom" id="system" className={styles.systemSection}>
       {/* Background Radial Glow */}
       <div className={styles.systemGlow} aria-hidden="true">
         <Image
@@ -161,33 +161,30 @@ export const SystemSection: React.FC<SystemSectionProps> = ({ content }) => {
                     <span className={styles.inputCursor} />
                   </div>
 
-                  {/* Status Badges */}
+                  {/* Status Badges — Figma 103:63 / 103:65 / 103:67 (h20, 12px) */}
                   <div className={styles.badgeRow}>
-                    <Tag variant="status-approved">Approved</Tag>
-                    <Tag variant="status-review">In review</Tag>
-                    <Tag variant="status-blocked">Blocked</Tag>
+                    <span className={`${styles.miniBadge} ${styles.badgeApproved}`}>Approved</span>
+                    <span className={`${styles.miniBadge} ${styles.badgeReview}`}>In review</span>
+                    <span className={`${styles.miniBadge} ${styles.badgeBlocked}`}>Blocked</span>
                   </div>
 
-                  {/* Mini Card */}
+                  {/* Mini Card — Figma 103:69 (264x66 at 18,152) */}
                   <div className={styles.miniCard}>
-                    <Text size="caption" weight="semibold" color="primary">
-                      Application Console Card
-                    </Text>
-                    <Text size="caption" color="tertiary">
-                      Workflow Item — 17 min
-                    </Text>
-                    <div style={{ width: 150, height: 5, background: 'rgba(255,255,255,0.1)', borderRadius: 3, marginTop: 4 }}>
-                      <div style={{ width: 104, height: 5, background: 'rgba(155,111,230,0.8)', borderRadius: 3 }} />
+                    <span className={styles.miniCardTitle}>Application NW-4471</span>
+                    <span className={styles.miniCardMeta}>Broker: A. Whitfield · 17 min</span>
+                    <div className={styles.miniProgressTrack}>
+                      <div className={styles.miniProgressFill} />
                     </div>
                   </div>
 
-                  {/* Theme Toggle Controls */}
+                  {/* Theme Controls — Figma 103:74 toggle + 103:77 checkbox */}
                   <div className={styles.toggleRow}>
-                    <span>Dark</span>
-                    <div style={{ width: 18, height: 18, background: '#9b6fe6', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 10, fontWeight: 700 }}>
-                      ✓
-                    </div>
-                    <span>Compact</span>
+                    <span className={styles.switchTrack} aria-hidden="true">
+                      <span className={styles.switchThumb} />
+                    </span>
+                    <span className={styles.toggleLabel}>Dark</span>
+                    <span className={styles.checkBox} aria-hidden="true">✓</span>
+                    <span className={styles.toggleLabel}>Compact</span>
                   </div>
                 </div>
               </GlassCard>
@@ -224,41 +221,66 @@ export const SystemSection: React.FC<SystemSectionProps> = ({ content }) => {
                       <span className={styles.sidebarItemActive}>Applications</span>
                       <span className={styles.sidebarItem}>Documents</span>
                       <span className={styles.sidebarItem}>Compliance</span>
+                      <span className={styles.sidebarItem}>Reports</span>
                     </div>
 
                     <div className={styles.mainPanel}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <Text size="caption" weight="semibold" color="primary">
-                          Active applications
-                        </Text>
-                        <Tag variant="status-approved">Active</Tag>
+                      <span className={styles.panelTitle}>Active applications</span>
+
+                      {/* Figma 103:106 — delta badge + comparison label */}
+                      <div className={styles.deltaRow}>
+                        <span className={styles.deltaBadge}>+64%</span>
+                        <span className={styles.deltaLabel}>vs last quarter</span>
                       </div>
 
-                      {/* Structural Metrics Row */}
+                      {/* Figma 103:109 / 103:112 / 103:115 — 106x42 KPI tiles */}
                       <div className={styles.kpiRow}>
                         <div className={styles.kpiCard}>
-                          <Text size="caption" color="tertiary">Per broker</Text>
-                          <Text size="base" weight="bold" color="primary">Volume</Text>
+                          <span className={styles.kpiLabel}>Per broker / day</span>
+                          <span className={styles.kpiValue}>23</span>
                         </div>
                         <div className={styles.kpiCard}>
-                          <Text size="caption" color="tertiary">Avg handling</Text>
-                          <Text size="base" weight="bold" color="primary">Duration</Text>
+                          <span className={styles.kpiLabel}>Avg handling</span>
+                          <span className={styles.kpiValue}>17m</span>
                         </div>
                         <div className={styles.kpiCard}>
-                          <Text size="caption" color="tertiary">Efficiency</Text>
-                          <Text size="base" weight="bold" color="primary">Rate</Text>
+                          <span className={styles.kpiLabel}>Rework</span>
+                          <span className={styles.kpiValue}>3%</span>
                         </div>
                       </div>
 
-                      {/* Bar Chart Bars */}
+                      {/* Figma 103:118 — 7 bars over a baseline with day labels */}
                       <div className={styles.chartContainer}>
-                        <div className={styles.chartBar} style={{ height: 24 }} />
-                        <div className={styles.chartBar} style={{ height: 32 }} />
-                        <div className={styles.chartBar} style={{ height: 28 }} />
-                        <div className={styles.chartBar} style={{ height: 41 }} />
-                        <div className={styles.chartBar} style={{ height: 49 }} />
-                        <div className={styles.chartBar} style={{ height: 58 }} />
-                        <div className={styles.chartBar} style={{ height: 70 }} />
+                        {[
+                          { h: 24, d: 'M' },
+                          { h: 32, d: 'T' },
+                          { h: 28, d: 'W' },
+                          { h: 41, d: 'T' },
+                          { h: 49, d: 'F' },
+                          { h: 58, d: 'S' },
+                          { h: 70, d: 'S' },
+                        ].map((b, i) => (
+                          <div key={i} className={styles.chartCol}>
+                            <div className={styles.chartBar} style={{ height: b.h }} />
+                            <span className={styles.chartDay}>{b.d}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Figma 103:134 — application rows */}
+                      <div className={styles.rowList}>
+                        <div className={styles.appRow}>
+                          <span className={styles.appId}>NW-4471</span>
+                          <span className={`${styles.rowBadge} ${styles.badgeApproved}`}>Approved</span>
+                          <span className={styles.rowTrack} />
+                          <span className={styles.appTime}>2 min</span>
+                        </div>
+                        <div className={styles.appRow}>
+                          <span className={styles.appId}>NW-4472</span>
+                          <span className={`${styles.rowBadge} ${styles.badgeReview}`}>In review</span>
+                          <span className={styles.rowTrack} />
+                          <span className={styles.appTime}>6 min</span>
+                        </div>
                       </div>
                     </div>
                   </div>

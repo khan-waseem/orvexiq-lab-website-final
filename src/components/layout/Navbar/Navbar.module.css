@@ -37,17 +37,12 @@
   text-decoration: none;
 }
 
+/* Figma 183:139 — 40px exported ring mark */
 .logoMark {
   width: var(--orv-space-40);
   height: var(--orv-space-40);
-  background-color: var(--orv-brand-500);
-  border-radius: var(--orv-radius-8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--orv-text-on-brand);
-  font-weight: var(--orv-font-weight-bold);
-  font-size: var(--orv-font-size-20);
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .brandText {
@@ -105,8 +100,8 @@
 /* Mobile Toggle Button */
 .mobileToggle {
   display: none;
-  width: var(--orv-space-40);
-  height: var(--orv-space-40);
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   color: var(--orv-text-primary);
@@ -128,12 +123,36 @@
   display: none;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1024px) {
-  .header {
-    top: var(--orv-space-16);
+/* ==========================================
+ * RESPONSIVE
+ * The full nav is held through tablet landscape (1024) — a 1250px pill has
+ * room for six links at that width — and only collapses at tablet portrait.
+ * ========================================== */
+@media (max-width: 1120px) {
+  .navLinks {
+    gap: var(--orv-space-8);
+  }
+
+  .link {
+    padding: var(--orv-space-12);
+    font-size: var(--orv-font-size-15);
+  }
+
+  .brandText {
+    font-size: var(--orv-font-size-20);
+  }
+
+  .navPill {
     padding-left: var(--orv-space-24);
     padding-right: var(--orv-space-24);
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    top: var(--orv-space-16);
+    padding-left: var(--orv-layout-page-margin);
+    padding-right: var(--orv-layout-page-margin);
   }
 
   .navLinks {
@@ -153,8 +172,8 @@
     flex-direction: column;
     position: absolute;
     top: calc(var(--orv-nav-height) + var(--orv-space-12));
-    left: var(--orv-space-24);
-    right: var(--orv-space-24);
+    left: 0;
+    right: 0;
     background: var(--orv-surface-system);
     border: var(--orv-border-width-default) solid var(--orv-border-glass);
     border-radius: var(--orv-radius-24);
@@ -172,7 +191,9 @@
   }
 
   .mobileLink {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
     font-size: var(--orv-font-size-18);
     font-weight: var(--orv-font-weight-medium);
     color: var(--orv-text-primary);
@@ -183,5 +204,26 @@
   .mobileActiveLink {
     background-color: var(--orv-color-alpha-white-12);
     font-weight: var(--orv-font-weight-bold);
+  }
+}
+
+@media (max-width: 600px) {
+  .navPill {
+    height: 64px;
+    padding-left: var(--orv-space-16);
+    padding-right: var(--orv-space-16);
+  }
+
+  .logoMark {
+    width: var(--orv-space-32);
+    height: var(--orv-space-32);
+  }
+
+  .brandText {
+    font-size: var(--orv-font-size-18);
+  }
+
+  .mobileDrawer {
+    top: calc(64px + var(--orv-space-12));
   }
 }

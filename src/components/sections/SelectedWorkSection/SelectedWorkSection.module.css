@@ -1,11 +1,42 @@
-/* SelectedWorkSection Component Styles — 100% Token Governance */
+/* SelectedWorkSection Component Styles — Figma node 86:817
+ *
+ * 1440 reference (section height 1800, padding 128/128):
+ *   header y=128 (144) -> gap 64 -> grid y=336 (1336)
+ *   card 612x656 = screen 435 + body 221 (padding 32, gap 16)
+ *   grid gutters 24 both axes
+ */
 .selectedWorkSection {
   position: relative;
-  width: 100%;
-  background-color: var(--orv-surface-canvas);
-  padding-top: var(--orv-layout-section-padding-lg);
-  padding-bottom: var(--orv-layout-section-padding-lg);
   overflow: hidden;
+}
+
+/* Ambient glows — Figma 203:186 (900 @ -140,180) and 203:187 (820 @ 760,860).
+   The exported glow asset is a blurred circle inside a box 1.5x its diameter,
+   so each wrapper is sized/offset to that padded box. */
+.workGlowA,
+.workGlowB {
+  position: absolute;
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+  aspect-ratio: 1;
+}
+
+.workGlowA {
+  width: min(93.75%, 1350px);
+  left: -25.35%;
+  top: -45px;
+}
+
+.workGlowB {
+  width: min(85.42%, 1230px);
+  left: 38.54%;
+  top: 655px;
+}
+
+.glowImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .contentContainer {
@@ -13,7 +44,7 @@
   z-index: var(--orv-z-floating);
   display: flex;
   flex-direction: column;
-  gap: var(--orv-space-48);
+  gap: var(--orv-space-64);
   width: 100%;
 }
 
@@ -23,7 +54,7 @@
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
-  gap: var(--orv-space-24);
+  gap: var(--orv-layout-gutter);
 }
 
 .titleGroup {
@@ -32,16 +63,7 @@
   gap: var(--orv-space-16);
 }
 
-.headlineText {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-48);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-56);
-  letter-spacing: var(--orv-letter-spacing-tight-48);
-  color: var(--orv-text-primary);
-  margin: 0;
-}
-
+/* Figma 86:824 — 16px Medium, arrow in brand-400, gap 8 */
 .viewAllLink {
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-16);
@@ -51,9 +73,11 @@
   align-items: center;
   gap: var(--orv-space-8);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--orv-duration-normal) var(--orv-ease-default);
   white-space: nowrap;
-  padding-bottom: var(--orv-space-8);
+  /* keeps the 44px touch target without shifting the 1440 baseline */
+  padding: var(--orv-space-12) 0;
+  margin-bottom: calc(var(--orv-space-12) * -1);
 }
 
 .viewAllLink:hover,
@@ -62,7 +86,8 @@
 }
 
 .arrowIcon {
-  transition: transform 0.2s ease;
+  color: var(--orv-brand-400);
+  transition: transform var(--orv-duration-normal) var(--orv-ease-default);
 }
 
 .viewAllLink:hover .arrowIcon,
@@ -74,35 +99,46 @@
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--orv-layout-gutter);
+  gap: var(--orv-layout-card-gap);
   width: 100%;
 }
 
-/* Card Link Container */
+/* Card container — same glass treatment as GlassCard variant "card"
+   (Figma 86:829: gradient-glass-133, 1px alpha-white-14, blur 14, r16, shadow-card) */
 .cardLink {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  border-radius: var(--orv-radius-16);
+  background: var(--orv-card-glass-bg);
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  border-radius: var(--orv-card-glass-radius);
+  box-shadow: var(--orv-card-glass-shadow);
   overflow: hidden;
-  background-color: var(--orv-surface-card);
-  border: 1px solid var(--orv-border-subtle);
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
+              transform var(--orv-duration-normal) var(--orv-ease-default),
+              box-shadow var(--orv-duration-normal) var(--orv-ease-default);
   outline: none;
 }
 
 .cardLink:hover,
 .cardLink:focus-visible {
-  border-color: rgba(155, 111, 230, 0.4);
+  border-color: var(--orv-border-active);
   transform: translateY(-4px);
   box-shadow: var(--orv-shadow-glass-lg);
+}
+
+.cardLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 612 / 435;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--orv-color-alpha-white-4);
   overflow: hidden;
 }
 
@@ -110,14 +146,14 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
-  transition: transform 0.35s ease;
+  transition: transform var(--orv-duration-slow) var(--orv-ease-default);
 }
 
 .cardLink:hover .screenImage {
   transform: scale(1.03);
 }
 
-/* Card Body Details */
+/* Card Body — Figma 86:832: padding 32, gap 16 */
 .cardBody {
   display: flex;
   flex-direction: column;
@@ -131,34 +167,54 @@
   align-items: center;
 }
 
+/* Figma 86:835 — 28px Bold, tracking -0.28 */
 .cardTitle {
   font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-24);
-  font-weight: var(--orv-font-weight-semibold);
+  font-size: var(--orv-font-size-28);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-028);
   color: var(--orv-text-primary);
   margin: 0;
-  line-height: 1.3;
 }
 
+/* Figma 86:836 — 16px / 26px Regular */
 .cardDescription {
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-16);
   font-weight: var(--orv-font-weight-regular);
-  line-height: var(--orv-line-height-24);
+  line-height: var(--orv-line-height-26);
   color: var(--orv-text-secondary);
   margin: 0;
 }
 
+/* Figma 86:837 — 13px Medium, tertiary */
 .servicesMeta {
   font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-14);
-  font-weight: var(--orv-font-weight-regular);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
   color: var(--orv-text-tertiary);
   margin-top: auto;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1024px) {
+/* ==========================================
+ * RESPONSIVE
+ * The 2-column grid is held all the way down to tablet portrait — a case
+ * study card is a picture-led tile and reads well at half width.
+ * ========================================== */
+@media (max-width: 1120px) {
+  .contentContainer {
+    gap: var(--orv-space-48);
+  }
+
+  .cardBody {
+    padding: var(--orv-space-24);
+    gap: var(--orv-space-12);
+  }
+}
+
+@media (max-width: 900px) {
   .headerRow {
     flex-direction: column;
     align-items: flex-start;
@@ -170,19 +226,22 @@
     gap: var(--orv-space-32);
   }
 
-  .headlineText {
-    font-size: 36px;
-    line-height: 44px;
+  .viewAllLink {
+    margin-bottom: 0;
   }
 }
 
-@media (max-width: 640px) {
-  .cardBody {
-    padding: var(--orv-space-24);
+@media (max-width: 600px) {
+  .contentContainer {
+    gap: var(--orv-space-40);
   }
 
-  .headlineText {
-    font-size: 28px;
-    line-height: 36px;
+  .cardsGrid {
+    gap: var(--orv-space-24);
+  }
+
+  .cardTitle {
+    font-size: var(--orv-font-size-22);
+    letter-spacing: var(--orv-letter-spacing-normal);
   }
 }

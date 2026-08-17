@@ -1,0 +1,41 @@
+{
+  "code": "404",
+  "headline": "This page moved, or never existed.",
+  "subdescription": "Check the address, or start from one of these. If you followed a link from our own site, tell us at hello@orvexiq.com and we will fix it.",
+  "primaryCta": {
+    "label": "Back to home",
+    "href": "/"
+  },
+  "secondaryCta": {
+    "label": "See our work",
+    "href": "/case-studies"
+  },
+  "linksLabel": "OR TRY ONE OF THESE",
+  "links": [
+    {
+      "id": "nf-services",
+      "title": "Services",
+      "body": "What we do, and how we price it",
+      "href": "/services"
+    },
+    {
+      "id": "nf-cases",
+      "title": "Case Studies",
+      "body": "Six projects, with the numbers",
+      "href": "/case-studies"
+    },
+    {
+      "id": "nf-about",
+      "title": "About",
+      "body": "Who we are and how we work",
+      "href": "/about"
+    },
+    {
+      "id": "nf-careers",
+      "title": "Careers",
+      "body": "Open roles and how we hire",
+      "href": "/careers"
+    }
+  ],
+  "heroIconAssetUrl": "/assets/404/not-found-icon.png"
+}

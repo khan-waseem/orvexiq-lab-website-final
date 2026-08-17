@@ -80,6 +80,7 @@
    * 7. TESTIMONIAL QUOTE CARD TOKENS
    * ========================================== */
   --orv-testimonial-card-bg: var(--orv-gradient-glass-156);
+  --orv-testimonial-card-scrim: rgba(8, 2, 17, 0.42);
   --orv-testimonial-card-blur: var(--orv-blur-testimonial);
   --orv-testimonial-card-radius: var(--orv-radius-24);
   --orv-testimonial-card-padding: var(--orv-space-96);
@@ -89,6 +90,20 @@
    * ========================================== */
   --orv-cta-card-bg: var(--orv-gradient-cta-card);
   --orv-cta-card-padding: var(--orv-space-96);
+
+  /* Boxed variant — Figma 31:78 (Services page): inset 1248 card with a
+     1px subtle border and 24px radius, instead of the homepage full-bleed band */
+  --orv-cta-card-boxed-bg: var(--orv-gradient-cta-card-boxed);
+  --orv-cta-card-boxed-border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  --orv-cta-card-boxed-radius: var(--orv-radius-24);
+
+  /* CTA buttons — Figma 86:987 / 86:989 (h54 = 16 + 22 + 16) */
+  --orv-button-cta-height: 54px;
+  --orv-button-cta-padding-x: var(--orv-space-32);
+  --orv-button-cta-font-size: var(--orv-font-size-16);
+  --orv-button-cta-primary-bg: var(--orv-gradient-cta-primary);
+  --orv-button-cta-email-bg: var(--orv-color-alpha-white-4);
+  --orv-button-cta-email-border: var(--orv-border-width-default) solid var(--orv-border-subtle);
 
   /* ==========================================
    * 9. FOOTER COMPONENT TOKENS

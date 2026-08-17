@@ -28,6 +28,7 @@
   --orv-color-raw-gray-100: #fafafa;
   --orv-color-raw-gray-300: #d4d4d4;
   --orv-color-raw-gray-400: #b0b0b0;
+  --orv-color-raw-gray-600: #545454;
   --orv-color-raw-gray-700: #3b3b3b;
 
   /* Alpha Channel Primitives */
@@ -76,7 +77,9 @@
   --orv-font-size-48: 48px;
   --orv-font-size-56: 56px;
   --orv-font-size-64: 64px;
+  --orv-font-size-72: 72px;
   --orv-font-size-96: 96px;
+  --orv-font-size-180: 180px;
 
   --orv-line-height-tight: 1.1;
   --orv-line-height-normal: normal;
@@ -85,13 +88,22 @@
   --orv-line-height-26: 26px;
   --orv-line-height-28: 28px;
   --orv-line-height-30: 30px;
+  --orv-line-height-32: 32px;
   --orv-line-height-38: 38px;
+  --orv-line-height-40: 40px;
   --orv-line-height-48: 48px;
+  --orv-line-height-52: 52px;
   --orv-line-height-56: 56px;
   --orv-line-height-64: 64px;
   --orv-line-height-72: 72px;
+  --orv-line-height-80: 80px;
+  --orv-line-height-58: 58px;
+  --orv-line-height-31: 31px;
 
+  --orv-letter-spacing-tight-900: -9px;
+  --orv-letter-spacing-tight-216: -2.16px;
   --orv-letter-spacing-tight-192: -1.92px;
+  --orv-letter-spacing-tight-168: -1.68px;
   --orv-letter-spacing-tight-112: -1.12px;
   --orv-letter-spacing-tight-096: -0.96px;
   --orv-letter-spacing-tight-080: -0.8px;
@@ -167,7 +179,11 @@
   --orv-shadow-card: 0px 20px 44px -16px rgba(5, 1, 15, 0.45);
   --orv-shadow-button: 0px 8px 20px -6px rgba(5, 1, 15, 0.4);
   --orv-shadow-drop-service: 0px 20px 22px rgba(5, 1, 15, 0.45);
+  /* Elevated hover state derived from --orv-shadow-card (interaction only, not in Figma) */
+  --orv-shadow-card-sm: 0px 10px 24px -8px rgba(5, 1, 15, 0.4);
+  --orv-shadow-glass-lg: 0px 32px 64px -20px rgba(5, 1, 15, 0.6);
 
+  --orv-blur-sm: blur(10px);
   --orv-blur-nav: blur(9px);
   --orv-blur-stage: blur(11px);
   --orv-blur-card: blur(14px);
@@ -187,6 +203,7 @@
   --orv-gradient-glass-150: linear-gradient(150deg, rgba(255, 255, 255, 0.1) 14.6%, rgba(255, 255, 255, 0.025) 85.4%);
   --orv-gradient-glass-156: linear-gradient(156.8deg, rgba(255, 255, 255, 0.09) 14.6%, rgba(255, 255, 255, 0.02) 85.4%);
   --orv-gradient-cta-card: linear-gradient(146.1deg, rgba(124, 58, 237, 0.22) 0%, rgba(95, 25, 216, 0.05) 73.5%);
+  --orv-gradient-cta-card-boxed: linear-gradient(142.2deg, rgba(124, 58, 237, 0.22) 0%, rgba(95, 25, 216, 0.05) 73.5%);
   --orv-gradient-cta-primary: linear-gradient(to right, #7c3aed, #5f19d8);
 
   /* ==========================================

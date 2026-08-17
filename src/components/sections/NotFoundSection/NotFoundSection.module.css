@@ -1,0 +1,349 @@
+/* NotFoundSection — Figma node 54:16
+ *
+ * 1440 reference (section height 1031):
+ *   padding-top 128 -> code(246) +24 -> headline(58) +24 -> sub(62) +32
+ *   -> actions(54) +64 -> links label(15) +24 -> cards(140) + padding-bottom 128
+ */
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 128px;
+  padding-bottom: var(--orv-layout-section-padding-lg);
+}
+
+/* Same ambient glow as the page heroes (see HeroSection.module.css for why
+   this is a CSS gradient rather than the exported blurred asset). */
+.heroGlow {
+  position: absolute;
+  top: 34px;
+  left: 47.82%;
+  width: min(166.67%, 2400px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(48, 7, 84, 1) 0%,
+    rgba(48, 7, 84, 0.89) 12.5%,
+    rgba(48, 7, 84, 0.75) 25%,
+    rgba(48, 7, 84, 0.55) 37.5%,
+    rgba(48, 7, 84, 0.38) 50%,
+    rgba(48, 7, 84, 0.26) 58.3%,
+    rgba(48, 7, 84, 0.12) 75%,
+    rgba(48, 7, 84, 0) 100%
+  );
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.vectorOverlay {
+  position: absolute;
+  top: -68px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--orv-size-container-max);
+  height: 798px;
+  overflow: hidden;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.gridImage {
+  position: absolute;
+  top: 68.64px;
+  left: 0;
+  width: 100%;
+  height: 1102.46px;
+  object-fit: fill;
+}
+
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.layout {
+  position: relative;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+}
+
+/* Figma 54:21 — 180px Bold, tracking -9 */
+.code {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-180);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-900);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 54:22 — 48px / 58px Bold, tracking -0.96 */
+.headline {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-48);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-58);
+  letter-spacing: var(--orv-letter-spacing-tight-096);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 54:23 — 19px / 31px Regular, secondary, 720 wide */
+.sub {
+  font-family: var(--orv-font-family-primary);
+  font-size: 19px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-31);
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-32) 0;
+  max-width: 720px;
+}
+
+/* Figma 54:24 — 16px gap */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-16);
+  flex-wrap: wrap;
+}
+
+/* Figma 54:25 / 54:27 — CTA gradient pill and glass pill */
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--orv-space-16) var(--orv-space-32);
+  border-radius: var(--orv-radius-full);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
+  transition: opacity var(--orv-duration-fast) var(--orv-ease-default),
+              border-color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.primaryCta {
+  background: var(--orv-gradient-cta-primary);
+  color: var(--orv-text-on-brand);
+}
+
+.primaryCta:hover {
+  opacity: 0.92;
+}
+
+.secondaryCta {
+  background-color: var(--orv-color-alpha-white-4);
+  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  color: var(--orv-text-primary);
+}
+
+.secondaryCta:hover {
+  border-color: var(--orv-border-glass);
+}
+
+.primaryCta:focus-visible,
+.secondaryCta:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+/* Figma 114:9 — 352px icon at x=992 y=155 */
+.visual {
+  position: absolute;
+  top: 27px;
+  right: 0;
+  width: 352px;
+  height: 352px;
+  pointer-events: none;
+}
+
+.visualImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Figma 54:29 — 64px above the label, then 24px to the cards */
+.links {
+  padding-top: var(--orv-space-64);
+}
+
+/* Figma 54:30 — 11px SemiBold, tertiary, tracking 1.32 */
+.linksLabel {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-wide-132);
+  color: var(--orv-text-tertiary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 54:31 — 4 equal cards, 24px gutters */
+.linkRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--orv-layout-gutter);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linkItem {
+  display: flex;
+}
+
+/* Figma 54:32 — glass card, gradient 154.54deg, r16, padding 24, gap 8 */
+.linkCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  width: 100%;
+  padding: var(--orv-space-24);
+  border-radius: var(--orv-radius-16);
+  background: linear-gradient(
+    154.54deg,
+    rgba(255, 255, 255, 0.08) 14.6%,
+    rgba(255, 255, 255, 0.02) 85.4%
+  );
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-blur-sm);
+  -webkit-backdrop-filter: var(--orv-blur-sm);
+  box-shadow: var(--orv-shadow-card-sm);
+  text-decoration: none;
+  overflow: hidden;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
+              transform var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.linkCard:hover,
+.linkCard:focus-visible {
+  border-color: var(--orv-border-active);
+  transform: translateY(-4px);
+}
+
+.linkCard:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+/* Figma 54:33 — 20px Bold */
+.linkTitle {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+}
+
+/* Figma 54:34 — 15px / 24px Regular, secondary */
+.linkBody {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-secondary);
+}
+
+/* Figma 54:35 — 18px Medium, brand-400 */
+.linkArrow {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-18);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-brand-400);
+  transition: transform var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.linkCard:hover .linkArrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .code {
+    font-size: 140px;
+    letter-spacing: -7px;
+  }
+
+  .visual {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .section {
+    padding-top: 112px;
+  }
+
+  .code {
+    font-size: 120px;
+    letter-spacing: -6px;
+  }
+
+  .headline {
+    font-size: var(--orv-font-size-40);
+    line-height: var(--orv-line-height-48);
+    letter-spacing: var(--orv-letter-spacing-tight-080);
+  }
+
+  .linkRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* the decorative 3D visual would collide with the copy column */
+  .visual {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-top: 96px;
+  }
+
+  .code {
+    font-size: 88px;
+    letter-spacing: -4px;
+  }
+
+  .headline {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+
+  .sub {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-26);
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions > * {
+    flex: 1 1 100%;
+  }
+
+  .linkRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

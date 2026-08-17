@@ -15,7 +15,8 @@
 
 .topRow {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  /* Figma 86:992 — four equal flex-1 columns, 24px gutter */
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--orv-layout-gutter);
 }
 
@@ -60,6 +61,7 @@
 
 .emailText {
   font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-normal);
   font-weight: var(--orv-font-weight-medium);
   color: var(--orv-text-primary);
   text-decoration: none;
@@ -75,15 +77,17 @@
 .columnHeading {
   font-size: var(--orv-font-size-13);
   font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
   color: var(--orv-text-tertiary);
   letter-spacing: var(--orv-letter-spacing-wide-130);
-  text-transform: uppercase;
 }
 
 .linkList {
   display: flex;
   flex-direction: column;
-  gap: var(--orv-space-12);
+  gap: var(--orv-space-16);
+  /* the <li> line box, not the <a>, sets the row height */
+  line-height: var(--orv-line-height-normal);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -91,6 +95,7 @@
 
 .footerLink {
   font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-normal);
   color: var(--orv-text-secondary);
   text-decoration: none;
   transition: color var(--orv-duration-fast) var(--orv-ease-default);
@@ -101,12 +106,24 @@
 }
 
 /* Bottom Bar */
+/* Figma 86:1020 — 14px Regular, tertiary, leading normal (19px) */
 .bottomBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-normal);
   color: var(--orv-text-tertiary);
+}
+
+.bottomBar .footerLink {
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+}
+
+.bottomBar .footerLink:hover {
+  color: var(--orv-text-primary);
 }
 
 .legalLinks {
@@ -117,23 +134,60 @@
   padding: 0;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1024px) {
+/* ==========================================
+ * RESPONSIVE
+ * 4 -> 4 -> 2 (brand spans the row) -> 2 -> 1
+ * ========================================== */
+@media (max-width: 1120px) {
   .topRow {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--orv-space-48) var(--orv-layout-gutter);
+  }
+
+  .brandColumn {
+    grid-column: 1 / -1;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contentContainer {
     gap: var(--orv-space-48);
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .topRow {
     grid-template-columns: 1fr;
     gap: var(--orv-space-32);
+  }
+
+  .brandColumn {
+    max-width: 100%;
   }
 
   .bottomBar {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--orv-space-16);
+  }
+}
+
+/* Touch-friendly hit areas without changing the 1440 baseline rhythm */
+@media (max-width: 1120px) and (pointer: coarse), (max-width: 900px) {
+  .linkList {
+    gap: var(--orv-space-8);
+  }
+
+  .footerLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .emailText {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 }

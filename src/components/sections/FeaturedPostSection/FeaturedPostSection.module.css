@@ -1,0 +1,217 @@
+/* FeaturedPostSection — Figma node 64:23 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-32);
+  padding-bottom: var(--orv-space-64);
+}
+
+/* Figma 64:24 — 12px SemiBold, tertiary, wide tracking */
+.label {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  color: var(--orv-text-tertiary);
+  text-transform: uppercase;
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 64:25 — glass card, gradient 160.74deg, r24, padding 48, gap 64 */
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-64);
+  padding: var(--orv-space-48);
+  border-radius: var(--orv-radius-24);
+  background: linear-gradient(
+    160.74deg,
+    rgba(255, 255, 255, 0.1) 14.6%,
+    rgba(255, 255, 255, 0.025) 85.4%
+  );
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  overflow: hidden;
+}
+
+/* Figma 64:26 — 340px tall, r16, 1px subtle border, gradient 148deg */
+.image {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--orv-radius-16);
+  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  background: linear-gradient(
+    148deg,
+    rgba(124, 58, 237, 0.28) 0%,
+    rgba(8, 2, 17, 0.92) 71.43%
+  );
+  overflow: hidden;
+}
+
+.imageAsset {
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  opacity: 0.5;
+}
+
+/* Figma 64:28 — info column, 16px gaps */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Figma 64:29 — 13px meta row, category in brand, 12px gaps */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  flex-wrap: wrap;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+.category {
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-brand-400);
+}
+
+.dot {
+  color: var(--orv-text-tertiary);
+}
+
+/* Figma 64:35 — 36px / 44px Bold, tracking -0.72 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: 36px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 44px;
+  letter-spacing: -0.72px;
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* The whole card is not a link: the title carries the accessible name and the
+   read-more repeats it visually, so it is removed from the tab order. */
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.titleLink:hover {
+  color: var(--orv-brand-400);
+}
+
+.titleLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-4);
+  border-radius: var(--orv-radius-4);
+}
+
+/* Figma 64:36 — 17px / 28px Regular, secondary */
+.excerpt {
+  font-family: var(--orv-font-family-primary);
+  font-size: 17px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* Figma 64:37 — 15px SemiBold, brand-400 */
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-brand-400);
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.arrow {
+  transition: transform var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .card {
+    gap: var(--orv-space-48);
+    padding: var(--orv-space-40);
+  }
+
+  .title {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+}
+
+/* Tablet portrait: the 544px image and 544px copy column no longer both fit,
+   so the card stacks with the image leading. */
+@media (max-width: 900px) {
+  .card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--orv-space-32);
+    padding: var(--orv-space-32);
+  }
+
+  .image {
+    flex: none;
+    width: 100%;
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: var(--orv-space-24);
+    border-radius: var(--orv-radius-16);
+  }
+
+  .image {
+    height: 190px;
+  }
+
+  .title {
+    font-size: var(--orv-font-size-28);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+
+  .excerpt {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-26);
+  }
+}

@@ -1,0 +1,546 @@
+/* Blog Post sections — Figma node 64:158
+ *
+ * One 720px reading measure runs through the header, body and author bio,
+ * centred in the 1248 content box.
+ */
+
+/* ---------- Article Header (64:172) ---------- */
+.headerSection {
+  position: relative;
+  overflow: hidden;
+  padding-top: 220px;
+  padding-bottom: var(--orv-space-64);
+}
+
+.headerGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(120%, 1730px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -55%);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(48, 7, 84, 0.85) 0%,
+    rgba(48, 7, 84, 0.5) 37.5%,
+    rgba(48, 7, 84, 0.22) 58.3%,
+    rgba(48, 7, 84, 0) 100%
+  );
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+/* Figma centres the article column on a 720 measure */
+.measure {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumb {
+  margin-bottom: var(--orv-space-24);
+}
+
+.crumbList {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+}
+
+.crumbLink {
+  color: var(--orv-text-tertiary);
+  text-decoration: none;
+  outline: none;
+  transition: color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.crumbLink:hover {
+  color: var(--orv-text-primary);
+}
+
+.crumbLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+  border-radius: var(--orv-radius-4);
+}
+
+.crumbSep {
+  color: var(--orv-text-tertiary);
+}
+
+.crumbCurrent {
+  color: var(--orv-brand-400);
+}
+
+/* Figma 64:176 — 44px / 54px Bold, tracking -0.88 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: 44px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 54px;
+  letter-spacing: -0.88px;
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 64:177 — 19px / 31px Regular, secondary */
+.standfirst {
+  font-family: var(--orv-font-family-primary);
+  font-size: 19px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-31);
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-32) 0;
+}
+
+/* Figma 64:178 — avatar + name/meta */
+.byline {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-16);
+}
+
+.avatar,
+.authorAvatar {
+  display: block;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-gradient-primary);
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+}
+
+.bylineText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-4);
+  min-width: 0;
+}
+
+.authorName {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+}
+
+.bylineMeta {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+}
+
+/* ---------- Article Image (64:188) ---------- */
+.imageSection {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    158deg,
+    rgba(124, 58, 237, 0.32) 0%,
+    rgba(8, 2, 17, 0.94) 71.43%
+  );
+}
+
+.imageAsset {
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-text-tertiary);
+  opacity: 0.5;
+}
+
+/* ---------- Article Body (64:191) ---------- */
+.bodySection {
+  position: relative;
+  padding-top: var(--orv-space-96);
+  padding-bottom: var(--orv-space-64);
+}
+
+.prose {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Figma 64:192 — lead paragraph, 21px / 36px, primary */
+.lead {
+  font-family: var(--orv-font-family-primary);
+  font-size: 21px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 36px;
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-40) 0;
+}
+
+/* Figma 64:194 — 28px Bold section heading */
+.h2 {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-28);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-028);
+  color: var(--orv-text-primary);
+  margin: var(--orv-space-40) 0 var(--orv-space-20) 0;
+}
+
+/* Figma 64:196 — 17px / 34px Regular, secondary */
+.paragraph {
+  font-family: var(--orv-font-family-primary);
+  font-size: 17px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 34px;
+  color: var(--orv-text-secondary);
+  margin: 0 0 var(--orv-space-24) 0;
+}
+
+/* Figma 64:206 — pull quote with a 2px brand rule on the left */
+.quote {
+  border-left: 2px solid var(--orv-brand-400);
+  padding-left: var(--orv-space-32);
+  margin: var(--orv-space-40) 0;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-22);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 34px;
+  letter-spacing: var(--orv-letter-spacing-normal);
+  color: var(--orv-text-primary);
+}
+
+.list {
+  list-style: none;
+  margin: 0 0 var(--orv-space-24) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-16);
+  font-family: var(--orv-font-family-primary);
+  font-size: 17px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-secondary);
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  margin-top: 11px;
+  border-radius: var(--orv-radius-full);
+  background-color: var(--orv-brand-400);
+  flex-shrink: 0;
+}
+
+/* Figma 64:214 — inline diagram band, 380 tall, r16, with a caption below */
+.figure {
+  margin: var(--orv-space-40) 0;
+}
+
+.figureBand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 380px;
+  border-radius: var(--orv-radius-16);
+  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  background: linear-gradient(
+    152deg,
+    rgba(124, 58, 237, 0.28) 0%,
+    rgba(8, 2, 17, 0.92) 71.43%
+  );
+  overflow: hidden;
+}
+
+.figurePlaceholder {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-text-tertiary);
+  opacity: 0.5;
+}
+
+.figureCaption {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: var(--orv-space-16) 0 0 0;
+}
+
+/* ---------- Author Bio (64:226) ---------- */
+.authorSection {
+  position: relative;
+  padding-top: var(--orv-space-32);
+  padding-bottom: var(--orv-space-64);
+}
+
+.authorCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-24);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--orv-space-32);
+  border-radius: var(--orv-radius-16);
+  background: var(--orv-card-glass-bg);
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  box-sizing: border-box;
+}
+
+.authorAvatar {
+  width: 64px;
+  height: 64px;
+}
+
+.authorText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  min-width: 0;
+}
+
+.authorCardName {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+.authorCardBio {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* ---------- Related Posts (64:232) ---------- */
+.relatedSection {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
+}
+
+.relatedEyebrow {
+  margin-bottom: var(--orv-space-24);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--orv-layout-card-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.relatedItem {
+  display: flex;
+}
+
+.relatedCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+  width: 100%;
+  padding: var(--orv-space-32);
+  border-radius: var(--orv-radius-16);
+  background: var(--orv-card-glass-bg);
+  border: var(--orv-card-glass-border);
+  backdrop-filter: var(--orv-card-glass-blur);
+  -webkit-backdrop-filter: var(--orv-card-glass-blur);
+  box-shadow: var(--orv-card-glass-shadow);
+  box-sizing: border-box;
+  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
+              transform var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.relatedCard:hover,
+.relatedCard:focus-within {
+  border-color: var(--orv-border-active);
+  transform: translateY(-4px);
+}
+
+.relatedMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  flex-wrap: wrap;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+.relatedCategory {
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-brand-400);
+}
+
+.relatedTitle {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 27px;
+  letter-spacing: -0.2px;
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+.relatedLink {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.relatedLink:hover {
+  color: var(--orv-brand-400);
+}
+
+.relatedLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-4);
+  border-radius: var(--orv-radius-4);
+}
+
+.relatedExcerpt {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-25);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .title {
+    font-size: var(--orv-font-size-40);
+    line-height: var(--orv-line-height-48);
+    letter-spacing: var(--orv-letter-spacing-tight-080);
+  }
+}
+
+@media (max-width: 1120px) {
+  .headerSection {
+    padding-top: 188px;
+  }
+
+  .imageSection {
+    height: 480px;
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .headerSection {
+    padding-top: 152px;
+  }
+
+  .title {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+
+  .standfirst {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-26);
+  }
+
+  .imageSection {
+    height: 260px;
+  }
+
+  .bodySection {
+    padding-top: var(--orv-space-48);
+  }
+
+  .lead {
+    font-size: var(--orv-font-size-18);
+    line-height: var(--orv-line-height-30);
+  }
+
+  .paragraph,
+  .listItem {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-28);
+  }
+
+  .h2 {
+    font-size: var(--orv-font-size-22);
+    letter-spacing: var(--orv-letter-spacing-normal);
+  }
+
+  .quote {
+    font-size: var(--orv-font-size-18);
+    line-height: var(--orv-line-height-30);
+    padding-left: var(--orv-space-20);
+  }
+
+  .authorCard {
+    flex-direction: column;
+    gap: var(--orv-space-16);
+    padding: var(--orv-space-24);
+  }
+
+  .relatedGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .relatedCard {
+    padding: var(--orv-space-24);
+  }
+
+  .figureBand {
+    height: 220px;
+  }
+}

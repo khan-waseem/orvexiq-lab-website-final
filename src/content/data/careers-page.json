@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "headlineLine1": "Build systems that outlast",
+    "headlineLine2": "the projects.",
+    "subdescription": "We hire slowly and keep teams small. If you have been frustrated by design that stops at handoff, you will recognize how we work.",
+    "heroIconAssetUrl": "/assets/careers/careers-hero-icon.png"
+  },
+  "whyUs": {
+    "eyebrow": "WHAT IT IS LIKE",
+    "headline": "Small team. Real ownership.",
+    "perks": [
+      {
+        "id": "pk-1",
+        "title": "You own the outcome",
+        "body": "Not a ticket queue. You take a problem from first conversation to what ships, and stay through build."
+      },
+      {
+        "id": "pk-2",
+        "title": "Remote, with overlap",
+        "body": "Work where you want. Four hours of daily overlap so decisions happen in conversation, not threads."
+      },
+      {
+        "id": "pk-3",
+        "title": "Time to go deep",
+        "body": "Two focus days a week with no meetings. Systems work does not happen in thirty-minute gaps."
+      },
+      {
+        "id": "pk-4",
+        "title": "Learning budget",
+        "body": "A yearly budget for courses, conferences and tools — with time set aside to actually use it."
+      }
+    ]
+  },
+  "openRoles": {
+    "eyebrow": "OPEN ROLES",
+    "headlineTemplate": "{count} seats open right now",
+    "emptyHeadline": "No open seats right now",
+    "footnote": "Nothing that fits? Send us your work anyway — ",
+    "footnoteEmail": "hello@orvexiq.com"
+  },
+  "ctaSection": {
+    "eyebrow": "START A PROJECT",
+    "headlineLine1": "Have something complex",
+    "headlineLine2": "to build?",
+    "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
+    "subdescriptionLine2": "not a pitch deck.",
+    "primaryCtaText": "Start a Project",
+    "emailCtaText": "hello@orvexiq.com"
+  },
+  "seo": {
+    "title": "Careers — Orvexiq Lab",
+    "description": "Open roles at Orvexiq Lab. We hire slowly, keep teams small, and stay through build."
+  }
+}

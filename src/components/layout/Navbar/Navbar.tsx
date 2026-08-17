@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/primitives/Button';
@@ -44,8 +45,17 @@ export const Navbar: React.FC = () => {
     <header className={styles.header}>
       <nav className={styles.navPill} aria-label="Main Navigation">
         {/* Brand Lockup */}
+        {/* Figma 183:139 — the nav lockup uses the exported 40px ring mark,
+            not the lettered square used in the footer (86:995). */}
         <Link href="/" className={styles.brandLink} aria-label="Orvexiq Lab Home">
-          <div className={styles.logoMark}>O</div>
+          <Image
+            src="/assets/brand/logo-mark.svg"
+            alt=""
+            width={40}
+            height={40}
+            className={styles.logoMark}
+            priority
+          />
           <span className={styles.brandText}>Orvexiq Lab</span>
         </Link>
 

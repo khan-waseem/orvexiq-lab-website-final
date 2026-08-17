@@ -3,8 +3,8 @@
   position: relative;
   width: 100%;
   background-color: var(--orv-surface-canvas);
-  padding-top: var(--orv-space-96);
-  padding-bottom: var(--orv-space-96);
+  padding-top: var(--orv-layout-section-padding-md);
+  padding-bottom: var(--orv-layout-section-padding-md);
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -42,13 +42,13 @@
   min-width: 0;
 }
 
-/* Exact 64px Metric Value Typography (Node 218:586) */
+/* Figma 86:953 — 64px Bold, tracking -1.92, leading normal */
 .metricValue {
   font-family: var(--orv-font-family-primary);
-  font-size: 64px;
+  font-size: var(--orv-font-size-64);
   font-weight: var(--orv-font-weight-bold);
-  line-height: 1;
-  letter-spacing: -1.92px;
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-192);
   color: var(--orv-text-primary);
   margin: 0;
 }
@@ -59,30 +59,48 @@
   opacity: 0.5;
 }
 
-/* Stat Label Typography (Node 218:587) */
+/* Figma 86:954 — 16px Medium, leading normal */
 .statLabel {
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-16);
   font-weight: var(--orv-font-weight-medium);
-  line-height: 1.4;
+  line-height: var(--orv-line-height-normal);
   color: var(--orv-text-secondary);
   margin: 0;
 }
 
-/* Vertical Column Divider (Node 218:588) */
+/* Figma 86:955 — 1x72 rule */
 .divider {
-  width: 1px;
-  height: 72px;
+  width: var(--orv-border-width-default);
+  height: var(--orv-space-72);
   background-color: var(--orv-border-subtle);
   flex-shrink: 0;
 }
 
-/* Responsive Reflow Media Queries */
-@media (max-width: 1024px) {
+/* ==========================================
+ * RESPONSIVE
+ * 4 -> 4 -> 4 -> 2 -> 2. Stats stay in a row as long as the numerals fit;
+ * a single column of four would read as a list, not a stat band.
+ * ========================================== */
+@media (max-width: 1400px) {
+  .metricValue {
+    font-size: var(--orv-font-size-56);
+    letter-spacing: var(--orv-letter-spacing-tight-112);
+  }
+}
+
+@media (max-width: 1120px) {
+  .metricValue {
+    font-size: var(--orv-font-size-48);
+    letter-spacing: var(--orv-letter-spacing-tight-096);
+  }
+}
+
+@media (max-width: 900px) {
   .statsRow {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--orv-space-32);
+    gap: var(--orv-space-40) var(--orv-space-32);
   }
 
   .divider {
@@ -90,19 +108,17 @@
   }
 }
 
-@media (max-width: 640px) {
-  .impactSection {
-    padding-top: var(--orv-space-64);
-    padding-bottom: var(--orv-space-64);
+@media (max-width: 600px) {
+  .contentContainer {
+    gap: var(--orv-space-32);
   }
 
   .statsRow {
-    grid-template-columns: 1fr;
-    gap: var(--orv-space-24);
+    gap: var(--orv-space-32) var(--orv-space-24);
   }
 
   .metricValue {
-    font-size: 48px;
-    letter-spacing: -1.2px;
+    font-size: var(--orv-font-size-40);
+    letter-spacing: var(--orv-letter-spacing-tight-080);
   }
 }

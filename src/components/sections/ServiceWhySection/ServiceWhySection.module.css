@@ -1,0 +1,73 @@
+/* ServiceWhySection — Figma node 124:37 */
+.section {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Figma 124:41 — 40px / 48px Bold, tracking -0.8 */
+.headline {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-40);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-48);
+  letter-spacing: var(--orv-letter-spacing-tight-080);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-24);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Figma 124:45 — 17px / 29px Regular, secondary */
+.paragraph {
+  font-family: var(--orv-font-family-primary);
+  font-size: 17px;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 29px;
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 1400px) {
+  .row { gap: var(--orv-space-64); }
+  .headline {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+}
+
+@media (max-width: 1120px) {
+  .row { flex-direction: column; gap: var(--orv-space-32); }
+  .heading, .body { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: var(--orv-font-size-28);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+  .headline br { display: none; }
+  .paragraph { font-size: var(--orv-font-size-16); line-height: var(--orv-line-height-26); }
+}

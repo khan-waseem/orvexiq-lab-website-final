@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
 import { GlassCard } from '@/components/primitives/GlassCard';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { ServiceItem } from '@/content/schemas/service.schema';
@@ -19,7 +18,7 @@ export interface ServicesSectionProps {
  * Requirements:
  * - 4 service cards in 2x2 desktop grid (Product Strategy, UX/UI, Design Systems, AI)
  * - Service title, description, capabilities list, 3D icon
- * - Reuses Eyebrow, GlassCard, SectionWrapper, PageContainer primitives
+ * - Reuses GlassCard, SectionWrapper, PageContainer primitives
  * - 100% token-governed and content-repository compliant
  */
 export const ServicesSection: React.FC<ServicesSectionProps> = ({
@@ -27,7 +26,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   services,
 }) => {
   return (
-    <SectionWrapper theme="canvas" padding="lg" id="services">
+    /*
+     * padding="none" is deliberate: in Figma (86:866) the Services section has
+     * zero internal vertical padding — its eyebrow sits at local y=0 and the
+     * card grid ends flush with the section box. The 128px rhythm above and
+     * below is carried by Selected Work's bottom padding and Approach's top
+     * padding. Giving this section its own padding added 242px of dead space.
+     */
+    <SectionWrapper theme="canvas" padding="none" id="services" className={styles.servicesSection}>
       {/* Background Radial Glow */}
       <div className={styles.servicesGlow} aria-hidden="true">
         <Image
@@ -41,9 +47,18 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
       <PageContainer>
         <div className={styles.contentContainer}>
-          {/* Header Title Composition */}
+          {/*
+            Header Title Composition.
+            Services does NOT use the shared Eyebrow/h2 treatment: Figma 86:867
+            is a 20px Light label with a 29.64px dash and a 13px gap, and 86:870
+            is 40px SemiBold at normal leading — unlike the 12px eyebrow / 48px
+            Bold headline used by Selected Work and Approach.
+          */}
           <div className={styles.titleGroup}>
-            <Eyebrow align="left">{content.eyebrow}</Eyebrow>
+            <div className={styles.servicesEyebrow}>
+              <span className={styles.servicesEyebrowDash} aria-hidden="true" />
+              <span className={styles.servicesEyebrowLabel}>{content.eyebrow}</span>
+            </div>
             <h2 className={styles.headlineText}>
               {content.headlineLine1}
               <br />

@@ -1,0 +1,108 @@
+/* StorySection — Figma node 32:24 */
+.section {
+  position: relative;
+  padding-top: var(--orv-layout-section-padding-lg);
+  padding-bottom: var(--orv-layout-section-padding-lg);
+}
+
+/* Figma 32:24 — heading 460 | gap 96 | body fills */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-96);
+  width: 100%;
+}
+
+/* Figma 32:25 — column, 16px gap */
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  width: 460px;
+  flex-shrink: 0;
+}
+
+/* Figma 32:29 — 44px / 52px Bold, tracking -0.88 */
+.headline {
+  font-family: var(--orv-font-family-primary);
+  font-size: 44px;
+  font-weight: var(--orv-font-weight-bold);
+  line-height: 52px;
+  letter-spacing: -0.88px;
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 32:30 — 24px gaps between paragraphs */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-24);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Figma 32:31 — 18px / 30px Regular, secondary */
+.paragraph {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-18);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-30);
+  color: var(--orv-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1400px) {
+  .row {
+    gap: var(--orv-space-64);
+  }
+
+  .heading {
+    width: 400px;
+  }
+
+  .headline {
+    font-size: var(--orv-font-size-40);
+    line-height: var(--orv-line-height-48);
+    letter-spacing: var(--orv-letter-spacing-tight-080);
+  }
+}
+
+/* Below tablet landscape the 460px heading and the body no longer both read,
+   so the heading becomes a stacked lead-in. */
+@media (max-width: 1120px) {
+  .row {
+    flex-direction: column;
+    gap: var(--orv-space-40);
+  }
+
+  .heading {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: var(--orv-font-size-32);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-056);
+  }
+
+  /* the 1440 line breaks fight the phone measure */
+  .headline br {
+    display: none;
+  }
+
+  .paragraph {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-26);
+  }
+}

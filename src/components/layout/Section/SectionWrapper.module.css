@@ -35,11 +35,7 @@
   padding-bottom: 0;
 }
 
-@media (max-width: 768px) {
-  .paddingSm,
-  .paddingMd,
-  .paddingLg {
-    padding-top: var(--orv-layout-section-padding-mobile);
-    padding-bottom: var(--orv-layout-section-padding-mobile);
-  }
-}
+/*
+ * No local breakpoints: the section padding tokens are redefined across the
+ * breakpoint ladder in semantics.css.
+ */
