@@ -157,6 +157,58 @@
         ]
       },
       {
+        "type": "decision",
+        "eyebrow": "03 · THE APPROACH",
+        "headline": "A worklist, not a dashboard",
+        "paragraphs": [
+          "The home screen answers one question: what must I do today. It opens on two groups only — windows closing now, and windows closing this week — each row carrying the patient, the visit, the window and the single action that resolves it. Everything a dashboard would show is still in the product; none of it is on this screen.",
+          "The trade-off: a study manager gets almost nothing out of this screen. We accepted that. A screen built to serve both roles equally serves neither, so navigation and the home screen change by role — which is more to build and more to explain."
+        ],
+        "layout": "stacked",
+        "shots": [
+          {
+            "placeholder": "Today — worklist",
+            "caption": "Today — two windows need you"
+          }
+        ]
+      },
+      {
+        "type": "decision",
+        "eyebrow": "04 · THE APPROACH",
+        "headline": "No date is ever shown alone",
+        "paragraphs": [
+          "Every date in the product is rendered as its window: the range, a marker for where today sits inside it, and how much room is left. A date tells you when something is due. A window tells you whether you still have time to do anything about it — which is the only question the coordinator is actually asking.",
+          "The trade-off: a window costs roughly three times the horizontal space of a date. The visit table therefore caps at eight visits per view and pages beyond that, and the worklist rows are taller than a conventional table. We spent density to buy judgement."
+        ],
+        "layout": "aside",
+        "shots": [
+          {
+            "placeholder": "Visit windows",
+            "caption": "Visit windows across one site's patients"
+          }
+        ]
+      },
+      {
+        "type": "decision",
+        "eyebrow": "05 · THE APPROACH",
+        "headline": "Capture the reason at the moment the rule breaks",
+        "paragraphs": [
+          "When a booking has to fall outside the window, the reason is captured right there — category, root cause, and what happened, in the coordinator's own words. The protocol deviation is filed from that, timestamped, with the audit trail attached and the monitor notified. The deviation writes itself, at the one moment when someone still remembers the detail.",
+          "The trade-off: this puts a form in front of someone at their most rushed moment. We cut it to three fields and pre-filled two from the booking, but it is still friction — deliberately. The alternative is reconstructing the same facts six weeks later from memory and source documents."
+        ],
+        "layout": "stacked",
+        "shots": [
+          {
+            "placeholder": "Out-of-window justification",
+            "caption": "Out-of-window justification"
+          },
+          {
+            "placeholder": "Filed deviation",
+            "caption": "The deviation, filed with its audit trail"
+          }
+        ]
+      },
+      {
         "type": "constraints",
         "eyebrow": "06 · WHAT COULD NOT BE CHANGED",
         "headlineLines": [
@@ -256,8 +308,8 @@
     ],
     "nextCase": {
       "eyebrow": "MORE WORK",
-      "title": "See the rest of the work",
-      "body": "Further case studies are being written up.",
+      "title": "More work",
+      "body": "Browse the rest of the case studies.",
       "href": "/case-studies"
     },
     "ctaSection": {

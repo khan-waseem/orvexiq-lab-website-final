@@ -140,6 +140,50 @@ const Block: React.FC<{ block: CaseBlock }> = ({ block }) => {
         </SectionWrapper>
       );
 
+    case 'decision': {
+      const aside = block.layout === 'aside' && block.shots.length === 1;
+      const shots = (
+        <ul className={`${styles.shotGrid} ${block.shots.length > 1 ? styles.shotGridPair : ''}`}>
+          {block.shots.map((sh) => (
+            <li key={sh.caption} className={styles.shot}>
+              <div className={styles.shotBand}>
+                <span className={styles.shotPlaceholder}>{sh.placeholder}</span>
+              </div>
+              <p className={styles.shotCaption}>{sh.caption}</p>
+            </li>
+          ))}
+        </ul>
+      );
+      const copy = (
+        <div className={styles.decisionCopy}>
+          <p className={styles.sectionEyebrow}>{block.eyebrow}</p>
+          <h2 className={styles.decisionHeadline}>{block.headline}</h2>
+          {block.paragraphs.map((p) => (
+            <p key={p} className={styles.sectionBody}>{p}</p>
+          ))}
+        </div>
+      );
+
+      return (
+        <SectionWrapper theme="canvas" padding="custom" className={styles.block}>
+          <PageContainer>
+            {aside ? (
+              /* Figma 149:153 sets the shot beside the copy rather than under it */
+              <div className={styles.decisionAside}>
+                {shots}
+                {copy}
+              </div>
+            ) : (
+              <>
+                {copy}
+                {shots}
+              </>
+            )}
+          </PageContainer>
+        </SectionWrapper>
+      );
+    }
+
     case 'constraints':
       return (
         <SectionWrapper theme="canvas" padding="custom" className={styles.block}>

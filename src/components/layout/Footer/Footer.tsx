@@ -26,7 +26,7 @@ const COMPANY_LINKS: FooterLinkItem[] = [
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
-  { label: 'Careers', href: '/about' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -125,12 +125,12 @@ export const Footer: React.FC = () => {
             <p>© {currentYear} Orvexiq Lab. All rights reserved.</p>
             <ul className={styles.legalLinks}>
               <li>
-                <Link href="#" className={styles.footerLink}>
+                <Link href="/privacy" className={styles.footerLink}>
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link href="#" className={styles.footerLink}>
+                <Link href="/terms" className={styles.footerLink}>
                   Terms
                 </Link>
               </li>

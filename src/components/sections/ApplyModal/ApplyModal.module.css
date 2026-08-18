@@ -1,0 +1,297 @@
+/* Apply Modal — Figma nodes 206:286 / 42:364, over Job Detail (42:10) */
+
+/* Matches the sticky apply-card CTA it replaces (38:x) */
+.opener {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--orv-space-16) var(--orv-space-32);
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-gradient-cta-primary);
+  border: none;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-16);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-on-brand);
+  cursor: pointer;
+  outline: none;
+  transition: opacity var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.opener:hover { opacity: 0.92; }
+
+.opener:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--orv-z-modal, 1000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--orv-space-24);
+  background-color: rgba(5, 1, 15, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  overflow-y: auto;
+}
+
+/* Figma 206:286 — 638x721 card, surface-system, r24 */
+.modal {
+  width: 100%;
+  max-width: 638px;
+  max-height: calc(100vh - var(--orv-space-48));
+  overflow-y: auto;
+  padding: 47px;
+  border-radius: var(--orv-radius-24);
+  background-color: var(--orv-surface-system);
+  border: var(--orv-border-width-default) solid var(--orv-border-glass);
+  box-shadow: var(--orv-shadow-glass-lg);
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Figma 206:287 */
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-24);
+  margin-bottom: var(--orv-space-24);
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Figma 206:289 — 28px Bold, tracking -0.56 */
+.title {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-28);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-normal);
+  letter-spacing: var(--orv-letter-spacing-tight-056);
+  color: var(--orv-text-primary);
+  margin: 0;
+}
+
+/* Figma 206:290 — 15px Medium */
+.subtitle {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+/* Figma 206:291 — 36px square, alpha-white-8, r8 */
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: var(--orv-radius-8);
+  background-color: var(--orv-color-alpha-white-8);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-text-primary);
+  cursor: pointer;
+  outline: none;
+  transition: background-color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.close:hover { background-color: var(--orv-color-alpha-white-12); }
+
+.close:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-24);
+}
+
+/* Figma 206:293 / 206:306 — paired fields, 16px gap */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--orv-space-16);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+}
+
+.required { color: var(--orv-brand-400); }
+
+/* Figma 206:298 — alpha-white-8, 1px border, r8, padding 16 */
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--orv-space-16);
+  border-radius: var(--orv-radius-8);
+  background-color: var(--orv-color-alpha-white-8);
+  border: var(--orv-border-width-default) solid var(--orv-border-default);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-primary);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color var(--orv-duration-fast) var(--orv-ease-default);
+}
+
+.input::placeholder,
+.textarea::placeholder { color: var(--orv-text-placeholder); }
+
+.input:focus-visible,
+.textarea:focus-visible { border-color: var(--orv-border-active); }
+
+/* Figma 206:326 — 110px tall */
+.textarea {
+  height: 110px;
+  resize: vertical;
+  min-height: 88px;
+}
+
+/* Figma 206:320 — dashed dropzone, alpha-white-4 */
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--orv-space-24);
+  border-radius: var(--orv-radius-8);
+  background-color: var(--orv-color-alpha-white-4);
+  border: var(--orv-border-width-default) dashed var(--orv-border-default);
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-text-tertiary);
+  text-align: center;
+}
+
+/* Figma 206:328 */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-24);
+  flex-wrap: wrap;
+}
+
+.retention {
+  flex: 1 1 220px;
+  min-width: 0;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-20, 20px);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+.retentionLink {
+  color: var(--orv-brand-400);
+  text-decoration: none;
+  outline: none;
+}
+
+.retentionLink:hover { color: var(--orv-brand-300); }
+
+.retentionLink:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+  border-radius: var(--orv-radius-4);
+}
+
+/* Figma 206:330 — CTA gradient pill, 15px SemiBold */
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--orv-space-16) var(--orv-space-32);
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-gradient-cta-primary);
+  border: none;
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-semibold);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-on-brand);
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.submit:focus-visible {
+  outline: var(--orv-border-width-default) solid var(--orv-border-active);
+  outline-offset: var(--orv-space-2);
+}
+
+.submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Not in Figma: states plainly that the form has no endpoint yet. */
+.note {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 600px) {
+  .overlay {
+    padding: var(--orv-space-12);
+    align-items: flex-start;
+  }
+
+  .modal {
+    padding: var(--orv-space-24);
+    border-radius: var(--orv-radius-16);
+    max-height: calc(100vh - var(--orv-space-24));
+  }
+
+  .title { font-size: var(--orv-font-size-22); }
+
+  /* paired fields stack rather than squeezing two inputs onto a phone row */
+  .row {
+    flex-direction: column;
+    gap: var(--orv-space-20);
+  }
+
+  .footer { align-items: stretch; }
+  .submit { width: 100%; }
+}

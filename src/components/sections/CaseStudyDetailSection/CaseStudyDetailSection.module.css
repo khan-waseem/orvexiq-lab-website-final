@@ -871,3 +871,124 @@
   .nextCard { flex-direction: column; align-items: flex-start; gap: var(--orv-space-16); }
   .nextTitle { font-size: var(--orv-font-size-22); }
 }
+
+/* ---------- Decision (149:144 / :153 / :164) ---------- */
+.decisionCopy {
+  max-width: 900px;
+  margin-bottom: var(--orv-space-48);
+}
+
+/* Figma 149:146 — 40px Bold, tracking -0.8 */
+.decisionHeadline {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-40);
+  font-weight: var(--orv-font-weight-bold);
+  line-height: var(--orv-line-height-48);
+  letter-spacing: var(--orv-letter-spacing-tight-080);
+  color: var(--orv-text-primary);
+  margin: 0 0 var(--orv-space-32) 0;
+}
+
+/* Figma 149:153 — single shot set beside the copy */
+.decisionAside {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-96);
+}
+
+.decisionAside .decisionCopy {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.decisionAside .shotGrid {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.shotGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--orv-layout-card-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shotGridPair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.shot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+}
+
+/* Product mock band — no asset exported, so the gradient placeholder stands in */
+.shotBand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1248 / 930;
+  border-radius: var(--orv-radius-16);
+  border: var(--orv-border-width-default) solid var(--orv-border-subtle);
+  background: linear-gradient(
+    155deg,
+    rgba(124, 58, 237, 0.24) 0%,
+    rgba(8, 2, 17, 0.94) 71.43%
+  );
+  overflow: hidden;
+}
+
+.shotGridPair .shotBand {
+  aspect-ratio: 612 / 500;
+}
+
+.decisionAside .shotBand {
+  aspect-ratio: 576 / 440;
+}
+
+.shotPlaceholder {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-text-tertiary);
+  opacity: 0.5;
+}
+
+.shotCaption {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: var(--orv-line-height-normal);
+  color: var(--orv-text-tertiary);
+  margin: 0;
+}
+
+@media (max-width: 1120px) {
+  .decisionAside {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--orv-space-40);
+  }
+
+  .decisionAside .decisionCopy,
+  .decisionAside .shotGrid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .decisionHeadline {
+    font-size: var(--orv-font-size-28);
+    line-height: var(--orv-line-height-38);
+    letter-spacing: var(--orv-letter-spacing-tight-028);
+  }
+
+  .shotGridPair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

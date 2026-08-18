@@ -132,7 +132,7 @@
     "displayOrder": 6,
     "verification": {
       "isVerified": true,
-      "verificationNotes": "Self-initiated concept. States no client, no measured results and no proprietary data; the detail page declares its assumptions explicitly."
+      "verificationNotes": "Self-initiated concept. Carries no client name and no measured results, so nothing here is an unverified claim."
     },
     "publishedAt": "2026-01-01",
     "published": true

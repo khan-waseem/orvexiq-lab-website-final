@@ -63,6 +63,21 @@ export const caseBlockSchema = z.discriminatedUnion('type', [
     paragraphs: z.array(z.string()),
   }),
 
+  /**
+   * Numbered approach section (149:144 / :153 / :164): copy plus one or two
+   * captioned product shots. `layout` selects the Figma arrangement —
+   * "stacked" runs copy above a full-width shot, "aside" sets a single shot
+   * beside the copy.
+   */
+  z.object({
+    type: z.literal('decision'),
+    eyebrow: z.string(),
+    headline: z.string(),
+    paragraphs: z.array(z.string()),
+    layout: z.enum(['stacked', 'aside']).default('stacked'),
+    shots: z.array(z.object({ placeholder: z.string(), caption: z.string() })),
+  }),
+
   /** Labelled constraint cards beside a heading (149:176). */
   z.object({
     type: z.literal('constraints'),

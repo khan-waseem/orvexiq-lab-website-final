@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { JobRole } from '@/content/schemas/careers-page.schema';
+import { ApplyModal } from '@/components/sections/ApplyModal';
 import styles from './JobDetailSection.module.css';
 
 export interface JobDetailSectionProps {
@@ -81,9 +82,10 @@ export const JobDetailSection: React.FC<JobDetailSectionProps> = ({ role }) => {
               <h2 className={styles.applyHeading}>{role.detail.applyHeading}</h2>
               <p className={styles.applyBody}>{role.detail.applyBody}</p>
 
-              <a className={styles.applyCta} href={applyHref}>
-                {role.detail.applyCtaLabel}
-              </a>
+              {/* Figma pairs "Apply now" with the Apply Modal (42:10 / 206:286).
+                  The modal owns its own open state; the mailto stays as the
+                  working route since there is no application endpoint. */}
+              <ApplyModal role={role} mailtoHref={applyHref} />
 
               <dl className={styles.detailList}>
                 <div className={styles.detailRow}>
