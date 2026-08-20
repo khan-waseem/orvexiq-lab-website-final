@@ -1,0 +1,78 @@
+/* PillEyebrow — the bordered capsule label that opens every landing section.
+   Figma landing: a 1px violet-tinted capsule flanked by a hairline that
+   terminates in a small glowing dot on each side. */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--orv-space-8);
+}
+
+.tail {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-6);
+}
+
+.line {
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.55));
+}
+
+.tailRight .line {
+  background: linear-gradient(to left, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.55));
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-purple-300);
+  box-shadow: 0 0 8px 1px rgba(168, 85, 247, 0.85);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  padding: 10px var(--orv-space-24);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  border-radius: var(--orv-radius-full);
+  background: rgba(124, 58, 237, 0.06);
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.18),
+    inset 0 0 12px rgba(124, 58, 237, 0.10);
+}
+
+.text {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-medium);
+  line-height: 1;
+  letter-spacing: var(--orv-letter-spacing-wide-300);
+  text-transform: uppercase;
+  color: var(--orv-text-secondary);
+  white-space: nowrap;
+}
+
+.icon {
+  display: inline-flex;
+  color: var(--orv-color-raw-purple-300);
+}
+
+@media (max-width: 640px) {
+  .line {
+    width: 18px;
+  }
+
+  .pill {
+    padding: 8px var(--orv-space-16);
+  }
+
+  .text {
+    font-size: var(--orv-font-size-11);
+    letter-spacing: var(--orv-letter-spacing-wide-240);
+  }
+}

@@ -50,6 +50,8 @@
    * 2. TYPOGRAPHY PRIMITIVES
    * ========================================== */
   --orv-font-family-primary: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Display serif used for the landing section headlines. */
+  --orv-font-family-display: var(--font-playfair), 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   --orv-font-weight-light: 300;
   --orv-font-weight-regular: 400;
@@ -67,6 +69,7 @@
   --orv-font-size-14: 14px;
   --orv-font-size-15: 15px;
   --orv-font-size-16: 16px;
+  --orv-font-size-17: 17px;
   --orv-font-size-18: 18px;
   --orv-font-size-20: 20px;
   --orv-font-size-22: 22px;
@@ -76,6 +79,7 @@
   --orv-font-size-40: 40px;
   --orv-font-size-48: 48px;
   --orv-font-size-56: 56px;
+  --orv-font-size-60: 60px;
   --orv-font-size-64: 64px;
   --orv-font-size-72: 72px;
   --orv-font-size-96: 96px;
@@ -118,6 +122,8 @@
   --orv-letter-spacing-wide-132: 1.32px;
   --orv-letter-spacing-wide-154: 1.54px;
   --orv-letter-spacing-wide-168: 1.68px;
+  --orv-letter-spacing-wide-240: 2.4px;
+  --orv-letter-spacing-wide-300: 3px;
 
   /* ==========================================
    * 3. SPACING SCALE PRIMITIVES (8pt / 4pt grid)
@@ -206,6 +212,11 @@
   --orv-gradient-cta-card: linear-gradient(146.1deg, rgba(124, 58, 237, 0.22) 0%, rgba(95, 25, 216, 0.05) 73.5%);
   --orv-gradient-cta-card-boxed: linear-gradient(142.2deg, rgba(124, 58, 237, 0.22) 0%, rgba(95, 25, 216, 0.05) 73.5%);
   --orv-gradient-cta-primary: linear-gradient(to right, #7c3aed, #5f19d8);
+
+  /* --- Landing display accents (serif headline highlight + ambient light) --- */
+  --orv-gradient-accent-text: linear-gradient(92deg, #c084fc 0%, #a855f7 45%, #7c3aed 100%);
+  --orv-gradient-glow-violet: radial-gradient(circle, rgba(124, 58, 237, 0.38) 0%, rgba(124, 58, 237, 0.10) 45%, rgba(124, 58, 237, 0) 72%);
+  --orv-gradient-glow-indigo: radial-gradient(circle, rgba(59, 76, 202, 0.32) 0%, rgba(59, 76, 202, 0.08) 48%, rgba(59, 76, 202, 0) 74%);
 
   /* ==========================================
    * 8. MOTION PRIMITIVES

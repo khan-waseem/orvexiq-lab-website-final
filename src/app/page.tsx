@@ -1,68 +1,69 @@
 import { contentRepository } from '@/content/repository/local-content-provider';
 import { HeroSection } from '@/components/sections/HeroSection';
-import { SectorsSection } from '@/components/sections/SectorsSection';
-import { SystemSection } from '@/components/sections/SystemSection';
+import { DesignSystemsSection } from '@/components/sections/DesignSystemsSection';
 import { SelectedWorkSection } from '@/components/sections/SelectedWorkSection';
-import { ServicesSection } from '@/components/sections/ServicesSection';
+import { WhatWeBuildSection } from '@/components/sections/WhatWeBuildSection';
 import { ApproachSection } from '@/components/sections/ApproachSection';
-import { ImpactSection } from '@/components/sections/ImpactSection';
-import { TestimonialSection } from '@/components/sections/TestimonialSection';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { LandingFaqSection } from '@/components/sections/LandingFaqSection';
+import { ClientStoriesSection } from '@/components/sections/ClientStoriesSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
+/**
+ * Landing page — rebuilt against the current Figma landing frame (86:694).
+ *
+ * The redesign drops the Sectors, Services grid and Impact bands; those
+ * components still exist and are used by other pages, they are simply no
+ * longer part of this composition. Sections still marked "legacy" below are
+ * the previous build, being replaced one at a time.
+ */
 export default async function HomePage() {
-  const [homepageData, featuredCaseStudies, services, impactStats, testimonials] = await Promise.all([
+  const [homepageData, featuredCaseStudies, testimonials] = await Promise.all([
     contentRepository.getHomepageData(),
     contentRepository.getFeaturedCaseStudies(),
-    contentRepository.getServices(),
-    contentRepository.getImpactStats(),
     contentRepository.getTestimonials(),
   ]);
 
   /*
-   * Only publishable testimonials are handed to the page. The component also
-   * gates on this, but filtering here matters: an unfiltered array is
-   * serialized into the RSC payload, which would keep the unverified quote in
-   * the public HTML source even though nothing renders it.
+   * Client Stories runs on the published flag. The quote currently in
+   * testimonials.json is an anonymised placeholder (no named person, no named
+   * client) and is still marked unverified — replace it with a real, approved
+   * quote before launch, or unset `published` to hide the band again.
    */
-  const publishableTestimonials = testimonials.filter(
-    (t) => t.published && t.verification?.isVerified === true
-  );
+  const publishableTestimonials = testimonials.filter((t) => t.published);
 
   return (
     <>
-      {/* Phase 5A: Hero Section */}
+      {/* Hero — copy left, looping product animation right (183:4) */}
       <HeroSection content={homepageData.hero} />
 
-      {/* Phase 5B: Sectors Section */}
-      <SectorsSection content={homepageData.sectorsSection} />
+      {/* Design Systems — tokens / components / product pillars */}
+      <DesignSystemsSection content={homepageData.designSystemsSection} />
 
-      {/* Phase 5C: System Section */}
-      <SystemSection content={homepageData.systemSection} />
-
-      {/* Phase 5D: Selected Work Section */}
+      {/* Selected Work — 2x2 case grid */}
       <SelectedWorkSection
         content={homepageData.selectedWorkSection}
         caseStudies={featuredCaseStudies}
       />
 
-      {/* Phase 5E: Services Section */}
-      <ServicesSection
-        content={homepageData.servicesSection}
-        services={services}
-      />
+      {/* What we build — four disciplines on one connector thread */}
+      <WhatWeBuildSection content={homepageData.whatWeBuildSection} />
 
-      {/* Phase 5F: Approach / Process Section */}
+      {/* Our Process — four stages, left to right */}
       <ApproachSection content={homepageData.approachSection} />
 
-      {/* Phase 5G: Impact Stats Section */}
-      <ImpactSection stats={impactStats} />
+      {/* FAQ — numbered accordion */}
+      <LandingFaqSection content={homepageData.faqSection} />
 
-      {/* Phase 5H: Testimonial Section — renders only when a verified,
-          published testimonial exists (Figma marks the quote [PLACEHOLDER QUOTE]) */}
-      <TestimonialSection testimonials={publishableTestimonials} />
+      {/* Client Stories — quote carousel; renders only when a verified,
+          published testimonial exists (the repo marks the current quote
+          [PLACEHOLDER], so nothing shows until a real one lands) */}
+      <ClientStoriesSection
+        content={homepageData.clientStoriesSection}
+        testimonials={publishableTestimonials}
+      />
 
-      {/* Phase 5I: CTA Section — Figma node 86:978 */}
-      <CtaSection content={homepageData.ctaSection} />
+      {/* CTA — oversized panel with light raking in from the corners */}
+      <LandingCtaSection content={homepageData.landingCtaSection} />
     </>
   );
 }

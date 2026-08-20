@@ -1,65 +1,90 @@
 import React from 'react';
-import Image from 'next/image';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
-import { Heading } from '@/components/primitives/Heading';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { DotGrid } from '@/components/decor/DotGrid';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
+import { STEP_ICONS } from './StepIcons';
 import styles from './ApproachSection.module.css';
 
 export interface ApproachSectionProps {
   content: HomepageContent['approachSection'];
 }
 
+/** Violet arrow marking the hand-off from one stage to the next. */
+const StepArrow: React.FC = () => (
+  <span className={styles.arrow} aria-hidden="true">
+    <svg width="26" height="12" viewBox="0 0 26 12" fill="none">
+      <path d="M0 6h23M18.5 1.5 24 6l-5.5 4.5" stroke="currentColor" strokeWidth="1.4"
+            strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </span>
+);
+
 /**
- * ApproachSection Component (1:1 Figma Match — Node 218:555)
+ * ApproachSection — landing band five, "Our Process".
  *
- * Requirements:
- * - 4 process stages: Discover (01), Define (02), Design (03), Deliver (04)
- * - Exact 1:1 Figma card proportions (294px min-width, 277px min-height, 128px top/bottom padding)
- * - 40px bold purple stage numbers, 22px bold stage titles, 15px/24px body text
- * - Reuses Eyebrow, SectionWrapper, PageContainer primitives
- * - 100% token-governed and content-repository compliant
+ * Four stage cards read left to right with an arrow between each. The number,
+ * glyph frame, title rule and the dot texture inside the outer cards are all
+ * drawn in markup.
  */
-export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => {
-  return (
-    <SectionWrapper theme="canvas" padding="lg" id="process" className={styles.approachSection}>
-      {/* Ambient Top-Left Purple Glow (Node 218:556) */}
-      <div className={styles.approachGlow} aria-hidden="true">
-        <Image
-          src="/assets/process/approach-glow.svg"
-          alt=""
-          width={632}
-          height={632}
-          className={styles.glowImage}
-        />
-      </div>
+export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => (
+  <SectionWrapper
+    padding="custom"
+    className={styles.section}
+    ariaLabelledBy="approach-heading"
+  >
+    <GlowRings side="left" size={1020} sparks={[[1, -30], [3, 30]]} />
+    <GlowRings side="right" size={940} sparks={[[2, 165], [1, 198]]} />
+    <DotGrid className={styles.dots} columns={7} rows={4} fade="to-right" />
 
-      <PageContainer>
-        <div className={styles.contentContainer}>
-          {/* Header Block (Node 218:557) */}
-          <div className={styles.headerBlock}>
-            <Eyebrow align="left">{content.eyebrow}</Eyebrow>
-            <Heading level="h2" align="left" className={styles.headlineText}>
-              {content.headline}
-            </Heading>
-            <p className={styles.supportingText}>{content.subdescription}</p>
-          </div>
+    <PageContainer className={styles.container}>
+      <SectionHeading
+        id="approach-heading"
+        eyebrow={content.eyebrow}
+        rule="solid"
+        sub={content.subdescription}
+      >
+        {content.headline}
+        <Accent>{content.headlineAccent}</Accent>
+      </SectionHeading>
 
-          {/* 4-Stage Horizontal Grid (Node 218:563) */}
-          <div className={styles.stepsGrid} role="list" aria-label="Process stages">
-            {content.steps.map((step) => (
-              <article key={step.id} className={styles.stepCard} role="listitem">
-                <span className={styles.stepNumber} aria-label={`Step ${step.stepNumber}`}>
-                  {step.stepNumber}
+      <ol className={styles.steps}>
+        {content.steps.map((step, index) => {
+          const Icon = STEP_ICONS[step.icon];
+          const isEdgeCard = index === 0 || index === content.steps.length - 1;
+
+          return (
+            <React.Fragment key={step.id}>
+              {index > 0 && <StepArrow />}
+
+              <li className={styles.step}>
+                <span className={styles.stepNumber}>{step.stepNumber}</span>
+
+                <span className={styles.iconFrame}>
+                  <Icon />
                 </span>
+
                 <h3 className={styles.stepTitle}>{step.title}</h3>
-                <p className={styles.stepDescription}>{step.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </PageContainer>
-    </SectionWrapper>
-  );
-};
+                <span className={styles.titleRule} aria-hidden="true" />
+                <p className={styles.stepBody}>{step.description}</p>
+
+                {/* The first and last cards carry a dot texture in the design. */}
+                {isEdgeCard && (
+                  <DotGrid
+                    className={styles.stepTexture}
+                    columns={6}
+                    rows={3}
+                    gap={10}
+                    fade={index === 0 ? 'to-right' : 'to-left'}
+                  />
+                )}
+              </li>
+            </React.Fragment>
+          );
+        })}
+      </ol>
+    </PageContainer>
+  </SectionWrapper>
+);

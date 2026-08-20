@@ -1,0 +1,392 @@
+/* Miniature UI shown inside the pillar cards.
+   Sizes are deliberately small and absolute — these read as a screenshot of a
+   product, so they do not scale with the body type. */
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-10);
+  width: 100%;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  padding: var(--orv-space-12);
+  border: 1px solid rgba(168, 85, 247, 0.16);
+  border-radius: var(--orv-radius-10);
+  background: rgba(124, 58, 237, 0.05);
+}
+
+.panelRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--orv-space-10);
+}
+
+.panelRow .panel {
+  min-width: 0;
+}
+
+.panelLabel {
+  font-size: var(--orv-font-size-10);
+  line-height: 1;
+  color: var(--orv-text-tertiary);
+}
+
+/* --- TOKENS --- */
+
+.swatchRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+}
+
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--orv-radius-full);
+  flex: 0 0 auto;
+}
+
+.swatchLead {
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.35), 0 0 12px rgba(168, 85, 247, 0.55);
+}
+
+.typeRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--orv-space-8);
+}
+
+.typeSpecimen {
+  font-size: var(--orv-font-size-28);
+  line-height: 1;
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-color-raw-purple-300);
+}
+
+.typeMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.typeMetaPrimary {
+  font-size: var(--orv-font-size-10);
+  line-height: 1.2;
+  color: var(--orv-text-primary);
+}
+
+.typeMetaSecondary {
+  font-size: var(--orv-font-size-9);
+  line-height: 1.2;
+  color: var(--orv-text-tertiary);
+}
+
+.radiusRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-6);
+}
+
+.radiusBox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  flex: 0 0 auto;
+}
+
+.radiusBoxLead {
+  width: 22px;
+  height: 22px;
+  border-color: var(--orv-color-raw-purple-300);
+}
+
+/* --- COMPONENTS --- */
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--orv-space-8);
+  padding: 9px var(--orv-space-12);
+  border-radius: var(--orv-radius-8);
+  background: var(--orv-gradient-primary);
+  color: var(--orv-text-on-brand);
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-medium);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+
+.controlRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+}
+
+.secondaryButton {
+  flex: 1 1 auto;
+  padding: 9px var(--orv-space-12);
+  border: 1px solid var(--orv-color-alpha-white-12);
+  border-radius: var(--orv-radius-8);
+  background: var(--orv-color-alpha-white-4);
+  color: var(--orv-text-secondary);
+  font-size: var(--orv-font-size-11);
+  white-space: nowrap;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border: 1px solid var(--orv-color-alpha-white-12);
+  border-radius: var(--orv-radius-8);
+  background: var(--orv-color-alpha-white-4);
+  color: var(--orv-text-secondary);
+}
+
+.ellipsis {
+  width: 12px;
+  height: 2px;
+  border-radius: var(--orv-radius-full);
+  background: currentColor;
+  box-shadow: -5px 0 0 currentColor, 5px 0 0 currentColor;
+  transform: translateX(0);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-6);
+  padding: 6px var(--orv-space-10);
+  border: 1px solid var(--orv-color-alpha-white-12);
+  border-radius: var(--orv-radius-6);
+  background: var(--orv-color-alpha-white-4);
+  color: var(--orv-text-secondary);
+  font-size: var(--orv-font-size-11);
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--orv-radius-4);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  background: rgba(124, 58, 237, 0.18);
+  color: var(--orv-color-raw-purple-200);
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  background: rgba(124, 58, 237, 0.14);
+}
+
+.radioDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-purple-300);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  width: 38px;
+  height: 20px;
+  padding: 2px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-gradient-primary);
+  justify-content: flex-end;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.45);
+}
+
+.toggleKnob {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-white);
+}
+
+/* --- PRODUCT (app screen) --- */
+
+.app {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: var(--orv-radius-10);
+  background: #0b0618;
+  min-height: 212px;
+}
+
+.appSidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--orv-space-10);
+  padding: var(--orv-space-10) var(--orv-space-8);
+  border-right: 1px solid var(--orv-color-alpha-white-5);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--orv-text-tertiary);
+}
+
+.appLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--orv-radius-6);
+  background: var(--orv-gradient-primary);
+  color: var(--orv-text-on-brand);
+  font-size: var(--orv-font-size-10);
+  font-weight: var(--orv-font-weight-bold);
+  margin-bottom: var(--orv-space-2);
+}
+
+.appSidebarIcon {
+  display: inline-flex;
+}
+
+.appBody {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-8);
+  padding: var(--orv-space-10) var(--orv-space-12) var(--orv-space-12);
+}
+
+.appArc {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: auto;
+  pointer-events: none;
+}
+
+.appHeader {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--orv-space-8);
+}
+
+.appGreeting {
+  margin: 0;
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-text-primary);
+}
+
+.appSubGreeting {
+  margin: 2px 0 0;
+  font-size: var(--orv-font-size-9);
+  color: var(--orv-text-tertiary);
+}
+
+.appHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-6);
+  color: var(--orv-text-tertiary);
+}
+
+.appBell {
+  display: inline-flex;
+}
+
+/* Abstract avatar — a lit sphere, matching the studio's illustration style. */
+.appAvatar {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--orv-radius-full);
+  background:
+    radial-gradient(circle at 32% 28%, #dacfff 0%, #a78bfa 38%, #6d28d9 100%);
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+}
+
+.appTabs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+}
+
+.appTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px var(--orv-space-8);
+  border-radius: var(--orv-radius-6);
+  font-size: var(--orv-font-size-9);
+  color: var(--orv-text-tertiary);
+}
+
+.appTabActive {
+  background: rgba(124, 58, 237, 0.22);
+  color: var(--orv-color-raw-purple-200);
+  box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.35);
+}
+
+.appRow {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: var(--orv-space-8);
+}
+
+.appField {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--orv-space-8) var(--orv-space-10);
+  border: 1px solid var(--orv-color-alpha-white-5);
+  border-radius: var(--orv-radius-6);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.appFieldLabel {
+  font-size: var(--orv-font-size-8);
+  color: var(--orv-text-tertiary);
+}
+
+.appFieldValue {
+  font-size: var(--orv-font-size-10);
+  color: var(--orv-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.appSwap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  background: rgba(124, 58, 237, 0.16);
+  color: var(--orv-color-raw-purple-200);
+}

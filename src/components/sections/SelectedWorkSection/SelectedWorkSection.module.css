@@ -1,247 +1,307 @@
-/* SelectedWorkSection Component Styles — Figma node 86:817
+/* SelectedWorkSection — landing band three.
  *
- * 1440 reference (section height 1800, padding 128/128):
- *   header y=128 (144) -> gap 64 -> grid y=336 (1336)
- *   card 612x656 = screen 435 + body 221 (padding 32, gap 16)
- *   grid gutters 24 both axes
+ * 1440 reference geometry (band height 1940):
+ *   heading block  y=40..300
+ *   cards          2x2 grid, ~650 wide x ~775 tall, 53px gutter
  */
-.selectedWorkSection {
+
+.section {
   position: relative;
   overflow: hidden;
+  padding-top: var(--orv-space-72);
+  padding-bottom: var(--orv-space-72);
 }
 
-/* Ambient glows — Figma 203:186 (900 @ -140,180) and 203:187 (820 @ 760,860).
-   The exported glow asset is a blurred circle inside a box 1.5x its diameter,
-   so each wrapper is sized/offset to that padded box. */
-.workGlowA,
-.workGlowB {
-  position: absolute;
-  pointer-events: none;
-  z-index: var(--orv-z-normal);
-  aspect-ratio: 1;
-}
-
-.workGlowA {
-  width: min(93.75%, 1350px);
-  left: -25.35%;
-  top: -45px;
-}
-
-.workGlowB {
-  width: min(85.42%, 1230px);
-  left: 38.54%;
-  top: 655px;
-}
-
-.glowImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.contentContainer {
+.container {
   position: relative;
   z-index: var(--orv-z-floating);
-  display: flex;
-  flex-direction: column;
-  gap: var(--orv-space-64);
-  width: 100%;
 }
 
-/* Header Row Composition */
-.headerRow {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 100%;
-  gap: var(--orv-layout-gutter);
+.dots {
+  position: absolute;
+  top: var(--orv-space-40);
+  right: var(--orv-space-32);
+  z-index: var(--orv-z-normal);
 }
 
-.titleGroup {
-  display: flex;
-  flex-direction: column;
-  gap: var(--orv-space-16);
-}
+/* --- Grid --- */
 
-/* Figma 86:824 — 16px Medium, arrow in brand-400, gap 8 */
-.viewAllLink {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-16);
-  font-weight: var(--orv-font-weight-medium);
-  color: var(--orv-text-secondary);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--orv-space-8);
-  text-decoration: none;
-  transition: color var(--orv-duration-normal) var(--orv-ease-default);
-  white-space: nowrap;
-  /* keeps the 44px touch target without shifting the 1440 baseline */
-  padding: var(--orv-space-12) 0;
-  margin-bottom: calc(var(--orv-space-12) * -1);
-}
-
-.viewAllLink:hover,
-.viewAllLink:focus-visible {
-  color: var(--orv-brand-400);
-}
-
-.arrowIcon {
-  color: var(--orv-brand-400);
-  transition: transform var(--orv-duration-normal) var(--orv-ease-default);
-}
-
-.viewAllLink:hover .arrowIcon,
-.viewAllLink:focus-visible .arrowIcon {
-  transform: translateX(4px);
-}
-
-/* Cards Grid */
-.cardsGrid {
+.grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--orv-layout-card-gap);
-  width: 100%;
+  gap: var(--orv-space-48);
+  margin: var(--orv-space-48) 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* Card container — same glass treatment as GlassCard variant "card"
-   (Figma 86:829: gradient-glass-133, 1px alpha-white-14, blur 14, r16, shadow-card) */
-.cardLink {
+.card {
+  position: relative;
   display: flex;
   flex-direction: column;
+  padding: var(--orv-space-24);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: var(--orv-radius-16);
+  background:
+    linear-gradient(158deg, rgba(124, 58, 237, 0.10) 0%, rgba(124, 58, 237, 0.02) 55%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: rgba(168, 85, 247, 0.42);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
+}
+
+/* --- Card head --- */
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+}
+
+.index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-8);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  background: linear-gradient(150deg, rgba(124, 58, 237, 0.45), rgba(124, 58, 237, 0.12));
+  color: var(--orv-text-primary);
+  font-size: var(--orv-font-size-14);
+  font-weight: var(--orv-font-weight-semibold);
+}
+
+.categoryIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-8);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  background: rgba(124, 58, 237, 0.08);
+  color: var(--orv-color-raw-purple-300);
+}
+
+.category {
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-154);
+  text-transform: uppercase;
+  color: var(--orv-color-raw-purple-300);
+}
+
+/* --- Card copy --- */
+
+.cardTitle {
+  margin: var(--orv-space-16) 0 0;
+  font-family: var(--orv-font-family-display);
+  font-size: var(--orv-font-size-28);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.2;
+  color: var(--orv-text-primary);
+}
+
+/* The title carries the accessible link; the overlay makes the whole card
+   clickable without adding a second tab stop. */
+.cardTitleLink {
+  color: inherit;
   text-decoration: none;
-  background: var(--orv-card-glass-bg);
-  border: var(--orv-card-glass-border);
-  backdrop-filter: var(--orv-card-glass-blur);
-  -webkit-backdrop-filter: var(--orv-card-glass-blur);
-  border-radius: var(--orv-card-glass-radius);
-  box-shadow: var(--orv-card-glass-shadow);
-  overflow: hidden;
-  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
-              transform var(--orv-duration-normal) var(--orv-ease-default),
-              box-shadow var(--orv-duration-normal) var(--orv-ease-default);
+}
+
+.cardTitleLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.cardTitleLink:focus-visible {
   outline: none;
 }
 
-.cardLink:hover,
-.cardLink:focus-visible {
-  border-color: var(--orv-border-active);
-  transform: translateY(-4px);
-  box-shadow: var(--orv-shadow-glass-lg);
+.cardTitleLink:focus-visible::after {
+  outline: 2px solid var(--orv-border-active);
+  outline-offset: 3px;
 }
 
-.cardLink:focus-visible {
-  outline: var(--orv-border-width-default) solid var(--orv-border-active);
-  outline-offset: var(--orv-space-2);
-}
-
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 612 / 435;
-  background-color: var(--orv-color-alpha-white-4);
-  overflow: hidden;
-}
-
-.screenImage {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  transition: transform var(--orv-duration-slow) var(--orv-ease-default);
-}
-
-.cardLink:hover .screenImage {
-  transform: scale(1.03);
-}
-
-/* Card Body — Figma 86:832: padding 32, gap 16 */
 .cardBody {
-  display: flex;
-  flex-direction: column;
-  padding: var(--orv-space-32);
-  gap: var(--orv-space-16);
-  flex: 1;
+  margin: var(--orv-space-12) 0 0;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-tertiary);
+  max-width: 52ch;
 }
 
-.tagRow {
+/* --- Screen art --- */
+
+.mockupWell {
+  position: relative;
+  margin-top: var(--orv-space-20);
+}
+
+.coverImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--orv-radius-10);
+  display: block;
+}
+
+/* --- Tags --- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--orv-space-8);
+  margin: var(--orv-space-20) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-6);
+  padding: 5px var(--orv-space-10);
+  border: 1px solid var(--orv-color-alpha-white-8);
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-alpha-white-4);
+  font-size: var(--orv-font-size-11);
+  color: var(--orv-text-secondary);
+}
+
+.tagDot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-purple-300);
+}
+
+/* --- Card foot --- */
+
+.cardFoot {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: var(--orv-space-16);
+  margin-top: var(--orv-space-20);
 }
 
-/* Figma 86:835 — 28px Bold, tracking -0.28 */
-.cardTitle {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-28);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-normal);
-  letter-spacing: var(--orv-letter-spacing-tight-028);
-  color: var(--orv-text-primary);
-  margin: 0;
-}
-
-/* Figma 86:836 — 16px / 26px Regular */
-.cardDescription {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-16);
-  font-weight: var(--orv-font-weight-regular);
-  line-height: var(--orv-line-height-26);
-  color: var(--orv-text-secondary);
-  margin: 0;
-}
-
-/* Figma 86:837 — 13px Medium, tertiary */
-.servicesMeta {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-13);
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  font-size: var(--orv-font-size-14);
   font-weight: var(--orv-font-weight-medium);
-  line-height: var(--orv-line-height-normal);
-  color: var(--orv-text-tertiary);
-  margin-top: auto;
+  color: var(--orv-color-raw-purple-300);
+  text-decoration: none;
+}
+
+.cardCtaIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+}
+
+.cornerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-8);
+  border: 1px solid var(--orv-color-alpha-white-12);
+  background: var(--orv-color-alpha-white-4);
+  color: var(--orv-text-secondary);
+}
+
+.card:hover .cornerButton {
+  border-color: rgba(168, 85, 247, 0.45);
+  color: var(--orv-color-raw-purple-200);
+}
+
+/* --- View all --- */
+
+.viewAllRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--orv-space-48);
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  padding: var(--orv-space-12) var(--orv-space-24);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: var(--orv-radius-full);
+  background: rgba(124, 58, 237, 0.08);
+  font-size: var(--orv-font-size-14);
+  color: var(--orv-text-primary);
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.viewAll:hover {
+  border-color: var(--orv-border-active);
+  background: rgba(124, 58, 237, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewAll {
+    transition: none;
+  }
 }
 
 /* ==========================================
  * RESPONSIVE
- * The 2-column grid is held all the way down to tablet portrait — a case
- * study card is a picture-led tile and reads well at half width.
  * ========================================== */
-@media (max-width: 1120px) {
-  .contentContainer {
-    gap: var(--orv-space-48);
-  }
-
-  .cardBody {
-    padding: var(--orv-space-24);
-    gap: var(--orv-space-12);
-  }
-}
-
-@media (max-width: 900px) {
-  .headerRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--orv-space-16);
-  }
-
-  .cardsGrid {
+@media (max-width: 1024px) {
+  .grid {
     grid-template-columns: 1fr;
     gap: var(--orv-space-32);
   }
 
-  .viewAllLink {
-    margin-bottom: 0;
+  .dots {
+    display: none;
   }
 }
 
 @media (max-width: 600px) {
-  .contentContainer {
-    gap: var(--orv-space-40);
+  .section {
+    padding-top: var(--orv-space-48);
+    padding-bottom: var(--orv-space-48);
   }
 
-  .cardsGrid {
-    gap: var(--orv-space-24);
+  .card {
+    padding: var(--orv-space-16);
   }
 
   .cardTitle {
-    font-size: var(--orv-font-size-22);
-    letter-spacing: var(--orv-letter-spacing-normal);
+    font-size: var(--orv-font-size-24);
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PageContainer } from '../Container';
 import { Divider } from '@/components/primitives/Divider';
 import styles from './Footer.module.css';
@@ -54,7 +55,15 @@ export const Footer: React.FC = () => {
             {/* Column 1: Brand */}
             <div className={styles.brandColumn}>
               <Link href="/" className={styles.logoLockup} aria-label="Orvexiq Lab Home">
-                <div className={styles.logoMark}>O</div>
+                {/* Figma 270:607 — footer lockup uses the same exported mark
+                    as the nav (Logo System / Flat mark), at 40px. */}
+                <Image
+                  src="/assets/brand/logo-mark.svg"
+                  alt=""
+                  width={40}
+                  height={40}
+                  className={styles.logoMark}
+                />
                 <span className={styles.logoText}>Orvexiq Lab</span>
               </Link>
               <p className={styles.bioText}>

@@ -5,6 +5,7 @@ import { Heading } from '@/components/primitives/Heading';
 import { Text } from '@/components/primitives/Text';
 import { Button } from '@/components/primitives/Button';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
+import { HeroVideo } from './HeroVideo';
 import styles from './HeroSection.module.css';
 
 export interface HeroSectionProps {
@@ -19,7 +20,7 @@ export interface HeroSectionProps {
  *   h1       y=281  48px / 64px SemiBold, w=676      (183:11)
  *   sub      y=498  20px / 28px Regular, w=597       (183:12)
  *   buttons  y=591  h=48, 18px / 28px Medium         (183:13, 183:16)
- *   visual   x=741 y=161 613x548                     (183:42)
+ *   visual   x=456 y=165 974x548 looping video        (290:249)
  *
  * Note: the hero eyebrow in Figma is plain sentence-case text, NOT the
  * dashed uppercase Eyebrow primitive used by the other sections.
@@ -74,16 +75,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ content }) => {
             </div>
           </div>
 
-          {/* Right Column: 3D Hero Visual Asset */}
+          {/* Right Column: looping hero animation.
+              It reaches left under the headline, so the stylesheet masks its
+              left edge into the canvas instead of hard-cutting it. */}
           <div className={styles.visualColumn}>
-            <Image
-              src="/assets/hero-icon.png"
-              alt="Orvexiq Lab 3D Modular Product Icon"
-              width={613}
-              height={548}
-              className={styles.heroIconImage}
-              priority
-            />
+            <HeroVideo src="/assets/video/hero.mp4" />
           </div>
         </div>
       </PageContainer>

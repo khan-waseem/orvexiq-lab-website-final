@@ -34,17 +34,12 @@
   text-decoration: none;
 }
 
+/* Figma 270:608 — exported pixel-dissolve mark, same asset as the nav. */
 .logoMark {
-  width: 36px;
-  height: 36px;
-  background-color: var(--orv-brand-500);
-  border-radius: var(--orv-radius-8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--orv-text-on-brand);
-  font-weight: var(--orv-font-weight-bold);
-  font-size: var(--orv-font-size-18);
+  width: var(--orv-space-40);
+  height: var(--orv-space-40);
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .logoText {

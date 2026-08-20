@@ -3,11 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
-import { Heading } from '@/components/primitives/Heading';
-import { Tag } from '@/components/primitives/Tag';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { DotGrid } from '@/components/decor/DotGrid';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { CaseStudy } from '@/content/schemas/case-study.schema';
+import { CaseMockup } from './CaseMockup';
+import { CATEGORY_ICONS } from './CategoryIcons';
 import styles from './SelectedWorkSection.module.css';
 
 export interface SelectedWorkSectionProps {
@@ -15,85 +17,123 @@ export interface SelectedWorkSectionProps {
   caseStudies: CaseStudy[];
 }
 
+/** Cards are a fixed 2x2 grid in the design; extra featured work is ignored. */
+const CARD_LIMIT = 4;
+
 /**
- * SelectedWorkSection Component (1:1 Figma Match — Node 218:431)
+ * SelectedWorkSection — landing band three.
  *
- * Requirements:
- * - Scalable route `/case-studies/[slug]`
- * - Verified/unverified content compliance
- * - Reuses existing Eyebrow, Tag, SectionWrapper, PageContainer primitives
- * - 100% token governance
+ * Two-by-two grid of case cards. The screen art inside each card is the
+ * shared `CaseMockup`, built in markup; a case study overrides it by setting
+ * `coverScreenAssetUrl`, so real project artwork can be dropped in per case
+ * without touching this component.
  */
 export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
   content,
   caseStudies,
 }) => {
+  const cards = caseStudies.slice(0, CARD_LIMIT);
+
   return (
-    <SectionWrapper theme="canvas" padding="lg" id="work" className={styles.selectedWorkSection}>
-      {/* Ambient Glows — Figma 203:186 / 203:187 */}
-      <div className={styles.workGlowA} aria-hidden="true">
-        <Image src="/assets/services/services-glow.svg" alt="" width={1350} height={1350} className={styles.glowImage} />
-      </div>
-      <div className={styles.workGlowB} aria-hidden="true">
-        <Image src="/assets/services/services-glow.svg" alt="" width={1230} height={1230} className={styles.glowImage} />
-      </div>
+    <SectionWrapper
+      id="work"
+      padding="custom"
+      className={styles.section}
+      ariaLabelledBy="selected-work-heading"
+    >
+      <GlowRings side="left" size={1100} sparks={[[1, -34], [2, 14], [3, 48]]} />
+      <GlowRings side="right" size={1000} sparks={[[1, 200], [3, 150]]} />
+      <DotGrid className={styles.dots} columns={9} rows={5} fade="to-right" />
 
-      <PageContainer>
-        <div className={styles.contentContainer}>
-          {/* Header Row Composition */}
-          <div className={styles.headerRow}>
-            <div className={styles.titleGroup}>
-              <Eyebrow align="left">{content.eyebrow}</Eyebrow>
-              <Heading level="h2" align="left">
-                {content.headlineLine1}
-                <br />
-                {content.headlineLine2}
-              </Heading>
-            </div>
+      <PageContainer className={styles.container}>
+        <SectionHeading
+          id="selected-work-heading"
+          eyebrow={content.eyebrow}
+          sub={content.subdescription}
+        >
+          {content.headlineLine1}
+          <br />
+          {content.headlineLine2}
+          <Accent>{content.headlineAccent2}</Accent>
+        </SectionHeading>
 
-            {/* View All Case Studies Link */}
-            <Link href="/case-studies" className={styles.viewAllLink} aria-label="View all case studies">
-              <span>{content.viewAllText}</span>
-              <span className={styles.arrowIcon} aria-hidden="true">→</span>
-            </Link>
-          </div>
+        <ul className={styles.grid}>
+          {cards.map((study, index) => {
+            const CategoryIcon = CATEGORY_ICONS[study.category] ?? CATEGORY_ICONS.GENERAL;
+            const href = `/case-studies/${study.slug}`;
 
-          {/* 2-Column Responsive Cards Grid */}
-          <div className={styles.cardsGrid}>
-            {caseStudies.map((item) => (
-              <Link
-                key={item.id}
-                href={`/case-studies/${item.slug}`}
-                className={styles.cardLink}
-                aria-label={`View Case Study: ${item.title}`}
-              >
-                {/* Project Cover Screen Image */}
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={item.coverScreenAssetUrl || '/assets/screens/case-screen-1.png'}
-                    alt={`Preview mockup for ${item.title}`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 612px"
-                    className={styles.screenImage}
-                  />
+            return (
+              <li key={study.id} className={styles.card}>
+                <div className={styles.cardHead}>
+                  <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
+                  <span className={styles.categoryIcon}>
+                    <CategoryIcon />
+                  </span>
+                  <span className={styles.category}>{study.category}</span>
                 </div>
 
-                {/* Card Details Body */}
-                <div className={styles.cardBody}>
-                  <div className={styles.tagRow}>
-                    <Tag variant="category">{item.category}</Tag>
-                  </div>
+                <h3 className={styles.cardTitle}>
+                  <Link href={href} className={styles.cardTitleLink}>
+                    {study.title}
+                  </Link>
+                </h3>
 
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardDescription}>{item.subtitle || item.description}</p>
+                <p className={styles.cardBody}>{study.description}</p>
 
-                  <span className={styles.servicesMeta}>
-                    {item.servicesProvided.join(' · ')}
+                <div className={styles.mockupWell}>
+                  {study.coverScreenAssetUrl ? (
+                    <Image
+                      src={study.coverScreenAssetUrl}
+                      alt={`${study.title} interface`}
+                      width={602}
+                      height={300}
+                      className={styles.coverImage}
+                    />
+                  ) : (
+                    <CaseMockup label={study.title} />
+                  )}
+                </div>
+
+                <ul className={styles.tags}>
+                  {study.servicesProvided.map((service) => (
+                    <li key={service} className={styles.tag}>
+                      <span className={styles.tagDot} aria-hidden="true" />
+                      {service}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className={styles.cardFoot}>
+                  <Link href={href} className={styles.cardCta} tabIndex={-1} aria-hidden="true">
+                    {content.cardCtaText}
+                    <span className={styles.cardCtaIcon}>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2 6h7M6.4 3.2 9.2 6l-2.8 2.8" stroke="currentColor" strokeWidth="1.2"
+                              strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </Link>
+
+                  <span className={styles.cornerButton} aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M4 10 10 4M5 4h5v5" stroke="currentColor" strokeWidth="1.3"
+                            strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </span>
                 </div>
-              </Link>
-            ))}
-          </div>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className={styles.viewAllRow}>
+          <Link href="/case-studies" className={styles.viewAll}>
+            {content.viewAllText}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 7h9M7.8 3.4 11.5 7l-3.7 3.6" stroke="currentColor" strokeWidth="1.3"
+                    strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
       </PageContainer>
     </SectionWrapper>

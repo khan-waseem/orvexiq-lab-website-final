@@ -49,7 +49,6 @@
     rgba(48, 7, 84, 0) 100%
   );
   pointer-events: none;
-  z-index: var(--orv-z-normal);
 }
 
 .glowImage {
@@ -71,7 +70,6 @@
   overflow: hidden;
   opacity: 0.3;
   pointer-events: none;
-  z-index: var(--orv-z-normal);
 }
 
 .gridImage {
@@ -83,10 +81,66 @@
   object-fit: fill;
 }
 
-/* Content Composition */
+/* ==========================================
+ * ENTRANCE
+ * The hero introduces itself on load: the copy rises in sequence and the
+ * video fades up once it can actually play. `both` holds the from-state
+ * before the delay elapses, so nothing flashes in at full opacity first.
+ * ========================================== */
+@keyframes heroVideoRise {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.eyebrowText,
+.headline,
+.subdescription,
+.actionsGroup {
+  animation: heroRise 720ms cubic-bezier(0.22, 0.68, 0.24, 1) both;
+}
+
+.eyebrowText {
+  animation-delay: 80ms;
+}
+
+.headline {
+  animation-delay: 200ms;
+}
+
+.subdescription {
+  animation-delay: 340ms;
+}
+
+.actionsGroup {
+  animation-delay: 470ms;
+}
+
+/* Content Composition
+   No z-index here on purpose: the hero video uses mix-blend-mode, and any
+   stacking context between it and .heroSection would isolate the blend from
+   the glow and grid it is meant to blend with. The glow and grid are earlier
+   in the DOM, so they still paint underneath. */
 .heroContainer {
   position: relative;
-  z-index: var(--orv-z-floating);
 }
 
 .heroLayout {
@@ -122,20 +176,47 @@
   flex-wrap: wrap;
 }
 
-/* Visual 3D Icon — absolutely placed at 1440 to reproduce the Figma overhang */
+/* Hero video — Figma 290:249 sits at section x=456 y=165, 974.5x548.2.
+   The content container starts at x=96 / y=237, so relative to it the visual
+   is offset -72px vertically and overhangs the 1248 box by 86.6px on the
+   right. It reaches back under the headline, hence the left-edge mask. */
 .visualColumn {
   position: absolute;
-  top: -76px;
-  right: -10px;
-  width: 613px;
-  height: 548px;
+  top: -72px;
+  right: -86.6px;
+  width: 974.5px;
+  height: 548.2px;
   pointer-events: none;
 }
 
-.heroIconImage {
+.heroVideo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  display: block;
+  /* The clip is a glowing subject on flat black (measured: corners rgb(1,1,1),
+     darkest 0,0,0). Screen blend makes that black behave as transparent, so
+     the hero glow and grid read through the footage — no alpha channel, and
+     no second video file, required. */
+  mix-blend-mode: screen;
+  /* Fades up with the copy. Kept in CSS rather than gated on a playback
+     event, so the clip is never left invisible if the component does not
+     hydrate. Until it fades in there is nothing to see anyway: screen blend
+     makes an unpainted frame indistinguishable from the background. */
+  animation: heroVideoRise 1100ms cubic-bezier(0.22, 0.68, 0.24, 1) 260ms both;
+  /* Fades the video into the canvas where it passes behind the copy. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 18%,
+    #000 42%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 18%,
+    #000 42%
+  );
 }
 
 /* ==========================================
@@ -165,10 +246,17 @@
 
   .visualColumn {
     position: static;
-    flex: 0 1 480px;
+    flex: 0 1 560px;
     width: auto;
     height: auto;
-    aspect-ratio: 613 / 548;
+    aspect-ratio: 974.5 / 548.2;
+  }
+
+  /* Once it no longer sits under the copy, the mask is only needed to keep
+     the left edge from ending on a hard line. */
+  .heroVideo {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 14%);
   }
 }
 
@@ -182,7 +270,7 @@
   }
 
   .visualColumn {
-    flex: 0 1 380px;
+    flex: 0 1 440px;
   }
 }
 
@@ -211,8 +299,19 @@
   .visualColumn {
     flex: none;
     width: 100%;
-    max-width: 420px;
+    max-width: 560px;
     align-self: center;
+  }
+
+  /* Stacked layout: the lit subject sits at 63.6% across the frame (measured
+     from the source), so centring the element still reads as pushed right.
+     Shifting by the 13.6% difference centres what the eye actually sees —
+     safe to do because screen blend makes the frame's black edges invisible,
+     so there is no box to give the offset away. */
+  .heroVideo {
+    -webkit-mask-image: none;
+    mask-image: none;
+    animation-name: heroVideoRiseShifted;
   }
 }
 
@@ -235,6 +334,32 @@
   }
 
   .visualColumn {
-    max-width: 300px;
+    max-width: 100%;
+  }
+}
+
+/* Stacked layout entrance: same rise, landing on the recentring offset
+   instead of on zero. */
+@keyframes heroVideoRiseShifted {
+  from {
+    opacity: 0;
+    transform: translateX(-13.6%) scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-13.6%);
+  }
+}
+
+/* Respect a reduced-motion preference: everything lands in its final state
+   with no travel. */
+@media (prefers-reduced-motion: reduce) {
+  .eyebrowText,
+  .headline,
+  .subdescription,
+  .actionsGroup,
+  .heroVideo {
+    animation: none;
   }
 }

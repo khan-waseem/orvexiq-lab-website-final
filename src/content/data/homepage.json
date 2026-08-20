@@ -78,11 +78,69 @@
       }
     ]
   },
+  "designSystemsSection": {
+    "eyebrow": "Design Systems",
+    "headlineLine1": "Built to stay ",
+    "headlineAccent1": "consistent.",
+    "headlineLine2": "Designed to ",
+    "headlineAccent2": "scale.",
+    "subdescription": "Tokens, components and patterns that keep design and development working as one system.",
+    "pillars": [
+      {
+        "id": "tokens",
+        "title": "Tokens",
+        "body": "The foundation. Shared tokens for color, type, spacing, radius and more."
+      },
+      {
+        "id": "components",
+        "title": "Components",
+        "body": "Reusable building blocks that bring consistency to every interface."
+      },
+      {
+        "id": "product",
+        "title": "Product",
+        "body": "Real experiences. Built with the system, shipped with confidence."
+      }
+    ]
+  },
   "selectedWorkSection": {
-    "eyebrow": "SELECTED WORK",
-    "headlineLine1": "Real problems.",
-    "headlineLine2": "Measured outcomes.",
-    "viewAllText": "View all case studies"
+    "eyebrow": "Selected Work",
+    "headlineLine1": "Systems designed for",
+    "headlineLine2": "real-world ",
+    "headlineAccent2": "complexity.",
+    "subdescription": "We partner with ambitious teams to design and build digital products, platforms and experiences that drive real impact.",
+    "viewAllText": "View all case studies",
+    "cardCtaText": "View case study"
+  },
+  "whatWeBuildSection": {
+    "eyebrow": "What we build",
+    "headlineLine1": "Complex digital products.",
+    "headlineLine2": "Designed as ",
+    "headlineAccent2": "connected systems.",
+    "subdescription": "From product strategy and interface design to scalable systems, technology and intelligent experiences — we bring the disciplines together.",
+    "ctaText": "Explore all services",
+    "disciplines": [
+      {
+        "id": "strategy",
+        "title": "Strategy",
+        "body": "Product direction, discovery, market insight and system thinking that sets the right foundation."
+      },
+      {
+        "id": "product-design",
+        "title": "Product Design",
+        "body": "Human-centered UX/UI design for products, platforms and complex workflows that people love."
+      },
+      {
+        "id": "technology",
+        "title": "Technology",
+        "body": "Scalable, secure and high-performance digital experiences built with modern technology and clean architecture."
+      },
+      {
+        "id": "intelligence",
+        "title": "Intelligence",
+        "body": "AI-powered experiences, automation and data-driven systems designed around real human needs."
+      }
+    ]
   },
   "servicesSection": {
     "eyebrow": "WHAT WE DO",
@@ -90,35 +148,94 @@
     "headlineLine2": "and AI as one practice."
   },
   "approachSection": {
-    "eyebrow": "HOW WE WORK",
-    "headline": "Four stages. No surprises.",
-    "subdescription": "Every engagement runs the same way, so you always know what is happening and what comes next.",
+    "eyebrow": "Our Process",
+    "headline": "From complexity to ",
+    "headlineAccent": "clarity.",
+    "subdescription": "A focused process for turning complex problems into scalable digital products.",
     "steps": [
       {
         "id": "step-1",
         "stepNumber": "01",
         "title": "Discover",
-        "description": "We map the problem space, talk to the people who use the product, and audit what already exists."
+        "icon": "discover",
+        "description": "We research deeply to understand users, business and the real problem."
       },
       {
         "id": "step-2",
         "stepNumber": "02",
         "title": "Define",
-        "description": "Findings become a product direction — scoped, prioritised, and agreed before anyone opens Figma."
+        "icon": "define",
+        "description": "We turn insights into a clear strategy and product direction."
       },
       {
         "id": "step-3",
         "stepNumber": "03",
-        "title": "Design",
-        "description": "Flows, interfaces and a design system built so the work survives handoff instead of drifting."
+        "title": "Design & Build",
+        "icon": "build",
+        "description": "We design experiences and build systems that are scalable, robust and user-centered."
       },
       {
         "id": "step-4",
         "stepNumber": "04",
-        "title": "Deliver",
-        "description": "We stay through build. What ships is what was designed, not an approximation of it."
+        "title": "Evolve",
+        "icon": "evolve",
+        "description": "We measure, learn and iterate to continuously improve and drive long-term impact."
       }
     ]
+  },
+  "faqSection": {
+    "eyebrow": "FAQ",
+    "headlineLine1": "Questions we get,",
+    "headlineAccent2": "answered clearly.",
+    "subdescription": "Everything you need to know about working with Orvexiq Lab.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What types of projects do you work on?",
+        "answer": "We work on digital products that solve real problems — from AI-powered platforms and SaaS products to enterprise systems, marketplaces, and mobile applications."
+      },
+      {
+        "id": "faq-2",
+        "question": "Do you work with existing product teams?",
+        "answer": "Yes. We work alongside in-house designers, engineers and product managers, and we adapt to how your team already works rather than replacing your process."
+      },
+      {
+        "id": "faq-3",
+        "question": "Do you provide both design and development?",
+        "answer": "We lead product strategy and design end to end, and we stay through build so what ships matches what was designed rather than an approximation of it."
+      },
+      {
+        "id": "faq-4",
+        "question": "Do you build design systems?",
+        "answer": "Design systems are a core part of what we do — tokens, components and documentation built so the work holds up after handoff instead of drifting."
+      },
+      {
+        "id": "faq-5",
+        "question": "How does a typical project engagement work?",
+        "answer": "Every engagement runs through the same four stages: discover, define, design and build, then evolve. You always know what is happening and what comes next."
+      },
+      {
+        "id": "faq-6",
+        "question": "How can we start a project?",
+        "answer": "Tell us the problem you are trying to solve. We come back with how we would approach it — not a pitch deck — and we take it from there."
+      }
+    ]
+  },
+  "clientStoriesSection": {
+    "eyebrow": "Client Stories",
+    "headlineLine1": "Trusted to solve the",
+    "headlineLine2": "problems ",
+    "headlineAccent2": "that matter.",
+    "subdescription": "We partner with forward-thinking teams to build digital products that deliver real impact."
+  },
+  "landingCtaSection": {
+    "eyebrow": "Start a project",
+    "headlineLine1": "Have a complex",
+    "headlineLine2": "product in mind?",
+    "headlineAccent3": "Let's make it clear.",
+    "subdescription": "Strategy, product design, design systems and intelligent experiences — built as one connected system.",
+    "primaryCtaText": "Start a project",
+    "emailCtaText": "Email us"
   },
   "ctaSection": {
     "eyebrow": "START A PROJECT",

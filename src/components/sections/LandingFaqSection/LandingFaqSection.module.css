@@ -1,0 +1,194 @@
+/* LandingFaqSection — landing band six.
+ *
+ * 1440 reference geometry (band height 960):
+ *   eyebrow  y=61
+ *   headline y=102..225   60px serif, two lines
+ *   sub      y=262
+ *   list     y=304..908   922 wide, centred; open item ~130 tall, closed ~68
+ */
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-72);
+}
+
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-16);
+  width: 100%;
+  max-width: 922px;
+  margin: var(--orv-space-40) auto 0;
+}
+
+.item {
+  border: 1px solid var(--orv-color-alpha-white-8);
+  border-radius: var(--orv-radius-10);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.item:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* The open panel is the lit one in the design. */
+.item[open] {
+  border-color: rgba(168, 85, 247, 0.42);
+  background:
+    linear-gradient(150deg, rgba(124, 58, 237, 0.12) 0%, rgba(124, 58, 237, 0.03) 60%),
+    rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
+}
+
+/* --- Question row --- */
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-16);
+  padding: var(--orv-space-16) var(--orv-space-20);
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Strip the native disclosure triangle in both engines. */
+.head::-webkit-details-marker {
+  display: none;
+}
+
+.head:focus-visible {
+  outline: 2px solid var(--orv-border-active);
+  outline-offset: 2px;
+  border-radius: var(--orv-radius-10);
+}
+
+.index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-6);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  background: rgba(124, 58, 237, 0.10);
+  color: var(--orv-color-raw-purple-300);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-medium);
+}
+
+.item[open] .index {
+  border-color: rgba(168, 85, 247, 0.5);
+  background: rgba(124, 58, 237, 0.28);
+  color: var(--orv-color-raw-purple-200);
+}
+
+.question {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-text-primary);
+}
+
+/* --- Plus / minus --- */
+
+.toggle {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  color: var(--orv-color-raw-purple-200);
+}
+
+.toggle::before,
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  border-radius: var(--orv-radius-full);
+  transform: translate(-50%, -50%);
+}
+
+.toggle::before {
+  width: 11px;
+  height: 1.5px;
+}
+
+/* The upright bar is what turns the minus into a plus; it retracts on open. */
+.toggle::after {
+  width: 1.5px;
+  height: 11px;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.item[open] .toggle {
+  background: var(--orv-gradient-primary);
+  border-color: transparent;
+  color: var(--orv-text-on-brand);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+}
+
+.item[open] .toggle::after {
+  transform: translate(-50%, -50%) scaleY(0);
+  opacity: 0;
+}
+
+/* --- Answer --- */
+
+.answerWrap {
+  /* Aligns the answer with the question text, past the number chip. */
+  padding: 0 var(--orv-space-20) var(--orv-space-20) 66px;
+}
+
+.answer {
+  margin: 0;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-tertiary);
+  max-width: 78ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .toggle::after {
+    transition: none;
+  }
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 768px) {
+  .head {
+    gap: var(--orv-space-12);
+    padding: var(--orv-space-12) var(--orv-space-16);
+  }
+
+  .question {
+    font-size: var(--orv-font-size-14);
+  }
+
+  .answerWrap {
+    padding: 0 var(--orv-space-16) var(--orv-space-16) var(--orv-space-16);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-top: var(--orv-space-48);
+    padding-bottom: var(--orv-space-48);
+  }
+}

@@ -12,6 +12,8 @@ export const approachStepSchema = z.object({
   stepNumber: z.string(),
   title: z.string(),
   description: z.string(),
+  /** Chooses the step's line glyph; see ApproachSection/StepIcons. */
+  icon: z.enum(['discover', 'define', 'build', 'evolve']),
 });
 
 export const systemStageSchema = z.object({
@@ -19,6 +21,28 @@ export const systemStageSchema = z.object({
   stageName: z.string(),
   caption: z.string(),
   verification: verificationMetadataSchema.optional(),
+});
+
+/* Landing "Design Systems" band — three pillar cards, each carrying a small
+   live UI demo rendered in code (Figma landing, second section). */
+export const designSystemPillarSchema = z.object({
+  id: z.enum(['tokens', 'components', 'product']),
+  title: z.string(),
+  body: z.string(),
+});
+
+/* Landing "What we build" band — four discipline cards joined by a connector
+   line, reading left to right as one system. */
+export const disciplineSchema = z.object({
+  id: z.enum(['strategy', 'product-design', 'technology', 'intelligence']),
+  title: z.string(),
+  body: z.string(),
+});
+
+export const landingFaqItemSchema = z.object({
+  id: z.string(),
+  question: z.string(),
+  answer: z.string(),
 });
 
 export const homepageContentSchema = z.object({
@@ -39,11 +63,33 @@ export const homepageContentSchema = z.object({
     headline: z.string(),
     stages: z.array(systemStageSchema),
   }),
+  designSystemsSection: z.object({
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    headlineAccent1: z.string(),
+    headlineLine2: z.string(),
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
+    pillars: z.array(designSystemPillarSchema),
+  }),
   selectedWorkSection: z.object({
     eyebrow: z.string(),
     headlineLine1: z.string(),
     headlineLine2: z.string(),
+    /** Trailing words of line two, rendered in the violet gradient. */
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
     viewAllText: z.string(),
+    cardCtaText: z.string(),
+  }),
+  whatWeBuildSection: z.object({
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    headlineLine2: z.string(),
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
+    ctaText: z.string(),
+    disciplines: z.array(disciplineSchema),
   }),
   servicesSection: z.object({
     eyebrow: z.string(),
@@ -53,8 +99,35 @@ export const homepageContentSchema = z.object({
   approachSection: z.object({
     eyebrow: z.string(),
     headline: z.string(),
+    /** Trailing words of the headline, in the violet gradient. */
+    headlineAccent: z.string(),
     subdescription: z.string(),
     steps: z.array(approachStepSchema),
+  }),
+  clientStoriesSection: z.object({
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    headlineLine2: z.string(),
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
+  }),
+  faqSection: z.object({
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    /** Second headline line, rendered entirely in the violet gradient. */
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
+    items: z.array(landingFaqItemSchema),
+  }),
+  landingCtaSection: z.object({
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    headlineLine2: z.string(),
+    /** Third line, rendered entirely in the violet gradient. */
+    headlineAccent3: z.string(),
+    subdescription: z.string(),
+    primaryCtaText: z.string(),
+    emailCtaText: z.string(),
   }),
   ctaSection: z.object({
     eyebrow: z.string(),

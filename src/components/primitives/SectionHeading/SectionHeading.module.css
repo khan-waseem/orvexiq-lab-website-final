@@ -1,0 +1,139 @@
+/* SectionHeading — pill eyebrow + serif display headline + optional rule + sub.
+   This block repeats in six landing sections, so it lives as one primitive. */
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: var(--orv-space-24);
+}
+
+.title {
+  font-family: var(--orv-font-family-display);
+  font-size: var(--orv-font-size-60);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.18;
+  letter-spacing: var(--orv-letter-spacing-tight-032);
+  color: var(--orv-text-primary);
+  margin: 0;
+  /* Wide enough for the longest landing headline ("Designed as connected
+     systems." measures ~742px at 60px), so the explicit <br> in each headline
+     stays the only line break. */
+  max-width: min(100%, 900px);
+  text-wrap: balance;
+}
+
+/* The CTA panel runs a larger headline than the section bands. */
+.titleLg {
+  font-size: 68px;
+  line-height: 1.2;
+  max-width: min(100%, 760px);
+}
+
+/* The highlighted word in every headline — violet gradient fill. */
+.accent {
+  background: var(--orv-gradient-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Keeps the descender glow from clipping on the gradient box. */
+  padding-bottom: 0.06em;
+}
+
+/* Hairline under the headline: a fading rule with a lit dot at its centre. */
+.rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--orv-space-8);
+  margin-top: var(--orv-space-16);
+}
+
+.ruleLine {
+  width: 42px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.7));
+}
+
+.ruleLineRight {
+  background: linear-gradient(to left, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.7));
+}
+
+.ruleDot {
+  width: 5px;
+  height: 5px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-purple-300);
+  box-shadow: 0 0 10px 1px rgba(168, 85, 247, 0.9);
+}
+
+/* Solid short underline variant (Our Process). */
+.ruleSolid {
+  width: 92px;
+  height: 2px;
+  border-radius: var(--orv-radius-full);
+  background: linear-gradient(
+    to right,
+    rgba(168, 85, 247, 0),
+    var(--orv-color-raw-purple-300),
+    rgba(168, 85, 247, 0)
+  );
+  margin-top: var(--orv-space-16);
+}
+
+.sub {
+  margin: var(--orv-space-24) 0 0;
+  font-size: var(--orv-font-size-17);
+  line-height: var(--orv-line-height-30);
+  color: var(--orv-text-secondary);
+  max-width: 52ch;
+  text-wrap: balance;
+}
+
+/* --- Left-aligned variant (hero-style blocks) --- */
+.alignLeft {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.alignLeft .rule,
+.alignLeft .ruleSolid {
+  margin-left: 0;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: var(--orv-font-size-48);
+  }
+
+  .titleLg {
+    font-size: var(--orv-font-size-56);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--orv-font-size-40);
+    max-width: 100%;
+  }
+
+  .titleLg {
+    font-size: var(--orv-font-size-40);
+  }
+
+  .sub {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-26);
+  }
+}
+
+@media (max-width: 480px) {
+  .title,
+  .titleLg {
+    font-size: var(--orv-font-size-32);
+  }
+}

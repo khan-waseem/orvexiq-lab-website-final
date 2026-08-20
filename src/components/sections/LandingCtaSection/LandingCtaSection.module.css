@@ -1,0 +1,179 @@
+/* LandingCtaSection — landing band eight.
+ *
+ * 1440 reference geometry (band height 960):
+ *   panel   x=69..1371, y=120..831  (~1302 x 711, radius 24)
+ *   eyebrow y=211
+ *   headline y=262..490  68px serif, three lines
+ *   sub     y=543..602
+ *   buttons y=645..723
+ */
+
+.section {
+  position: relative;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  padding: var(--orv-space-72) var(--orv-space-48);
+  min-height: 711px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: var(--orv-radius-24);
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(124, 58, 237, 0.10) 0%, rgba(8, 2, 17, 0) 62%),
+    #060210;
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-8);
+}
+
+.panelInner {
+  position: relative;
+  z-index: var(--orv-z-floating);
+  width: 100%;
+}
+
+/* --- Light raking in from the lower corners --- */
+
+.streak {
+  position: absolute;
+  bottom: -18%;
+  width: 62%;
+  height: 78%;
+  pointer-events: none;
+  filter: blur(34px);
+}
+
+.streakLeft {
+  left: -14%;
+  background: linear-gradient(
+    38deg,
+    rgba(124, 58, 237, 0) 26%,
+    rgba(139, 92, 246, 0.36) 52%,
+    rgba(124, 58, 237, 0) 78%
+  );
+  transform: rotate(-6deg);
+}
+
+.streakRight {
+  right: -14%;
+  background: linear-gradient(
+    -38deg,
+    rgba(59, 76, 202, 0) 26%,
+    rgba(79, 110, 226, 0.34) 52%,
+    rgba(59, 76, 202, 0) 78%
+  );
+  transform: rotate(6deg);
+}
+
+/* Violet line of light along the panel's bottom edge. */
+.floorGlow {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  width: 46%;
+  height: 60px;
+  transform: translateX(-50%);
+  background: var(--orv-gradient-glow-violet);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+/* --- Actions --- */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--orv-space-16);
+  margin-top: var(--orv-space-40);
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--orv-space-10);
+  height: 56px;
+  padding: 0 var(--orv-space-32);
+  border-radius: var(--orv-radius-8);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-medium);
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.primary {
+  background: var(--orv-gradient-primary);
+  color: var(--orv-text-on-brand);
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.42);
+}
+
+.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(124, 58, 237, 0.55);
+}
+
+.secondary {
+  border: 1px solid var(--orv-color-alpha-white-16);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--orv-text-primary);
+}
+
+.secondary:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 2px solid var(--orv-border-active);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary,
+  .secondary {
+    transition: none;
+  }
+
+  .primary:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 900px) {
+  .panel {
+    min-height: 0;
+    padding: var(--orv-space-64) var(--orv-space-32);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-top: var(--orv-space-40);
+    padding-bottom: var(--orv-space-40);
+  }
+
+  .panel {
+    padding: var(--orv-space-48) var(--orv-space-20);
+    border-radius: var(--orv-radius-16);
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+}

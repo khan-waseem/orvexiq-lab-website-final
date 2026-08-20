@@ -1,17 +1,27 @@
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import { Manrope, Playfair_Display } from 'next/font/google';
 import '@/styles/primitives.css';
 import '@/styles/semantics.css';
 import '@/styles/components.css';
 import '@/styles/typography.css';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
+import { SiteFooter } from '@/components/layout/SiteFooter';
 
 const manrope = Manrope({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-manrope',
+  display: 'swap',
+});
+
+/* Landing display face — the high-contrast serif used for every section
+   headline in the Figma landing design. */
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
   display: 'swap',
 });
 
@@ -26,13 +36,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={manrope.variable}>
+    <html lang="en" className={`${manrope.variable} ${playfair.variable}`}>
       <body>
         <Navbar />
         <main id="main-content" style={{ minHeight: '100vh' }}>
           {children}
         </main>
-        <Footer />
+        <SiteFooter />
       </body>
     </html>
   );

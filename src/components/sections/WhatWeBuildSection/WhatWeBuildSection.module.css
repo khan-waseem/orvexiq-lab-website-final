@@ -1,0 +1,252 @@
+/* WhatWeBuildSection — landing band four.
+ *
+ * 1440 reference geometry (band height 842):
+ *   eyebrow  y=82
+ *   headline y=126..240   60px serif, two lines
+ *   sub      y=274..324
+ *   cards    y=367..754   four columns ~286 wide, ~43 gutter
+ *   cta      y=818
+ */
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
+}
+
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.dots {
+  position: absolute;
+  top: var(--orv-space-24);
+  right: var(--orv-space-40);
+  z-index: var(--orv-z-normal);
+}
+
+/* --- Card row --- */
+
+.row {
+  display: flex;
+  align-items: stretch;
+  margin: var(--orv-space-40) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--orv-space-24) var(--orv-space-20) var(--orv-space-32);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: var(--orv-radius-16);
+  background:
+    linear-gradient(168deg, rgba(124, 58, 237, 0.10) 0%, rgba(124, 58, 237, 0.015) 60%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
+}
+
+.index {
+  align-self: flex-start;
+  font-size: var(--orv-font-size-18);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-color-raw-purple-300);
+}
+
+/* --- Medallion --- */
+
+.medallion {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin-top: var(--orv-space-8);
+  border-radius: var(--orv-radius-full);
+  background: radial-gradient(circle at 50% 45%, rgba(124, 58, 237, 0.22) 0%, rgba(124, 58, 237, 0) 68%);
+  color: var(--orv-color-raw-purple-300);
+}
+
+/* Two rings: a solid hairline and a wider, softer halo. */
+.medallionRing {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  box-shadow:
+    0 0 22px rgba(124, 58, 237, 0.35),
+    inset 0 0 18px rgba(124, 58, 237, 0.20);
+}
+
+.medallionRing::after {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.14);
+}
+
+/* Lit points sitting on the ring. */
+.spark {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--orv-radius-full);
+  background: #e9d5ff;
+  box-shadow: 0 0 9px 2px rgba(192, 132, 252, 0.85);
+}
+
+.sparkA {
+  top: 12%;
+  right: 10%;
+}
+
+.sparkB {
+  bottom: 16%;
+  left: 8%;
+}
+
+.sparkC {
+  top: 46%;
+  left: -2%;
+  width: 4px;
+  height: 4px;
+}
+
+/* --- Card copy --- */
+
+.cardTitle {
+  margin: var(--orv-space-24) 0 0;
+  font-size: var(--orv-font-size-18);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  text-transform: uppercase;
+  color: var(--orv-text-primary);
+  text-align: center;
+}
+
+.cardBody {
+  margin: var(--orv-space-16) 0 0;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-tertiary);
+  text-align: center;
+}
+
+/* --- Connector between cards --- */
+
+.connector {
+  display: flex;
+  align-items: center;
+  flex: 0 0 44px;
+  /* Sits level with the medallion centres rather than the card centres. */
+  align-self: flex-start;
+  margin-top: 116px;
+}
+
+.connectorLine {
+  flex: 1 1 auto;
+  height: 1px;
+  background: rgba(168, 85, 247, 0.5);
+}
+
+.connectorDot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-full);
+  background: #e9d5ff;
+  box-shadow: 0 0 9px 2px rgba(192, 132, 252, 0.8);
+}
+
+/* --- CTA --- */
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--orv-space-40);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  font-size: var(--orv-font-size-17);
+  color: var(--orv-text-primary);
+  text-decoration: none;
+}
+
+.ctaIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  color: var(--orv-color-raw-purple-200);
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.cta:hover .ctaIcon {
+  border-color: var(--orv-border-active);
+  background: rgba(124, 58, 237, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaIcon {
+    transition: none;
+  }
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * The connector describes a left-to-right chain, so it is dropped once the
+ * cards wrap rather than being redrawn vertically.
+ * ========================================== */
+@media (max-width: 1180px) {
+  .row {
+    flex-wrap: wrap;
+    gap: var(--orv-space-24);
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .card {
+    flex: 1 1 260px;
+  }
+}
+
+@media (max-width: 720px) {
+  .card {
+    flex: 1 1 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .dots {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-top: var(--orv-space-48);
+    padding-bottom: var(--orv-space-48);
+  }
+
+  .medallion {
+    width: 100px;
+    height: 100px;
+  }
+}

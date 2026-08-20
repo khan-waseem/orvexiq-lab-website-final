@@ -1,173 +1,167 @@
-/* ApproachSection Component Styles — Figma node 86:923
+/* ApproachSection — landing band five, "Our Process".
  *
- * 1440 reference (section height 741, padding 128/128):
- *   header y=128 (144) -> gap 64 -> steps y=336 (277)
- *   header: eyebrow(16) +16 headline(66) +16 sub(30)
- *   step card 294x277: padding 32, gap 16, number(55) title(30) body
- *
- * Vertical padding comes from SectionWrapper padding="lg"; this class only
- * supplies positioning/clipping for the ambient glow.
+ * 1440 reference geometry (band height 865):
+ *   eyebrow  y=76
+ *   headline y=131..196   60px serif, one line, solid rule under it
+ *   sub      y=246..298
+ *   cards    y=357..812   four columns ~297 wide, ~34 gutter with arrows
  */
-.approachSection {
+
+.section {
   position: relative;
   overflow: hidden;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-64);
 }
 
-/* Ambient Top-Left Radial Glow — Figma 215:187: 632.13 ellipse at (-106,-26);
-   asset is pre-blurred to 1072.13, drawn at natural size centred on (210, 289). */
-.approachGlow {
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.dots {
   position: absolute;
-  top: -247px;
-  left: -22.64%;
-  width: min(74.45%, 1072.13px);
-  aspect-ratio: 1;
-  pointer-events: none;
+  top: var(--orv-space-24);
+  right: var(--orv-space-32);
   z-index: var(--orv-z-normal);
 }
 
-.glowImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+/* --- Step row --- */
+
+.steps {
+  display: flex;
+  align-items: stretch;
+  margin: var(--orv-space-40) 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.contentContainer {
+.arrow {
+  display: flex;
+  align-items: center;
+  flex: 0 0 34px;
+  justify-content: center;
+  color: var(--orv-color-raw-purple-300);
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.6));
+}
+
+.step {
   position: relative;
-  z-index: var(--orv-z-floating);
   display: flex;
   flex-direction: column;
-  gap: var(--orv-space-64);
-  width: 100%;
-}
-
-/* Header Composition — Figma 86:924 */
-.headerBlock {
-  display: flex;
-  flex-direction: column;
-  gap: var(--orv-space-16);
-  width: 100%;
-}
-
-/* Figma 86:928 uses leading-[normal] at 48px (=66px), not the 56px used by
-   the other section headlines, so the default h2 leading is overridden here. */
-.headerBlock .headlineText {
-  line-height: var(--orv-line-height-normal);
-}
-
-/* Figma 86:929 — 18px / 30px Regular */
-.supportingText {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-18);
-  font-weight: var(--orv-font-weight-regular);
-  line-height: var(--orv-line-height-30);
-  color: var(--orv-text-secondary);
-  margin: 0;
-}
-
-/* 4-Stage Grid — Figma 86:930 */
-.stepsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--orv-layout-gutter);
-  width: 100%;
-}
-
-/* Step card — Figma 86:931: glass-136, 1px alpha-white-14, blur 11, r16 */
-.stepCard {
-  display: flex;
-  flex-direction: column;
-  gap: var(--orv-space-16);
-  padding: var(--orv-space-32);
-  min-height: var(--orv-size-step-card-height);
-  box-sizing: border-box;
-  width: 100%;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  padding: var(--orv-space-24) var(--orv-space-24) var(--orv-space-48);
+  border: 1px solid rgba(168, 85, 247, 0.16);
   border-radius: var(--orv-radius-16);
-  background: var(--orv-gradient-glass-136);
-  border: var(--orv-card-glass-border);
-  backdrop-filter: var(--orv-blur-stage);
-  -webkit-backdrop-filter: var(--orv-blur-stage);
-  box-shadow: var(--orv-shadow-card);
-  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
-              transform var(--orv-duration-normal) var(--orv-ease-default),
-              box-shadow var(--orv-duration-normal) var(--orv-ease-default);
+  background:
+    linear-gradient(170deg, rgba(124, 58, 237, 0.09) 0%, rgba(124, 58, 237, 0.015) 62%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
 }
 
-.stepCard:hover {
-  border-color: var(--orv-border-active);
-  transform: translateY(-2px);
-  box-shadow: var(--orv-shadow-glass-lg);
-}
-
-/* Figma 86:932 — 40px Bold, brand-400 */
 .stepNumber {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-40);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-normal);
-  letter-spacing: var(--orv-letter-spacing-tight-080);
-  color: var(--orv-brand-400);
-  margin: 0;
+  align-self: flex-start;
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-color-raw-purple-300);
 }
 
-/* Figma 86:933 — 22px Bold */
+.iconFrame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  margin-top: var(--orv-space-20);
+  border: 1px solid rgba(168, 85, 247, 0.26);
+  border-radius: var(--orv-radius-16);
+  background: rgba(124, 58, 237, 0.08);
+  color: var(--orv-color-raw-purple-300);
+  box-shadow: inset 0 0 20px rgba(124, 58, 237, 0.14);
+}
+
 .stepTitle {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-22);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-normal);
+  margin: var(--orv-space-24) 0 0;
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-semibold);
   color: var(--orv-text-primary);
-  margin: 0;
+  text-align: center;
 }
 
-/* Figma 86:934 — 15px / 24px Regular */
-.stepDescription {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-15);
-  font-weight: var(--orv-font-weight-regular);
+.titleRule {
+  width: 34px;
+  height: 2px;
+  margin-top: var(--orv-space-10);
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-purple-300);
+}
+
+.stepBody {
+  margin: var(--orv-space-16) 0 0;
+  font-size: var(--orv-font-size-14);
   line-height: var(--orv-line-height-24);
-  color: var(--orv-text-secondary);
-  margin: 0;
+  color: var(--orv-text-tertiary);
+  text-align: center;
+}
+
+/* Dot texture tucked into the bottom corner of the outer cards. */
+.stepTexture {
+  position: absolute;
+  bottom: var(--orv-space-12);
+  left: var(--orv-space-12);
+  opacity: 0.7;
+}
+
+.step:last-child .stepTexture {
+  left: auto;
+  right: var(--orv-space-12);
 }
 
 /* ==========================================
  * RESPONSIVE
- * 4 -> 4 -> 2 -> 2 -> 1. The four stages are a sequence, so they are kept in
- * balanced pairs rather than dropping straight to a single tall column.
+ * The arrows read left to right, so they drop out once the cards wrap.
  * ========================================== */
-@media (max-width: 1400px) {
-  .contentContainer {
-    gap: var(--orv-space-48);
+/* The design's cards are 297x454 — taller than their content needs, with the
+   copy sitting in the upper two thirds. */
+@media (min-width: 1181px) {
+  .step {
+    min-height: 430px;
   }
 }
 
-@media (max-width: 1120px) {
-  .stepsGrid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1180px) {
+  .steps {
+    flex-wrap: wrap;
+    gap: var(--orv-space-24);
   }
 
-  .stepCard {
-    min-height: 0;
+  .arrow {
+    display: none;
+  }
+
+  .step {
+    flex: 1 1 260px;
   }
 }
 
-@media (max-width: 900px) {
-  .stepCard {
-    padding: var(--orv-space-24);
+@media (max-width: 720px) {
+  .step {
+    flex: 1 1 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .dots {
+    display: none;
   }
 }
 
 @media (max-width: 600px) {
-  .contentContainer {
-    gap: var(--orv-space-40);
-  }
-
-  .stepsGrid {
-    grid-template-columns: 1fr;
-    gap: var(--orv-space-16);
-  }
-
-  .stepNumber {
-    font-size: var(--orv-font-size-32);
-    letter-spacing: var(--orv-letter-spacing-tight-032);
+  .section {
+    padding-top: var(--orv-space-48);
+    padding-bottom: var(--orv-space-48);
   }
 }
