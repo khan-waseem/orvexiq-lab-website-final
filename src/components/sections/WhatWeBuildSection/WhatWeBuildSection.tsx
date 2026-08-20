@@ -4,7 +4,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
-import { DotGrid } from '@/components/decor/DotGrid';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { DISCIPLINE_ICONS } from './DisciplineIcons';
 import styles from './WhatWeBuildSection.module.css';
@@ -27,7 +27,7 @@ const Connector: React.FC = () => (
  *
  * Four discipline cards joined left to right by a connector thread, so the
  * row reads as one system rather than four separate services. The medallion
- * rings, sparks and glyphs are all drawn in markup.
+ * medallion rings, their lit points and the glyphs are all drawn in markup.
  */
 export const WhatWeBuildSection: React.FC<WhatWeBuildSectionProps> = ({ content }) => (
   <SectionWrapper
@@ -35,14 +35,15 @@ export const WhatWeBuildSection: React.FC<WhatWeBuildSectionProps> = ({ content 
     className={styles.section}
     ariaLabelledBy="what-we-build-heading"
   >
-    <GlowRings side="right" size={1240} sparks={[[1, 172], [2, 208], [3, 146]]} />
-    <GlowRings side="left" size={880} sparks={[[2, -18]]} />
-    <DotGrid className={styles.dots} columns={8} rows={4} fade="to-right" />
+    <GlowRings side="right" size={1240} />
+    <GlowRings side="left" size={880} />
+    <SectionDots />
 
     <PageContainer className={styles.container}>
       <SectionHeading
         id="what-we-build-heading"
         eyebrow={content.eyebrow}
+        rule="dot"
         sub={content.subdescription}
       >
         {content.headlineLine1}

@@ -17,13 +17,6 @@
   z-index: var(--orv-z-floating);
 }
 
-.dots {
-  position: absolute;
-  top: var(--orv-space-40);
-  right: var(--orv-space-32);
-  z-index: var(--orv-z-normal);
-}
-
 /* --- Grid --- */
 
 .grid {
@@ -281,13 +274,18 @@
  * RESPONSIVE
  * ========================================== */
 @media (max-width: 1024px) {
+  /* One column, but the card keeps roughly its two-column width: letting it
+     run the full container stretches the screen art away from the proportions
+     the design sets, and leaves the copy in very long lines. */
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     gap: var(--orv-space-32);
   }
 
-  .dots {
-    display: none;
+  .card {
+    width: 100%;
+    max-width: 650px;
   }
 }
 

@@ -6,8 +6,8 @@ import React from 'react';
  */
 
 const base = {
-  width: 46,
-  height: 46,
+  width: 54,
+  height: 54,
   viewBox: '0 0 46 46',
   fill: 'none',
   stroke: 'currentColor',

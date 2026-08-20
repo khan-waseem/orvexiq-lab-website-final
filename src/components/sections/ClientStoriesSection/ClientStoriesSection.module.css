@@ -20,13 +20,6 @@
   z-index: var(--orv-z-floating);
 }
 
-.dots {
-  position: absolute;
-  top: var(--orv-space-24);
-  right: var(--orv-space-40);
-  z-index: var(--orv-z-normal);
-}
-
 /* --- Carousel shell --- */
 
 .carousel {
@@ -258,10 +251,6 @@
   .card {
     padding: var(--orv-space-32);
     min-height: 0;
-  }
-
-  .dots {
-    display: none;
   }
 }
 

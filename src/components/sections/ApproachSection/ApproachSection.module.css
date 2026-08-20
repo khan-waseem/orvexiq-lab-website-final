@@ -19,13 +19,6 @@
   z-index: var(--orv-z-floating);
 }
 
-.dots {
-  position: absolute;
-  top: var(--orv-space-24);
-  right: var(--orv-space-32);
-  z-index: var(--orv-z-normal);
-}
-
 /* --- Step row --- */
 
 .steps {
@@ -107,19 +100,6 @@
   text-align: center;
 }
 
-/* Dot texture tucked into the bottom corner of the outer cards. */
-.stepTexture {
-  position: absolute;
-  bottom: var(--orv-space-12);
-  left: var(--orv-space-12);
-  opacity: 0.7;
-}
-
-.step:last-child .stepTexture {
-  left: auto;
-  right: var(--orv-space-12);
-}
-
 /* ==========================================
  * RESPONSIVE
  * The arrows read left to right, so they drop out once the cards wrap.
@@ -152,10 +132,6 @@
     flex: 1 1 100%;
     max-width: 420px;
     margin: 0 auto;
-  }
-
-  .dots {
-    display: none;
   }
 }
 

@@ -20,13 +20,6 @@
   z-index: var(--orv-z-floating);
 }
 
-.dots {
-  position: absolute;
-  top: var(--orv-space-24);
-  right: var(--orv-space-24);
-  z-index: var(--orv-z-normal);
-}
-
 /* Violet wash along the bottom edge, where the band meets the next one. */
 .floorGlow {
   position: absolute;
@@ -137,10 +130,6 @@
     flex: 1 1 100%;
     max-width: 460px;
     margin: 0 auto;
-  }
-
-  .dots {
-    display: none;
   }
 }
 

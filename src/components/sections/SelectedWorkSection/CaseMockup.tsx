@@ -59,23 +59,30 @@ export const CaseMockup: React.FC<CaseMockupProps> = ({ label }) => (
               <span className={styles.panelChip}>Last 30 days</span>
             </div>
 
-            <svg className={styles.chart} viewBox="0 0 182 52" fill="none" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="caseChartFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="rgba(168, 85, 247, 0.45)" />
-                  <stop offset="100%" stopColor="rgba(168, 85, 247, 0)" />
-                </linearGradient>
-              </defs>
-              <polygon points={`${CHART_POINTS} 182,52 0,52`} fill="url(#caseChartFill)" />
-              <polyline
-                points={CHART_POINTS}
-                stroke="#c084fc"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle cx="182" cy="8" r="2.4" fill="#e9d5ff" />
-            </svg>
+            <div className={styles.chartWrap}>
+              <svg className={styles.chart} viewBox="0 0 182 52" fill="none" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="caseChartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="rgba(168, 85, 247, 0.45)" />
+                    <stop offset="100%" stopColor="rgba(168, 85, 247, 0)" />
+                  </linearGradient>
+                </defs>
+                <polygon points={`${CHART_POINTS} 182,52 0,52`} fill="url(#caseChartFill)" />
+                <polyline
+                  points={CHART_POINTS}
+                  stroke="#c084fc"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
+              {/* The plot is stretched to fill the panel, which would squash a
+                  marker drawn inside it — so the last point rides outside the
+                  SVG and keeps its shape. Its position mirrors the final data
+                  point (182,8 in a 182x52 box). */}
+              <span className={styles.chartTip} />
+            </div>
           </div>
 
           <div className={styles.listPanel}>

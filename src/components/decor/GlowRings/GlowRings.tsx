@@ -6,8 +6,6 @@ export interface GlowRingsProps {
   side: 'left' | 'right';
   /** Diameter of the outermost ring in px. */
   size?: number;
-  /** Lit points that sit on the arcs, as [ringIndex, angleDeg] pairs. */
-  sparks?: Array<[number, number]>;
   className?: string;
 }
 
@@ -17,13 +15,12 @@ const RING_COUNT = 5;
  * GlowRings Decor
  *
  * The concentric violet arcs that bleed in from the page edges behind most
- * landing sections, with a few lit points sitting on the rings. Pure
- * decoration — drawn as one inline SVG so the strokes stay crisp at any size.
+ * landing sections. Pure decoration — drawn as one inline SVG so the strokes
+ * stay crisp at any size.
  */
 export const GlowRings: React.FC<GlowRingsProps> = ({
   side,
   size = 900,
-  sparks = [[1, -28], [3, 18], [2, 62]],
   className = '',
 }) => {
   const c = size / 2;
@@ -54,19 +51,6 @@ export const GlowRings: React.FC<GlowRingsProps> = ({
             opacity={1 - i * 0.14}
           />
         ))}
-
-        {sparks.map(([ringIndex, angle]) => {
-          const r = rings[Math.min(ringIndex, rings.length - 1)];
-          const rad = (angle * Math.PI) / 180;
-          const x = c + r * Math.cos(rad) * (side === 'left' ? 1 : -1);
-          const y = c + r * Math.sin(rad);
-          return (
-            <g key={`${ringIndex}-${angle}`}>
-              <circle cx={x} cy={y} r={7} fill="rgba(192, 132, 252, 0.18)" />
-              <circle cx={x} cy={y} r={2.2} fill="#e9d5ff" />
-            </g>
-          );
-        })}
       </svg>
     </div>
   );

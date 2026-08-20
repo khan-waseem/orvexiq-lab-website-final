@@ -3,7 +3,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
-import { DotGrid } from '@/components/decor/DotGrid';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { PILLAR_ICONS } from './PillarIcons';
 import { PILLAR_DEMOS } from './PillarDemos';
@@ -36,9 +36,9 @@ export const DesignSystemsSection: React.FC<DesignSystemsSectionProps> = ({ cont
     className={styles.section}
     ariaLabelledBy="design-systems-heading"
   >
-    <GlowRings side="left" size={980} sparks={[[1, -22], [3, 26]]} />
-    <GlowRings side="right" size={860} sparks={[[2, 158], [1, 205]]} />
-    <DotGrid className={styles.dots} columns={7} rows={4} fade="to-right" />
+    <GlowRings side="left" size={980} />
+    <GlowRings side="right" size={860} />
+    <SectionDots />
 
     <PageContainer className={styles.container}>
       <SectionHeading

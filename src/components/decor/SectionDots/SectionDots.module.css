@@ -1,0 +1,45 @@
+/* Bottom-corner dot pattern closing a landing band. */
+
+.wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--orv-space-32);
+  pointer-events: none;
+  z-index: var(--orv-z-normal);
+}
+
+.left,
+.right {
+  position: absolute;
+  bottom: 0;
+}
+
+.left {
+  left: var(--orv-space-32);
+}
+
+.right {
+  right: var(--orv-space-32);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    bottom: var(--orv-space-16);
+  }
+
+  .left {
+    left: var(--orv-space-12);
+  }
+
+  .right {
+    right: var(--orv-space-12);
+  }
+}
+
+/* Below this the corners belong to the content, not to decoration. */
+@media (max-width: 600px) {
+  .wrapper {
+    display: none;
+  }
+}

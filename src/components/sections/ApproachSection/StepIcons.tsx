@@ -4,8 +4,8 @@ import React from 'react';
  *  card's colour and stay crisp at any density. */
 
 const base = {
-  width: 40,
-  height: 40,
+  width: 46,
+  height: 46,
   viewBox: '0 0 40 40',
   fill: 'none',
   stroke: 'currentColor',

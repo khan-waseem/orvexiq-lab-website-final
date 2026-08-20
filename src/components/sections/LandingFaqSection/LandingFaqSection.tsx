@@ -3,6 +3,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import styles from './LandingFaqSection.module.css';
 
@@ -28,13 +29,15 @@ export const LandingFaqSection: React.FC<LandingFaqSectionProps> = ({ content })
     className={styles.section}
     ariaLabelledBy="faq-heading"
   >
-    <GlowRings side="left" size={1080} sparks={[[1, -20], [2, 22], [3, 58]]} />
-    <GlowRings side="right" size={900} sparks={[[2, 168]]} />
+    <GlowRings side="left" size={1080} />
+    <GlowRings side="right" size={900} />
+    <SectionDots />
 
     <PageContainer className={styles.container}>
       <SectionHeading
         id="faq-heading"
         eyebrow={content.eyebrow}
+        rule="dot"
         sub={content.subdescription}
       >
         {content.headlineLine1}

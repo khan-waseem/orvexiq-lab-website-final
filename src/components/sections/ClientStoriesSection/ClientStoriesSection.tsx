@@ -6,7 +6,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
-import { DotGrid } from '@/components/decor/DotGrid';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { TestimonialData } from '@/content/schemas/testimonial.schema';
 import { OrbitVisual } from './OrbitVisual';
@@ -56,9 +56,9 @@ export const ClientStoriesSection: React.FC<ClientStoriesSectionProps> = ({
       className={styles.section}
       ariaLabelledBy="client-stories-heading"
     >
-      <GlowRings side="left" size={1000} sparks={[[1, -26], [3, 34]]} />
-      <GlowRings side="right" size={880} sparks={[[2, 170]]} />
-      <DotGrid className={styles.dots} columns={7} rows={4} fade="to-right" />
+      <GlowRings side="left" size={1000} />
+      <GlowRings side="right" size={880} />
+      <SectionDots />
 
       <PageContainer className={styles.container}>
         <SectionHeading

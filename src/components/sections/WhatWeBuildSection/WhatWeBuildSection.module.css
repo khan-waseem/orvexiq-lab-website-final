@@ -20,13 +20,6 @@
   z-index: var(--orv-z-floating);
 }
 
-.dots {
-  position: absolute;
-  top: var(--orv-space-24);
-  right: var(--orv-space-40);
-  z-index: var(--orv-z-normal);
-}
-
 /* --- Card row --- */
 
 .row {
@@ -232,10 +225,6 @@
     flex: 1 1 100%;
     max-width: 420px;
     margin: 0 auto;
-  }
-
-  .dots {
-    display: none;
   }
 }
 

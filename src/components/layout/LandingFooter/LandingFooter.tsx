@@ -51,10 +51,6 @@ export const LandingFooter: React.FC<LandingFooterProps> = ({
                    strokeWidth="1" />
           <ellipse cx="120" cy="310" rx="228" ry="228" stroke="rgba(168, 85, 247, 0.12)"
                    strokeWidth="1" />
-          <circle cx="330" cy="126" r="3" fill="#e9d5ff" />
-          <circle cx="330" cy="126" r="8" fill="rgba(192, 132, 252, 0.16)" />
-          <circle cx="76" cy="196" r="2.6" fill="#dacfff" />
-          <circle cx="92" cy="500" r="2.6" fill="#dacfff" />
         </svg>
         <span className={styles.cornerGlow} aria-hidden="true" />
 

@@ -5,7 +5,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
-import { DotGrid } from '@/components/decor/DotGrid';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { CaseStudy } from '@/content/schemas/case-study.schema';
 import { CaseMockup } from './CaseMockup';
@@ -41,14 +41,15 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
       className={styles.section}
       ariaLabelledBy="selected-work-heading"
     >
-      <GlowRings side="left" size={1100} sparks={[[1, -34], [2, 14], [3, 48]]} />
-      <GlowRings side="right" size={1000} sparks={[[1, 200], [3, 150]]} />
-      <DotGrid className={styles.dots} columns={9} rows={5} fade="to-right" />
+      <GlowRings side="left" size={1100} />
+      <GlowRings side="right" size={1000} />
+      <SectionDots />
 
       <PageContainer className={styles.container}>
         <SectionHeading
           id="selected-work-heading"
           eyebrow={content.eyebrow}
+          rule="dot"
           sub={content.subdescription}
         >
           {content.headlineLine1}

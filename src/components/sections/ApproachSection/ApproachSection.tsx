@@ -3,7 +3,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
-import { DotGrid } from '@/components/decor/DotGrid';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { STEP_ICONS } from './StepIcons';
 import styles from './ApproachSection.module.css';
@@ -26,8 +26,7 @@ const StepArrow: React.FC = () => (
  * ApproachSection — landing band five, "Our Process".
  *
  * Four stage cards read left to right with an arrow between each. The number,
- * glyph frame, title rule and the dot texture inside the outer cards are all
- * drawn in markup.
+ * glyph frame and title rule are all drawn in markup.
  */
 export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => (
   <SectionWrapper
@@ -35,15 +34,15 @@ export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => 
     className={styles.section}
     ariaLabelledBy="approach-heading"
   >
-    <GlowRings side="left" size={1020} sparks={[[1, -30], [3, 30]]} />
-    <GlowRings side="right" size={940} sparks={[[2, 165], [1, 198]]} />
-    <DotGrid className={styles.dots} columns={7} rows={4} fade="to-right" />
+    <GlowRings side="left" size={1020} />
+    <GlowRings side="right" size={940} />
+    <SectionDots />
 
     <PageContainer className={styles.container}>
       <SectionHeading
         id="approach-heading"
         eyebrow={content.eyebrow}
-        rule="solid"
+        rule="dot"
         sub={content.subdescription}
       >
         {content.headline}
@@ -53,7 +52,6 @@ export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => 
       <ol className={styles.steps}>
         {content.steps.map((step, index) => {
           const Icon = STEP_ICONS[step.icon];
-          const isEdgeCard = index === 0 || index === content.steps.length - 1;
 
           return (
             <React.Fragment key={step.id}>
@@ -70,16 +68,6 @@ export const ApproachSection: React.FC<ApproachSectionProps> = ({ content }) => 
                 <span className={styles.titleRule} aria-hidden="true" />
                 <p className={styles.stepBody}>{step.description}</p>
 
-                {/* The first and last cards carry a dot texture in the design. */}
-                {isEdgeCard && (
-                  <DotGrid
-                    className={styles.stepTexture}
-                    columns={6}
-                    rows={3}
-                    gap={10}
-                    fade={index === 0 ? 'to-right' : 'to-left'}
-                  />
-                )}
               </li>
             </React.Fragment>
           );
