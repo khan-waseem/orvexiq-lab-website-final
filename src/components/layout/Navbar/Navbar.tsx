@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -18,6 +18,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
@@ -34,6 +35,18 @@ export const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  /* The pill floats over the page, so once anything scrolls under it the
+     translucent background alone is not enough separation. Past the first few
+     pixels it gains a solid backing and a lit edge. */
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/';
@@ -43,7 +56,10 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <nav className={styles.navPill} aria-label="Main Navigation">
+      <nav
+        className={`${styles.navPill} ${scrolled ? styles.navPillScrolled : ''}`}
+        aria-label="Main Navigation"
+      >
         {/* Brand Lockup */}
         {/* Figma 183:139 — the nav lockup uses the exported 40px ring mark,
             not the lettered square used in the footer (86:995). */}
@@ -81,7 +97,7 @@ export const Navbar: React.FC = () => {
         {/* Desktop Navigation CTA */}
         <div className={styles.ctaDesktop}>
           <Button variant="nav" href="/contact">
-            Contact Us
+            Let&rsquo;s Connect
           </Button>
         </div>
 
@@ -123,7 +139,7 @@ export const Navbar: React.FC = () => {
               })}
             </ul>
             <Button variant="nav" href="/contact" onClick={() => setMobileMenuOpen(false)}>
-              Contact Us
+              Let&rsquo;s Connect
             </Button>
           </div>
         )}

@@ -1,19 +1,12 @@
-'use client';
-
 import React from 'react';
-import { usePathname } from 'next/navigation';
-import { Footer } from '@/components/layout/Footer';
 import { LandingFooter } from '@/components/layout/LandingFooter';
 
 /**
- * SiteFooter — picks the footer for the current route.
+ * SiteFooter — the footer for every route.
  *
- * The landing page has its own footer panel in the redesign; every other page
- * keeps the existing site footer. Doing the switch here keeps the root layout
- * as the single place a footer is rendered, rather than moving <Footer /> into
- * fourteen page files.
+ * This was a per-route switch while only the landing page carried the
+ * redesigned footer. Now that the whole site uses it, the indirection is kept
+ * as the single place the root layout renders a footer from — so a future
+ * per-route exception has somewhere to live.
  */
-export const SiteFooter: React.FC = () => {
-  const pathname = usePathname();
-  return pathname === '/' ? <LandingFooter /> : <Footer />;
-};
+export const SiteFooter: React.FC = () => <LandingFooter />;

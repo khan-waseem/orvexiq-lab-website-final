@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { LegalPage } from '@/content/schemas/legal-page.schema';
 import styles from './LegalPageSection.module.css';
@@ -21,7 +23,11 @@ export const LegalPageSection: React.FC<LegalPageSectionProps> = ({ page }) => {
   return (
     <>
       <SectionWrapper theme="canvas" padding="custom" id="legal-hero" className={styles.heroSection}>
-        <PageContainer>
+        <div className={styles.heroGlow} aria-hidden="true" />
+        <GlowRings side="left" size={960} />
+        <GlowRings side="right" size={840} />
+
+        <PageContainer className={styles.container}>
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <ol className={styles.crumbList}>
               <li>
@@ -46,35 +52,22 @@ export const LegalPageSection: React.FC<LegalPageSectionProps> = ({ page }) => {
       </SectionWrapper>
 
       <SectionWrapper theme="canvas" padding="custom" id="legal-body" className={styles.bodySection}>
-        <PageContainer>
-          <div className={styles.row}>
-            <nav className={styles.toc} aria-label="On this page">
-              <p className={styles.tocLabel}>{page.tocLabel}</p>
-              <ol className={styles.tocList}>
-                {page.sections.map((s, i) => (
-                  <li key={s.id}>
-                    <a href={`#${s.id}`} className={styles.tocLink}>
-                      {i + 1}. {s.title}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
+        <SectionDots />
 
-            <div className={styles.content}>
-              {page.sections.map((s, i) => (
-                <section key={s.id} id={s.id} className={styles.clause}>
-                  <h2 className={styles.clauseTitle}>
-                    {i + 1}. {s.title}
-                  </h2>
-                  {s.paragraphs.map((p) => (
-                    <p key={p} className={styles.clauseBody}>
-                      {p}
-                    </p>
-                  ))}
-                </section>
-              ))}
-            </div>
+        <PageContainer className={styles.container}>
+          <div className={styles.content}>
+            {page.sections.map((s, i) => (
+              <section key={s.id} id={s.id} className={styles.clause}>
+                <h2 className={styles.clauseTitle}>
+                  {i + 1}. {s.title}
+                </h2>
+                {s.paragraphs.map((p) => (
+                  <p key={p} className={styles.clauseBody}>
+                    {p}
+                  </p>
+                ))}
+              </section>
+            ))}
           </div>
         </PageContainer>
       </SectionWrapper>

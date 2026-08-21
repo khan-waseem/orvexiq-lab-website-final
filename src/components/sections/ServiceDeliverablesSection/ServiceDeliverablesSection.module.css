@@ -1,5 +1,17 @@
 /* ServiceDeliverablesSection — Figma node 124:71 */
+/* Lifted above the arcs and corner dots behind the band. */
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.heading {
+  margin-bottom: var(--orv-space-40);
+}
+
 .section {
+  position: relative;
+  overflow: hidden;
   position: relative;
   padding-top: var(--orv-space-64);
   padding-bottom: var(--orv-space-64);

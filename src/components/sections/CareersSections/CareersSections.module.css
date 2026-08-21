@@ -1,3 +1,13 @@
+/* Lifted above the arcs and corner dots behind each band. */
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.heading {
+  margin-bottom: var(--orv-space-48);
+}
+
 /* Careers sections — Figma nodes 35:24 (Why Us) and 35:42 (Open Roles) */
 
 .eyebrowRow {
@@ -37,16 +47,24 @@
 .perkCard {
   display: flex;
   flex-direction: column;
-  gap: var(--orv-space-16);
+  flex: 1 1 0;
+  min-width: 0;
   padding: var(--orv-space-32);
+  border: 1px solid rgba(168, 85, 247, 0.18);
   border-radius: var(--orv-radius-16);
-  background: var(--orv-card-glass-bg);
-  border: var(--orv-card-glass-border);
-  backdrop-filter: var(--orv-card-glass-blur);
-  -webkit-backdrop-filter: var(--orv-card-glass-blur);
-  box-shadow: var(--orv-card-glass-shadow);
-  box-sizing: border-box;
+  background:
+    linear-gradient(168deg, rgba(124, 58, 237, 0.10) 0%, rgba(124, 58, 237, 0.015) 60%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
+  transition: border-color 160ms ease, transform 160ms ease;
 }
+
+.perkCard:hover {
+  border-color: rgba(168, 85, 247, 0.42);
+  transform: translateY(-2px);
+}
+
+
 
 .perkTitle {
   font-family: var(--orv-font-family-primary);
@@ -90,22 +108,42 @@
 .roleRow {
   display: flex;
   align-items: center;
-  gap: var(--orv-space-32);
-  width: 100%;
-  min-height: 122px;
-  padding: var(--orv-space-32);
+  justify-content: space-between;
+  gap: var(--orv-space-24);
+  padding: var(--orv-space-24);
+  border: 1px solid rgba(168, 85, 247, 0.18);
   border-radius: var(--orv-radius-16);
-  background: var(--orv-card-glass-bg);
-  border: var(--orv-card-glass-border);
-  backdrop-filter: var(--orv-card-glass-blur);
-  -webkit-backdrop-filter: var(--orv-card-glass-blur);
-  box-shadow: var(--orv-card-glass-shadow);
-  box-sizing: border-box;
+  background:
+    linear-gradient(168deg, rgba(124, 58, 237, 0.10) 0%, rgba(124, 58, 237, 0.015) 60%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
   text-decoration: none;
-  outline: none;
-  transition: border-color var(--orv-duration-normal) var(--orv-ease-default),
-              transform var(--orv-duration-normal) var(--orv-ease-default);
+  transition: border-color 160ms ease, transform 160ms ease;
 }
+
+.roleRow:hover {
+  border-color: rgba(168, 85, 247, 0.42);
+  transform: translateY(-2px);
+}
+
+.roleRow:focus-visible {
+  outline: 2px solid var(--orv-border-active);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .perkCard,
+  .roleRow {
+    transition: none;
+  }
+
+  .perkCard:hover,
+  .roleRow:hover {
+    transform: none;
+  }
+}
+
+
 
 .roleRow:hover,
 .roleRow:focus-visible {

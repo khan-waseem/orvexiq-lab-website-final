@@ -1,17 +1,14 @@
 {
   "hero": {
-    "headlineLine1": "A small team that ships",
-    "headlineLine2": "large systems.",
+    "eyebrow": "About Orvexiq Lab",
+    "headline": "A small team that ships large systems.",
     "subdescription": "Orvexiq Lab is a product studio, not a staffing agency. We take a handful of clients at a time and embed deeply enough to be genuinely useful.",
     "heroIconAssetUrl": "/assets/about/about-hero-icon.png"
   },
   "story": {
-    "eyebrow": "WHY WE EXIST",
-    "headlineLines": [
-      "Complex products",
-      "fail for the same",
-      "reasons."
-    ],
+    "eyebrow": "Why we exist",
+    "headlineLine1": "Complex products fail",
+    "headlineAccent2": "for the same reasons.",
     "paragraphs": [
       "Not because nobody could design a good screen. Because the fiftieth screen was designed by someone who never saw the first ten, using values nobody wrote down.",
       "We build the layer underneath — the tokens, the components, the decisions — so that the fiftieth screen costs a fraction of what the first one did and still looks like it belongs.",
@@ -19,7 +16,10 @@
     ]
   },
   "principles": {
-    "headline": "How we actually work",
+    "eyebrow": "How we work",
+    "headlineLine1": "Four rules we",
+    "headlineAccent2": "do not bend.",
+    "subdescription": "They decide what we take on, how we run it, and what we leave behind.",
     "items": [
       {
         "id": "pr-1",
@@ -42,9 +42,6 @@
         "body": "We take a handful at a time. Capacity is a design constraint like any other."
       }
     ]
-  },
-  "impact": {
-    "eyebrow": "IMPACT"
   },
   "ctaSection": {
     "eyebrow": "START A PROJECT",

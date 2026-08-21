@@ -48,7 +48,6 @@ export const DesignSystemsSection: React.FC<DesignSystemsSectionProps> = ({ cont
         sub={content.subdescription}
       >
         {content.headlineLine1}
-        <Accent>{content.headlineAccent1}</Accent>
         <br />
         {content.headlineLine2}
         <Accent>{content.headlineAccent2}</Accent>

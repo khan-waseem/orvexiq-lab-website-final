@@ -1,7 +1,9 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
 import { ServiceDetailPage } from '@/content/schemas/service-detail.schema';
 import styles from './ServiceWhySection.module.css';
 
@@ -18,17 +20,30 @@ export interface ServiceWhySectionProps {
  */
 export const ServiceWhySection: React.FC<ServiceWhySectionProps> = ({ content }) => {
   return (
-    <SectionWrapper theme="canvas" padding="custom" id="service-why" className={styles.section}>
-      <PageContainer>
+    <SectionWrapper
+      theme="canvas"
+      padding="custom"
+      id="service-why"
+      className={styles.section}
+      ariaLabelledBy="service-why-heading"
+    >
+      <GlowRings side="left" size={980} />
+      <GlowRings side="right" size={860} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
         <div className={styles.row}>
-          <div className={styles.heading}>
-            <Eyebrow align="left" tone="muted">{content.eyebrow}</Eyebrow>
-            <h2 className={styles.headline}>
-              {content.headlineLine1}{' '}
-              <br />
-              {content.headlineLine2}
-            </h2>
-          </div>
+          <SectionHeading
+            id="service-why-heading"
+            eyebrow={content.eyebrow}
+            rule="dot"
+            align="left"
+            className={styles.heading}
+          >
+            {content.headlineLine1}
+            <br />
+            <Accent>{content.headlineLine2}</Accent>
+          </SectionHeading>
 
           <div className={styles.body}>
             {content.paragraphs.map((p) => (

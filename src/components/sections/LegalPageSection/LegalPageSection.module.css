@@ -1,8 +1,34 @@
+/* Lifted above the arcs and corner dots behind each band. */
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+/* Same ambient wash the other page heroes open with. */
+.heroGlow {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: min(160%, 2300px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(48, 7, 84, 1) 0%,
+    rgba(48, 7, 84, 0.7) 28%,
+    rgba(48, 7, 84, 0.34) 52%,
+    rgba(48, 7, 84, 0.12) 75%,
+    rgba(48, 7, 84, 0) 100%
+  );
+  pointer-events: none;
+}
+
 /* Legal page — Figma nodes 36:2 / 37:2 */
 
 /* ---------- Page Hero (36:16) — 339 tall incl. the 124 nav band ---------- */
 .heroSection {
   position: relative;
+  overflow: hidden;
   padding-top: 220px;
   padding-bottom: var(--orv-space-48);
 }
@@ -52,13 +78,12 @@
 
 /* Figma 36:20 — 56px Bold, tracking -1.12 */
 .title {
-  font-family: var(--orv-font-family-primary);
+  font-family: var(--orv-font-family-display);
   font-size: var(--orv-font-size-56);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-normal);
-  letter-spacing: var(--orv-letter-spacing-tight-112);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.15;
+  letter-spacing: var(--orv-letter-spacing-tight-032);
   color: var(--orv-text-primary);
-  margin: 0 0 var(--orv-space-16) 0;
 }
 
 /* Figma 36:21 — 15px, tertiary */
@@ -74,82 +99,26 @@
 /* ---------- Legal Body (36:23) ---------- */
 .bodySection {
   position: relative;
+  overflow: hidden;
   padding-top: var(--orv-space-48);
   padding-bottom: var(--orv-layout-section-padding-lg);
 }
 
-/* Figma 36:24 — contents card | gap 96 | clauses */
-.row {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--orv-space-96);
-  width: 100%;
-}
-
-/* Figma 36:25 — glass contents card, r16, padding 24 */
-.toc {
-  position: sticky;
-  top: var(--orv-space-96);
-  width: 300px;
-  flex-shrink: 0;
-  padding: var(--orv-space-24);
-  border-radius: var(--orv-radius-16);
-  background: var(--orv-card-glass-bg);
-  border: var(--orv-card-glass-border);
-  backdrop-filter: var(--orv-card-glass-blur);
-  -webkit-backdrop-filter: var(--orv-card-glass-blur);
-  box-sizing: border-box;
-}
-
-.tocLabel {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-11);
-  font-weight: var(--orv-font-weight-semibold);
-  line-height: var(--orv-line-height-normal);
-  letter-spacing: var(--orv-letter-spacing-wide-132);
-  color: var(--orv-text-tertiary);
-  margin: 0 0 var(--orv-space-16) 0;
-}
-
-.tocList {
-  display: flex;
-  flex-direction: column;
-  gap: var(--orv-space-12);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.tocLink {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-14);
-  font-weight: var(--orv-font-weight-regular);
-  line-height: var(--orv-line-height-normal);
-  color: var(--orv-text-secondary);
-  text-decoration: none;
-  outline: none;
-  transition: color var(--orv-duration-fast) var(--orv-ease-default);
-}
-
-.tocLink:hover {
-  color: var(--orv-brand-400);
-}
-
-.tocLink:focus-visible {
-  outline: var(--orv-border-width-default) solid var(--orv-border-active);
-  outline-offset: var(--orv-space-2);
-  border-radius: var(--orv-radius-4);
-}
-
+/* The contents card is gone, so the clauses hold the left edge of the page
+   container and are capped at a comfortable reading measure instead of being
+   pushed across by a sidebar. */
 .content {
-  flex: 1 1 0;
+  width: 100%;
   min-width: 0;
+  /* A legal clause is long-form text; past this measure the lines get hard to
+     track back to the next one. */
+  max-width: 78ch;
 }
 
 /* Figma 36:32 — clause blocks, 48px apart */
 .clause {
   margin-bottom: var(--orv-space-48);
-  /* clears the overlaid navbar when jumping from the contents list */
+  /* clears the fixed navbar when a clause is linked to directly */
   scroll-margin-top: 140px;
 }
 
@@ -159,12 +128,11 @@
 
 /* Figma 36:33 — 24px Bold */
 .clauseTitle {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-24);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-normal);
+  font-family: var(--orv-font-family-display);
+  font-size: var(--orv-font-size-28);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.25;
   color: var(--orv-text-primary);
-  margin: 0 0 var(--orv-space-16) 0;
 }
 
 /* Figma 36:34 — 16px / 28px Regular, secondary */
@@ -185,11 +153,7 @@
  * RESPONSIVE
  * ========================================== */
 @media (max-width: 1400px) {
-  .row {
-    gap: var(--orv-space-64);
-  }
-
-  .title {
+    .title {
     font-size: var(--orv-font-size-48);
     letter-spacing: var(--orv-letter-spacing-tight-096);
   }
@@ -202,18 +166,7 @@
     padding-top: 188px;
   }
 
-  .row {
-    flex-direction: column;
-    gap: var(--orv-space-40);
-  }
-
-  .toc {
-    position: static;
-    width: 100%;
-    max-width: 640px;
-  }
-
-  .content {
+      .content {
     width: 100%;
   }
 }

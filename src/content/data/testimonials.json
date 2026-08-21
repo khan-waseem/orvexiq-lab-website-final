@@ -1,15 +1,15 @@
 [
   {
-    "id": "test-1",
-    "quote": "They did not hand us screens and leave. They sat with our engineers until the thing actually shipped — and the design system they left behind is still what every new feature is built on, two years later.",
-    "authorName": "Head of Product",
-    "authorRole": "Head of Product",
-    "clientCompanyProfile": "Enterprise lending platform · 40,000 brokers",
-    "avatarAssetUrl": "/assets/testimonials/avatar-purple-sphere.svg",
-    "published": true,
+    "id": "test-rapha",
+    "quote": "Orvexiq Lab was referred by my brother for my home health company, RaphaHealth, based in Houston, Texas. From logo development to brochures and website design, everything was handled exceptionally well. What stood out the most was their accessibility and responsiveness — they are easy to reach and consistently deliver a turnaround time of just 1–2 business days. They also ensure complete client satisfaction before invoicing, which reflects their integrity and professionalism. Highly recommended!",
+    "authorName": "Aahil Khowaja",
+    "authorRole": "Administrator, Rapha Home Health LLC",
+    "clientCompanyProfile": "Home health · Houston, Texas",
+    "avatarAssetUrl": "/assets/testimonials/aahil-khowaja.jpg",
     "verification": {
-      "isVerified": false,
-      "verificationNotes": "Figma layout quote structure placeholder. UNVERIFIED - Do not publish as real client identity."
-    }
+      "isVerified": true,
+      "verificationNotes": "Supplied by the client and approved for publication. Only the studio name was substituted for the founder name; pronouns follow from that change."
+    },
+    "published": true
   }
 ]

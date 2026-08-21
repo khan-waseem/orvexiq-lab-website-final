@@ -1,5 +1,13 @@
 /* ContactBodySection — Figma node 33:28 */
+/* Lifted above the arcs behind the band. */
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
 .section {
+  position: relative;
+  overflow: hidden;
   position: relative;
   padding-top: var(--orv-space-64);
   padding-bottom: var(--orv-layout-section-padding-lg);
@@ -14,6 +22,7 @@
 }
 
 /* Figma 33:29 — glass card, gradient 143.77deg, r16, padding 48, gap 24 */
+/* Same surface as the landing's cards. */
 .form {
   display: flex;
   flex-direction: column;
@@ -22,17 +31,12 @@
   flex: 1 1 0;
   min-width: 0;
   padding: var(--orv-space-48);
-  border-radius: var(--orv-radius-16);
-  background: linear-gradient(
-    143.77deg,
-    rgba(255, 255, 255, 0.1) 14.6%,
-    rgba(255, 255, 255, 0.025) 85.4%
-  );
-  border: var(--orv-card-glass-border);
-  backdrop-filter: var(--orv-card-glass-blur);
-  -webkit-backdrop-filter: var(--orv-card-glass-blur);
-  box-shadow: var(--orv-card-glass-shadow);
-  overflow: hidden;
+  border-radius: var(--orv-radius-24);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  background:
+    linear-gradient(150deg, rgba(124, 58, 237, 0.14) 0%, rgba(124, 58, 237, 0.02) 58%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-8);
   box-sizing: border-box;
 }
 
@@ -68,9 +72,9 @@
 .textarea {
   width: 100%;
   padding: var(--orv-space-16);
-  border-radius: var(--orv-radius-8);
-  background-color: var(--orv-color-alpha-white-4);
-  border: var(--orv-border-width-default) solid var(--orv-border-default);
+  border-radius: var(--orv-radius-10);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(168, 85, 247, 0.18);
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-16);
   font-weight: var(--orv-font-weight-regular);
@@ -78,8 +82,14 @@
   color: var(--orv-text-primary);
   box-sizing: border-box;
   outline: none;
-  transition: border-color var(--orv-duration-fast) var(--orv-ease-default);
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
+
+.input:hover,
+.textarea:hover {
+  border-color: rgba(168, 85, 247, 0.34);
+}
+
 
 .input::placeholder,
 .textarea::placeholder {
@@ -88,7 +98,16 @@
 
 .input:focus-visible,
 .textarea:focus-visible {
-  border-color: var(--orv-border-active);
+  border-color: rgba(168, 85, 247, 0.7);
+  background: rgba(124, 58, 237, 0.08);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .textarea {
+    transition: none;
+  }
 }
 
 /* Figma 33:50 — 140px tall */

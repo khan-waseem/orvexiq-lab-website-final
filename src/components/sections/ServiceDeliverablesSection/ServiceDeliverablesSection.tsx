@@ -1,7 +1,9 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
 import { ServiceDetailPage } from '@/content/schemas/service-detail.schema';
 import styles from './ServiceDeliverablesSection.module.css';
 
@@ -28,19 +30,25 @@ export const ServiceDeliverablesSection: React.FC<ServiceDeliverablesSectionProp
       padding="custom"
       id="service-deliverables"
       className={styles.section}
+      ariaLabelledBy="service-deliverables-heading"
     >
-      <PageContainer>
+      <GlowRings side="left" size={980} />
+      <GlowRings side="right" size={860} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
         <div className={styles.row}>
-          <div className={styles.head}>
-            <Eyebrow align="left" tone="muted">
-              {content.eyebrow}
-            </Eyebrow>
-            <h2 className={styles.headline}>
-              {content.headlineLine1}{' '}
-              <br />
-              {content.headlineLine2}
-            </h2>
-          </div>
+          <SectionHeading
+            id="service-deliverables-heading"
+            eyebrow={content.eyebrow}
+            rule="dot"
+            align="left"
+            className={styles.heading}
+          >
+            {content.headlineLine1}
+            <br />
+            <Accent>{content.headlineLine2}</Accent>
+          </SectionHeading>
 
           <ul className={styles.list}>
             {content.items.map((item) => (

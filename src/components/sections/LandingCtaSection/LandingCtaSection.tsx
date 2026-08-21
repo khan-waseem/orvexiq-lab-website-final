@@ -6,11 +6,42 @@ import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import styles from './LandingCtaSection.module.css';
 
+export type LandingCtaContent = HomepageContent['landingCtaSection'];
+
+/** Shape the other pages still carry from the previous CTA band. */
+export interface LegacyCtaContent {
+  eyebrow: string;
+  headlineLine1: string;
+  headlineLine2: string;
+  subdescriptionLine1: string;
+  subdescriptionLine2: string;
+  primaryCtaText: string;
+  emailCtaText: string;
+}
+
 export interface LandingCtaSectionProps {
-  content: HomepageContent['landingCtaSection'];
+  content: LandingCtaContent | LegacyCtaContent;
   /** Address behind the secondary action. */
   email?: string;
 }
+
+/**
+ * Folds the older two-line CTA copy into this band's shape: the second
+ * headline line becomes the accented run, and the two sub lines join into
+ * one paragraph. Keeps every page on one CTA component without having to
+ * rewrite each page's content file.
+ */
+const normalize = (content: LandingCtaContent | LegacyCtaContent): LandingCtaContent =>
+  'headlineAccent2' in content
+    ? content
+    : {
+        eyebrow: content.eyebrow,
+        headlineLine1: content.headlineLine1,
+        headlineAccent2: content.headlineLine2,
+        subdescription: `${content.subdescriptionLine1} ${content.subdescriptionLine2}`.trim(),
+        primaryCtaText: content.primaryCtaText,
+        emailCtaText: content.emailCtaText,
+      };
 
 /** Four-point spark sitting inside the eyebrow capsule. */
 const Spark: React.FC = () => (
@@ -28,9 +59,12 @@ const Spark: React.FC = () => (
  * oversized treatment.
  */
 export const LandingCtaSection: React.FC<LandingCtaSectionProps> = ({
-  content,
+  content: rawContent,
   email = 'hello@orvexiq.com',
-}) => (
+}) => {
+  const content = normalize(rawContent);
+
+  return (
   <SectionWrapper
     padding="custom"
     className={styles.section}
@@ -53,9 +87,7 @@ export const LandingCtaSection: React.FC<LandingCtaSectionProps> = ({
         >
           {content.headlineLine1}
           <br />
-          {content.headlineLine2}
-          <br />
-          <Accent>{content.headlineAccent3}</Accent>
+          <Accent>{content.headlineAccent2}</Accent>
         </SectionHeading>
 
         <div className={styles.actions}>
@@ -80,4 +112,5 @@ export const LandingCtaSection: React.FC<LandingCtaSectionProps> = ({
       </PageContainer>
     </div>
   </SectionWrapper>
-);
+  );
+};

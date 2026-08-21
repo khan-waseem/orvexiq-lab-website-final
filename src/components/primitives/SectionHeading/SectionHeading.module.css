@@ -28,10 +28,12 @@
 }
 
 /* The CTA panel runs a larger headline than the section bands. */
+/* The CTA runs a larger headline than the section bands, and its first line
+   is a full sentence — so it needs the room to stay unbroken. */
 .titleLg {
   font-size: 68px;
   line-height: 1.2;
-  max-width: min(100%, 760px);
+  max-width: min(100%, 1120px);
 }
 
 /* The highlighted word in every headline — violet gradient fill. */
@@ -103,6 +105,14 @@
 .alignLeft .rule,
 .alignLeft .ruleSolid {
   margin-left: 0;
+}
+
+/* Centred headings get symmetrical ornaments. Left-aligned ones drop the
+   leading segment of both the capsule's tail and the rule, so each starts flush
+   with the headline's left edge instead of being pushed in by it. */
+.alignLeft .eyebrow > :first-child,
+.alignLeft .rule > .ruleLine:first-child {
+  display: none;
 }
 
 @media (max-width: 1024px) {

@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { Eyebrow } from '@/components/primitives/Eyebrow';
 import { BlogPostItem } from '@/content/schemas/blog.schema';
@@ -24,6 +26,10 @@ export interface ArticleHeaderProps {
 
 export const ArticleHeaderSection: React.FC<ArticleHeaderProps> = ({ post }) => (
   <SectionWrapper theme="canvas" padding="custom" id="article-header" className={styles.headerSection}>
+    <div className={styles.headerGlow} aria-hidden="true" />
+    <GlowRings side="left" size={960} />
+    <GlowRings side="right" size={840} />
+
     <div className={styles.headerGlow} aria-hidden="true" />
     <PageContainer className={styles.container}>
       <div className={styles.measure}>
@@ -164,6 +170,8 @@ export const RelatedPostsSection: React.FC<RelatedPostsProps> = ({ posts, label 
 
   return (
     <SectionWrapper theme="canvas" padding="custom" id="related-posts" className={styles.relatedSection}>
+      <SectionDots />
+
       <PageContainer>
         <div className={styles.relatedEyebrow}>
           <Eyebrow align="left" tone="muted">{label}</Eyebrow>

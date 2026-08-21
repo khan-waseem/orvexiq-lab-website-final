@@ -1,0 +1,204 @@
+/* ContactMapSection — location band beneath the contact form. */
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--orv-space-64);
+  padding-bottom: var(--orv-space-96);
+}
+
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-32);
+  margin-top: var(--orv-space-48);
+}
+
+/* --- Map --- */
+
+/* Runs the full container width; the address rides on it rather than beside
+   it, so the map keeps the whole frame. */
+.mapFrame {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  border-radius: var(--orv-radius-24);
+  aspect-ratio: 21 / 9;
+  min-height: 420px;
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-8);
+}
+
+/* Google's keyless embed only serves a light map. Inverting and rotating its
+   hue lands it in the page's range; the violet wash on top ties it to the
+   surrounding surface. Approximate by nature — a true dark map needs an API
+   key and a styled map id. */
+.map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: invert(0.92) hue-rotate(185deg) saturate(0.55) brightness(0.95) contrast(1.05);
+}
+
+.mapFrame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: var(--orv-z-normal);
+  background: linear-gradient(160deg, rgba(124, 58, 237, 0.16) 0%, rgba(10, 5, 23, 0.28) 100%);
+  pointer-events: none;
+}
+
+/* --- Address --- */
+
+.address {
+  position: absolute;
+  left: var(--orv-space-32);
+  bottom: var(--orv-space-32);
+  z-index: var(--orv-z-floating);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--orv-space-8);
+  padding: var(--orv-space-24);
+  max-width: 320px;
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  border-radius: var(--orv-radius-16);
+  /* Solid enough to stay readable over the map beneath it. */
+  background: rgba(8, 3, 20, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.addressLabel {
+  margin: 0;
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  text-transform: uppercase;
+  color: var(--orv-color-raw-purple-300);
+}
+
+.addressLines {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+}
+
+.addressLine {
+  font-size: var(--orv-font-size-20);
+  line-height: var(--orv-line-height-30);
+  color: var(--orv-text-primary);
+}
+
+.directions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  margin-top: var(--orv-space-8);
+  padding: var(--orv-space-12) var(--orv-space-20);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: var(--orv-radius-full);
+  background: rgba(124, 58, 237, 0.08);
+  font-size: var(--orv-font-size-14);
+  color: var(--orv-text-primary);
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.directions:hover {
+  border-color: var(--orv-border-active);
+  background: rgba(124, 58, 237, 0.18);
+}
+
+.directions:focus-visible {
+  outline: 2px solid var(--orv-border-active);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .directions {
+    transition: none;
+  }
+}
+
+/* --- Facts --- */
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--orv-space-32);
+  margin: 0;
+  min-width: 0;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-6);
+  padding-left: var(--orv-space-20);
+  border-left: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.factLabel {
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  text-transform: uppercase;
+  color: var(--orv-color-raw-purple-300);
+}
+
+.factValue {
+  margin: 0;
+  font-size: var(--orv-font-size-20);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-text-primary);
+}
+
+.factBody {
+  margin: 0;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-tertiary);
+  max-width: 40ch;
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 900px) {
+  .mapFrame {
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+
+  /* Too short to carry a floating card — the address drops below the map. */
+  .address {
+    position: static;
+    max-width: 100%;
+    margin-top: var(--orv-space-16);
+  }
+
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-top: var(--orv-space-48);
+    padding-bottom: var(--orv-space-64);
+  }
+
+  .addressLine {
+    font-size: var(--orv-font-size-18);
+  }
+}

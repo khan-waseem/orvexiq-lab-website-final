@@ -17,8 +17,9 @@ export const serviceDetailPageSchema = z.object({
   slug: z.string(),
   breadcrumbLabel: z.string(),
   hero: z.object({
-    headlineLine1: z.string(),
-    headlineLine2: z.string(),
+    /** Plain line above the headline, as on the landing hero. */
+    eyebrow: z.string(),
+    headline: z.string(),
     subdescription: z.string(),
     iconAssetUrl: z.string(),
   }),
@@ -30,6 +31,9 @@ export const serviceDetailPageSchema = z.object({
   }),
   includes: z.object({
     eyebrow: z.string(),
+    headlineLine1: z.string(),
+    /** Trailing run in the violet gradient — one accent per headline. */
+    headlineAccent2: z.string(),
     items: z.array(serviceIncludeItemSchema),
   }),
   /** Design Systems only (Figma 139:71) — omitted on the other three pages. */

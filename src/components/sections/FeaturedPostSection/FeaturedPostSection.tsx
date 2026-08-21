@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import { PostCover } from '@/components/sections/PostGridSection/PostCover';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
 import { PageContainer } from '@/components/layout/Container';
 import { BlogPostItem } from '@/content/schemas/blog.schema';
 import { BlogPageContent } from '@/content/schemas/blog-page.schema';
@@ -28,10 +31,28 @@ export const FeaturedPostSection: React.FC<FeaturedPostSectionProps> = ({ conten
   if (!post) return null;
 
   return (
-    <SectionWrapper theme="canvas" padding="custom" id="featured-post" className={styles.section}>
-      <PageContainer>
-        {/* Figma 64:24 is a plain label, not the dashed Eyebrow primitive */}
-        <p className={styles.label}>{content.eyebrow}</p>
+    <SectionWrapper
+      theme="canvas"
+      padding="custom"
+      id="featured-post"
+      className={styles.section}
+      ariaLabelledBy="featured-post-heading"
+    >
+      <GlowRings side="left" size={960} />
+      <GlowRings side="right" size={840} />
+
+      <PageContainer className={styles.container}>
+        <SectionHeading
+          id="featured-post-heading"
+          eyebrow={content.eyebrow}
+          rule="dot"
+          align="left"
+          className={styles.heading}
+        >
+          {content.headlineLine1}
+          <br />
+          <Accent>{content.headlineAccent2}</Accent>
+        </SectionHeading>
 
         <article className={styles.card}>
           <div className={styles.image}>
@@ -44,7 +65,7 @@ export const FeaturedPostSection: React.FC<FeaturedPostSectionProps> = ({ conten
                 className={styles.imageAsset}
               />
             ) : (
-              <span className={styles.imagePlaceholder}>{content.imagePlaceholderLabel}</span>
+              <PostCover category={post.category} title={post.title} />
             )}
           </div>
 

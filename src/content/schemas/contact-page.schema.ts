@@ -2,8 +2,9 @@ import { z } from 'zod';
 import { seoMetadataSchema } from './common.schema';
 
 export const contactPageHeroSchema = z.object({
-  headlineLine1: z.string(),
-  headlineLine2: z.string(),
+  /** Plain line above the headline, as on the landing hero. */
+  eyebrow: z.string(),
+  headline: z.string(),
   subdescription: z.string(),
   heroIconAssetUrl: z.string(),
 });
@@ -28,6 +29,14 @@ export const contactInfoBlockSchema = z.object({
   email: z.string().optional(),
 });
 
+/** A single line in the contact page's location band. */
+export const contactMapFactSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  value: z.string(),
+  body: z.string(),
+});
+
 export const contactPageContentSchema = z.object({
   hero: contactPageHeroSchema,
   form: z.object({
@@ -36,6 +45,20 @@ export const contactPageContentSchema = z.object({
     unavailableNote: z.string(),
   }),
   info: z.array(contactInfoBlockSchema),
+  map: z.object({
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    /** Trailing run in the violet gradient — one accent per headline. */
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
+    addressLabel: z.string(),
+    addressLines: z.array(z.string()),
+    /** Search string the embedded map and the directions link both resolve. */
+    mapQuery: z.string(),
+    directionsLabel: z.string(),
+    mapTitle: z.string(),
+    facts: z.array(contactMapFactSchema),
+  }),
   seo: seoMetadataSchema.optional(),
 });
 

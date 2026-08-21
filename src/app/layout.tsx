@@ -36,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${playfair.variable}`}>
-      <body>
+    <html lang="en" className={`${manrope.variable} ${playfair.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Navbar />
         <main id="main-content" style={{ minHeight: '100vh' }}>
           {children}

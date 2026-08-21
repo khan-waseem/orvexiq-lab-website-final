@@ -2,6 +2,8 @@ import { z } from 'zod';
 import { seoMetadataSchema } from './common.schema';
 
 export const caseStudiesPageHeroSchema = z.object({
+  /** Plain line above the headline, as on the landing hero. */
+  eyebrow: z.string(),
   headline: z.string(),
   subdescription: z.string(),
   heroIconAssetUrl: z.string(),
@@ -18,6 +20,15 @@ export const caseStudiesPageContentSchema = z.object({
   hero: caseStudiesPageHeroSchema,
   grid: z.object({
     filters: z.array(caseFilterSchema),
+    /** Heading above the grid, in the landing's section style. */
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
+    /** Shown on cards whose detail page has not been written yet. */
+    comingSoonLabel: z.string(),
+    /** Call to action on the promoted lead card. */
+    leadCtaLabel: z.string(),
     countLabelSingular: z.string(),
     countLabelPlural: z.string(),
     visualPlaceholderLabel: z.string(),

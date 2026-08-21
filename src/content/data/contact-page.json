@@ -1,7 +1,7 @@
 {
   "hero": {
-    "headlineLine1": "Tell us what you",
-    "headlineLine2": "are building.",
+    "eyebrow": "Start a conversation",
+    "headline": "Tell us what you are building.",
     "subdescription": "We read every message. If it is a fit you will hear back within two working days with a real response, not a calendar link.",
     "heroIconAssetUrl": "/assets/contact/contact-hero-icon.png"
   },
@@ -75,6 +75,35 @@
       "body": "We keep four hours of overlap with European and US East teams."
     }
   ],
+  "map": {
+    "eyebrow": "Where to find us",
+    "headlineLine1": "Remote by default.",
+    "headlineAccent2": "Karachi when it counts.",
+    "subdescription": "Most work happens over video, on your hours. When a kickoff or a workshop is worth being in a room for, this is the room.",
+    "addressLabel": "Studio",
+    "addressLines": [
+      "Street 09, Sector D/2",
+      "Hijrat Colony",
+      "Karachi, Pakistan"
+    ],
+    "mapQuery": "Street 09, Sector D/2, Hijrat Colony, Karachi, Pakistan",
+    "directionsLabel": "Get directions",
+    "mapTitle": "Map showing the Orvexiq Lab studio in Hijrat Colony, Karachi",
+    "facts": [
+      {
+        "id": "m-1",
+        "label": "Working hours",
+        "value": "GMT+5 overlap",
+        "body": "At least four hours of live overlap with your team every working day."
+      },
+      {
+        "id": "m-2",
+        "label": "How we meet",
+        "value": "Video, and in person when it counts",
+        "body": "Kickoffs and workshops in person where it is worth the trip."
+      }
+    ]
+  },
   "seo": {
     "title": "Contact — Orvexiq Lab",
     "description": "Tell us what you are building. We reply within two working days with a real response."

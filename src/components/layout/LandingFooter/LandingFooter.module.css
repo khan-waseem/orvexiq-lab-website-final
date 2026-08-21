@@ -16,9 +16,11 @@
 .panel {
   position: relative;
   overflow: hidden;
-  /* The design's panel opens with a deep run of empty space above the brand
-     lockup, with the arcs carrying it — hence the outsized top padding. */
-  padding: 176px 0 var(--orv-space-48);
+  /* The design's panel opens with space above the brand lockup, carried by the
+     arcs behind it. 176px matched the Figma frame but left the content sitting
+     too low with a dead band above it, so it is pulled up to the section
+     rhythm the rest of the site uses. */
+  padding: var(--orv-space-96) 0 var(--orv-space-48);
   border-top: 1px solid var(--orv-color-alpha-white-8);
   background:
     radial-gradient(90% 120% at 8% 40%, rgba(124, 58, 237, 0.10) 0%, rgba(6, 2, 16, 0) 58%),
@@ -196,16 +198,13 @@
   z-index: var(--orv-z-floating);
 }
 
+/* Runs edge to edge rather than fading in at 22%: the copyright and the social
+   links sit on the container's full measure, and a rule that stopped short of
+   them read as though the row was overhanging it. */
 .dividerLine {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(168, 85, 247, 0) 0%,
-    rgba(168, 85, 247, 0.35) 22%,
-    rgba(168, 85, 247, 0.35) 78%,
-    rgba(168, 85, 247, 0) 100%
-  );
+  background: rgba(168, 85, 247, 0.28);
 }
 
 .dividerDot {
@@ -319,7 +318,7 @@
  * ========================================== */
 @media (max-width: 1024px) {
   .panel {
-    padding-top: var(--orv-space-96);
+    padding-top: var(--orv-space-72);
   }
 
   .top {

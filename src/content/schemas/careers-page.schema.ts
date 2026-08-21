@@ -2,8 +2,9 @@ import { z } from 'zod';
 import { seoMetadataSchema } from './common.schema';
 
 export const careersHeroSchema = z.object({
-  headlineLine1: z.string(),
-  headlineLine2: z.string(),
+  /** Plain line above the headline, as on the landing hero. */
+  eyebrow: z.string(),
+  headline: z.string(),
   subdescription: z.string(),
   heroIconAssetUrl: z.string(),
 });
@@ -50,7 +51,10 @@ export const careersPageContentSchema = z.object({
   hero: careersHeroSchema,
   whyUs: z.object({
     eyebrow: z.string(),
-    headline: z.string(),
+    headlineLine1: z.string(),
+    /** Trailing run in the violet gradient — one accent per headline. */
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
     perks: z.array(perkSchema),
   }),
   openRoles: z.object({
@@ -58,6 +62,8 @@ export const careersPageContentSchema = z.object({
     /** "{count}" is replaced with the live number of open roles so the headline
      *  cannot drift from the list beneath it. */
     headlineTemplate: z.string(),
+    /** Accented tail of the headline, shown only when roles are open. */
+    headlineAccent: z.string(),
     emptyHeadline: z.string(),
     footnote: z.string(),
     footnoteEmail: z.string(),

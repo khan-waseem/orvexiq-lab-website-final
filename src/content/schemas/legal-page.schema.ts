@@ -11,7 +11,6 @@ export const legalPageSchema = z.object({
   slug: z.string(),
   title: z.string(),
   lastUpdated: z.string(),
-  tocLabel: z.string(),
   sections: z.array(legalSectionSchema),
   seo: seoMetadataSchema.optional(),
 });

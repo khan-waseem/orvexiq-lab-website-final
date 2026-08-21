@@ -1,6 +1,13 @@
 /* PostGridSection — Figma nodes 64:38 (Filters) + 64:50 (Post Grid) */
+/* Lifted above the arcs and corner dots behind the band. */
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
 .section {
   position: relative;
+  overflow: hidden;
   padding-top: var(--orv-space-32);
   padding-bottom: var(--orv-space-96);
 }

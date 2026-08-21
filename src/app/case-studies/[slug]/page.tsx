@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { contentRepository } from '@/content/repository/local-content-provider';
 import { CaseStudyDetailSection } from '@/components/sections/CaseStudyDetailSection';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -27,7 +27,7 @@ export default async function CaseStudyDetailPage({ params }: Params) {
   return (
     <>
       <CaseStudyDetailSection page={page} />
-      <CtaSection content={page.ctaSection} variant="boxed" />
+      <LandingCtaSection content={page.ctaSection} />
     </>
   );
 }

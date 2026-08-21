@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { ServiceDetailBlock } from '@/content/schemas/services-page.schema';
 import styles from './ServiceDetailSection.module.css';
 
@@ -21,7 +23,11 @@ export interface ServiceDetailSectionProps {
 export const ServiceDetailSection: React.FC<ServiceDetailSectionProps> = ({ blocks }) => {
   return (
     <SectionWrapper theme="canvas" padding="custom" id="service-detail" className={styles.section}>
-      <PageContainer>
+      <GlowRings side="left" size={1020} />
+      <GlowRings side="right" size={900} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
         <ol className={styles.blockList}>
           {blocks.map((block, index) => (
             <li key={block.id} className={styles.blockItem}>

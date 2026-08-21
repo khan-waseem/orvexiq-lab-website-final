@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { JobRole } from '@/content/schemas/careers-page.schema';
 import { ApplyModal } from '@/components/sections/ApplyModal';
@@ -30,6 +32,10 @@ export const JobDetailSection: React.FC<JobDetailSectionProps> = ({ role }) => {
     <>
       <SectionWrapper theme="canvas" padding="custom" id="job-hero" className={styles.heroSection}>
         <div className={styles.heroGlow} aria-hidden="true" />
+        <GlowRings side="left" size={960} />
+        <GlowRings side="right" size={840} />
+
+        <div className={styles.heroGlow} aria-hidden="true" />
         <PageContainer className={styles.heroContainer}>
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <ol className={styles.crumbList}>
@@ -52,6 +58,8 @@ export const JobDetailSection: React.FC<JobDetailSectionProps> = ({ role }) => {
       </SectionWrapper>
 
       <SectionWrapper theme="canvas" padding="custom" id="job-body" className={styles.bodySection}>
+        <SectionDots />
+
         <PageContainer>
           <div className={styles.row}>
             <div className={styles.main}>

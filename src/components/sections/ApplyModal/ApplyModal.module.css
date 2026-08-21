@@ -42,16 +42,23 @@
 }
 
 /* Figma 206:286 — 638x721 card, surface-system, r24 */
+/* Same surface as the landing's cards, over a dark canvas so the form stays
+   readable at any scroll position behind it. */
 .modal {
+  position: relative;
   width: 100%;
   max-width: 638px;
   max-height: calc(100vh - var(--orv-space-48));
   overflow-y: auto;
   padding: 47px;
   border-radius: var(--orv-radius-24);
-  background-color: var(--orv-surface-system);
-  border: var(--orv-border-width-default) solid var(--orv-border-glass);
-  box-shadow: var(--orv-shadow-glass-lg);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  background:
+    linear-gradient(150deg, rgba(124, 58, 237, 0.16) 0%, rgba(124, 58, 237, 0.02) 58%),
+    #0a0517;
+  box-shadow:
+    inset 0 1px 0 var(--orv-color-alpha-white-8),
+    0 30px 80px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   outline: none;
 }
@@ -74,11 +81,10 @@
 
 /* Figma 206:289 — 28px Bold, tracking -0.56 */
 .title {
-  font-family: var(--orv-font-family-primary);
+  font-family: var(--orv-font-family-display);
   font-size: var(--orv-font-size-28);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-normal);
-  letter-spacing: var(--orv-letter-spacing-tight-056);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.25;
   color: var(--orv-text-primary);
   margin: 0;
 }
@@ -156,9 +162,9 @@
 .textarea {
   width: 100%;
   padding: var(--orv-space-16);
-  border-radius: var(--orv-radius-8);
-  background-color: var(--orv-color-alpha-white-8);
-  border: var(--orv-border-width-default) solid var(--orv-border-default);
+  border-radius: var(--orv-radius-10);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(168, 85, 247, 0.18);
   font-family: var(--orv-font-family-primary);
   font-size: var(--orv-font-size-15);
   font-weight: var(--orv-font-weight-regular);
@@ -166,14 +172,31 @@
   color: var(--orv-text-primary);
   box-sizing: border-box;
   outline: none;
-  transition: border-color var(--orv-duration-fast) var(--orv-ease-default);
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
+
+.input:hover,
+.textarea:hover {
+  border-color: rgba(168, 85, 247, 0.34);
+}
+
 
 .input::placeholder,
 .textarea::placeholder { color: var(--orv-text-placeholder); }
 
 .input:focus-visible,
-.textarea:focus-visible { border-color: var(--orv-border-active); }
+.textarea:focus-visible {
+  border-color: rgba(168, 85, 247, 0.7);
+  background: rgba(124, 58, 237, 0.08);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .textarea {
+    transition: none;
+  }
+}
 
 /* Figma 206:326 — 110px tall */
 .textarea {
@@ -188,14 +211,9 @@
   align-items: center;
   justify-content: center;
   padding: var(--orv-space-24);
-  border-radius: var(--orv-radius-8);
-  background-color: var(--orv-color-alpha-white-4);
-  border: var(--orv-border-width-default) dashed var(--orv-border-default);
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-14);
-  font-weight: var(--orv-font-weight-medium);
-  color: var(--orv-text-tertiary);
-  text-align: center;
+  border-radius: var(--orv-radius-10);
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px dashed rgba(168, 85, 247, 0.35);
 }
 
 /* Figma 206:328 */

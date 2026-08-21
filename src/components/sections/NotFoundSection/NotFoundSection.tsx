@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { NotFoundPageContent } from '@/content/schemas/not-found-page.schema';
 import styles from './NotFoundSection.module.css';
@@ -24,6 +26,10 @@ export const NotFoundSection: React.FC<NotFoundSectionProps> = ({ content }) => 
     <SectionWrapper theme="canvas" padding="custom" id="not-found" className={styles.section}>
       {/* Same ambient glow + grid treatment as the page heroes */}
       <div className={styles.heroGlow} aria-hidden="true" />
+
+      <GlowRings side="left" size={1000} />
+      <GlowRings side="right" size={880} />
+      <SectionDots />
 
       <div className={styles.vectorOverlay} aria-hidden="true">
         <Image

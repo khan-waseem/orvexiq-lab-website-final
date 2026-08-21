@@ -1,11 +1,14 @@
 {
   "hero": {
+    "eyebrow": "Field notes",
     "headline": "Notes from the work.",
     "subdescription": "What we learned building design systems and products for regulated businesses. Written by the people who did the work, not a content team.",
     "heroIconAssetUrl": "/assets/blog/blog-hero-icon.png"
   },
   "featured": {
-    "eyebrow": "FEATURED",
+    "eyebrow": "Featured",
+    "headlineLine1": "The one we would",
+    "headlineAccent2": "start with.",
     "readMoreLabel": "Read the post",
     "imagePlaceholderLabel": "Featured image"
   },

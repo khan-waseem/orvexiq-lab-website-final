@@ -7,9 +7,36 @@ import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import styles from './LandingFaqSection.module.css';
 
-export interface LandingFaqSectionProps {
-  content: HomepageContent['faqSection'];
+export type LandingFaqContent = HomepageContent['faqSection'];
+
+/** Shape the services pages still carry from the previous two-column FAQ. */
+export interface LegacyFaqContent {
+  eyebrow: string;
+  headlineLine1: string;
+  headlineLine2: string;
+  note?: string;
+  items: { id: string; question: string; answer: string }[];
 }
+
+export interface LandingFaqSectionProps {
+  content: LandingFaqContent | LegacyFaqContent;
+}
+
+/**
+ * Folds the older FAQ copy into this band's shape: the second headline line
+ * becomes the accented run and the note becomes the supporting line, so every
+ * page can share one FAQ component without rewriting its content file.
+ */
+const normalize = (content: LandingFaqContent | LegacyFaqContent): LandingFaqContent =>
+  'headlineAccent2' in content
+    ? content
+    : {
+        eyebrow: content.eyebrow,
+        headlineLine1: content.headlineLine1,
+        headlineAccent2: content.headlineLine2,
+        subdescription: content.note ?? '',
+        items: content.items,
+      };
 
 /**
  * LandingFaqSection — landing band six.
@@ -19,10 +46,13 @@ export interface LandingFaqSectionProps {
  * group exclusive (opening one closes the rest) in browsers that support it;
  * elsewhere it degrades to letting several stay open, which is harmless.
  *
- * The services pages keep the existing two-column FaqSection — this is the
- * landing's numbered accordion treatment, not a replacement for it.
+ * Used by the landing and the services pages alike; the older two-column FAQ
+ * content is folded into this shape by `normalize`.
  */
-export const LandingFaqSection: React.FC<LandingFaqSectionProps> = ({ content }) => (
+export const LandingFaqSection: React.FC<LandingFaqSectionProps> = ({ content: rawContent }) => {
+  const content = normalize(rawContent);
+
+  return (
   <SectionWrapper
     id="faq"
     padding="custom"
@@ -67,4 +97,5 @@ export const LandingFaqSection: React.FC<LandingFaqSectionProps> = ({ content })
       </div>
     </PageContainer>
   </SectionWrapper>
-);
+  );
+};

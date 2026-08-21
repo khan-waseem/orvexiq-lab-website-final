@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { contentRepository } from '@/content/repository/local-content-provider';
-import { CaseStudiesHeroSection } from '@/components/sections/CaseStudiesHeroSection';
+import { PageHero } from '@/components/sections/PageHero';
 import { CaseGridSection } from '@/components/sections/CaseGridSection';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   const pageData = await contentRepository.getCaseStudiesPageData();
@@ -15,25 +15,38 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Case Studies page — Figma node 44:2.
+ * Case Studies page.
  *
- * Section order matches the Figma frame:
- *   Page Hero (183:795) -> Case Grid (44:24)
- *   -> CTA (44:107, boxed variant) -> Footer (44:120, global)
+ * Section order: Page Hero -> Case Grid -> CTA -> Footer.
  */
 export default async function CaseStudiesPage() {
-  const [pageData, caseStudies] = await Promise.all([
+  const [pageData, caseStudies, details] = await Promise.all([
     contentRepository.getCaseStudiesPageData(),
     contentRepository.getCaseStudies(),
+    contentRepository.getCaseStudyDetails(),
   ]);
+
+  /* Only these have a written detail page; the grid keeps the rest as plain
+     cards so no card on this page can lead to a 404. */
+  const readableSlugs = details.map((detail) => detail.slug);
 
   return (
     <>
-      <CaseStudiesHeroSection content={pageData.hero} />
+      <PageHero
+        id="case-studies-hero"
+        eyebrow={pageData.hero.eyebrow}
+        headline={pageData.hero.headline}
+        subdescription={pageData.hero.subdescription}
+        iconAssetUrl={pageData.hero.heroIconAssetUrl}
+      />
 
-      <CaseGridSection content={pageData.grid} caseStudies={caseStudies} />
+      <CaseGridSection
+        content={pageData.grid}
+        caseStudies={caseStudies}
+        readableSlugs={readableSlugs}
+      />
 
-      <CtaSection content={pageData.ctaSection} variant="boxed" />
+      <LandingCtaSection content={pageData.ctaSection} />
     </>
   );
 }

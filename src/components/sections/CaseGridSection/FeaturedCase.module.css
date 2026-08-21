@@ -1,0 +1,163 @@
+/* FeaturedCase — lead card above the case grid.
+   Same surface as the landing's cards, run wide with the copy beside the
+   screen art rather than above it. */
+
+.featured {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--orv-space-48);
+  margin-bottom: var(--orv-space-48);
+  padding: var(--orv-space-40);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: var(--orv-radius-24);
+  background:
+    linear-gradient(150deg, rgba(124, 58, 237, 0.14) 0%, rgba(124, 58, 237, 0.02) 58%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-8);
+  transition: border-color 160ms ease;
+}
+
+.featured:hover,
+.featured:focus-within {
+  border-color: rgba(168, 85, 247, 0.45);
+}
+
+.copy {
+  min-width: 0;
+}
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  flex-wrap: wrap;
+}
+
+.client {
+  font-size: var(--orv-font-size-13);
+  color: var(--orv-text-tertiary);
+}
+
+.title {
+  margin: var(--orv-space-20) 0 0;
+  font-family: var(--orv-font-family-display);
+  font-size: var(--orv-font-size-40);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.15;
+  color: var(--orv-text-primary);
+}
+
+/* The title carries the link; the overlay makes the whole card clickable
+   without adding a second tab stop. */
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.titleLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.titleLink:focus-visible {
+  outline: none;
+}
+
+.titleLink:focus-visible::after {
+  outline: 2px solid var(--orv-border-active);
+  outline-offset: 3px;
+}
+
+.body {
+  margin: var(--orv-space-16) 0 0;
+  font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+  max-width: 46ch;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--orv-space-8);
+  margin: var(--orv-space-20) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-6);
+  padding: 5px var(--orv-space-10);
+  border: 1px solid var(--orv-color-alpha-white-8);
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-alpha-white-4);
+  font-size: var(--orv-font-size-11);
+  color: var(--orv-text-secondary);
+}
+
+.serviceDot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-purple-300);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  margin-top: var(--orv-space-24);
+  font-size: var(--orv-font-size-15);
+  font-weight: var(--orv-font-weight-medium);
+  color: var(--orv-color-raw-purple-300);
+}
+
+.visual {
+  min-width: 0;
+}
+
+.visualImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--orv-radius-10);
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured {
+    transition: none;
+  }
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1024px) {
+  .featured {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--orv-space-32);
+    padding: var(--orv-space-32);
+  }
+
+  /* The screen art leads once the card stacks. */
+  .visual {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .featured {
+    padding: var(--orv-space-20);
+    border-radius: var(--orv-radius-16);
+  }
+
+  .title {
+    font-size: var(--orv-font-size-28);
+  }
+}

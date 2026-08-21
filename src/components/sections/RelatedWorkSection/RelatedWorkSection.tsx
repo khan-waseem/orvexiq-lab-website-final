@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
+import { SectionHeading } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
 import { ServiceDetailPage } from '@/content/schemas/service-detail.schema';
 import styles from './RelatedWorkSection.module.css';
 
@@ -18,17 +20,30 @@ export interface RelatedWorkSectionProps {
  */
 export const RelatedWorkSection: React.FC<RelatedWorkSectionProps> = ({ content }) => {
   return (
-    <SectionWrapper theme="canvas" padding="custom" id="related-work" className={styles.section}>
-      <PageContainer>
-        <div className={styles.eyebrowRow}>
-          <Eyebrow align="left" tone="muted">
-            {content.eyebrow}
-          </Eyebrow>
-        </div>
+    <SectionWrapper
+      theme="canvas"
+      padding="custom"
+      id="related-work"
+      className={styles.section}
+      ariaLabelledBy="related-work-heading"
+    >
+      <GlowRings side="left" size={980} />
+      <GlowRings side="right" size={860} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
+        <SectionHeading
+          id="related-work-heading"
+          eyebrow={content.eyebrow}
+          rule="dot"
+          align="left"
+          className={styles.heading}
+        >
+          {content.title}
+        </SectionHeading>
 
         <Link href={content.href} className={styles.card}>
           <span className={styles.text}>
-            <span className={styles.title}>{content.title}</span>
             <span className={styles.body}>{content.body}</span>
           </span>
           <span className={styles.arrow} aria-hidden="true">

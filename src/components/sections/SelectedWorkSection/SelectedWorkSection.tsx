@@ -15,6 +15,9 @@ import styles from './SelectedWorkSection.module.css';
 export interface SelectedWorkSectionProps {
   content: HomepageContent['selectedWorkSection'];
   caseStudies: CaseStudy[];
+  /** How many cards to show. The landing runs the full 2x2; other pages use
+   *  this band as a shorter proof strip. */
+  limit?: number;
 }
 
 /** Cards are a fixed 2x2 grid in the design; extra featured work is ignored. */
@@ -31,8 +34,9 @@ const CARD_LIMIT = 4;
 export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
   content,
   caseStudies,
+  limit = CARD_LIMIT,
 }) => {
-  const cards = caseStudies.slice(0, CARD_LIMIT);
+  const cards = caseStudies.slice(0, limit);
 
   return (
     <SectionWrapper

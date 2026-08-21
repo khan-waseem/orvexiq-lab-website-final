@@ -1,13 +1,15 @@
 {
   "hero": {
-    "headlineLine1": "Build systems that outlast",
-    "headlineLine2": "the projects.",
+    "eyebrow": "Careers at Orvexiq Lab",
+    "headline": "Build systems that outlast the projects.",
     "subdescription": "We hire slowly and keep teams small. If you have been frustrated by design that stops at handoff, you will recognize how we work.",
     "heroIconAssetUrl": "/assets/careers/careers-hero-icon.png"
   },
   "whyUs": {
     "eyebrow": "WHAT IT IS LIKE",
-    "headline": "Small team. Real ownership.",
+    "headlineLine1": "Small team.",
+    "headlineAccent2": "Real ownership.",
+    "subdescription": "Four things that are true here and are not true at most studios.",
     "perks": [
       {
         "id": "pk-1",
@@ -33,7 +35,8 @@
   },
   "openRoles": {
     "eyebrow": "OPEN ROLES",
-    "headlineTemplate": "{count} seats open right now",
+    "headlineTemplate": "{count} seats open",
+    "headlineAccent": "right now",
     "emptyHeadline": "No open seats right now",
     "footnote": "Nothing that fits? Send us your work anyway — ",
     "footnoteEmail": "hello@orvexiq.com"

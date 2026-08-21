@@ -2,6 +2,8 @@ import { z } from 'zod';
 import { seoMetadataSchema } from './common.schema';
 
 export const blogPageHeroSchema = z.object({
+  /** Plain line above the headline, as on the landing hero. */
+  eyebrow: z.string(),
   headline: z.string(),
   subdescription: z.string(),
   heroIconAssetUrl: z.string(),
@@ -18,6 +20,9 @@ export const blogPageContentSchema = z.object({
   hero: blogPageHeroSchema,
   featured: z.object({
     eyebrow: z.string(),
+    headlineLine1: z.string(),
+    /** Trailing run in the violet gradient — one accent per headline. */
+    headlineAccent2: z.string(),
     readMoreLabel: z.string(),
     imagePlaceholderLabel: z.string(),
   }),

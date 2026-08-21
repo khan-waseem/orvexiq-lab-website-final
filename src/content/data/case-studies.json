@@ -1,5 +1,29 @@
 [
   {
+    "id": "cs-6",
+    "slug": "trial-coordination",
+    "category": "GENERAL",
+    "title": "Trial coordination console",
+    "subtitle": "Making a missed visit window visible while it can still be prevented.",
+    "description": "Making a missed visit window visible while it can still be prevented.",
+    "clientDescriptor": "Self-initiated concept",
+    "year": "2026",
+    "servicesProvided": [
+      "Problem framing",
+      "Product Design",
+      "Design System"
+    ],
+    "coverScreenAssetUrl": "",
+    "featured": true,
+    "displayOrder": 1,
+    "verification": {
+      "isVerified": true,
+      "verificationNotes": "Self-initiated concept. Carries no client name and no measured results, so nothing here is an unverified claim."
+    },
+    "publishedAt": "2026-01-01",
+    "published": true
+  },
+  {
     "id": "cs-1",
     "slug": "loan-origination-redesign",
     "category": "FINTECH",
@@ -14,7 +38,7 @@
     ],
     "coverScreenAssetUrl": "",
     "featured": true,
-    "displayOrder": 1,
+    "displayOrder": 2,
     "verification": {
       "isVerified": false,
       "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
@@ -37,7 +61,7 @@
     ],
     "coverScreenAssetUrl": "",
     "featured": true,
-    "displayOrder": 2,
+    "displayOrder": 3,
     "verification": {
       "isVerified": false,
       "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
@@ -60,7 +84,7 @@
     ],
     "coverScreenAssetUrl": "",
     "featured": true,
-    "displayOrder": 3,
+    "displayOrder": 4,
     "verification": {
       "isVerified": false,
       "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
@@ -82,8 +106,8 @@
       "Platform"
     ],
     "coverScreenAssetUrl": "",
-    "featured": true,
-    "displayOrder": 4,
+    "featured": false,
+    "displayOrder": 5,
     "verification": {
       "isVerified": false,
       "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
@@ -105,36 +129,12 @@
     ],
     "coverScreenAssetUrl": "",
     "featured": false,
-    "displayOrder": 5,
+    "displayOrder": 6,
     "verification": {
       "isVerified": false,
       "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
     },
     "publishedAt": "2024-01-01",
-    "published": true
-  },
-  {
-    "id": "cs-6",
-    "slug": "trial-coordination",
-    "category": "GENERAL",
-    "title": "Trial coordination console",
-    "subtitle": "Making a missed visit window visible while it can still be prevented.",
-    "description": "Making a missed visit window visible while it can still be prevented.",
-    "clientDescriptor": "Self-initiated concept",
-    "year": "2026",
-    "servicesProvided": [
-      "Problem framing",
-      "Product Design",
-      "Design System"
-    ],
-    "coverScreenAssetUrl": "",
-    "featured": false,
-    "displayOrder": 6,
-    "verification": {
-      "isVerified": true,
-      "verificationNotes": "Self-initiated concept. Carries no client name and no measured results, so nothing here is an unverified claim."
-    },
-    "publishedAt": "2026-01-01",
     "published": true
   }
 ]

@@ -1,5 +1,6 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
+import { GlowRings } from '@/components/decor/GlowRings';
 import { PageContainer } from '@/components/layout/Container';
 import { ContactPageContent } from '@/content/schemas/contact-page.schema';
 import styles from './ContactBodySection.module.css';
@@ -33,7 +34,10 @@ export const ContactBodySection: React.FC<ContactBodySectionProps> = ({ form, in
 
   return (
     <SectionWrapper theme="canvas" padding="custom" id="contact-body" className={styles.section}>
-      <PageContainer>
+      <GlowRings side="left" size={980} />
+      <GlowRings side="right" size={860} />
+
+      <PageContainer className={styles.container}>
         <div className={styles.row}>
           <form className={styles.form} aria-label="Project enquiry">
             {rows.map((pair) => (

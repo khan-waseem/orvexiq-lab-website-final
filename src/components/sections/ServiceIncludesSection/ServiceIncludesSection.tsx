@@ -1,7 +1,9 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
 import { ServiceDetailPage } from '@/content/schemas/service-detail.schema';
 import styles from './ServiceIncludesSection.module.css';
 
@@ -18,11 +20,28 @@ export interface ServiceIncludesSectionProps {
  */
 export const ServiceIncludesSection: React.FC<ServiceIncludesSectionProps> = ({ content }) => {
   return (
-    <SectionWrapper theme="canvas" padding="custom" id="service-includes" className={styles.section}>
-      <PageContainer>
-        <div className={styles.eyebrowRow}>
-          <Eyebrow align="left" tone="muted">{content.eyebrow}</Eyebrow>
-        </div>
+    <SectionWrapper
+      theme="canvas"
+      padding="custom"
+      id="service-includes"
+      className={styles.section}
+      ariaLabelledBy="service-includes-heading"
+    >
+      <GlowRings side="left" size={980} />
+      <GlowRings side="right" size={860} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
+        <SectionHeading
+          id="service-includes-heading"
+          eyebrow={content.eyebrow}
+          rule="dot"
+          className={styles.heading}
+        >
+          {content.headlineLine1}
+          <br />
+          <Accent>{content.headlineAccent2}</Accent>
+        </SectionHeading>
 
         <ul className={styles.grid}>
           {content.items.map((item) => (

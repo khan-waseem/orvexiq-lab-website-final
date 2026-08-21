@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import { contentRepository } from '@/content/repository/local-content-provider';
-import { ServicesHeroSection } from '@/components/sections/ServicesHeroSection';
+import { PageHero } from '@/components/sections/PageHero';
 import { ServiceDetailSection } from '@/components/sections/ServiceDetailSection';
-import { FaqSection } from '@/components/sections/FaqSection';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { SelectedWorkSection } from '@/components/sections/SelectedWorkSection';
+import { LandingFaqSection } from '@/components/sections/LandingFaqSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   const servicesPageData = await contentRepository.getServicesPageData();
@@ -16,25 +17,48 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Services page — Figma node 30:4.
+ * Services page.
  *
- * Section order matches the Figma frame:
- *   Page Hero (30:18) -> Service Detail (31:2) -> FAQ (123:2)
- *   -> CTA (31:77, boxed variant) -> Footer (31:90, global)
+ * Section order: Page Hero -> Service Detail -> Selected Work -> FAQ -> CTA.
+ *
+ * The proof strip is the landing's own component fed from the homepage
+ * content rather than a copy, so the two stay in step. The process band was
+ * deliberately left off: it would repeat the landing's verbatim.
  */
 export default async function ServicesPage() {
-  const servicesPageData = await contentRepository.getServicesPageData();
+  const [servicesPageData, homepageData, caseStudies] = await Promise.all([
+    contentRepository.getServicesPageData(),
+    contentRepository.getHomepageData(),
+    contentRepository.getCaseStudies(),
+  ]);
+
+  const featuredCaseStudies = caseStudies.filter((study) => study.featured && study.published);
 
   return (
     <>
-      <ServicesHeroSection content={servicesPageData.hero} />
+      <PageHero
+        id="services-hero"
+        eyebrow={servicesPageData.hero.eyebrow}
+        headline={servicesPageData.hero.headline}
+        subdescription={servicesPageData.hero.subdescription}
+        iconAssetUrl={servicesPageData.hero.heroIconAssetUrl}
+        primaryCta={{ label: servicesPageData.hero.primaryCtaText, href: '/contact' }}
+        secondaryCta={{ label: servicesPageData.hero.secondaryCtaText, href: '/case-studies' }}
+      />
 
       <ServiceDetailSection blocks={servicesPageData.serviceDetail.blocks} />
 
-      <FaqSection content={servicesPageData.faq} />
+      {/* Shorter proof strip than the landing's 2x2 — enough to show the work
+          without turning the services page into a case-study index. */}
+      <SelectedWorkSection
+        content={homepageData.selectedWorkSection}
+        caseStudies={featuredCaseStudies}
+        limit={2}
+      />
 
-      {/* Figma 31:78 is the inset/bordered CTA card, not the homepage band */}
-      <CtaSection content={servicesPageData.ctaSection} variant="boxed" />
+      <LandingFaqSection content={servicesPageData.faq} />
+
+      <LandingCtaSection content={servicesPageData.ctaSection} />
     </>
   );
 }

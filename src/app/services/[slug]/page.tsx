@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { contentRepository } from '@/content/repository/local-content-provider';
-import { ServiceDetailHeroSection } from '@/components/sections/ServiceDetailHeroSection';
+import { PageHero } from '@/components/sections/PageHero';
 import { ServiceWhySection } from '@/components/sections/ServiceWhySection';
 import { ServiceIncludesSection } from '@/components/sections/ServiceIncludesSection';
 import { ServiceAuditOfferSection } from '@/components/sections/ServiceAuditOfferSection';
 import { ServiceDeliverablesSection } from '@/components/sections/ServiceDeliverablesSection';
 import { RelatedWorkSection } from '@/components/sections/RelatedWorkSection';
-import { FaqSection } from '@/components/sections/FaqSection';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { LandingFaqSection } from '@/components/sections/LandingFaqSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -45,7 +45,15 @@ export default async function ServiceDetailPage({ params }: Params) {
 
   return (
     <>
-      <ServiceDetailHeroSection hero={page.hero} breadcrumbLabel={page.breadcrumbLabel} />
+      <PageHero
+        id="service-hero"
+        eyebrow={page.hero.eyebrow}
+        headline={page.hero.headline}
+        subdescription={page.hero.subdescription}
+        iconAssetUrl={page.hero.iconAssetUrl}
+        primaryCta={{ label: 'Start a Project', href: '/contact' }}
+        secondaryCta={{ label: 'All services', href: '/services' }}
+      />
 
       <ServiceWhySection content={page.why} />
 
@@ -57,9 +65,9 @@ export default async function ServiceDetailPage({ params }: Params) {
 
       <RelatedWorkSection content={page.relatedWork} />
 
-      <FaqSection content={page.faq} />
+      <LandingFaqSection content={page.faq} />
 
-      <CtaSection content={page.ctaSection} variant="boxed" />
+      <LandingCtaSection content={page.ctaSection} />
     </>
   );
 }

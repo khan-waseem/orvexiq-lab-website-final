@@ -1,9 +1,11 @@
 {
   "hero": {
-    "headlineLine1": "What we do, and how far",
-    "headlineLine2": "we take it.",
+    "eyebrow": "Product strategy, design & AI",
+    "headline": "What we do, and how far we take it.",
     "subdescription": "Four capabilities that usually arrive together. Most engagements start with one and grow into the rest.",
-    "heroIconAssetUrl": "/assets/services/services-hero-icon.png"
+    "heroIconAssetUrl": "/assets/services/services-hero-icon.png",
+    "primaryCtaText": "Start a Project",
+    "secondaryCtaText": "Explore Case Studies"
   },
   "serviceDetail": {
     "blocks": [

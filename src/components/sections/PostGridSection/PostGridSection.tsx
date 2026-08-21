@@ -2,8 +2,11 @@
 
 import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
+import { PostCover } from './PostCover';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { BlogPostItem } from '@/content/schemas/blog.schema';
 import { BlogPageContent } from '@/content/schemas/blog-page.schema';
@@ -39,7 +42,11 @@ export const PostGridSection: React.FC<PostGridSectionProps> = ({ content, posts
 
   return (
     <SectionWrapper theme="canvas" padding="custom" id="post-grid" className={styles.section}>
-      <PageContainer>
+      <GlowRings side="left" size={1000} />
+      <GlowRings side="right" size={880} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
         <div className={styles.pills} role="group" aria-label="Filter posts by category">
           {content.filters.map((f) => {
             const isActive = activeFilter === f.value;
@@ -76,9 +83,7 @@ export const PostGridSection: React.FC<PostGridSectionProps> = ({ content, posts
                         className={styles.imageAsset}
                       />
                     ) : (
-                      <span className={styles.imagePlaceholder}>
-                        {content.imagePlaceholderLabel}
-                      </span>
+                      <PostCover category={post.category} title={post.title} />
                     )}
                   </div>
 

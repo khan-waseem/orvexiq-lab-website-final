@@ -1,5 +1,13 @@
 /* StorySection — Figma node 32:24 */
+/* Lifted above the arcs and corner dots behind the band. */
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
 .section {
+  position: relative;
+  overflow: hidden;
   position: relative;
   padding-top: var(--orv-layout-section-padding-lg);
   padding-bottom: var(--orv-layout-section-padding-lg);

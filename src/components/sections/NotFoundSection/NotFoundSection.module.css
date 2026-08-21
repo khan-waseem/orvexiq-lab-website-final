@@ -76,24 +76,25 @@
 
 /* Figma 54:21 — 180px Bold, tracking -9 */
 .code {
-  font-family: var(--orv-font-family-primary);
+  font-family: var(--orv-font-family-display);
   font-size: var(--orv-font-size-180);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-normal);
-  letter-spacing: var(--orv-letter-spacing-tight-900);
-  color: var(--orv-text-primary);
-  margin: 0 0 var(--orv-space-24) 0;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1;
+  letter-spacing: var(--orv-letter-spacing-tight-096);
+  /* The violet gradient the landing headlines use, run over the numerals. */
+  background: var(--orv-gradient-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Figma 54:22 — 48px / 58px Bold, tracking -0.96 */
 .headline {
-  font-family: var(--orv-font-family-primary);
+  font-family: var(--orv-font-family-display);
   font-size: var(--orv-font-size-48);
-  font-weight: var(--orv-font-weight-bold);
-  line-height: var(--orv-line-height-58);
-  letter-spacing: var(--orv-letter-spacing-tight-096);
-  color: var(--orv-text-primary);
-  margin: 0 0 var(--orv-space-24) 0;
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.2;
+  letter-spacing: var(--orv-letter-spacing-tight-032);
 }
 
 /* Figma 54:23 — 19px / 31px Regular, secondary, 720 wide */

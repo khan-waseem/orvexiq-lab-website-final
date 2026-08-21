@@ -3,8 +3,8 @@
     "slug": "product-strategy",
     "breadcrumbLabel": "Product Strategy",
     "hero": {
-      "headlineLine1": "Product strategy for",
-      "headlineLine2": "complex software.",
+      "eyebrow": "Product strategy",
+      "headline": "Product strategy for complex software.",
       "subdescription": "Before the interface. We map business goals, user needs and system constraints into one direction the whole team can build against.",
       "iconAssetUrl": "/assets/services/service-icon-strategy.png"
     },
@@ -19,6 +19,8 @@
     },
     "includes": {
       "eyebrow": "WHAT THIS INCLUDES",
+      "headlineLine1": "What the engagement",
+      "headlineAccent2": "actually covers.",
       "items": [
         {
           "id": "ps-i1",
@@ -109,8 +111,8 @@
     "slug": "ux-ui-product-design",
     "breadcrumbLabel": "UX / UI Product Design",
     "hero": {
-      "headlineLine1": "Enterprise UX and",
-      "headlineLine2": "UI design.",
+      "eyebrow": "UX / UI product design",
+      "headline": "Enterprise UX and UI design.",
       "subdescription": "Interface systems for products that do not get simpler over time — dashboards, complex flows, and the mobile apps that sit beside them.",
       "iconAssetUrl": "/assets/services/service-icon-uxui.png"
     },
@@ -125,6 +127,8 @@
     },
     "includes": {
       "eyebrow": "WHAT THIS INCLUDES",
+      "headlineLine1": "What the design work",
+      "headlineAccent2": "actually covers.",
       "items": [
         {
           "id": "ux-i1",
@@ -215,8 +219,8 @@
     "slug": "ai-experiences-automation",
     "breadcrumbLabel": "AI Experiences & Automation",
     "hero": {
-      "headlineLine1": "AI product design and",
-      "headlineLine2": "automation UX.",
+      "eyebrow": "AI & automation",
+      "headline": "AI product design and automation UX.",
       "subdescription": "AI only helps when people trust it. We design the interface layer that makes automated decisions legible, correctable and worth relying on.",
       "iconAssetUrl": "/assets/services/service-icon-ai.png"
     },
@@ -231,6 +235,8 @@
     },
     "includes": {
       "eyebrow": "WHAT THIS INCLUDES",
+      "headlineLine1": "What the build",
+      "headlineAccent2": "actually covers.",
       "items": [
         {
           "id": "ai-i1",
@@ -321,8 +327,8 @@
     "slug": "design-systems",
     "breadcrumbLabel": "Design Systems",
     "hero": {
-      "headlineLine1": "Design systems that",
-      "headlineLine2": "survive handoff.",
+      "eyebrow": "Design systems",
+      "headline": "Design systems that survive handoff.",
       "subdescription": "Tokens, components and governance shipped into your repository — versioned, documented, and usable by people who were never in the workshop.",
       "iconAssetUrl": "/assets/services/service-icon-systems.png"
     },
@@ -337,6 +343,8 @@
     },
     "includes": {
       "eyebrow": "WHAT THIS INCLUDES",
+      "headlineLine1": "What the system",
+      "headlineAccent2": "actually covers.",
       "items": [
         {
           "id": "ds-i1",

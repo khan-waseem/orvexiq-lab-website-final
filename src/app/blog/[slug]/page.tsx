@@ -8,7 +8,7 @@ import {
   AuthorBioSection,
   RelatedPostsSection,
 } from '@/components/sections/ArticleSections';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Params) {
 
       <RelatedPostsSection posts={related} label="KEEP READING" />
 
-      <CtaSection content={pageData.ctaSection} variant="boxed" />
+      <LandingCtaSection content={pageData.ctaSection} />
     </>
   );
 }

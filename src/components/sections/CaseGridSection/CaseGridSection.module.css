@@ -1,8 +1,19 @@
 /* CaseGridSection — Figma node 44:24 */
 .section {
   position: relative;
-  padding-top: var(--orv-space-32);
+  overflow: hidden;
+  padding-top: var(--orv-space-64);
   padding-bottom: var(--orv-space-128);
+}
+
+/* Lifted above the arcs and corner dots behind the band. */
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.heading {
+  margin-bottom: var(--orv-space-48);
 }
 
 /* Figma 44:25 — pills left, count right, 12px gaps */
@@ -129,6 +140,25 @@
   box-shadow: var(--orv-shadow-glass-lg);
 }
 
+/* A card without a write-up is not a link, so it does not offer the hover
+   affordance of one. */
+.cardPending:hover {
+  border-color: var(--orv-card-glass-border-color, rgba(255, 255, 255, 0.14));
+  transform: none;
+  box-shadow: none;
+}
+
+.pending {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px var(--orv-space-10);
+  border: 1px solid var(--orv-color-alpha-white-12);
+  border-radius: var(--orv-radius-full);
+  font-size: var(--orv-font-size-11);
+  color: var(--orv-text-tertiary);
+  white-space: nowrap;
+}
+
 .card:focus-visible {
   outline: var(--orv-border-width-default) solid var(--orv-border-active);
   outline-offset: var(--orv-space-2);
@@ -153,6 +183,15 @@
 
 .visualImage {
   object-fit: cover;
+}
+
+/* Screen art stands in for missing project imagery. Inset so the console
+   reads as sitting inside the band rather than being cropped by it. */
+.visualMockup {
+  width: 100%;
+  padding: var(--orv-space-24) var(--orv-space-24) 0;
+  box-sizing: border-box;
+  align-self: flex-end;
 }
 
 /* Figma 44:41 — 13px Medium tertiary at 50% */

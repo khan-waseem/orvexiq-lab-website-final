@@ -4,14 +4,68 @@ import Image from 'next/image';
 import { PageContainer } from '@/components/layout/Container';
 import styles from './LandingFooter.module.css';
 
-export interface LandingFooterProps {
-  email?: string;
-}
+export type LandingFooterProps = Record<string, never>;
 
 interface FooterLink {
   label: string;
   href: string;
 }
+
+interface SocialLink {
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+}
+
+/* Platform marks drawn inline so they take the footer's colour. Hrefs point at
+   the platform roots until the studio's real handles exist. */
+const SOCIAL_LINKS: SocialLink[] = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com',
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M3.4 5.6h2.3V13H3.4V5.6ZM4.6 2a1.3 1.3 0 1 1 0 2.7 1.3 1.3 0 0 1 0-2.7ZM7.3 5.6h2.2v1h.03c.31-.56 1.07-1.15 2.2-1.15 2.35 0 2.79 1.5 2.79 3.45V13h-2.3V9.36c0-.87-.02-1.98-1.23-1.98-1.24 0-1.43.94-1.43 1.92V13H7.3V5.6Z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com',
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <rect x="2.2" y="2.2" width="11.6" height="11.6" rx="3.4" stroke="currentColor"
+              strokeWidth="1.4" />
+        <circle cx="8" cy="8" r="2.9" stroke="currentColor" strokeWidth="1.4" />
+        <circle cx="11.5" cy="4.5" r="0.9" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com',
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M9.4 1.8v8.05a2.35 2.35 0 1 1-1.9-2.3"
+              stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"
+              strokeLinejoin="round" />
+        <path d="M9.4 1.8a3.5 3.5 0 0 0 3.3 3.1" stroke="currentColor" strokeWidth="1.4"
+              strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com',
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <rect x="1.4" y="3.4" width="13.2" height="9.2" rx="3" stroke="currentColor"
+              strokeWidth="1.4" />
+        <path d="M6.9 6.3v3.4L9.9 8 6.9 6.3Z" fill="currentColor" />
+      </svg>
+    ),
+  },
+];
 
 /* The design lists a couple of services the site does not have pages for
    (Web Development, Mobile Apps), so this stays on the four that exist —
@@ -37,9 +91,7 @@ const COMPANY_LINKS: FooterLink[] = [
  * The other pages keep the existing site Footer; SiteFooter picks between
  * them by route. The arcs, lit points and divider dots are drawn in markup.
  */
-export const LandingFooter: React.FC<LandingFooterProps> = ({
-  email = 'hello@orvexiq.com',
-}) => {
+export const LandingFooter: React.FC<LandingFooterProps> = () => {
   const year = new Date().getFullYear();
 
   return (
@@ -144,32 +196,18 @@ export const LandingFooter: React.FC<LandingFooterProps> = ({
             </p>
 
             <p className={styles.social}>
-              <a
-                href="https://www.linkedin.com"
-                className={styles.socialLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className={styles.socialIcon}>
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"
-                       aria-hidden="true">
-                    <path d="M3.4 5.6h2.3V13H3.4V5.6ZM4.6 2a1.3 1.3 0 1 1 0 2.7 1.3 1.3 0 0 1 0-2.7ZM7.3 5.6h2.2v1h.03c.31-.56 1.07-1.15 2.2-1.15 2.35 0 2.79 1.5 2.79 3.45V13h-2.3V9.36c0-.87-.02-1.98-1.23-1.98-1.24 0-1.43.94-1.43 1.92V13H7.3V5.6Z" />
-                  </svg>
-                </span>
-                LinkedIn
-              </a>
-
-              <a href={`mailto:${email}`} className={styles.socialLink}>
-                <span className={styles.socialIcon}>
-                  <svg width="13" height="13" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                    <rect x="2" y="4" width="14" height="10" rx="1.8" stroke="currentColor"
-                          strokeWidth="1.4" />
-                    <path d="m2.6 5 6.4 4.6L15.4 5" stroke="currentColor" strokeWidth="1.4"
-                          strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                Email
-              </a>
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className={styles.socialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className={styles.socialIcon}>{social.icon}</span>
+                  {social.label}
+                </a>
+              ))}
             </p>
           </div>
         </PageContainer>

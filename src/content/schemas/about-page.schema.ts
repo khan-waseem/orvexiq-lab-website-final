@@ -2,8 +2,9 @@ import { z } from 'zod';
 import { seoMetadataSchema } from './common.schema';
 
 export const aboutPageHeroSchema = z.object({
-  headlineLine1: z.string(),
-  headlineLine2: z.string(),
+  /** Plain line above the headline, as on the landing hero. */
+  eyebrow: z.string(),
+  headline: z.string(),
   subdescription: z.string(),
   heroIconAssetUrl: z.string(),
 });
@@ -18,15 +19,17 @@ export const aboutPageContentSchema = z.object({
   hero: aboutPageHeroSchema,
   story: z.object({
     eyebrow: z.string(),
-    headlineLines: z.array(z.string()),
+    headlineLine1: z.string(),
+    /** Trailing run in the violet gradient — one accent per headline. */
+    headlineAccent2: z.string(),
     paragraphs: z.array(z.string()),
   }),
   principles: z.object({
-    headline: z.string(),
-    items: z.array(principleSchema),
-  }),
-  impact: z.object({
     eyebrow: z.string(),
+    headlineLine1: z.string(),
+    headlineAccent2: z.string(),
+    subdescription: z.string(),
+    items: z.array(principleSchema),
   }),
   ctaSection: z.object({
     eyebrow: z.string(),

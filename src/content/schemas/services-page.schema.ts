@@ -2,10 +2,13 @@ import { z } from 'zod';
 import { seoMetadataSchema } from './common.schema';
 
 export const servicesPageHeroSchema = z.object({
-  headlineLine1: z.string(),
-  headlineLine2: z.string(),
+  /** Plain line above the headline, as on the landing hero. */
+  eyebrow: z.string(),
+  headline: z.string(),
   subdescription: z.string(),
   heroIconAssetUrl: z.string(),
+  primaryCtaText: z.string(),
+  secondaryCtaText: z.string(),
 });
 
 /**

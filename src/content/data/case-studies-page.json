@@ -1,5 +1,6 @@
 {
   "hero": {
+    "eyebrow": "Selected engagements",
     "headline": "Work we can talk about.",
     "subdescription": "Six engagements, all still in production. Some clients we can name, some we cannot — the numbers are real either way.",
     "heroIconAssetUrl": "/assets/case-studies/case-studies-hero-icon.png"
@@ -32,6 +33,12 @@
         "value": "AI"
       }
     ],
+    "eyebrow": "Selected work",
+    "headlineLine1": "Six engagements,",
+    "headlineAccent2": "all still in production.",
+    "subdescription": "Lending, logistics, commerce and AI — what the problem was, what we decided, and what shipped.",
+    "comingSoonLabel": "Write-up in progress",
+    "leadCtaLabel": "Read the case study",
     "countLabelSingular": "project",
     "countLabelPlural": "projects",
     "visualPlaceholderLabel": "Project visual",

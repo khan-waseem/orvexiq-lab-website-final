@@ -1,39 +1,37 @@
-/* Bottom-corner dot pattern closing a landing band. */
+/* Dot pattern framing a landing band: top-right where the section opens,
+   bottom-left where it closes. */
 
 .wrapper {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: var(--orv-space-32);
+  inset: 0;
   pointer-events: none;
   z-index: var(--orv-z-normal);
 }
 
-.left,
-.right {
+.start,
+.end {
   position: absolute;
-  bottom: 0;
 }
 
-.left {
-  left: var(--orv-space-32);
-}
-
-.right {
+.start {
+  top: var(--orv-space-32);
   right: var(--orv-space-32);
 }
 
+.end {
+  bottom: var(--orv-space-32);
+  left: var(--orv-space-32);
+}
+
 @media (max-width: 900px) {
-  .wrapper {
-    bottom: var(--orv-space-16);
-  }
-
-  .left {
-    left: var(--orv-space-12);
-  }
-
-  .right {
+  .start {
+    top: var(--orv-space-16);
     right: var(--orv-space-12);
+  }
+
+  .end {
+    bottom: var(--orv-space-16);
+    left: var(--orv-space-12);
   }
 }
 

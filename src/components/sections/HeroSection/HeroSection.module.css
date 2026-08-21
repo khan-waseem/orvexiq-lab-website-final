@@ -296,6 +296,14 @@
     max-width: 100%;
   }
 
+  /* The hero's supporting copy is set at 20px for the 1440 layout; once the
+     column narrows it reads heavy against the headline, so it steps down. */
+  .eyebrowText,
+  .subdescription {
+    font-size: var(--orv-font-size-18);
+    line-height: var(--orv-line-height-26);
+  }
+
   .visualColumn {
     flex: none;
     width: 100%;
@@ -318,6 +326,12 @@
 @media (max-width: 600px) {
   .heroSection {
     padding-top: 128px;
+  }
+
+  .eyebrowText,
+  .subdescription {
+    font-size: var(--orv-font-size-16);
+    line-height: var(--orv-line-height-25);
   }
 
   .heroLayout {

@@ -1,5 +1,7 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { ServiceDetailPage } from '@/content/schemas/service-detail.schema';
 import styles from './ServiceAuditOfferSection.module.css';
@@ -19,7 +21,11 @@ export const ServiceAuditOfferSection: React.FC<ServiceAuditOfferSectionProps> =
 }) => {
   return (
     <SectionWrapper theme="canvas" padding="custom" id="audit-offer" className={styles.section}>
-      <PageContainer>
+      <GlowRings side="left" size={960} />
+      <GlowRings side="right" size={840} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
         <div className={styles.card}>
           <div className={styles.copy}>
             <p className={styles.eyebrow}>{content.eyebrow}</p>

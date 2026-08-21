@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import { contentRepository } from '@/content/repository/local-content-provider';
-import { AboutHeroSection } from '@/components/sections/AboutHeroSection';
+import { PageHero } from '@/components/sections/PageHero';
 import { StorySection } from '@/components/sections/StorySection';
 import { PrinciplesSection } from '@/components/sections/PrinciplesSection';
-import { ImpactSection } from '@/components/sections/ImpactSection';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   const pageData = await contentRepository.getAboutPageData();
@@ -19,31 +18,29 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * About page — Figma node 32:2.
  *
- * Section order matches the Figma frame:
- *   Page Hero (183:517) -> Story (32:24) -> Principles (32:34)
- *   -> Impact (32:49) -> CTA (32:69, boxed) -> Footer (32:82, global)
+ * Section order: Page Hero -> Story -> Principles -> CTA -> Footer.
  *
- * Figma 32:49 is the same Impact band as the homepage (86:947), so the
- * homepage ImpactSection is reused verbatim — including its rule that
- * unverified metrics render as placeholders rather than numbers.
+ * The Impact band was dropped in the premium pass: its metrics are
+ * unverified, so it only ever rendered placeholder dashes.
  */
 export default async function AboutPage() {
-  const [pageData, impactStats] = await Promise.all([
-    contentRepository.getAboutPageData(),
-    contentRepository.getImpactStats(),
-  ]);
+  const pageData = await contentRepository.getAboutPageData();
 
   return (
     <>
-      <AboutHeroSection content={pageData.hero} />
+      <PageHero
+        id="about-hero"
+        eyebrow={pageData.hero.eyebrow}
+        headline={pageData.hero.headline}
+        subdescription={pageData.hero.subdescription}
+        iconAssetUrl={pageData.hero.heroIconAssetUrl}
+      />
 
       <StorySection content={pageData.story} />
 
       <PrinciplesSection content={pageData.principles} />
 
-      <ImpactSection stats={impactStats} />
-
-      <CtaSection content={pageData.ctaSection} variant="boxed" />
+      <LandingCtaSection content={pageData.ctaSection} />
     </>
   );
 }

@@ -1,6 +1,12 @@
-/* Navbar Component Styles — 100% Token Governance */
+/* Navbar Component Styles — 100% Token Governance
+ *
+ * The bar is fixed rather than absolute: it was scrolling away with the page,
+ * which left every page without a visible next step below the fold — and put
+ * its CTA on screen at the same moment as the hero's, where the two read as a
+ * duplicate. Page heroes already carry enough top padding to clear it, so
+ * nothing needed to shift to make room. */
 .header {
-  position: absolute;
+  position: fixed;
   top: var(--orv-space-40);
   left: 0;
   right: 0;
@@ -27,6 +33,23 @@
   padding-left: var(--orv-nav-padding-x);
   padding-right: var(--orv-nav-padding-x);
   box-sizing: border-box;
+  border: 1px solid transparent;
+  transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Once content runs beneath it, the pill needs a real backing to stay legible. */
+.navPillScrolled {
+  background-color: rgba(10, 5, 23, 0.82);
+  border-color: rgba(168, 85, 247, 0.22);
+  box-shadow:
+    inset 0 1px 0 var(--orv-color-alpha-white-8),
+    0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navPill {
+    transition: none;
+  }
 }
 
 /* Logo Lockup */

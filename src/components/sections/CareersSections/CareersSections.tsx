@@ -2,18 +2,37 @@ import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { CareersPageContent, JobRole } from '@/content/schemas/careers-page.schema';
 import styles from './CareersSections.module.css';
 
 /** Figma 35:24 — "WHAT IT IS LIKE" band with four perk cards. */
 export const WhyUsSection: React.FC<{ content: CareersPageContent['whyUs'] }> = ({ content }) => (
-  <SectionWrapper theme="canvas" padding="custom" id="why-us" className={styles.whySection}>
-    <PageContainer>
-      <div className={styles.eyebrowRow}>
-        <Eyebrow align="left" tone="muted">{content.eyebrow}</Eyebrow>
-      </div>
-      <h2 className={styles.whyHeadline}>{content.headline}</h2>
+  <SectionWrapper
+    theme="canvas"
+    padding="custom"
+    id="why-us"
+    className={styles.whySection}
+    ariaLabelledBy="why-us-heading"
+  >
+    <GlowRings side="left" size={960} />
+    <GlowRings side="right" size={840} />
+    <SectionDots />
+
+    <PageContainer className={styles.container}>
+      <SectionHeading
+        id="why-us-heading"
+        eyebrow={content.eyebrow}
+        rule="dot"
+        sub={content.subdescription}
+        className={styles.heading}
+      >
+        {content.headlineLine1}
+        <br />
+        <Accent>{content.headlineAccent2}</Accent>
+      </SectionHeading>
       <ul className={styles.perkRow}>
         {content.perks.map((p) => (
           <li key={p.id} className={styles.perkCard}>
@@ -46,12 +65,32 @@ export const OpenRolesSection: React.FC<{
       : content.headlineTemplate.replace('{count}', word);
 
   return (
-    <SectionWrapper theme="canvas" padding="custom" id="open-roles" className={styles.rolesSection}>
-      <PageContainer>
-        <div className={styles.eyebrowRow}>
-          <Eyebrow align="left" tone="muted">{content.eyebrow}</Eyebrow>
-        </div>
-        <h2 className={styles.rolesHeadline}>{headline}</h2>
+    <SectionWrapper
+      theme="canvas"
+      padding="custom"
+      id="open-roles"
+      className={styles.rolesSection}
+      ariaLabelledBy="open-roles-heading"
+    >
+      <GlowRings side="left" size={1000} />
+      <GlowRings side="right" size={880} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
+        <SectionHeading
+          id="open-roles-heading"
+          eyebrow={content.eyebrow}
+          rule="dot"
+          className={styles.heading}
+        >
+          {headline}
+          {open.length > 0 && (
+            <>
+              {' '}
+              <Accent>{content.headlineAccent}</Accent>
+            </>
+          )}
+        </SectionHeading>
 
         {open.length > 0 && (
           <ul className={styles.roleList}>

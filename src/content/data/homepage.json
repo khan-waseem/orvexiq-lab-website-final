@@ -80,8 +80,7 @@
   },
   "designSystemsSection": {
     "eyebrow": "Design Systems",
-    "headlineLine1": "Built to stay ",
-    "headlineAccent1": "consistent.",
+    "headlineLine1": "Built to stay consistent.",
     "headlineLine2": "Designed to ",
     "headlineAccent2": "scale.",
     "subdescription": "Tokens, components and patterns that keep design and development working as one system.",
@@ -230,12 +229,11 @@
   },
   "landingCtaSection": {
     "eyebrow": "Start a project",
-    "headlineLine1": "Have a complex",
-    "headlineLine2": "product in mind?",
-    "headlineAccent3": "Let's make it clear.",
+    "headlineLine1": "Have a complex product in mind?",
     "subdescription": "Strategy, product design, design systems and intelligent experiences — built as one connected system.",
     "primaryCtaText": "Start a project",
-    "emailCtaText": "Email us"
+    "emailCtaText": "Email us",
+    "headlineAccent2": "Let's make it clear."
   },
   "ctaSection": {
     "eyebrow": "START A PROJECT",

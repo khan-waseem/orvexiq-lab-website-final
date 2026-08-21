@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import { contentRepository } from '@/content/repository/local-content-provider';
-import { BlogHeroSection } from '@/components/sections/BlogHeroSection';
+import { PageHero } from '@/components/sections/PageHero';
 import { FeaturedPostSection } from '@/components/sections/FeaturedPostSection';
 import { PostGridSection } from '@/components/sections/PostGridSection';
 import { NewsletterSection } from '@/components/sections/NewsletterSection';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   const pageData = await contentRepository.getBlogPageData();
@@ -17,11 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Blog page — Figma node 64:2.
+ * Blog page.
  *
- * Section order matches the Figma frame:
- *   Page Hero (183:974) -> Featured Post (64:23) -> Filters + Post Grid
- *   (64:38 / 64:50) -> Newsletter (64:103) -> CTA (64:112, boxed) -> Footer
+ * Section order: Page Hero -> Featured Post -> Filters + Post Grid
+ * -> Newsletter -> CTA -> Footer.
  */
 export default async function BlogPage() {
   const [pageData, posts] = await Promise.all([
@@ -34,7 +33,13 @@ export default async function BlogPage() {
 
   return (
     <>
-      <BlogHeroSection content={pageData.hero} />
+      <PageHero
+        id="blog-hero"
+        eyebrow={pageData.hero.eyebrow}
+        headline={pageData.hero.headline}
+        subdescription={pageData.hero.subdescription}
+        iconAssetUrl={pageData.hero.heroIconAssetUrl}
+      />
 
       <FeaturedPostSection content={pageData.featured} post={featured} />
 
@@ -42,7 +47,7 @@ export default async function BlogPage() {
 
       <NewsletterSection content={pageData.newsletter} />
 
-      <CtaSection content={pageData.ctaSection} variant="boxed" />
+      <LandingCtaSection content={pageData.ctaSection} />
     </>
   );
 }

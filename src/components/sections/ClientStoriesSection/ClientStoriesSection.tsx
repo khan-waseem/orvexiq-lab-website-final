@@ -9,7 +9,6 @@ import { GlowRings } from '@/components/decor/GlowRings';
 import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { TestimonialData } from '@/content/schemas/testimonial.schema';
-import { OrbitVisual } from './OrbitVisual';
 import styles from './ClientStoriesSection.module.css';
 
 export interface ClientStoriesSectionProps {
@@ -91,47 +90,36 @@ export const ClientStoriesSection: React.FC<ClientStoriesSectionProps> = ({
                 &ldquo;
               </span>
 
-              <blockquote className={styles.quote} aria-live="polite">
-                {story.quote}
-              </blockquote>
+              <div className={styles.quoteBody}>
+                <blockquote className={styles.quote} aria-live="polite">
+                  {story.quote}
+                </blockquote>
 
-              <figcaption className={styles.attribution}>
-                <span className={styles.avatar}>
-                  {story.avatarAssetUrl ? (
-                    <Image
-                      src={story.avatarAssetUrl}
-                      alt=""
-                      width={52}
-                      height={52}
-                      className={styles.avatarImage}
-                    />
-                  ) : null}
+                <span className={`${styles.quoteMark} ${styles.quoteMarkClose}`} aria-hidden="true">
+                  &rdquo;
                 </span>
-
-                <span className={styles.author}>
-                  <span className={styles.authorName}>{story.authorName}</span>
-                  <span className={styles.authorRole}>{story.authorRole}</span>
-                </span>
-
-                <span className={styles.attributionRule} aria-hidden="true" />
-
-                <span className={styles.client}>
-                  <span className={styles.clientMark} aria-hidden="true">
-                    <svg width="22" height="24" viewBox="0 0 22 24" fill="none">
-                      <path d="M11 1.2 20.5 6.6v10.8L11 22.8 1.5 17.4V6.6L11 1.2Z"
-                            stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-                      <path d="M11 7.4v9.2M7.6 10.2h6.8" stroke="currentColor" strokeWidth="1.3"
-                            strokeLinecap="round" />
-                    </svg>
-                  </span>
-                  <span className={styles.clientProfile}>{story.clientCompanyProfile}</span>
-                </span>
-              </figcaption>
+              </div>
             </div>
 
-            <div className={styles.visualColumn}>
-              <OrbitVisual />
-            </div>
+            {/* Portrait carries the attribution beneath it, so the quote column
+                stays a single block of text. */}
+            <figcaption className={styles.person}>
+              <span className={styles.portrait}>
+                {story.avatarAssetUrl ? (
+                  <Image
+                    src={story.avatarAssetUrl}
+                    alt={story.authorName}
+                    width={420}
+                    height={520}
+                    className={styles.portraitImage}
+                  />
+                ) : null}
+              </span>
+
+              <span className={styles.personName}>{story.authorName}</span>
+              <span className={styles.personRole}>{story.authorRole}</span>
+              <span className={styles.personCompany}>{story.clientCompanyProfile}</span>
+            </figcaption>
           </figure>
 
           {hasMultiple && (

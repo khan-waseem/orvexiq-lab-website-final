@@ -1,5 +1,8 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { AboutPageContent } from '@/content/schemas/about-page.schema';
 import styles from './PrinciplesSection.module.css';
@@ -20,9 +23,29 @@ export interface PrinciplesSectionProps {
  */
 export const PrinciplesSection: React.FC<PrinciplesSectionProps> = ({ content }) => {
   return (
-    <SectionWrapper theme="canvas" padding="custom" id="principles" className={styles.section}>
-      <PageContainer>
-        <h2 className={styles.headline}>{content.headline}</h2>
+    <SectionWrapper
+      theme="canvas"
+      padding="custom"
+      id="principles"
+      className={styles.section}
+      ariaLabelledBy="principles-heading"
+    >
+      <GlowRings side="left" size={960} />
+      <GlowRings side="right" size={840} />
+      <SectionDots />
+
+      <PageContainer className={styles.container}>
+        <SectionHeading
+          id="principles-heading"
+          eyebrow={content.eyebrow}
+          rule="dot"
+          sub={content.subdescription}
+          className={styles.heading}
+        >
+          {content.headlineLine1}
+          <br />
+          <Accent>{content.headlineAccent2}</Accent>
+        </SectionHeading>
 
         <ul className={styles.row}>
           {content.items.map((item) => (

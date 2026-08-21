@@ -1,7 +1,9 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
-import { Eyebrow } from '@/components/primitives/Eyebrow';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { AboutPageContent } from '@/content/schemas/about-page.schema';
 import styles from './StorySection.module.css';
 
@@ -19,31 +21,30 @@ export interface StorySectionProps {
  */
 export const StorySection: React.FC<StorySectionProps> = ({ content }) => {
   return (
-    <SectionWrapper theme="canvas" padding="custom" id="story" className={styles.section}>
-      <PageContainer>
-        <div className={styles.row}>
-          <div className={styles.heading}>
-            <Eyebrow align="left" tone="muted">
-              {content.eyebrow}
-            </Eyebrow>
+    <SectionWrapper
+      theme="canvas"
+      padding="custom"
+      id="story"
+      className={styles.section}
+      ariaLabelledBy="story-heading"
+    >
+      <GlowRings side="left" size={980} />
+      <GlowRings side="right" size={860} />
+      <SectionDots />
 
-            {/* The space before each <br /> matters: the breaks are hidden at
-                <=600px so the headline can reflow to the phone measure, and
-                without it the lines would concatenate ("productsfail"). */}
-            <h2 className={styles.headline}>
-              {content.headlineLines.map((line, i) => (
-                <React.Fragment key={line}>
-                  {i > 0 ? (
-                    <>
-                      {' '}
-                      <br />
-                    </>
-                  ) : null}
-                  {line}
-                </React.Fragment>
-              ))}
-            </h2>
-          </div>
+      <PageContainer className={styles.container}>
+        <div className={styles.row}>
+          <SectionHeading
+            id="story-heading"
+            eyebrow={content.eyebrow}
+            rule="dot"
+            align="left"
+            className={styles.heading}
+          >
+            {content.headlineLine1}
+            <br />
+            <Accent>{content.headlineAccent2}</Accent>
+          </SectionHeading>
 
           <div className={styles.body}>
             {content.paragraphs.map((p) => (

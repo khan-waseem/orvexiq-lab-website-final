@@ -66,8 +66,10 @@ export const homepageContentSchema = z.object({
   designSystemsSection: z.object({
     eyebrow: z.string(),
     headlineLine1: z.string(),
-    headlineAccent1: z.string(),
     headlineLine2: z.string(),
+    /** Trailing words of line two, in the violet gradient. Every landing
+        headline highlights exactly one run, so the accent reads as emphasis
+        rather than as decoration. */
     headlineAccent2: z.string(),
     subdescription: z.string(),
     pillars: z.array(designSystemPillarSchema),
@@ -122,9 +124,8 @@ export const homepageContentSchema = z.object({
   landingCtaSection: z.object({
     eyebrow: z.string(),
     headlineLine1: z.string(),
-    headlineLine2: z.string(),
-    /** Third line, rendered entirely in the violet gradient. */
-    headlineAccent3: z.string(),
+    /** Second line, rendered entirely in the violet gradient. */
+    headlineAccent2: z.string(),
     subdescription: z.string(),
     primaryCtaText: z.string(),
     emailCtaText: z.string(),
