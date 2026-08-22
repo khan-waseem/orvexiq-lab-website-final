@@ -31,8 +31,11 @@ export const caseStudySchema = z.object({
   coverScreenAssetUrl: z.string(),
   /** A recording of the product, shown in the card in place of the drawn
       mockup. Per study rather than per band: each one gets its own once it is
-      recorded, and the drawn mockup stands in until then. */
+      recorded, and the drawn mockup stands in until then.
+      Needs mockupPosterUrl alongside it — the capture zooms as it plays, so no
+      frame of it holds the whole screen, and the card rests on the still. */
   mockupVideoUrl: z.string().optional(),
+  mockupPosterUrl: z.string().optional(),
   featured: z.boolean().default(false),
   displayOrder: z.number().default(0),
   outcomes: z.array(caseStudyOutcomeSchema).optional(),

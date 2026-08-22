@@ -22,7 +22,8 @@
     },
     "publishedAt": "2026-05-01",
     "published": true,
-    "mockupVideoUrl": "/assets/video/case-mockup.mp4"
+    "mockupVideoUrl": "/assets/case-studies/true-available-cash/mockup.mp4",
+    "mockupPosterUrl": "/assets/case-studies/true-available-cash/mockup.png"
   },
   {
     "id": "cs-2",
@@ -46,7 +47,9 @@
       "verificationNotes": "Written up in full on the case study page."
     },
     "publishedAt": "2025-01-01",
-    "published": true
+    "published": true,
+    "mockupVideoUrl": "/assets/case-studies/trial-coordination/mockup.mp4",
+    "mockupPosterUrl": "/assets/case-studies/trial-coordination/mockup.png"
   },
   {
     "id": "cs-3",

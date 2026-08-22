@@ -107,10 +107,11 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
                       height={300}
                       className={styles.coverImage}
                     />
-                  ) : study.mockupVideoUrl ? (
+                  ) : study.mockupVideoUrl && study.mockupPosterUrl ? (
                     <HoverVideo
                       src={study.mockupVideoUrl}
-                      label={`${study.title} interface walkthrough`}
+                      poster={study.mockupPosterUrl}
+                      label={`${study.title} interface`}
                       className={styles.mockupVideo}
                     />
                   ) : (

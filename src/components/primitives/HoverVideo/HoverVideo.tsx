@@ -1,9 +1,13 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import styles from './HoverVideo.module.css';
 
 export interface HoverVideoProps {
   src: string;
+  /** Still shown at rest, on top of the clip. */
+  poster: string;
   /** Describes what the clip shows, for anyone who cannot see it. */
   label: string;
   className?: string;
@@ -16,14 +20,17 @@ export interface HoverVideoProps {
  * Used for the case study mockups, where four of these sit in one grid. They
  * are deliberately not autoplaying: four clips looping at once is a lot of
  * decoding for a band a visitor is only scanning, and the movement competes
- * with the copy beside it. Resting on frame one still shows the product.
+ * with the copy beside it.
  *
- * Loading is tied to visibility rather than to load or to hover. Attaching at
- * load would pull four clips down for a band most visitors never reach;
- * attaching on hover would leave the card empty until then, since a video with
- * no source has no frame to show. An observer attaches the source when the card
- * comes near the viewport, so the still is ready before anyone looks at it and
- * the clip is ready before anyone points at it.
+ * At rest it shows a still rather than the clip's own first frame. The capture
+ * zooms as it plays, so no single frame of it holds the whole dashboard — the
+ * card would sit permanently on a cropped view of the thing it is meant to
+ * show. The still is a separate image of the complete screen; the clip runs
+ * over it on hover.
+ *
+ * The clip loads on visibility rather than at page load, so a visitor who
+ * never reaches this band never downloads it. The still carries the card until
+ * then, and is what is seen for as long as nobody hovers.
  *
  * Touch has no hover, and phones fire mouseenter on tap anyway, so playback is
  * gated on the pointer actually being a hovering one. Rather than invent a
@@ -34,9 +41,15 @@ export interface HoverVideoProps {
  * A reduced-motion preference is honoured the same way: the frame, never the
  * motion.
  */
-export const HoverVideo: React.FC<HoverVideoProps> = ({ src, label, className = '' }) => {
+export const HoverVideo: React.FC<HoverVideoProps> = ({
+  src,
+  poster,
+  label,
+  className = '',
+}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [source, setSource] = useState<string | undefined>(undefined);
+  const [running, setRunning] = useState(false);
   const [motionAllowed, setMotionAllowed] = useState(true);
 
   useEffect(() => {
@@ -83,31 +96,50 @@ export const HoverVideo: React.FC<HoverVideoProps> = ({ src, label, className = 
 
   const play = useCallback(() => {
     if (!motionAllowed) return;
-    // Rejects if the pointer left before the clip was ready; nothing to undo.
-    void videoRef.current?.play().catch(() => {});
+    const video = videoRef.current;
+    if (!video) return;
+    // The still only lifts once the clip is actually running, so a slow start
+    // shows the dashboard rather than a blank frame.
+    void video
+      .play()
+      .then(() => setRunning(true))
+      .catch(() => {});
   }, [motionAllowed]);
 
   const rest = useCallback(() => {
     const video = videoRef.current;
+    setRunning(false);
     if (!video) return;
     video.pause();
     video.currentTime = 0;
   }, []);
 
   return (
-    <video
-      ref={videoRef}
-      className={className}
-      src={source}
-      muted
-      loop
-      playsInline
-      preload="auto"
-      aria-label={label}
+    <div
+      className={[styles.frame, className].filter(Boolean).join(' ')}
       onMouseEnter={play}
       onMouseLeave={rest}
       onFocus={play}
       onBlur={rest}
-    />
+    >
+      <video
+        ref={videoRef}
+        className={styles.video}
+        src={source}
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-label={label}
+      />
+
+      <Image
+        src={poster}
+        alt={label}
+        fill
+        sizes="(max-width: 900px) 100vw, 560px"
+        className={`${styles.poster} ${running ? styles.posterHidden : ''}`}
+      />
+    </div>
   );
 };

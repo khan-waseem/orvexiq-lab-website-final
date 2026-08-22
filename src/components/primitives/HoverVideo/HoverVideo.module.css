@@ -1,0 +1,39 @@
+/* HoverVideo — the still sits over the clip and lifts while it plays. */
+
+.frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--orv-radius-10);
+}
+
+.video,
+.poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+}
+
+.poster {
+  position: absolute;
+  inset: 0;
+  transition: opacity 240ms ease;
+}
+
+/* Cross-faded rather than switched, so the hand-off is not a visible cut. */
+.posterHidden {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster {
+    transition: none;
+  }
+}
