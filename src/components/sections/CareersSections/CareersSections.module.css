@@ -5,7 +5,7 @@
 }
 
 .heading {
-  margin-bottom: var(--orv-space-48);
+  margin-bottom: var(--orv-text-gap-block);
 }
 
 /* Careers sections — Figma nodes 35:24 (Why Us) and 35:42 (Open Roles) */

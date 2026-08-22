@@ -4,6 +4,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { Heading } from '@/components/primitives/Heading';
 import { Text } from '@/components/primitives/Text';
+import { AmbientVideo } from '@/components/primitives/AmbientVideo';
 import styles from './PageHero.module.css';
 
 export interface PageHeroProps {
@@ -13,6 +14,12 @@ export interface PageHeroProps {
   subdescription: string;
   /** The page's 3D mark, shown to the right of the copy. */
   iconAssetUrl?: string;
+  /** Drawn mark shown instead of iconAssetUrl. The service detail pages pass
+      the discipline medallion here so the hero matches the card that opened
+      it; everything else still uses the exported render. */
+  icon?: React.ReactNode;
+  /** Looping clip shown instead of any static mark, as on the landing hero. */
+  videoSrc?: string;
   id?: string;
 }
 
@@ -39,6 +46,8 @@ export const PageHero: React.FC<PageHeroProps> = ({
   headline,
   subdescription,
   iconAssetUrl,
+  icon,
+  videoSrc,
   id,
 }) => (
   <SectionWrapper id={id} padding="custom" className={styles.hero} aria-label="Page hero">
@@ -73,17 +82,23 @@ export const PageHero: React.FC<PageHeroProps> = ({
           </Text>
         </div>
 
-        {iconAssetUrl && (
+        {videoSrc ? (
+          <div className={`${styles.visual} ${styles.visualVideo}`}>
+            <AmbientVideo src={videoSrc} className={styles.video} />
+          </div>
+        ) : (icon || iconAssetUrl) && (
           <div className={styles.visual}>
             <span className={styles.visualGlow} aria-hidden="true" />
-            <Image
-              src={iconAssetUrl}
-              alt=""
-              width={492}
-              height={492}
-              className={styles.icon}
-              priority
-            />
+            {icon ?? (
+              <Image
+                src={iconAssetUrl as string}
+                alt=""
+                width={492}
+                height={492}
+                className={styles.icon}
+                priority
+              />
+            )}
           </div>
         )}
       </div>

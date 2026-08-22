@@ -21,7 +21,6 @@ export const serviceDetailPageSchema = z.object({
     eyebrow: z.string(),
     headline: z.string(),
     subdescription: z.string(),
-    iconAssetUrl: z.string(),
   }),
   why: z.object({
     eyebrow: z.string(),

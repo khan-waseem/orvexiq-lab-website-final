@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--orv-space-32);
-  margin-top: var(--orv-space-48);
+  margin-top: var(--orv-text-gap-block);
 }
 
 /* --- Map --- */

@@ -6,7 +6,7 @@ import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
 import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
-import { DISCIPLINE_ICONS } from './DisciplineIcons';
+import { DisciplineMedallion } from '@/components/primitives/DisciplineMedallion';
 import styles from './WhatWeBuildSection.module.css';
 
 export interface WhatWeBuildSectionProps {
@@ -26,8 +26,14 @@ const Connector: React.FC = () => (
  * WhatWeBuildSection — landing band four.
  *
  * Four discipline cards joined left to right by a connector thread, so the
- * row reads as one system rather than four separate services. The medallion
- * medallion rings, their lit points and the glyphs are all drawn in markup.
+ * row reads as one system rather than four separate services. The medallions
+ * are drawn in markup, and the service detail hero shows the same one, so a
+ * card and the page it opens are visibly the same thing.
+ *
+ * Each card links to its service page. The whole card is the target — a small
+ * button would be the only clickable part of a large, obviously clickable
+ * surface — with a visible "View details" affordance so it does not rely on
+ * hover to announce itself.
  */
 export const WhatWeBuildSection: React.FC<WhatWeBuildSectionProps> = ({ content }) => (
   <SectionWrapper
@@ -53,30 +59,35 @@ export const WhatWeBuildSection: React.FC<WhatWeBuildSectionProps> = ({ content 
       </SectionHeading>
 
       <ul className={styles.row}>
-        {content.disciplines.map((discipline, index) => {
-          const Icon = DISCIPLINE_ICONS[discipline.id];
+        {content.disciplines.map((discipline, index) => (
+          <React.Fragment key={discipline.id}>
+            {index > 0 && <Connector />}
 
-          return (
-            <React.Fragment key={discipline.id}>
-              {index > 0 && <Connector />}
-
-              <li className={styles.card}>
+            <li className={styles.card}>
+              <Link href={discipline.href} className={styles.cardLink}>
                 <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
 
-                <span className={styles.medallion}>
-                  <span className={styles.medallionRing} aria-hidden="true" />
-                  <span className={`${styles.spark} ${styles.sparkA}`} aria-hidden="true" />
-                  <span className={`${styles.spark} ${styles.sparkB}`} aria-hidden="true" />
-                  <span className={`${styles.spark} ${styles.sparkC}`} aria-hidden="true" />
-                  <Icon />
-                </span>
+                <DisciplineMedallion
+                  discipline={discipline.id}
+                  className={styles.medallion}
+                />
 
                 <h3 className={styles.cardTitle}>{discipline.title}</h3>
                 <p className={styles.cardBody}>{discipline.body}</p>
-              </li>
-            </React.Fragment>
-          );
-        })}
+
+                <span className={styles.cardCta}>
+                  {content.cardCtaText}
+                  <span className={styles.cardCtaIcon} aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                      <path d="M2.6 6.5h7M6.9 3.7 9.7 6.5l-2.8 2.8" stroke="currentColor"
+                            strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </span>
+              </Link>
+            </li>
+          </React.Fragment>
+        ))}
       </ul>
 
       <div className={styles.ctaRow}>

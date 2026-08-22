@@ -93,7 +93,7 @@
 }
 
 .stepBody {
-  margin: var(--orv-space-16) 0 0;
+  margin: var(--orv-text-gap-tight) 0 0;
   font-size: var(--orv-font-size-14);
   line-height: var(--orv-line-height-24);
   color: var(--orv-text-tertiary);

@@ -2,7 +2,10 @@ import React from 'react';
 
 /**
  * Medallion glyphs for the four disciplines. Line art drawn inline so it
- * inherits the card's colour and keeps its hairlines at any density.
+ * inherits the surrounding colour and keeps its hairlines at any density.
+ *
+ * Sits beside DisciplineMedallion rather than inside a section, because both
+ * the landing cards and the service detail heroes draw from it.
  */
 
 const base = {
@@ -63,3 +66,5 @@ export const DISCIPLINE_ICONS = {
   technology: Technology,
   intelligence: Intelligence,
 } as const;
+
+export type DisciplineId = keyof typeof DISCIPLINE_ICONS;

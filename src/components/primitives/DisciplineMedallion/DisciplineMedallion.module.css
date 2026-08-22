@@ -1,0 +1,96 @@
+/* DisciplineMedallion — the ringed glyph that marks each of the four
+   disciplines. Extracted from the landing's What We Build cards so the service
+   detail hero can show the same mark rather than a look-alike. */
+
+.medallion {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Sized by --medallion-size so one component covers both the 120px card mark
+     and the larger hero one, without a second set of rules. */
+  width: var(--medallion-size, 120px);
+  height: var(--medallion-size, 120px);
+  border-radius: var(--orv-radius-full);
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(124, 58, 237, 0.22) 0%,
+    rgba(124, 58, 237, 0) 68%
+  );
+  color: var(--orv-color-raw-purple-300);
+}
+
+/* Two rings: a solid hairline and a wider, softer halo. */
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  box-shadow:
+    0 0 22px rgba(124, 58, 237, 0.35),
+    inset 0 0 18px rgba(124, 58, 237, 0.2);
+}
+
+.ring::after {
+  content: '';
+  position: absolute;
+  inset: calc(var(--medallion-size, 120px) * -0.075);
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.14);
+}
+
+/* Lit points sitting on the ring. */
+.spark {
+  position: absolute;
+  width: calc(var(--medallion-size, 120px) * 0.042);
+  height: calc(var(--medallion-size, 120px) * 0.042);
+  border-radius: var(--orv-radius-full);
+  background: #e9d5ff;
+  box-shadow: 0 0 9px 2px rgba(192, 132, 252, 0.85);
+}
+
+.sparkA {
+  top: 12%;
+  right: 10%;
+}
+
+.sparkB {
+  bottom: 16%;
+  left: 8%;
+}
+
+.sparkC {
+  top: 46%;
+  left: -2%;
+  width: calc(var(--medallion-size, 120px) * 0.033);
+  height: calc(var(--medallion-size, 120px) * 0.033);
+}
+
+/* The glyph scales with the ring rather than staying at its drawn 54px. */
+.medallion svg {
+  width: calc(var(--medallion-size, 120px) * 0.45);
+  height: calc(var(--medallion-size, 120px) * 0.45);
+}
+
+/* --- Hero variant: the same mark, at hero scale --- */
+.lg {
+  --medallion-size: 260px;
+}
+
+@media (max-width: 1120px) {
+  .lg {
+    --medallion-size: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .lg {
+    --medallion-size: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lg {
+    --medallion-size: 168px;
+  }
+}

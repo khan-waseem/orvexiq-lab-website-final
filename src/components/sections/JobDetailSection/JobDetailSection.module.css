@@ -171,7 +171,7 @@
   font-weight: var(--orv-font-weight-regular);
   line-height: var(--orv-line-height-28);
   color: var(--orv-text-secondary);
-  margin: 0 0 var(--orv-space-16) 0;
+  margin: 0 0 var(--orv-text-gap-para) 0;
 }
 
 .bulletList {

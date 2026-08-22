@@ -60,6 +60,23 @@
   --orv-layout-page-margin: var(--orv-space-96);
   --orv-layout-gutter: var(--orv-space-24);
   --orv-layout-card-gap: var(--orv-space-24);
+  /* ==========================================
+   * TEXT RHYTHM
+   * The gaps between pieces of text, named by the relationship rather than
+   * chosen per component — which is how the same relationship ended up at 8,
+   * 10, 12, 16, 20 and 24 in different places.
+   *
+   * Long-form paragraph spacing is set against the copy it separates: body
+   * text runs at a 28-30px line-height, so 24px reads as a paragraph break
+   * while the 12px it used to be read as an accidental line gap.
+   * ========================================== */
+  /* A label and the thing it labels; a title and its own short body. */
+  --orv-text-gap-tight: var(--orv-space-12);
+  /* Paragraph to paragraph in anything meant to be read at length. */
+  --orv-text-gap-para: var(--orv-space-24);
+  /* A section heading and the content beneath it. */
+  --orv-text-gap-block: var(--orv-space-40);
+
   /* The standard section band. Every band below a page hero uses this for both
      top and bottom padding, so the vertical rhythm is declared once here rather
      than re-picked per section — which is how 64 / 72 / 96 / 128 all ended up

@@ -5,7 +5,7 @@ import { Heading } from '@/components/primitives/Heading';
 import { Text } from '@/components/primitives/Text';
 import { Button } from '@/components/primitives/Button';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
-import { HeroVideo } from './HeroVideo';
+import { AmbientVideo } from '@/components/primitives/AmbientVideo';
 import styles from './HeroSection.module.css';
 
 export interface HeroSectionProps {
@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ content }) => {
               It reaches left under the headline, so the stylesheet masks its
               left edge into the canvas instead of hard-cutting it. */}
           <div className={styles.visualColumn}>
-            <HeroVideo src="/assets/video/hero.mp4" />
+            <AmbientVideo src="/assets/video/hero.mp4" className={styles.heroVideo} />
           </div>
         </div>
       </PageContainer>

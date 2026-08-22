@@ -43,7 +43,7 @@ export default async function ServicesPage() {
         eyebrow={servicesPageData.hero.eyebrow}
         headline={servicesPageData.hero.headline}
         subdescription={servicesPageData.hero.subdescription}
-        iconAssetUrl={servicesPageData.hero.heroIconAssetUrl}
+        videoSrc="/assets/video/services.mp4"
       />
 
       <ServiceDetailSection blocks={servicesPageData.serviceDetail.blocks} />

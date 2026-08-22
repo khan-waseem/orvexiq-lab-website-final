@@ -123,24 +123,29 @@
       {
         "id": "strategy",
         "title": "Strategy",
-        "body": "Product direction, discovery, market insight and system thinking that sets the right foundation."
+        "body": "Product direction, discovery, market insight and system thinking that sets the right foundation.",
+        "href": "/services/product-strategy"
       },
       {
         "id": "product-design",
         "title": "Product Design",
-        "body": "Human-centered UX/UI design for products, platforms and complex workflows that people love."
+        "body": "Human-centered UX/UI design for products, platforms and complex workflows that people love.",
+        "href": "/services/ux-ui-product-design"
       },
       {
         "id": "technology",
         "title": "Technology",
-        "body": "Scalable, secure and high-performance digital experiences built with modern technology and clean architecture."
+        "body": "Scalable, secure and high-performance digital experiences built with modern technology and clean architecture.",
+        "href": "/services/design-systems"
       },
       {
         "id": "intelligence",
         "title": "Intelligence",
-        "body": "AI-powered experiences, automation and data-driven systems designed around real human needs."
+        "body": "AI-powered experiences, automation and data-driven systems designed around real human needs.",
+        "href": "/services/ai-experiences-automation"
       }
-    ]
+    ],
+    "cardCtaText": "View details"
   },
   "servicesSection": {
     "eyebrow": "WHAT WE DO",

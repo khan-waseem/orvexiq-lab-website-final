@@ -37,6 +37,10 @@ export const disciplineSchema = z.object({
   id: z.enum(['strategy', 'product-design', 'technology', 'intelligence']),
   title: z.string(),
   body: z.string(),
+  /* The service page this discipline opens. Stored rather than derived from the
+     id: the two vocabularies do not line up word for word (Technology is served
+     by the Design Systems page), so the pairing has to be stated. */
+  href: z.string(),
 });
 
 export const landingFaqItemSchema = z.object({
@@ -92,6 +96,8 @@ export const homepageContentSchema = z.object({
     headlineAccent2: z.string(),
     subdescription: z.string(),
     ctaText: z.string(),
+    /* Label on each card's own link, distinct from ctaText below the row. */
+    cardCtaText: z.string(),
     disciplines: z.array(disciplineSchema),
   }),
   servicesSection: z.object({

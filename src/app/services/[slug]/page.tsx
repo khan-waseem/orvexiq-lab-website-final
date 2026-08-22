@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { contentRepository } from '@/content/repository/local-content-provider';
 import { PageHero } from '@/components/sections/PageHero';
+import { DisciplineMedallion, type DisciplineId } from '@/components/primitives/DisciplineMedallion';
 import { ServiceWhySection } from '@/components/sections/ServiceWhySection';
 import { ServiceIncludesSection } from '@/components/sections/ServiceIncludesSection';
 import { ServiceAuditOfferSection } from '@/components/sections/ServiceAuditOfferSection';
@@ -37,11 +38,25 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
  * Audit Offer appears only on Design Systems (139:71), so it is optional in
  * the schema. The FAQ reuses the Services page component.
  */
+/* The landing's four discipline cards each open one of these pages, and the
+   hero shows the same medallion the card did — the two vocabularies do not
+   share a name (Technology is served by Design Systems), so the pairing is
+   spelled out. A service added without an entry here simply shows no mark,
+   which is visible immediately rather than silently wrong. */
+const MEDALLION_BY_SLUG: Record<string, DisciplineId> = {
+  'product-strategy': 'strategy',
+  'ux-ui-product-design': 'product-design',
+  'design-systems': 'technology',
+  'ai-experiences-automation': 'intelligence',
+};
+
 export default async function ServiceDetailPage({ params }: Params) {
   const { slug } = await params;
   const page = await contentRepository.getServiceDetailBySlug(slug);
 
   if (!page) notFound();
+
+  const medallion = MEDALLION_BY_SLUG[slug];
 
   return (
     <>
@@ -50,7 +65,7 @@ export default async function ServiceDetailPage({ params }: Params) {
         eyebrow={page.hero.eyebrow}
         headline={page.hero.headline}
         subdescription={page.hero.subdescription}
-        iconAssetUrl={page.hero.iconAssetUrl}
+        icon={medallion ? <DisciplineMedallion discipline={medallion} size="lg" /> : undefined}
       />
 
       <ServiceWhySection content={page.why} />

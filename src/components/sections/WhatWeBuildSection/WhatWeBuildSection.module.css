@@ -33,17 +33,63 @@
 .card {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   flex: 1 1 0;
   min-width: 0;
-  padding: var(--orv-space-24) var(--orv-space-20) var(--orv-space-32);
   border: 1px solid rgba(168, 85, 247, 0.18);
   border-radius: var(--orv-radius-16);
   background:
     linear-gradient(168deg, rgba(124, 58, 237, 0.10) 0%, rgba(124, 58, 237, 0.015) 60%),
     rgba(255, 255, 255, 0.015);
   box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: rgba(168, 85, 247, 0.42);
+  transform: translateY(-2px);
+}
+
+/* The anchor fills the card, so the whole surface is the target rather than a
+   small button inside an obviously clickable panel. */
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: var(--orv-space-24) var(--orv-space-20) var(--orv-space-24);
+  border-radius: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cardLink:focus-visible {
+  outline: 2px solid var(--orv-color-raw-purple-300);
+  outline-offset: 3px;
+}
+
+/* Sits at the foot of the card whatever the body length, so the four read as
+   one row rather than four ragged ones. */
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--orv-space-8);
+  margin-top: auto;
+  padding-top: var(--orv-space-20);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-120);
+  color: var(--orv-color-raw-purple-200);
+}
+
+.cardCtaIcon {
+  display: inline-flex;
+  transition: transform 200ms ease;
+}
+
+.card:hover .cardCtaIcon,
+.card:focus-within .cardCtaIcon {
+  transform: translateX(3px);
 }
 
 .index {
@@ -56,62 +102,7 @@
 /* --- Medallion --- */
 
 .medallion {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
   margin-top: var(--orv-space-8);
-  border-radius: var(--orv-radius-full);
-  background: radial-gradient(circle at 50% 45%, rgba(124, 58, 237, 0.22) 0%, rgba(124, 58, 237, 0) 68%);
-  color: var(--orv-color-raw-purple-300);
-}
-
-/* Two rings: a solid hairline and a wider, softer halo. */
-.medallionRing {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--orv-radius-full);
-  border: 1px solid rgba(168, 85, 247, 0.45);
-  box-shadow:
-    0 0 22px rgba(124, 58, 237, 0.35),
-    inset 0 0 18px rgba(124, 58, 237, 0.20);
-}
-
-.medallionRing::after {
-  content: '';
-  position: absolute;
-  inset: -9px;
-  border-radius: var(--orv-radius-full);
-  border: 1px solid rgba(168, 85, 247, 0.14);
-}
-
-/* Lit points sitting on the ring. */
-.spark {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: var(--orv-radius-full);
-  background: #e9d5ff;
-  box-shadow: 0 0 9px 2px rgba(192, 132, 252, 0.85);
-}
-
-.sparkA {
-  top: 12%;
-  right: 10%;
-}
-
-.sparkB {
-  bottom: 16%;
-  left: 8%;
-}
-
-.sparkC {
-  top: 46%;
-  left: -2%;
-  width: 4px;
-  height: 4px;
 }
 
 /* --- Card copy --- */
@@ -127,7 +118,7 @@
 }
 
 .cardBody {
-  margin: var(--orv-space-16) 0 0;
+  margin: var(--orv-text-gap-tight) 0 0;
   font-size: var(--orv-font-size-14);
   line-height: var(--orv-line-height-24);
   color: var(--orv-text-tertiary);

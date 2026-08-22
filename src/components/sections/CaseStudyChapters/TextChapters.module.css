@@ -35,7 +35,7 @@
 .statementBody {
   display: flex;
   flex-direction: column;
-  gap: var(--orv-space-20);
+  gap: var(--orv-text-gap-para);
   max-width: 76ch;
 }
 
@@ -106,7 +106,7 @@
 }
 
 .tradeOffBody {
-  margin: var(--orv-space-10) 0 0;
+  margin: var(--orv-text-gap-tight) 0 0;
   font-size: var(--orv-font-size-14);
   line-height: var(--orv-line-height-24);
   color: var(--orv-text-secondary);

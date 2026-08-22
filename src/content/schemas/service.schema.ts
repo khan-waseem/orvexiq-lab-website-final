@@ -12,7 +12,6 @@ export const serviceSchema = z.object({
   title: z.string(),
   shortDescription: z.string(),
   fullDescription: z.string().optional(),
-  iconAssetUrl: z.string(),
   capabilities: z.array(serviceCapabilitySchema),
   displayOrder: z.number().default(0),
   published: z.boolean().default(true),

@@ -183,7 +183,7 @@
   font-weight: var(--orv-font-weight-regular);
   line-height: 34px;
   color: var(--orv-text-secondary);
-  margin: 0 0 var(--orv-space-24) 0;
+  margin: 0 0 var(--orv-text-gap-para) 0;
 }
 
 /* Figma 64:206 — pull quote with a 2px brand rule on the left */

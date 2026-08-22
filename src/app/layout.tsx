@@ -7,6 +7,7 @@ import '@/styles/typography.css';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { SiteFooter } from '@/components/layout/SiteFooter';
+import { VideoFloorClear } from '@/components/primitives/AmbientVideo';
 import { siteUrl } from '@/lib/site';
 
 const manrope = Manrope({
@@ -71,6 +72,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <VideoFloorClear />
       </body>
     </html>
   );

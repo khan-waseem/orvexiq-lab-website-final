@@ -32,7 +32,7 @@ export default async function ContactPage() {
         eyebrow={pageData.hero.eyebrow}
         headline={pageData.hero.headline}
         subdescription={pageData.hero.subdescription}
-        iconAssetUrl={pageData.hero.heroIconAssetUrl}
+        videoSrc="/assets/video/contact.mp4"
       />
 
       <ContactBodySection form={pageData.form} info={pageData.info} />

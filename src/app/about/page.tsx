@@ -33,7 +33,7 @@ export default async function AboutPage() {
         eyebrow={pageData.hero.eyebrow}
         headline={pageData.hero.headline}
         subdescription={pageData.hero.subdescription}
-        iconAssetUrl={pageData.hero.heroIconAssetUrl}
+        videoSrc="/assets/video/about.mp4"
       />
 
       <StorySection content={pageData.story} />

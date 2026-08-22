@@ -36,6 +36,7 @@
 
 /* Figma 36:33 — 24px Bold */
 .clauseTitle {
+  margin: 0 0 var(--orv-text-gap-tight);
   font-family: var(--orv-font-family-display);
   font-size: var(--orv-font-size-28);
   font-weight: var(--orv-font-weight-regular);
@@ -50,7 +51,7 @@
   font-weight: var(--orv-font-weight-regular);
   line-height: var(--orv-line-height-28);
   color: var(--orv-text-secondary);
-  margin: 0 0 var(--orv-space-12) 0;
+  margin: 0 0 var(--orv-text-gap-para) 0;
 }
 
 .clauseBody:last-child {

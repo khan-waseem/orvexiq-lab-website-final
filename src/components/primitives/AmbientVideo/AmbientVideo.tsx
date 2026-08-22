@@ -1,28 +1,28 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import styles from './HeroSection.module.css';
 
-export interface HeroVideoProps {
+export interface AmbientVideoProps {
   src: string;
+  /** The section's own styling — size, blend, mask, entrance animation. */
   className?: string;
 }
 
 /**
- * HeroVideo — the looping product animation on the right of the hero
- * (Figma 290:249, 974x548 at section x=456 y=165).
+ * AmbientVideo — a looping, silent product animation used as page decoration.
  *
- * Autoplays muted so browsers allow it, and holds on the first frame for
- * viewers who ask for reduced motion. The fade-up itself is CSS, so the clip
- * still appears if this component never hydrates.
+ * Shared by the landing hero and the inner page heroes so the playback rules
+ * live in one place: autoplay muted (the only way browsers allow it), hold on
+ * the first frame for anyone who asks for reduced motion, and never announce
+ * itself to assistive tech — it carries no information the copy does not.
  *
- * The source is attached after the browser goes idle rather than in the initial
- * markup. The clip is 5 MB, and with `preload="auto"` in the HTML it competed
- * with the hero's own text and image for bandwidth on first paint. It blends
- * with `mix-blend-mode: screen` over the hero backdrop, so before it attaches
- * there is nothing to see — no gap, no flash, no layout shift.
+ * The source is attached after the browser goes idle rather than sitting in the
+ * initial markup. These clips run to several megabytes, and with `preload` in
+ * the HTML they competed with the hero's own text for bandwidth on first paint.
+ * They are composited with `mix-blend-mode: screen`, so before the source
+ * attaches there is nothing to see — no gap, no flash, no layout shift.
  */
-export const HeroVideo: React.FC<HeroVideoProps> = ({ src, className = '' }) => {
+export const AmbientVideo: React.FC<AmbientVideoProps> = ({ src, className = '' }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [source, setSource] = useState<string | undefined>(undefined);
 
@@ -61,7 +61,7 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({ src, className = '' }) => 
   return (
     <video
       ref={videoRef}
-      className={[styles.heroVideo, className].filter(Boolean).join(' ')}
+      className={className}
       src={source}
       autoPlay
       muted

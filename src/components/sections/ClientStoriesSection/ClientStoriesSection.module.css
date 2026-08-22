@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--orv-space-24);
-  margin-top: var(--orv-space-40);
+  margin-top: var(--orv-text-gap-block);
 }
 
 .arrow {

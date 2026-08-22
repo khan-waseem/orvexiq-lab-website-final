@@ -209,6 +209,9 @@
      the hero glow and grid read through the footage — no alpha channel, and
      no second video file, required. */
   mix-blend-mode: screen;
+  /* The clips' background is a dark blue, not black, and screen blend turns
+     that into a wash over the page. This drops each channel's floor. */
+  filter: url(#orv-video-floor-clear);
   /* Fades up with the copy. Kept in CSS rather than gated on a playback
      event, so the clip is never left invisible if the component does not
      hydrate. Until it fades in there is nothing to see anyway: screen blend

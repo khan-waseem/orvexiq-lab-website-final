@@ -13,7 +13,7 @@
 }
 
 .heading {
-  margin-bottom: var(--orv-space-48);
+  margin-bottom: var(--orv-text-gap-block);
 }
 
 /* Figma 44:25 — pills left, count right, 12px gaps */

@@ -37,7 +37,7 @@ export default async function CaseStudiesPage() {
         eyebrow={pageData.hero.eyebrow}
         headline={pageData.hero.headline}
         subdescription={pageData.hero.subdescription}
-        iconAssetUrl={pageData.hero.heroIconAssetUrl}
+        videoSrc="/assets/video/case-studies.mp4"
       />
 
       <CaseGridSection
