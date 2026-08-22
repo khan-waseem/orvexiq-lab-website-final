@@ -166,13 +166,16 @@
 
 .subdescription {
   max-width: 597px;
-  margin-bottom: var(--orv-space-10);
 }
 
+/* The actions own the gap above them, the same way the closing CTA band does.
+   This was 10px on the subdescription, against 24px under the headline — so the
+   buttons read as part of the paragraph rather than as the next thing to do. */
 .actionsGroup {
   display: flex;
   align-items: center;
   gap: var(--orv-layout-gutter);
+  margin-top: var(--orv-space-32);
   flex-wrap: wrap;
 }
 
