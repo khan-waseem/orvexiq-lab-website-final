@@ -52,11 +52,28 @@ const RED = `0 0 0.0400 0.0750 ${identityFrom(4)}`;
 const GREEN = `0 0 0 0.0450 0.0800 0.1200 ${identityFrom(6)}`;
 const BLUE = `0 0 0 0 0.0350 0.0750 0.1150 0.1700 ${identityFrom(8)}`;
 
+/**
+ * The host is 1x1 and moved off-screen rather than sized 0x0 or hidden.
+ * Safari has long dropped `filter: url(#…)` when the SVG holding the filter has
+ * no layout box, and it does not fall back to rendering unfiltered — the
+ * element it is applied to disappears entirely. A one-pixel box parked outside
+ * the viewport avoids that while showing nothing.
+ */
 export const VideoFloorClear: React.FC = () => (
   <svg
     aria-hidden="true"
     focusable="false"
-    style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}
+    width="1"
+    height="1"
+    style={{
+      position: 'absolute',
+      left: '-9999px',
+      top: 0,
+      width: '1px',
+      height: '1px',
+      overflow: 'hidden',
+      pointerEvents: 'none',
+    }}
   >
     <defs>
       <filter id={VIDEO_FLOOR_CLEAR_FILTER} colorInterpolationFilters="sRGB">

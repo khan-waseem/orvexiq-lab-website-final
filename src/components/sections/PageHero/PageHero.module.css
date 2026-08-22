@@ -203,10 +203,12 @@
 /* --- Video variant --- */
 
 /* The clips are 16:9; the square box exists for the 3D marks, so the column
-   widens and drops its aspect lock when a clip takes its place. */
+   widens and drops its aspect lock when a clip takes its place.
+   Clips the scaled clip below. */
 .visualVideo {
   flex: 0 1 520px;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .video {
@@ -224,6 +226,14 @@
   /* The clips' background is a dark blue, not black, and screen blend turns
      that into a wash over the page. This drops each channel's floor. */
   filter: url(#orv-video-floor-clear);
+  /* The orbit read small next to the landing hero's, which runs in a frame
+     nearly twice as wide. There is no width to give it — copy, gap and column
+     already fill the container — but the clip itself is mostly empty: sweeping
+     every frame of all four, the subject reaches only ~78% out from centre.
+     Scaling into that dead margin enlarges the orbit without taking anything
+     from the copy. 1.2 against a measured limit of 1.25 keeps the orbiting
+     cards inside the frame. */
+  transform: scale(1.2);
   /* Fades the clip out where it passes behind the copy, as on the landing. */
   -webkit-mask-image: linear-gradient(
     to right,
