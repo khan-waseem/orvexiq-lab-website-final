@@ -313,17 +313,18 @@
   white-space: nowrap;
 }
 
-/* The recording keeps its own 16:9 rather than being cropped into the drawn
-   mockup's 3:2. It is a real product capture — trimming 16% off the sides to
-   make it fit cut a KPI card off the right of the dashboard, which is exactly
-   the detail the card is there to show. A slightly shorter well is the cheaper
-   trade; the grid stretches the cards to match anyway. */
+/* The well matches the drawn mockup's 3:2 so the four cards line up, but the
+   recording is fitted inside it rather than cropped to it.
+   Cropping was measured and is not available: the captured UI runs to the very
+   edge of its frame — margins of 0-2px on every side — so reaching 3:2 would
+   need 100px off each side and would take a KPI card off the dashboard with
+   it. Fitting instead leaves a little of the card's own surface above and
+   below, which reads as padding rather than as letterboxing because the well
+   is transparent. */
 .mockupVideo {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
   border-radius: var(--orv-radius-10);
-  border: 1px solid rgba(168, 85, 247, 0.18);
-  background: #12081f;
 }
