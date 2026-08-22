@@ -155,23 +155,30 @@
   max-width: 676px;
 }
 
-.eyebrowText {
+/* The hero's vertical rhythm: 16 / 24 / 32, each step larger than the last, so
+   the actions read as the next thing to do rather than as the end of the
+   paragraph.
+ *
+ * Scoped to .contentColumn on purpose. The Text and Heading primitives each
+ * reset their own `margin: 0`, and in the production bundle their rules land
+ * after this module's — at equal specificity, so a bare `.headline` rule here
+ * loses and the spacing silently collapses. It survives in dev, where the
+ * modules load in a different order, which is exactly how it went unnoticed.
+ * Two classes beat one, in any order. */
+.contentColumn .eyebrowText {
   margin-bottom: var(--orv-space-16);
 }
 
-.headline {
+.contentColumn .headline {
   max-width: 676px;
   margin-bottom: var(--orv-space-24);
 }
 
-.subdescription {
+.contentColumn .subdescription {
   max-width: 597px;
 }
 
-/* The actions own the gap above them, the same way the closing CTA band does.
-   This was 10px on the subdescription, against 24px under the headline — so the
-   buttons read as part of the paragraph rather than as the next thing to do. */
-.actionsGroup {
+.contentColumn .actionsGroup {
   display: flex;
   align-items: center;
   gap: var(--orv-layout-gutter);
@@ -294,8 +301,8 @@
     max-width: 100%;
   }
 
-  .headline,
-  .subdescription {
+  .contentColumn .headline,
+  .contentColumn .subdescription {
     max-width: 100%;
   }
 
@@ -341,12 +348,12 @@
     gap: var(--orv-space-32);
   }
 
-  .actionsGroup {
+  .contentColumn .actionsGroup {
     width: 100%;
     gap: var(--orv-space-16);
   }
 
-  .actionsGroup > * {
+  .contentColumn .actionsGroup > * {
     flex: 1 1 100%;
   }
 
