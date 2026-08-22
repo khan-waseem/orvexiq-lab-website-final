@@ -8,6 +8,8 @@
 .section {
   position: relative;
   overflow: hidden;
+  /* Clears the fixed navbar when the nav CTA jumps to this section. */
+  scroll-margin-top: 116px;
   padding-top: var(--orv-layout-band-padding);
   padding-bottom: var(--orv-layout-band-padding);
 }

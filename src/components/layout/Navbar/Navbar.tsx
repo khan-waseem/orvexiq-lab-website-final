@@ -50,6 +50,13 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  /* On the contact page the CTA would otherwise link to the page it is already
+     on, so clicking it did nothing at all. From there it points at the form
+     instead, which is what someone pressing "Let's Connect" wants; from
+     anywhere else it still lands at the top of the page so the hero is read
+     first. */
+  const ctaHref = pathname === '/contact' ? '/contact#contact-body' : '/contact';
+
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/';
@@ -99,7 +106,7 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Navigation CTA */}
         <div className={styles.ctaDesktop}>
-          <Button variant="nav" href="/contact">
+          <Button variant="nav" href={ctaHref}>
             Let&rsquo;s Connect
           </Button>
         </div>
@@ -141,7 +148,7 @@ export const Navbar: React.FC = () => {
                 );
               })}
             </ul>
-            <Button variant="nav" href="/contact" onClick={() => setMobileMenuOpen(false)}>
+            <Button variant="nav" href={ctaHref} onClick={() => setMobileMenuOpen(false)}>
               Let&rsquo;s Connect
             </Button>
           </div>
