@@ -29,20 +29,8 @@ export const ArticleHeaderSection: React.FC<ArticleHeaderProps> = ({ post }) => 
     <div className={styles.headerGlow} aria-hidden="true" />
     <GlowRings side="left" size={960} />
     <GlowRings side="right" size={840} />
-
-    <div className={styles.headerGlow} aria-hidden="true" />
     <PageContainer className={styles.container}>
       <div className={styles.measure}>
-        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-          <ol className={styles.crumbList}>
-            <li><Link href="/" className={styles.crumbLink}>Home</Link></li>
-            <li aria-hidden="true" className={styles.crumbSep}>/</li>
-            <li><Link href="/blog" className={styles.crumbLink}>Blog</Link></li>
-            <li aria-hidden="true" className={styles.crumbSep}>/</li>
-            <li><span className={styles.crumbCurrent} aria-current="page">{post.category}</span></li>
-          </ol>
-        </nav>
-
         <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.standfirst}>{post.excerpt}</p>
 
@@ -64,14 +52,20 @@ export const ArticleHeaderSection: React.FC<ArticleHeaderProps> = ({ post }) => 
 
 export interface ArticleImageProps {
   post: BlogPostItem;
-  placeholderLabel: string;
+  /** Retained so the call site keeps compiling; no longer rendered. */
+  placeholderLabel?: string;
 }
 
-/** Figma 64:188 — full-bleed 700px band; no exported asset, so the gradient
- *  placeholder stands in rather than a substituted stock image. */
-export const ArticleImageSection: React.FC<ArticleImageProps> = ({ post, placeholderLabel }) => (
-  <section className={styles.imageSection} aria-hidden={!post.coverImageUrl}>
-    {post.coverImageUrl ? (
+/** Figma 64:188 — full-bleed 700px cover band.
+ *
+ * Renders nothing when a post has no cover image. It used to fall back to a
+ * 700px box captioned "Article hero image — full bleed", which every post hit,
+ * so every article opened on a large panel announcing its own missing asset. */
+export const ArticleImageSection: React.FC<ArticleImageProps> = ({ post }) => {
+  if (!post.coverImageUrl) return null;
+
+  return (
+    <section className={styles.imageSection} aria-hidden="true">
       <Image
         src={post.coverImageUrl}
         alt=""
@@ -80,11 +74,9 @@ export const ArticleImageSection: React.FC<ArticleImageProps> = ({ post, placeho
         className={styles.imageAsset}
         priority
       />
-    ) : (
-      <span className={styles.imagePlaceholder}>{placeholderLabel}</span>
-    )}
-  </section>
-);
+    </section>
+  );
+};
 
 export interface ArticleBodyProps {
   post: BlogPostItem;

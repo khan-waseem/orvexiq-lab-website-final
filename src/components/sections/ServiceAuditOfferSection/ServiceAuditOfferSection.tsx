@@ -3,6 +3,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { GlowRings } from '@/components/decor/GlowRings';
 import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { ServiceDetailPage } from '@/content/schemas/service-detail.schema';
 import styles from './ServiceAuditOfferSection.module.css';
 
@@ -28,8 +29,18 @@ export const ServiceAuditOfferSection: React.FC<ServiceAuditOfferSectionProps> =
       <PageContainer className={styles.container}>
         <div className={styles.card}>
           <div className={styles.copy}>
-            <p className={styles.eyebrow}>{content.eyebrow}</p>
-            <h2 className={styles.headline}>{content.headline}</h2>
+            {/* The shared band heading rather than a local eyebrow + h2, so this
+                card carries the same eyebrow capsule, serif headline and
+                accented run as every other section on the site. */}
+            <SectionHeading
+              eyebrow={content.eyebrow}
+              rule="dot"
+              align="left"
+              className={styles.heading}
+            >
+              {content.headlineLine1} <Accent>{content.headlineAccent2}</Accent>
+            </SectionHeading>
+
             <p className={styles.body}>{content.body}</p>
             <p className={styles.priceNote}>{content.priceNote}</p>
           </div>

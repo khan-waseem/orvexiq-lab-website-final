@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
-import { SectionHeading } from '@/components/primitives/SectionHeading';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
 import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
@@ -9,14 +9,20 @@ import { ServiceDetailPage } from '@/content/schemas/service-detail.schema';
 import styles from './RelatedWorkSection.module.css';
 
 export interface RelatedWorkSectionProps {
-  content: ServiceDetailPage['relatedWork'];
+  /** Non-optional here: the band is omitted upstream when a service has no
+      case study that honestly illustrates it. */
+  content: NonNullable<ServiceDetailPage['relatedWork']>;
 }
 
 /**
  * RelatedWorkSection — Figma node 124:95
  *
  * A single full-width glass card linking to the case study that best
- * illustrates the service (title 26px Bold, body 16/26, trailing arrow).
+ * illustrates the service.
+ *
+ * The heading used to be the case study's own name with no accented run, which
+ * left it the only section band on the site without one and put the project
+ * title in the wrong place. The title now sits on the card it links to.
  */
 export const RelatedWorkSection: React.FC<RelatedWorkSectionProps> = ({ content }) => {
   return (
@@ -39,11 +45,12 @@ export const RelatedWorkSection: React.FC<RelatedWorkSectionProps> = ({ content 
           align="left"
           className={styles.heading}
         >
-          {content.title}
+          {content.headlineLine1} <Accent>{content.headlineAccent2}</Accent>
         </SectionHeading>
 
         <Link href={content.href} className={styles.card}>
           <span className={styles.text}>
+            <span className={styles.title}>{content.title}</span>
             <span className={styles.body}>{content.body}</span>
           </span>
           <span className={styles.arrow} aria-hidden="true">

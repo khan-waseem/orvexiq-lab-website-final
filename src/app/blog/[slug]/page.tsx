@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { sections } from '@/lib/site';
 import { contentRepository } from '@/content/repository/local-content-provider';
 import {
   ArticleHeaderSection,
@@ -13,6 +14,7 @@ import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
 type Params = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
+  if (!sections.blog) return [];
   const posts = await contentRepository.getBlogPosts();
   return posts.filter((p) => p.published).map((p) => ({ slug: p.slug }));
 }
@@ -38,6 +40,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
  * prose, and ArticleBodySection returns null in that case.
  */
 export default async function BlogPostPage({ params }: Params) {
+  if (!sections.blog) notFound();
+
   const { slug } = await params;
   const [post, pageData, allPosts] = await Promise.all([
     contentRepository.getBlogPostBySlug(slug),
@@ -56,7 +60,7 @@ export default async function BlogPostPage({ params }: Params) {
     <>
       <ArticleHeaderSection post={post} />
 
-      <ArticleImageSection post={post} placeholderLabel="Article hero image — full bleed" />
+      <ArticleImageSection post={post} />
 
       <ArticleBodySection post={post} />
 

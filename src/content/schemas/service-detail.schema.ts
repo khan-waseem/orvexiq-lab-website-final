@@ -40,7 +40,8 @@ export const serviceDetailPageSchema = z.object({
   auditOffer: z
     .object({
       eyebrow: z.string(),
-      headline: z.string(),
+      headlineLine1: z.string(),
+      headlineAccent2: z.string(),
       body: z.string(),
       priceNote: z.string(),
       items: z.array(z.string()),
@@ -52,12 +53,16 @@ export const serviceDetailPageSchema = z.object({
     headlineLine2: z.string(),
     items: z.array(z.string()),
   }),
-  relatedWork: z.object({
-    eyebrow: z.string(),
-    title: z.string(),
-    body: z.string(),
-    href: z.string(),
-  }),
+  relatedWork: z
+    .object({
+      eyebrow: z.string(),
+      headlineLine1: z.string(),
+      headlineAccent2: z.string(),
+      title: z.string(),
+      body: z.string(),
+      href: z.string(),
+    })
+    .optional(),
   faq: z.object({
     eyebrow: z.string(),
     headlineLine1: z.string(),

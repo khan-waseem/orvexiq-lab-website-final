@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { contentRepository } from '@/content/repository/local-content-provider';
-import { CaseStudyDetailSection } from '@/components/sections/CaseStudyDetailSection';
-import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
+import { CaseStudyChapters } from '@/components/sections/CaseStudyChapters';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -18,16 +17,20 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return { title: page.seo?.title, description: page.seo?.description };
 }
 
-/** Case Study detail — Figma nodes 149:2 / 159:2 / 171:2. */
+/**
+ * Case study detail — one screen per chapter.
+ *
+ * The previous layout stacked thirteen text blocks, which read as a document
+ * a visitor had to work through. Each chapter now carries one idea and one
+ * diagram, so the problem and what was built land on the way past.
+ *
+ * No closing CTA band: the page already ends on what the work amounts to, and
+ * the site-wide footer carries the way to get in touch.
+ */
 export default async function CaseStudyDetailPage({ params }: Params) {
   const { slug } = await params;
   const page = await contentRepository.getCaseStudyDetailBySlug(slug);
   if (!page) notFound();
 
-  return (
-    <>
-      <CaseStudyDetailSection page={page} />
-      <LandingCtaSection content={page.ctaSection} />
-    </>
-  );
+  return <CaseStudyChapters study={page} />;
 }

@@ -7,8 +7,6 @@ export const servicesPageHeroSchema = z.object({
   headline: z.string(),
   subdescription: z.string(),
   heroIconAssetUrl: z.string(),
-  primaryCtaText: z.string(),
-  secondaryCtaText: z.string(),
 });
 
 /**

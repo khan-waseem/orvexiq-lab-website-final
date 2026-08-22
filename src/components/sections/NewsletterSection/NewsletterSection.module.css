@@ -1,8 +1,9 @@
 /* NewsletterSection — Figma node 64:103 */
 .section {
   position: relative;
-  padding-top: var(--orv-space-64);
-  padding-bottom: var(--orv-space-96);
+  overflow: hidden;
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 /* Figma 64:104 — glass card, gradient 164.89deg, r24, padding 64, gap 24 */

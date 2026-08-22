@@ -9,8 +9,8 @@
   position: relative;
   overflow: hidden;
   position: relative;
-  padding-top: var(--orv-layout-section-padding-lg);
-  padding-bottom: var(--orv-layout-section-padding-lg);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 /* Figma 32:24 — heading 460 | gap 96 | body fills */

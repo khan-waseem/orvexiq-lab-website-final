@@ -8,8 +8,8 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding-top: var(--orv-space-72);
-  padding-bottom: var(--orv-space-72);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 .container {
@@ -290,10 +290,6 @@
 }
 
 @media (max-width: 600px) {
-  .section {
-    padding-top: var(--orv-space-48);
-    padding-bottom: var(--orv-space-48);
-  }
 
   .card {
     padding: var(--orv-space-16);
@@ -302,4 +298,17 @@
   .cardTitle {
     font-size: var(--orv-font-size-24);
   }
+}
+
+/* Shown in place of the card action when a case study has no written detail
+   page yet, so a card can never lead to a 404. Matches the case studies grid. */
+.pending {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px var(--orv-space-10);
+  border: 1px solid var(--orv-color-alpha-white-12);
+  border-radius: var(--orv-radius-full);
+  font-size: var(--orv-font-size-11);
+  color: var(--orv-text-tertiary);
+  white-space: nowrap;
 }

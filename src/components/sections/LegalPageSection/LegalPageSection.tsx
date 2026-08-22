@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
-import { GlowRings } from '@/components/decor/GlowRings';
+import { PageHero } from '@/components/sections/PageHero';
 import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { LegalPage } from '@/content/schemas/legal-page.schema';
@@ -18,38 +17,20 @@ export interface LegalPageSectionProps {
  * The body is a sticky "on this page" card beside numbered sections. Section
  * numbers come from array order rather than being stored, so inserting a
  * clause cannot leave the numbering and the contents list disagreeing.
+ *
+ * The hero is the shared PageHero, not a local one. It used to be the only hero
+ * on the site with a breadcrumb and with GlowRings arcs behind it, which made
+ * the legal pages read as though they came from a different site.
  */
 export const LegalPageSection: React.FC<LegalPageSectionProps> = ({ page }) => {
   return (
     <>
-      <SectionWrapper theme="canvas" padding="custom" id="legal-hero" className={styles.heroSection}>
-        <div className={styles.heroGlow} aria-hidden="true" />
-        <GlowRings side="left" size={960} />
-        <GlowRings side="right" size={840} />
-
-        <PageContainer className={styles.container}>
-          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-            <ol className={styles.crumbList}>
-              <li>
-                <Link href="/" className={styles.crumbLink}>
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden="true" className={styles.crumbSep}>
-                /
-              </li>
-              <li>
-                <span className={styles.crumbCurrent} aria-current="page">
-                  {page.title}
-                </span>
-              </li>
-            </ol>
-          </nav>
-
-          <h1 className={styles.title}>{page.title}</h1>
-          <p className={styles.updated}>{page.lastUpdated}</p>
-        </PageContainer>
-      </SectionWrapper>
+      <PageHero
+        id="legal-hero"
+        eyebrow="Legal"
+        headline={page.title}
+        subdescription={page.lastUpdated}
+      />
 
       <SectionWrapper theme="canvas" padding="custom" id="legal-body" className={styles.bodySection}>
         <SectionDots />

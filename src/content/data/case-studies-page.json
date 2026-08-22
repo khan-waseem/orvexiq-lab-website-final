@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Selected engagements",
     "headline": "Work we can talk about.",
-    "subdescription": "Six engagements, all still in production. Some clients we can name, some we cannot — the numbers are real either way.",
+    "subdescription": "Four projects. Some are client work, some are concepts we built to think a problem through — each page says which, up front.",
     "heroIconAssetUrl": "/assets/case-studies/case-studies-hero-icon.png"
   },
   "grid": {
@@ -18,25 +18,25 @@
         "value": "FINTECH"
       },
       {
-        "id": "f-logistics",
-        "label": "Logistics",
-        "value": "LOGISTICS"
+        "id": "f-healthcare",
+        "label": "Healthcare",
+        "value": "HEALTHCARE"
       },
       {
-        "id": "f-commerce",
-        "label": "Commerce",
-        "value": "COMMERCE"
+        "id": "f-brand",
+        "label": "Brand",
+        "value": "BRAND"
       },
       {
-        "id": "f-ai",
-        "label": "AI",
-        "value": "AI"
+        "id": "f-mobile",
+        "label": "Mobile",
+        "value": "MOBILE"
       }
     ],
     "eyebrow": "Selected work",
-    "headlineLine1": "Six engagements,",
-    "headlineAccent2": "all still in production.",
-    "subdescription": "Lending, logistics, commerce and AI — what the problem was, what we decided, and what shipped.",
+    "headlineLine1": "Four engagements,",
+    "headlineAccent2": "four different problems.",
+    "subdescription": "Fintech, healthcare, brand and mobile — what the problem was, what we decided, and what shipped.",
     "comingSoonLabel": "Write-up in progress",
     "leadCtaLabel": "Read the case study",
     "countLabelSingular": "project",
@@ -51,7 +51,7 @@
     "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
     "subdescriptionLine2": "not a pitch deck.",
     "primaryCtaText": "Start a Project",
-    "emailCtaText": "hello@orvexiq.com"
+    "emailCtaText": "info@orvexiqlabs.com"
   },
   "seo": {
     "title": "Case Studies — Orvexiq Lab",

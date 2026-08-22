@@ -1,6 +1,9 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
+import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
+import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { BlogPageContent } from '@/content/schemas/blog-page.schema';
 import styles from './NewsletterSection.module.css';
 
@@ -21,10 +24,20 @@ export interface NewsletterSectionProps {
 export const NewsletterSection: React.FC<NewsletterSectionProps> = ({ content }) => {
   return (
     <SectionWrapper theme="canvas" padding="custom" id="newsletter" className={styles.section}>
+      <GlowRings side="left" size={860} />
+      <GlowRings side="right" size={760} />
+      <SectionDots />
       <PageContainer>
         <div className={styles.card}>
-          <h2 className={styles.headline}>{content.headline}</h2>
-          <p className={styles.sub}>{content.subdescription}</p>
+          <SectionHeading
+            eyebrow={content.eyebrow}
+            rule="dot"
+            align="left"
+            className={styles.heading}
+            sub={content.subdescription}
+          >
+            {content.headlineLine1} <Accent>{content.headlineAccent2}</Accent>
+          </SectionHeading>
 
           <div className={styles.form}>
             <label className={styles.srOnly} htmlFor="newsletter-email">

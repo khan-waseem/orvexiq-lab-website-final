@@ -8,8 +8,8 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding-top: var(--orv-space-32);
-  padding-bottom: var(--orv-space-96);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 /* Figma 64:39 — pill row, 12px gaps */
@@ -244,9 +244,6 @@
 }
 
 @media (max-width: 600px) {
-  .section {
-    padding-bottom: var(--orv-space-48);
-  }
 
   .grid {
     grid-template-columns: minmax(0, 1fr);

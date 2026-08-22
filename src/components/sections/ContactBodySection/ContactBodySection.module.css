@@ -8,9 +8,8 @@
 .section {
   position: relative;
   overflow: hidden;
-  position: relative;
-  padding-top: var(--orv-space-64);
-  padding-bottom: var(--orv-layout-section-padding-lg);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 /* Figma 33:28 — form fills | gap 96 | info 400 */
@@ -89,7 +88,6 @@
 .textarea:hover {
   border-color: rgba(168, 85, 247, 0.34);
 }
-
 
 .input::placeholder,
 .textarea::placeholder {
@@ -312,4 +310,81 @@
   .infoValueLink {
     font-size: var(--orv-font-size-20);
   }
+}
+
+/* --- Form states --- */
+
+/* Hidden from sight, from the tab order and from assistive tech. Not
+   `display: none`: some bots skip fields that are display-none, and the point
+   is that they fill this one. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.fieldError {
+  margin: var(--orv-space-8) 0 0;
+  font-size: var(--orv-font-size-13);
+  line-height: var(--orv-line-height-20);
+  color: #f89a9a;
+}
+
+.formError {
+  margin: 0;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-22);
+  color: #f89a9a;
+}
+
+.input[aria-invalid='true'],
+.textarea[aria-invalid='true'] {
+  border-color: rgba(248, 113, 113, 0.55);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* Replaces the form on success, at roughly the height the form occupied so the
+   page does not jump when it swaps in. */
+.sent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--orv-space-12);
+  min-height: 260px;
+}
+
+.sentMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: var(--orv-space-8);
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(74, 222, 128, 0.45);
+  background: rgba(47, 210, 107, 0.12);
+  color: #4ade80;
+}
+
+.sentTitle {
+  margin: 0;
+  font-family: var(--orv-font-family-display);
+  font-size: var(--orv-font-size-28);
+  font-weight: var(--orv-font-weight-regular);
+  color: var(--orv-text-primary);
+}
+
+.sentBody {
+  margin: 0;
+  font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+  max-width: 46ch;
 }

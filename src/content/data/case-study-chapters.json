@@ -1,0 +1,323 @@
+[
+  {
+    "slug": "trial-coordination",
+    "breadcrumbLabel": "Trial coordination console",
+    "origin": "Self-initiated concept · Clinical trial operations",
+    "chapters": [
+      {
+        "type": "intro",
+        "id": "tc-01",
+        "number": "01",
+        "label": "Introduction",
+        "title": "Trial coordination console",
+        "headlineLine1": "Clinical sites miss visit windows.",
+        "headlineAccent2": "The system tells them weeks later.",
+        "description": "A concept for the person nobody designs for: the site study coordinator, whose whole job is keeping patients inside a date range that lives in a spreadsheet.",
+        "meta": [
+          {
+            "id": "m1",
+            "icon": "role",
+            "label": "Role",
+            "value": "Product Strategy & Design"
+          },
+          {
+            "id": "m2",
+            "icon": "duration",
+            "label": "Scope",
+            "value": "8 screens",
+            "note": "Desktop, 1440"
+          },
+          {
+            "id": "m3",
+            "icon": "industry",
+            "label": "Industry",
+            "value": "Healthcare",
+            "note": "Clinical research"
+          }
+        ],
+        "screen": {
+          "src": "/assets/case-studies/trial-coordination/01-today.png",
+          "alt": "The Today worklist: two groups, windows closing now and this week",
+          "caption": "Today — the two windows that need the coordinator",
+          "width": 2880,
+          "height": 2048,
+          "frame": "laptop"
+        }
+      },
+      {
+        "type": "flow",
+        "id": "tc-02",
+        "number": "02",
+        "label": "The Problem",
+        "headlineLine1": "The window is the job.",
+        "headlineAccent2": "And it lives in a spreadsheet.",
+        "variant": "timeline",
+        "intro": "Every visit has to happen inside a date range calculated per patient — protocol day, plus or minus the allowed days, counted from that patient's own randomisation date. Miss it and the visit becomes a protocol deviation that has to be explained to the sponsor. The sponsor's system records that a visit happened. It does not compute when the next one must.",
+        "steps": [
+          {
+            "id": "f1",
+            "number": "01",
+            "title": "Randomisation",
+            "body": "Day zero. The patient's whole visit schedule is counted from this date.",
+            "icon": "clock",
+            "tone": "violet"
+          },
+          {
+            "id": "f2",
+            "number": "02",
+            "title": "Window calculated",
+            "body": "In Excel, by hand, alongside three or four other trials — each with a different sponsor, portal and login.",
+            "icon": "data",
+            "tone": "blue"
+          },
+          {
+            "id": "f3",
+            "number": "03",
+            "title": "Visit falls due",
+            "body": "No alert fires. Nothing in the sponsor's system knows this date exists.",
+            "icon": "alert",
+            "tone": "amber"
+          },
+          {
+            "id": "f4",
+            "number": "04",
+            "title": "No slot available",
+            "body": "Phone and email, back and forth, while the window keeps narrowing.",
+            "icon": "alert",
+            "tone": "amber"
+          },
+          {
+            "id": "f5",
+            "number": "05",
+            "title": "Window closes",
+            "body": "Silently. Nobody is told. The visit is now a protocol deviation.",
+            "icon": "alert",
+            "tone": "red"
+          },
+          {
+            "id": "f6",
+            "number": "06",
+            "title": "Monitoring visit",
+            "body": "Weeks later, this is where it gets found — and explained.",
+            "icon": "verdict",
+            "tone": "red"
+          }
+        ],
+        "footnote": "One patient, one missed window — and six steps where nothing in the system was watching."
+      },
+      {
+        "type": "statement",
+        "id": "tc-03",
+        "number": "03",
+        "label": "What we threw away",
+        "headlineLine1": "Our first version was a dashboard.",
+        "headlineAccent2": "We threw it away.",
+        "badge": "Rejected",
+        "tone": "red",
+        "paragraphs": [
+          "It was a good dashboard: enrollment against plan, site health, open queries, protocol deviations, all in one calm view. It also solved nothing. Every CTMS on the market already ships that screen, and it fails the same way they all do — it reports the problem accurately, after the problem has happened.",
+          "The fix was not a better dashboard. It was changing whose day the product is built around. A study manager needs oversight across many sites; a coordinator needs to get through today at one site. Same data, opposite job — and the interface follows whoever signs the contract.",
+          "That rejected dashboard is still in the file, kept on purpose."
+        ],
+        "screen": {
+          "src": "/assets/case-studies/trial-coordination/00-rejected-dashboard.png",
+          "alt": "The rejected sponsor dashboard: enrollment, site health, open queries and deviations",
+          "caption": "The dashboard we built first, and did not ship",
+          "width": 2880,
+          "height": 2048,
+          "frame": "laptop"
+        }
+      },
+      {
+        "type": "decisions",
+        "id": "tc-04",
+        "number": "04",
+        "label": "The three decisions",
+        "headlineLine1": "Three decisions, and",
+        "headlineAccent2": "what each one cost.",
+        "intro": "The design bet was written first, and every screen was judged against it: move the moment of discovery earlier. Show the window while it is still open — not the deviation after it has closed.",
+        "items": [
+          {
+            "id": "d1",
+            "number": "01",
+            "title": "A worklist, not a dashboard",
+            "body": "The home screen answers one question: what must I do today. It opens on two groups only — windows closing now, and windows closing this week — each row carrying the patient, the visit, the window and the room left in it.",
+            "tradeOffLabel": "The trade-off",
+            "tradeOff": "A study manager gets almost nothing out of this screen. We accepted that. A screen built to serve both roles equally serves neither.",
+            "screens": [
+              {
+                "src": "/assets/case-studies/trial-coordination/01-today.png",
+                "alt": "The Today worklist grouped by how much room is left in each window",
+                "caption": "Two groups, and nothing else on the screen",
+                "width": 2880,
+                "height": 2048,
+                "frame": "laptop"
+              }
+            ]
+          },
+          {
+            "id": "d2",
+            "number": "02",
+            "title": "No date is ever shown alone",
+            "body": "Every date is rendered as its window: the range, a marker for where today sits inside it, and how much room is left. A date tells you when something is due. A window tells you whether you are still safe.",
+            "tradeOffLabel": "The trade-off",
+            "tradeOff": "A window costs roughly three times the horizontal space of a date. The visit table caps at eight visits per view and pages beyond that.",
+            "screens": [
+              {
+                "src": "/assets/case-studies/trial-coordination/02-visit-windows.png",
+                "alt": "Visit windows across one site, each date drawn as its range",
+                "caption": "Every date rendered as its window",
+                "width": 2880,
+                "height": 2048,
+                "frame": "laptop"
+              }
+            ]
+          },
+          {
+            "id": "d3",
+            "number": "03",
+            "title": "Capture the reason at the moment the rule breaks",
+            "body": "When a booking has to fall outside the window, the reason is captured right there — category, root cause, and what happened, in the coordinator's own words. The deviation is filed from that record.",
+            "tradeOffLabel": "The trade-off",
+            "tradeOff": "This puts a form in front of someone at their most rushed moment. We cut it to three fields and pre-filled two — but it is still friction, deliberately.",
+            "screens": [
+              {
+                "src": "/assets/case-studies/trial-coordination/04-justification.png",
+                "alt": "The out-of-window justification dialog: category, root cause and what happened",
+                "caption": "The reason, captured where the rule breaks",
+                "width": 1488,
+                "height": 1452,
+                "frame": "plain"
+              },
+              {
+                "src": "/assets/case-studies/trial-coordination/05-audit-trail.png",
+                "alt": "The filed deviation with its audit trail",
+                "caption": "Filed, with the trail attached",
+                "width": 1360,
+                "height": 952,
+                "frame": "plain"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "constraints",
+        "id": "tc-05",
+        "number": "05",
+        "label": "Constraints",
+        "headlineLine1": "The constraints that shaped",
+        "headlineAccent2": "every screen.",
+        "intro": "None of these are negotiable in clinical research, and each one removed an option a cleaner design would have taken.",
+        "items": [
+          {
+            "id": "c1",
+            "label": "Regulatory",
+            "body": "Any change to submitted trial data needs an attributable, timestamped, permanent record. Nothing here can be silently edited.",
+            "tone": "violet"
+          },
+          {
+            "id": "c2",
+            "label": "Legacy",
+            "body": "The sponsor's systems own the data and are not being replaced. This concept reads from and writes to them rather than replacing them.",
+            "tone": "blue"
+          },
+          {
+            "id": "c3",
+            "label": "Commercial",
+            "body": "The sponsor holds the budget; the coordinator does the work. A tool designed for the site has to be paid for by someone else.",
+            "tone": "amber"
+          },
+          {
+            "id": "c4",
+            "label": "Accessibility",
+            "body": "Window state is never carried by colour alone — every state also carries text and position.",
+            "tone": "green"
+          }
+        ]
+      },
+      {
+        "type": "assumptions",
+        "id": "tc-06",
+        "number": "06",
+        "label": "What this rests on",
+        "headlineLine1": "We interviewed nobody.",
+        "headlineAccent2": "So here is what this assumes.",
+        "intro": "This is a concept, not a client engagement. Rather than dress that up, here is exactly what it is built on — and what would have to be true for it to work.",
+        "items": [
+          {
+            "id": "a1",
+            "key": "A1",
+            "body": "That coordinators, not sponsors, would be given a tool of their own. Commercially this is the hardest assumption, because the sponsor holds the budget."
+          },
+          {
+            "id": "a2",
+            "key": "A2",
+            "body": "That window arithmetic can be derived reliably from the protocol without manual configuration for every study."
+          },
+          {
+            "id": "a3",
+            "key": "A3",
+            "body": "That a justification captured at booking time is acceptable to sponsors and auditors as the deviation record itself."
+          },
+          {
+            "id": "a4",
+            "key": "A4",
+            "body": "That site staff will adopt one more system, when fewer systems is the thing they actually ask for."
+          }
+        ],
+        "note": "A1 is the one most likely to kill it. It is listed first for that reason."
+      },
+      {
+        "type": "outcome",
+        "id": "tc-07",
+        "number": "07",
+        "label": "What exists",
+        "headlineLine1": "Built as a concept,",
+        "headlineAccent2": "in full.",
+        "intro": "Nothing here is measured. This section states what exists and what would be tested — not what was achieved.",
+        "columns": [
+          {
+            "id": "o1",
+            "label": "Problem framing",
+            "tone": "violet",
+            "items": [
+              "The user, and the job to be done",
+              "Four named failure moments",
+              "Why the existing category misses them",
+              "The design bet, written before any screen",
+              "Four assumptions, including the commercial one"
+            ]
+          },
+          {
+            "id": "o2",
+            "label": "Product design",
+            "tone": "blue",
+            "items": [
+              "Eight desktop screens at 1440",
+              "One coordinator, one job, end to end",
+              "Worklist and visit-window matrix",
+              "Booking conflict and out-of-window justification",
+              "Filed deviation with audit trail"
+            ]
+          },
+          {
+            "id": "o3",
+            "label": "What we would test",
+            "tone": "amber",
+            "items": [
+              "Missed windows per 100 visits, against the site's own previous two quarters",
+              "Elapsed time between a window closing and the deviation being recorded",
+              "Whether coordinators keep their spreadsheet anyway"
+            ]
+          }
+        ],
+        "footnote": "A missed window should be visible the day it happens — not at the next monitoring visit. That is the hypothesis. It has not been tested."
+      }
+    ],
+    "seo": {
+      "title": "Trial coordination console — Case Study — Orvexiq Lab",
+      "description": "A concept for clinical site coordinators: show the protocol window while it is still open, not the deviation after it has closed."
+    }
+  }
+]

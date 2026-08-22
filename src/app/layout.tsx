@@ -7,6 +7,7 @@ import '@/styles/typography.css';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { SiteFooter } from '@/components/layout/SiteFooter';
+import { siteUrl } from '@/lib/site';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -25,9 +26,36 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
+const title = 'Orvexiq Lab — Product Studio & Enterprise Design Systems';
+const description =
+  'Orvexiq Lab architects enterprise product platforms, complex workflow consoles, and unified design system tokens.';
+
 export const metadata: Metadata = {
-  title: 'Orvexiq Lab — Product Studio & Enterprise Design Systems',
-  description: 'Orvexiq Lab architects enterprise product platforms, complex workflow consoles, and unified design system tokens.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: title,
+    /* Page-level metadata already appends " — Orvexiq Lab", so no template. */
+    template: '%s',
+  },
+  description,
+  applicationName: 'Orvexiq Lab',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Orvexiq Lab',
+    title,
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

@@ -62,49 +62,6 @@
   margin-right: auto;
 }
 
-.breadcrumb {
-  margin-bottom: var(--orv-space-24);
-}
-
-.crumbList {
-  display: flex;
-  align-items: center;
-  gap: var(--orv-space-8);
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-14);
-  font-weight: var(--orv-font-weight-medium);
-  line-height: var(--orv-line-height-normal);
-}
-
-.crumbLink {
-  color: var(--orv-text-tertiary);
-  text-decoration: none;
-  outline: none;
-  transition: color var(--orv-duration-fast) var(--orv-ease-default);
-}
-
-.crumbLink:hover {
-  color: var(--orv-text-primary);
-}
-
-.crumbLink:focus-visible {
-  outline: var(--orv-border-width-default) solid var(--orv-border-active);
-  outline-offset: var(--orv-space-2);
-  border-radius: var(--orv-radius-4);
-}
-
-.crumbSep {
-  color: var(--orv-text-tertiary);
-}
-
-.crumbCurrent {
-  color: var(--orv-brand-400);
-}
-
 /* Figma 64:176 — 44px / 54px Bold, tracking -0.88 */
 .title {
   font-family: var(--orv-font-family-display);
@@ -187,19 +144,11 @@
   object-fit: cover;
 }
 
-.imagePlaceholder {
-  font-family: var(--orv-font-family-primary);
-  font-size: var(--orv-font-size-13);
-  font-weight: var(--orv-font-weight-medium);
-  color: var(--orv-text-tertiary);
-  opacity: 0.5;
-}
-
 /* ---------- Article Body (64:191) ---------- */
 .bodySection {
   position: relative;
-  padding-top: var(--orv-space-96);
-  padding-bottom: var(--orv-space-64);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 .prose {
@@ -320,8 +269,8 @@
 /* ---------- Author Bio (64:226) ---------- */
 .authorSection {
   position: relative;
-  padding-top: var(--orv-space-32);
-  padding-bottom: var(--orv-space-64);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 .authorCard {
@@ -374,8 +323,8 @@
 /* ---------- Related Posts (64:232) ---------- */
 .relatedSection {
   position: relative;
-  padding-top: var(--orv-space-64);
-  padding-bottom: var(--orv-space-64);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 .relatedEyebrow {
@@ -512,10 +461,6 @@
 
   .imageSection {
     height: 260px;
-  }
-
-  .bodySection {
-    padding-top: var(--orv-space-48);
   }
 
   .lead {

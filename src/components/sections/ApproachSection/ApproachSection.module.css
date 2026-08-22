@@ -10,8 +10,8 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding-top: var(--orv-space-64);
-  padding-bottom: var(--orv-space-64);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 .container {
@@ -135,9 +135,3 @@
   }
 }
 
-@media (max-width: 600px) {
-  .section {
-    padding-top: var(--orv-space-48);
-    padding-bottom: var(--orv-space-48);
-  }
-}

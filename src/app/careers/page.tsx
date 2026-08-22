@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { sections } from '@/lib/site';
 import { contentRepository } from '@/content/repository/local-content-provider';
 import { PageHero } from '@/components/sections/PageHero';
 import { WhyUsSection, OpenRolesSection } from '@/components/sections/CareersSections';
@@ -15,6 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * Section order: Page Hero -> Why Us -> Open Roles -> CTA -> Footer.
  */
 export default async function CareersPage() {
+  if (!sections.careers) notFound();
+
   const [page, roles] = await Promise.all([
     contentRepository.getCareersPageData(),
     contentRepository.getJobRoles(),

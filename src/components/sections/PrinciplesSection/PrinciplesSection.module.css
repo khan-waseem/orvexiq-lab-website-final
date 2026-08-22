@@ -13,8 +13,8 @@
   position: relative;
   overflow: hidden;
   position: relative;
-  padding-top: var(--orv-layout-section-padding-md);
-  padding-bottom: var(--orv-layout-section-padding-lg);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 /* Figma 32:35 — 48px Bold, tracking -0.96 */

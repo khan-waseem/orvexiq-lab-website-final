@@ -1,0 +1,444 @@
+/* Case study chapters — one stylesheet shared by every chapter component.
+ *
+ * Kept in one file on purpose: the chapters share a tone system, a shell and a
+ * card surface, and splitting those across eight modules would mean eight
+ * copies of the same variables.
+ */
+
+/* ==========================================
+ * TONES
+ * Each chapter element carries data-tone; everything downstream reads --tone.
+ * Scoped under .chapter because CSS Modules rejects a bare attribute selector
+ * — and every tone-carrying element lives inside a chapter anyway.
+ * ========================================== */
+
+.chapter [data-tone] {
+  --tone: var(--orv-color-raw-purple-300);
+  --tone-soft: rgba(168, 85, 247, 0.16);
+  --tone-line: rgba(168, 85, 247, 0.42);
+  --tone-glow: rgba(168, 85, 247, 0.55);
+}
+
+.chapter [data-tone='violet'] {
+  --tone: #c084fc;
+  --tone-soft: rgba(168, 85, 247, 0.16);
+  --tone-line: rgba(168, 85, 247, 0.42);
+  --tone-glow: rgba(168, 85, 247, 0.55);
+}
+
+.chapter [data-tone='blue'] {
+  --tone: #7aa2ff;
+  --tone-soft: rgba(79, 110, 226, 0.16);
+  --tone-line: rgba(79, 110, 226, 0.45);
+  --tone-glow: rgba(79, 110, 226, 0.55);
+}
+
+.chapter [data-tone='green'] {
+  --tone: #4ade80;
+  --tone-soft: rgba(47, 210, 107, 0.14);
+  --tone-line: rgba(47, 210, 107, 0.4);
+  --tone-glow: rgba(47, 210, 107, 0.5);
+}
+
+.chapter [data-tone='amber'] {
+  --tone: #fbbf24;
+  --tone-soft: rgba(251, 191, 36, 0.14);
+  --tone-line: rgba(251, 191, 36, 0.4);
+  --tone-glow: rgba(251, 191, 36, 0.5);
+}
+
+.chapter [data-tone='red'] {
+  --tone: #f87171;
+  --tone-soft: rgba(248, 113, 113, 0.14);
+  --tone-line: rgba(248, 113, 113, 0.42);
+  --tone-glow: rgba(248, 113, 113, 0.5);
+}
+
+.chapter [data-tone='neutral'] {
+  --tone: var(--orv-text-secondary);
+  --tone-soft: var(--orv-color-alpha-white-5);
+  --tone-line: var(--orv-color-alpha-white-16);
+  --tone-glow: rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================
+ * SHELL
+ * ========================================== */
+
+.chapter {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--orv-space-96);
+  padding-bottom: var(--orv-space-96);
+  border-top: 1px solid var(--orv-color-alpha-white-5);
+}
+
+/* Faint scan grid, so a chapter reads as a screen rather than a page. */
+.chapter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: radial-gradient(120% 80% at 50% 0%, #000 0%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 0%, transparent 78%);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: var(--orv-z-floating);
+}
+
+.chapterLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-12);
+  margin-bottom: var(--orv-space-20);
+}
+
+.chapterNumber {
+  font-family: var(--orv-font-family-primary);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-semibold);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  color: var(--orv-color-raw-purple-300);
+}
+
+.chapterDot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--orv-radius-full);
+  background: var(--orv-color-raw-purple-300);
+  box-shadow: 0 0 8px 1px rgba(168, 85, 247, 0.8);
+}
+
+.chapterName {
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  text-transform: uppercase;
+  color: var(--orv-text-secondary);
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--orv-font-family-display);
+  font-size: var(--orv-font-size-56);
+  font-weight: var(--orv-font-weight-regular);
+  line-height: 1.14;
+  letter-spacing: var(--orv-letter-spacing-tight-032);
+  color: var(--orv-text-primary);
+  max-width: 20ch;
+}
+
+.accent {
+  display: block;
+  background: var(--orv-gradient-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 0.06em;
+}
+
+.intro {
+  margin: var(--orv-space-24) 0 0;
+  font-size: var(--orv-font-size-17);
+  line-height: var(--orv-line-height-30);
+  color: var(--orv-text-secondary);
+  max-width: 62ch;
+}
+
+/* Two-column chapter head: headline left, supporting copy right. */
+.splitHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: var(--orv-space-48);
+  align-items: end;
+}
+
+.splitHead .intro {
+  margin: 0;
+  padding-left: var(--orv-space-24);
+  border-left: 1px solid var(--tone-line, rgba(168, 85, 247, 0.42));
+}
+
+/* ==========================================
+ * SHARED SURFACES
+ * ========================================== */
+
+.card {
+  position: relative;
+  padding: var(--orv-space-24);
+  border: 1px solid var(--tone-line);
+  border-radius: var(--orv-radius-16);
+  background:
+    linear-gradient(168deg, var(--tone-soft) 0%, rgba(124, 58, 237, 0.015) 62%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-5);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid var(--tone-line);
+  background: var(--tone-soft);
+  color: var(--tone);
+  box-shadow: 0 0 20px -6px var(--tone-glow);
+}
+
+.cardNumber {
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-120);
+  color: var(--tone);
+}
+
+.cardTitle {
+  margin: var(--orv-space-16) 0 0;
+  font-size: var(--orv-font-size-18);
+  font-weight: var(--orv-font-weight-semibold);
+  color: var(--orv-text-primary);
+}
+
+.cardBody {
+  margin: var(--orv-space-12) 0 0;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-tertiary);
+}
+
+.cardRule {
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin-top: var(--orv-space-10);
+  border-radius: var(--orv-radius-full);
+  background: var(--tone);
+}
+
+.footnote {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-16);
+  margin-top: var(--orv-space-40);
+  padding: var(--orv-space-20) var(--orv-space-24);
+  border: 1px solid var(--orv-color-alpha-white-8);
+  border-radius: var(--orv-radius-12);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: var(--orv-font-size-15);
+  line-height: var(--orv-line-height-26);
+  color: var(--orv-text-secondary);
+}
+
+.footnoteMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: var(--orv-color-raw-purple-200);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+ * RESPONSIVE — shell
+ * ========================================== */
+@media (max-width: 1024px) {
+  .headline {
+    font-size: var(--orv-font-size-48);
+  }
+
+  .splitHead {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--orv-space-24);
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapter {
+    padding-top: var(--orv-space-64);
+    padding-bottom: var(--orv-space-64);
+  }
+
+  .headline {
+    font-size: var(--orv-font-size-40);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: var(--orv-font-size-32);
+  }
+}
+
+/* ==========================================
+ * PRODUCT SCREENS
+ * Exported from the design file at 2x. Framed rather than bled, so a screen
+ * reads as an artefact of the work rather than as page decoration.
+ * ========================================== */
+
+.screenFigure {
+  margin: var(--orv-space-40) 0 0;
+}
+
+.screenFrame {
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.24);
+  border-radius: var(--orv-radius-16);
+  background: #080414;
+  box-shadow:
+    inset 0 1px 0 var(--orv-color-alpha-white-5),
+    0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+.screenImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.screenCaption {
+  display: flex;
+  align-items: center;
+  gap: var(--orv-space-10);
+  margin-top: var(--orv-space-14);
+  font-size: var(--orv-font-size-13);
+  color: var(--orv-text-tertiary);
+}
+
+.screenCaption::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  flex: 0 0 auto;
+  background: var(--orv-color-raw-purple-300);
+}
+
+/* Two shots side by side, where a decision produced a pair. */
+.screenPair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--orv-space-24);
+  margin-top: var(--orv-space-24);
+}
+
+.screenPair .screenFigure {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .screenPair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==========================================
+ * LAPTOP MOCKUP
+ * Drawn rather than placed: a device image would be one more asset to keep in
+ * step with the theme, and this one takes its colours from the tokens.
+ * ========================================== */
+
+.laptop {
+  position: relative;
+}
+
+.laptopLid {
+  position: relative;
+  padding: 12px 12px 0;
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  border-bottom: none;
+  border-radius: 18px 18px 4px 4px;
+  background: linear-gradient(168deg, #1a1030 0%, #0a0517 70%);
+  box-shadow:
+    inset 0 1px 0 var(--orv-color-alpha-white-8),
+    0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+.laptopCamera {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: var(--orv-radius-full);
+  background: rgba(192, 132, 252, 0.5);
+  transform: translateX(-50%);
+}
+
+.laptopScreen {
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background: #080414;
+}
+
+/* The deck lip, wider than the lid so the machine reads in perspective. */
+.laptopBase {
+  position: relative;
+  width: 108%;
+  height: 14px;
+  margin-left: -4%;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(to bottom, #241844 0%, #120a26 100%);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.5);
+}
+
+.laptopNotch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 86px;
+  height: 4px;
+  border-radius: 0 0 6px 6px;
+  background: rgba(0, 0, 0, 0.45);
+  transform: translateX(-50%);
+}
+
+/* Light pooling under the machine. */
+.laptopGlow {
+  position: absolute;
+  left: 50%;
+  bottom: -26px;
+  width: 62%;
+  height: 54px;
+  background: var(--orv-gradient-glow-violet);
+  filter: blur(14px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .laptopLid {
+    padding: 7px 7px 0;
+    border-radius: 12px 12px 3px 3px;
+  }
+
+  .laptopBase {
+    height: 10px;
+  }
+}

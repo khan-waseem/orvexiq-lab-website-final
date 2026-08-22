@@ -62,6 +62,31 @@ const Ai: React.FC = () => (
   </svg>
 );
 
+/** Cross in a rounded frame — healthcare. */
+const Healthcare: React.FC = () => (
+  <svg {...base}>
+    <rect x="2.4" y="2.4" width="11.2" height="11.2" rx="2.6" />
+    <path d="M8 5.2v5.6M5.2 8h5.6" />
+  </svg>
+);
+
+/** Overlapping marks — brand. */
+const Brand: React.FC = () => (
+  <svg {...base}>
+    <circle cx="6.2" cy="8" r="3.8" />
+    <circle cx="9.8" cy="8" r="3.8" />
+  </svg>
+);
+
+/** Handset — mobile. */
+const Mobile: React.FC = () => (
+  <svg {...base}>
+    <rect x="4.4" y="1.8" width="7.2" height="12.4" rx="1.8" />
+    <path d="M7 3.6h2" />
+    <circle cx="8" cy="11.8" r="0.7" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 /** Layered planes — the catch-all. */
 const General: React.FC = () => (
   <svg {...base}>
@@ -72,6 +97,9 @@ const General: React.FC = () => (
 
 export const CATEGORY_ICONS = {
   FINTECH: Fintech,
+  HEALTHCARE: Healthcare,
+  BRAND: Brand,
+  MOBILE: Mobile,
   LOGISTICS: Logistics,
   COMMERCE: Commerce,
   TREASURY: Treasury,

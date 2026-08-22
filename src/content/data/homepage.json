@@ -109,7 +109,8 @@
     "headlineAccent2": "complexity.",
     "subdescription": "We partner with ambitious teams to design and build digital products, platforms and experiences that drive real impact.",
     "viewAllText": "View all case studies",
-    "cardCtaText": "View case study"
+    "cardCtaText": "View case study",
+    "comingSoonLabel": "Write-up in progress"
   },
   "whatWeBuildSection": {
     "eyebrow": "What we build",
@@ -242,7 +243,7 @@
     "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
     "subdescriptionLine2": "not a pitch deck.",
     "primaryCtaText": "Start a Project",
-    "emailCtaText": "hello@orvexiq.com"
+    "emailCtaText": "info@orvexiqlabs.com"
   },
   "seo": {
     "title": "Orvexiq Lab — Product Studio & Enterprise Design Systems",

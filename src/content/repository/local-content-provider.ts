@@ -9,11 +9,13 @@ import { notFoundPageContentSchema, NotFoundPageContent } from '../schemas/not-f
 import { serviceDetailCollectionSchema, ServiceDetailPage } from '../schemas/service-detail.schema';
 import { legalPageCollectionSchema, LegalPage } from '../schemas/legal-page.schema';
 import { careersPageContentSchema, jobRoleCollectionSchema, CareersPageContent, JobRole } from '../schemas/careers-page.schema';
-import { caseStudyDetailCollectionSchema, CaseStudyDetail } from '../schemas/case-study-detail.schema';
+import {
+  chapteredCaseStudyCollectionSchema,
+  ChapteredCaseStudy,
+} from '../schemas/case-study-chapter.schema';
 import { serviceSchema, ServiceItem } from '../schemas/service.schema';
 import { caseStudySchema, CaseStudyItem } from '../schemas/case-study.schema';
 import { blogPostSchema, BlogPostItem } from '../schemas/blog.schema';
-import { impactStatSchema, ImpactStatItem } from '../schemas/impact-stat.schema';
 import { testimonialSchema, TestimonialData } from '../schemas/testimonial.schema';
 
 import homepageData from '../data/homepage.json';
@@ -27,11 +29,10 @@ import serviceDetailData from '../data/service-details.json';
 import legalPageData from '../data/legal-pages.json';
 import careersPageData from '../data/careers-page.json';
 import jobRoleData from '../data/job-roles.json';
-import caseStudyDetailData from '../data/case-study-details.json';
+import caseStudyChapterData from '../data/case-study-chapters.json';
 import servicesData from '../data/services.json';
 import caseStudiesData from '../data/case-studies.json';
 import blogPostsData from '../data/blog-posts.json';
-import impactStatsData from '../data/impact-stats.json';
 import testimonialsData from '../data/testimonials.json';
 
 /**
@@ -97,11 +98,11 @@ export class LocalContentProvider implements IContentRepository {
     return roles.find((r) => r.slug === slug) ?? null;
   }
 
-  async getCaseStudyDetails(): Promise<CaseStudyDetail[]> {
-    return caseStudyDetailCollectionSchema.parse(caseStudyDetailData);
+  async getCaseStudyDetails(): Promise<ChapteredCaseStudy[]> {
+    return chapteredCaseStudyCollectionSchema.parse(caseStudyChapterData);
   }
 
-  async getCaseStudyDetailBySlug(slug: string): Promise<CaseStudyDetail | null> {
+  async getCaseStudyDetailBySlug(slug: string): Promise<ChapteredCaseStudy | null> {
     const pages = await this.getCaseStudyDetails();
     return pages.find((p) => p.slug === slug) ?? null;
   }
@@ -136,10 +137,6 @@ export class LocalContentProvider implements IContentRepository {
   async getBlogPostBySlug(slug: string): Promise<BlogPostItem | null> {
     const posts = await this.getBlogPosts();
     return posts.find((p) => p.slug === slug) || null;
-  }
-
-  async getImpactStats(): Promise<ImpactStatItem[]> {
-    return impactStatsData.map((item) => impactStatSchema.parse(item));
   }
 
   async getTestimonials(): Promise<TestimonialData[]> {

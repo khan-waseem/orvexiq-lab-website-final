@@ -1,6 +1,6 @@
 {
   "hero": {
-    "eyebrow": "Careers at Orvexiq Lab",
+    "eyebrow": "Working here",
     "headline": "Build systems that outlast the projects.",
     "subdescription": "We hire slowly and keep teams small. If you have been frustrated by design that stops at handoff, you will recognize how we work.",
     "heroIconAssetUrl": "/assets/careers/careers-hero-icon.png"
@@ -39,7 +39,7 @@
     "headlineAccent": "right now",
     "emptyHeadline": "No open seats right now",
     "footnote": "Nothing that fits? Send us your work anyway — ",
-    "footnoteEmail": "hello@orvexiq.com"
+    "footnoteEmail": "info@orvexiqlabs.com"
   },
   "ctaSection": {
     "eyebrow": "START A PROJECT",
@@ -48,7 +48,7 @@
     "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
     "subdescriptionLine2": "not a pitch deck.",
     "primaryCtaText": "Start a Project",
-    "emailCtaText": "hello@orvexiq.com"
+    "emailCtaText": "info@orvexiqlabs.com"
   },
   "seo": {
     "title": "Careers — Orvexiq Lab",

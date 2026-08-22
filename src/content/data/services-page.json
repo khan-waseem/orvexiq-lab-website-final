@@ -3,9 +3,7 @@
     "eyebrow": "Product strategy, design & AI",
     "headline": "What we do, and how far we take it.",
     "subdescription": "Four capabilities that usually arrive together. Most engagements start with one and grow into the rest.",
-    "heroIconAssetUrl": "/assets/services/services-hero-icon.png",
-    "primaryCtaText": "Start a Project",
-    "secondaryCtaText": "Explore Case Studies"
+    "heroIconAssetUrl": "/assets/services/services-hero-icon.png"
   },
   "serviceDetail": {
     "blocks": [
@@ -202,7 +200,7 @@
     "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
     "subdescriptionLine2": "not a pitch deck.",
     "primaryCtaText": "Start a Project",
-    "emailCtaText": "hello@orvexiq.com"
+    "emailCtaText": "info@orvexiqlabs.com"
   },
   "seo": {
     "title": "Services — Orvexiq Lab",

@@ -8,11 +8,10 @@ import { NotFoundPageContent } from '../schemas/not-found-page.schema';
 import { ServiceDetailPage } from '../schemas/service-detail.schema';
 import { LegalPage } from '../schemas/legal-page.schema';
 import { CareersPageContent, JobRole } from '../schemas/careers-page.schema';
-import { CaseStudyDetail } from '../schemas/case-study-detail.schema';
+import { ChapteredCaseStudy } from '../schemas/case-study-chapter.schema';
 import { ServiceItem } from '../schemas/service.schema';
 import { CaseStudyItem } from '../schemas/case-study.schema';
 import { BlogPostItem } from '../schemas/blog.schema';
-import { ImpactStatItem } from '../schemas/impact-stat.schema';
 import { TestimonialData } from '../schemas/testimonial.schema';
 
 /**
@@ -37,8 +36,8 @@ export interface IContentRepository {
   getCareersPageData(): Promise<CareersPageContent>;
   getJobRoles(): Promise<JobRole[]>;
   getJobRoleBySlug(slug: string): Promise<JobRole | null>;
-  getCaseStudyDetails(): Promise<CaseStudyDetail[]>;
-  getCaseStudyDetailBySlug(slug: string): Promise<CaseStudyDetail | null>;
+  getCaseStudyDetails(): Promise<ChapteredCaseStudy[]>;
+  getCaseStudyDetailBySlug(slug: string): Promise<ChapteredCaseStudy | null>;
   getServices(): Promise<ServiceItem[]>;
   getServiceBySlug(slug: string): Promise<ServiceItem | null>;
   getCaseStudies(): Promise<CaseStudyItem[]>;
@@ -46,6 +45,5 @@ export interface IContentRepository {
   getCaseStudyBySlug(slug: string): Promise<CaseStudyItem | null>;
   getBlogPosts(): Promise<BlogPostItem[]>;
   getBlogPostBySlug(slug: string): Promise<BlogPostItem | null>;
-  getImpactStats(): Promise<ImpactStatItem[]>;
   getTestimonials(): Promise<TestimonialData[]>;
 }

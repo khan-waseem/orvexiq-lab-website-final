@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { SectionWrapper } from '@/components/layout/Section';
 import { SectionHeading, Accent } from '@/components/primitives/SectionHeading';
 import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { BlogPostItem } from '@/content/schemas/blog.schema';
 import { BlogPageContent } from '@/content/schemas/blog-page.schema';
@@ -41,6 +42,7 @@ export const FeaturedPostSection: React.FC<FeaturedPostSectionProps> = ({ conten
       <GlowRings side="left" size={960} />
       <GlowRings side="right" size={840} />
 
+      <SectionDots />
       <PageContainer className={styles.container}>
         <SectionHeading
           id="featured-post-heading"

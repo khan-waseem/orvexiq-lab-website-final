@@ -13,6 +13,9 @@ import { CATEGORY_ICONS } from './CategoryIcons';
 import styles from './SelectedWorkSection.module.css';
 
 export interface SelectedWorkSectionProps {
+  /** Slugs that have a written detail page. Cards outside this list render
+      without a link rather than pointing at a 404. */
+  readableSlugs?: string[];
   content: HomepageContent['selectedWorkSection'];
   caseStudies: CaseStudy[];
   /** How many cards to show. The landing runs the full 2x2; other pages use
@@ -32,6 +35,7 @@ const CARD_LIMIT = 4;
  * without touching this component.
  */
 export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
+  readableSlugs = [],
   content,
   caseStudies,
   limit = CARD_LIMIT,
@@ -66,6 +70,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
           {cards.map((study, index) => {
             const CategoryIcon = CATEGORY_ICONS[study.category] ?? CATEGORY_ICONS.GENERAL;
             const href = `/case-studies/${study.slug}`;
+            const readable = readableSlugs.includes(study.slug);
 
             return (
               <li key={study.id} className={styles.card}>
@@ -78,9 +83,13 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
                 </div>
 
                 <h3 className={styles.cardTitle}>
-                  <Link href={href} className={styles.cardTitleLink}>
-                    {study.title}
-                  </Link>
+                  {readable ? (
+                    <Link href={href} className={styles.cardTitleLink}>
+                      {study.title}
+                    </Link>
+                  ) : (
+                    study.title
+                  )}
                 </h3>
 
                 <p className={styles.cardBody}>{study.description}</p>
@@ -109,22 +118,28 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
                 </ul>
 
                 <div className={styles.cardFoot}>
-                  <Link href={href} className={styles.cardCta} tabIndex={-1} aria-hidden="true">
-                    {content.cardCtaText}
-                    <span className={styles.cardCtaIcon}>
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <path d="M2 6h7M6.4 3.2 9.2 6l-2.8 2.8" stroke="currentColor" strokeWidth="1.2"
-                              strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </Link>
+                  {readable ? (
+                    <>
+                      <Link href={href} className={styles.cardCta} tabIndex={-1} aria-hidden="true">
+                        {content.cardCtaText}
+                        <span className={styles.cardCtaIcon}>
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M2 6h7M6.4 3.2 9.2 6l-2.8 2.8" stroke="currentColor" strokeWidth="1.2"
+                                  strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                      </Link>
 
-                  <span className={styles.cornerButton} aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M4 10 10 4M5 4h5v5" stroke="currentColor" strokeWidth="1.3"
-                            strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
+                      <span className={styles.cornerButton} aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M4 10 10 4M5 4h5v5" stroke="currentColor" strokeWidth="1.3"
+                                strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    </>
+                  ) : (
+                    <span className={styles.pending}>{content.comingSoonLabel ?? 'Write-up in progress'}</span>
+                  )}
                 </div>
               </li>
             );

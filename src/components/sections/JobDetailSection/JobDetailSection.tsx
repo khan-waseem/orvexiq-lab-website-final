@@ -22,7 +22,7 @@ export interface JobDetailSectionProps {
  * rather than a dialog that cannot submit.
  */
 export const JobDetailSection: React.FC<JobDetailSectionProps> = ({ role }) => {
-  const applyHref = `mailto:hello@orvexiq.com?subject=${encodeURIComponent(
+  const applyHref = `mailto:info@orvexiqlabs.com?subject=${encodeURIComponent(
     `Application — ${role.title}`
   )}`;
 

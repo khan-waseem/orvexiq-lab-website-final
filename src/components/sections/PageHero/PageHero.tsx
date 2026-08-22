@@ -4,13 +4,7 @@ import { SectionWrapper } from '@/components/layout/Section';
 import { PageContainer } from '@/components/layout/Container';
 import { Heading } from '@/components/primitives/Heading';
 import { Text } from '@/components/primitives/Text';
-import { Button } from '@/components/primitives/Button';
 import styles from './PageHero.module.css';
-
-export interface PageHeroAction {
-  label: string;
-  href: string;
-}
 
 export interface PageHeroProps {
   /** Sentence-case line above the headline — plain text, as on the landing. */
@@ -19,8 +13,6 @@ export interface PageHeroProps {
   subdescription: string;
   /** The page's 3D mark, shown to the right of the copy. */
   iconAssetUrl?: string;
-  primaryCta?: PageHeroAction;
-  secondaryCta?: PageHeroAction;
   id?: string;
 }
 
@@ -35,14 +27,18 @@ export interface PageHeroProps {
  *
  * Replaces the seven near-identical per-page hero components, so a change to
  * the hero language lands everywhere at once.
+ *
+ * The left column is fixed at three things — eyebrow, headline, supporting
+ * line — and takes no actions prop. Two pages used to carry hero buttons and
+ * five did not, which made the top of the site look assembled from parts. Every
+ * page still carries a CTA band lower down, so nothing is lost by holding the
+ * hero to one shape.
  */
 export const PageHero: React.FC<PageHeroProps> = ({
   eyebrow,
   headline,
   subdescription,
   iconAssetUrl,
-  primaryCta,
-  secondaryCta,
   id,
 }) => (
   <SectionWrapper id={id} padding="custom" className={styles.hero} aria-label="Page hero">
@@ -75,21 +71,6 @@ export const PageHero: React.FC<PageHeroProps> = ({
           <Text as="p" size="xl" color="primary" weight="regular" className={styles.sub}>
             {subdescription}
           </Text>
-
-          {(primaryCta || secondaryCta) && (
-            <div className={styles.actions}>
-              {primaryCta && (
-                <Button variant="primary" href={primaryCta.href}>
-                  {primaryCta.label}
-                </Button>
-              )}
-              {secondaryCta && (
-                <Button variant="secondary" href={secondaryCta.href}>
-                  {secondaryCta.label}
-                </Button>
-              )}
-            </div>
-          )}
         </div>
 
         {iconAssetUrl && (

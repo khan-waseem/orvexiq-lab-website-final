@@ -32,7 +32,9 @@ export const blogPageContentSchema = z.object({
     emptyLabel: z.string(),
   }),
   newsletter: z.object({
-    headline: z.string(),
+    eyebrow: z.string(),
+    headlineLine1: z.string(),
+    headlineAccent2: z.string(),
     subdescription: z.string(),
     inputPlaceholder: z.string(),
     submitLabel: z.string(),

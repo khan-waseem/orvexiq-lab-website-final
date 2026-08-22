@@ -44,7 +44,9 @@
     "emptyLabel": "No posts in this category yet."
   },
   "newsletter": {
-    "headline": "One post a month. No newsletter filler.",
+    "eyebrow": "The list",
+    "headlineLine1": "One post a month.",
+    "headlineAccent2": "No newsletter filler.",
     "subdescription": "We write when we have something worth saying, which is roughly monthly. Unsubscribe in one click.",
     "inputPlaceholder": "you@company.com",
     "submitLabel": "Subscribe"
@@ -56,7 +58,7 @@
     "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
     "subdescriptionLine2": "not a pitch deck.",
     "primaryCtaText": "Start a Project",
-    "emailCtaText": "hello@orvexiq.com"
+    "emailCtaText": "info@orvexiqlabs.com"
   },
   "seo": {
     "title": "Blog — Orvexiq Lab",

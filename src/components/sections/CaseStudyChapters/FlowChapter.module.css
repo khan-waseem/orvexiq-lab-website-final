@@ -1,0 +1,147 @@
+/* FlowChapter — two ways of drawing a sequence. */
+
+/* ==========================================
+ * LINKED — a pipeline running across
+ * ========================================== */
+
+.row {
+  display: flex;
+  align-items: stretch;
+  margin: var(--orv-space-48) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row .step {
+  display: contents;
+}
+
+.rowCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.rowNumber {
+  margin-top: var(--orv-space-20);
+  font-size: var(--orv-font-size-13);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-120);
+  color: var(--tone);
+}
+
+.connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  align-self: center;
+  color: var(--orv-color-raw-purple-300);
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.6));
+}
+
+/* ==========================================
+ * TIMELINE — events running down a rail
+ * ========================================== */
+
+.rail {
+  position: relative;
+  margin: var(--orv-space-48) 0 0;
+  padding: 0 0 0 var(--orv-space-64);
+  list-style: none;
+}
+
+/* The rail itself: lit at the top where the sequence starts, fading as the
+   chain of events runs out of anyone watching it. */
+.rail::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 27px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(168, 85, 247, 0.7) 0%,
+    rgba(168, 85, 247, 0.35) 55%,
+    rgba(248, 113, 113, 0.5) 100%
+  );
+}
+
+.rail .step {
+  position: relative;
+  padding-bottom: var(--orv-space-24);
+}
+
+.rail .step:last-child {
+  padding-bottom: 0;
+}
+
+.node {
+  position: absolute;
+  top: var(--orv-space-16);
+  left: calc(-1 * var(--orv-space-64) + 4px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--orv-radius-full);
+  border: 1px solid var(--tone-line);
+  background:
+    radial-gradient(circle at 50% 40%, var(--tone-soft) 0%, rgba(8, 2, 17, 0.9) 70%),
+    #0a0517;
+  color: var(--tone);
+  box-shadow: 0 0 22px -8px var(--tone-glow);
+}
+
+.railCard {
+  margin-left: var(--orv-space-16);
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1180px) {
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--orv-space-24);
+  }
+
+  .row .step {
+    display: block;
+  }
+
+  /* The arrows describe a left-to-right chain; once the cards wrap into a
+     grid they would point at the wrong neighbour. */
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rail {
+    padding-left: var(--orv-space-48);
+  }
+
+  .rail::before {
+    left: 19px;
+  }
+
+  .node {
+    left: calc(-1 * var(--orv-space-48) + 2px);
+    width: 38px;
+    height: 38px;
+  }
+
+  .railCard {
+    margin-left: var(--orv-space-8);
+  }
+}

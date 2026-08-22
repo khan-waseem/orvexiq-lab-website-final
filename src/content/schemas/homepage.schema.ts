@@ -83,6 +83,7 @@ export const homepageContentSchema = z.object({
     subdescription: z.string(),
     viewAllText: z.string(),
     cardCtaText: z.string(),
+    comingSoonLabel: z.string(),
   }),
   whatWeBuildSection: z.object({
     eyebrow: z.string(),

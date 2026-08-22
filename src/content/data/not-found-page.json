@@ -1,7 +1,7 @@
 {
   "code": "404",
   "headline": "This page moved, or never existed.",
-  "subdescription": "Check the address, or start from one of these. If you followed a link from our own site, tell us at hello@orvexiq.com and we will fix it.",
+  "subdescription": "Check the address, or start from one of these. If you followed a link from our own site, tell us at info@orvexiqlabs.com and we will fix it.",
   "primaryCta": {
     "label": "Back to home",
     "href": "/"
@@ -29,12 +29,6 @@
       "title": "About",
       "body": "Who we are and how we work",
       "href": "/about"
-    },
-    {
-      "id": "nf-careers",
-      "title": "Careers",
-      "body": "Open roles and how we hire",
-      "href": "/careers"
     }
   ],
   "heroIconAssetUrl": "/assets/404/not-found-icon.png"

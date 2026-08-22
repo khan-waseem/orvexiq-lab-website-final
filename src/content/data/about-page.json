@@ -1,6 +1,6 @@
 {
   "hero": {
-    "eyebrow": "About Orvexiq Lab",
+    "eyebrow": "Who we are",
     "headline": "A small team that ships large systems.",
     "subdescription": "Orvexiq Lab is a product studio, not a staffing agency. We take a handful of clients at a time and embed deeply enough to be genuinely useful.",
     "heroIconAssetUrl": "/assets/about/about-hero-icon.png"
@@ -50,7 +50,7 @@
     "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
     "subdescriptionLine2": "not a pitch deck.",
     "primaryCtaText": "Start a Project",
-    "emailCtaText": "hello@orvexiq.com"
+    "emailCtaText": "info@orvexiqlabs.com"
   },
   "seo": {
     "title": "About — Orvexiq Lab",

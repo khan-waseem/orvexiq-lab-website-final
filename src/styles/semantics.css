@@ -60,6 +60,11 @@
   --orv-layout-page-margin: var(--orv-space-96);
   --orv-layout-gutter: var(--orv-space-24);
   --orv-layout-card-gap: var(--orv-space-24);
+  /* The standard section band. Every band below a page hero uses this for both
+     top and bottom padding, so the vertical rhythm is declared once here rather
+     than re-picked per section — which is how 64 / 72 / 96 / 128 all ended up
+     in use at the same time. */
+  --orv-layout-band-padding: var(--orv-space-64);
   --orv-layout-section-padding-sm: var(--orv-space-72);
   --orv-layout-section-padding-md: var(--orv-space-96);
   --orv-layout-section-padding-lg: var(--orv-space-128);
@@ -96,6 +101,7 @@
 
 @media (max-width: 900px) {
   :root {
+    --orv-layout-band-padding: var(--orv-space-48);
     --orv-layout-page-margin: var(--orv-space-40);
     --orv-layout-section-padding-sm: var(--orv-space-40);
     --orv-layout-section-padding-md: var(--orv-space-48);
@@ -105,6 +111,7 @@
 
 @media (max-width: 600px) {
   :root {
+    --orv-layout-band-padding: var(--orv-space-40);
     --orv-layout-page-margin: var(--orv-space-24);
     --orv-layout-section-padding-sm: var(--orv-space-32);
     --orv-layout-section-padding-md: var(--orv-space-40);

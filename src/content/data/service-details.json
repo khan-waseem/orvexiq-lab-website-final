@@ -65,12 +65,6 @@
         "The research itself — recordings, notes and findings, not just a summary"
       ]
     },
-    "relatedWork": {
-      "eyebrow": "RELATED WORK",
-      "title": "Loan origination redesign",
-      "body": "Three weeks of shadowing found that 80% of handling time sat in three of six tools. That finding changed the whole engagement.",
-      "href": "/case-studies/loan-origination-redesign"
-    },
     "faq": {
       "eyebrow": "COMMON QUESTIONS",
       "headlineLine1": "Asked often enough",
@@ -100,7 +94,7 @@
       "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
       "subdescriptionLine2": "not a pitch deck.",
       "primaryCtaText": "Start a Project",
-      "emailCtaText": "hello@orvexiq.com"
+      "emailCtaText": "info@orvexiqlabs.com"
     },
     "seo": {
       "title": "Product Strategy — Orvexiq Lab",
@@ -175,9 +169,11 @@
     },
     "relatedWork": {
       "eyebrow": "RELATED WORK",
-      "title": "Fleet dispatch software",
-      "body": "A rebuilt dispatch interface cut average assignment time by 34% across 1,200 vehicles.",
-      "href": "/case-studies/fleet-dispatch-software"
+      "headlineLine1": "One product built for the person",
+      "headlineAccent2": "nobody designs for.",
+      "title": "Trial coordination console",
+      "body": "A site study coordinator keeps patients inside date ranges that live in a spreadsheet. We put those windows on the screen instead.",
+      "href": "/case-studies/trial-coordination"
     },
     "faq": {
       "eyebrow": "COMMON QUESTIONS",
@@ -208,7 +204,7 @@
       "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
       "subdescriptionLine2": "not a pitch deck.",
       "primaryCtaText": "Start a Project",
-      "emailCtaText": "hello@orvexiq.com"
+      "emailCtaText": "info@orvexiqlabs.com"
     },
     "seo": {
       "title": "UX / UI Product Design — Orvexiq Lab",
@@ -281,12 +277,6 @@
         "Prototypes tested with the people who have to act on the output"
       ]
     },
-    "relatedWork": {
-      "eyebrow": "RELATED WORK",
-      "title": "AI support assistant",
-      "body": "An assistant that now resolves 60% of inbound tickets without a human — and hands over cleanly when it should.",
-      "href": "/case-studies/ai-support-assistant"
-    },
     "faq": {
       "eyebrow": "COMMON QUESTIONS",
       "headlineLine1": "Asked often enough",
@@ -316,7 +306,7 @@
       "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
       "subdescriptionLine2": "not a pitch deck.",
       "primaryCtaText": "Start a Project",
-      "emailCtaText": "hello@orvexiq.com"
+      "emailCtaText": "info@orvexiqlabs.com"
     },
     "seo": {
       "title": "AI Experiences & Automation — Orvexiq Lab",
@@ -380,7 +370,8 @@
     },
     "auditOffer": {
       "eyebrow": "START HERE",
-      "headline": "Design system audit",
+      "headlineLine1": "Design system",
+      "headlineAccent2": "audit.",
       "body": "Two weeks, fixed scope. The fastest way to find out whether you need a system, a rebuild, or a decision nobody has made yet.",
       "priceNote": "Fixed price — ask us for the current figure. If it becomes a build, the audit fee comes off the first invoice.",
       "items": [
@@ -400,12 +391,6 @@
         "A contribution guide written on the assumption that we are gone",
         "A governance model your team can run without us"
       ]
-    },
-    "relatedWork": {
-      "eyebrow": "RELATED WORK",
-      "title": "Loan origination redesign",
-      "body": "142 tokens and 38 components shipped into the client repository, with a contribution guide their team still adds to.",
-      "href": "/case-studies/loan-origination-redesign"
     },
     "faq": {
       "eyebrow": "COMMON QUESTIONS",
@@ -436,7 +421,7 @@
       "subdescriptionLine1": "Tell us the problem. We will come back with how we would approach it —",
       "subdescriptionLine2": "not a pitch deck.",
       "primaryCtaText": "Start a Project",
-      "emailCtaText": "hello@orvexiq.com"
+      "emailCtaText": "info@orvexiqlabs.com"
     },
     "seo": {
       "title": "Design Systems — Orvexiq Lab",

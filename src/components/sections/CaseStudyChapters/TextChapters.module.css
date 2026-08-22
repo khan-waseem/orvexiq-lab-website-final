@@ -1,0 +1,275 @@
+/* The chapters whose diagram is the layout itself. */
+
+/* ==========================================
+ * STATEMENT — what was rejected
+ * ========================================== */
+
+.statement {
+  position: relative;
+  margin-top: var(--orv-space-48);
+  padding: var(--orv-space-48);
+  border: 1px solid var(--tone-line);
+  border-radius: var(--orv-radius-24);
+  background:
+    linear-gradient(150deg, var(--tone-soft) 0%, rgba(10, 5, 23, 0.6) 62%),
+    rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 0 var(--orv-color-alpha-white-8);
+}
+
+/* A struck-through label: the chapter is about something that did not survive. */
+.statementBadge {
+  position: absolute;
+  top: calc(-1 * var(--orv-space-14));
+  left: var(--orv-space-40);
+  padding: 5px var(--orv-space-14);
+  border: 1px solid var(--tone-line);
+  border-radius: var(--orv-radius-full);
+  background: #0a0517;
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.statementBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-20);
+  max-width: 76ch;
+}
+
+.statementParagraph {
+  margin: 0;
+  font-size: var(--orv-font-size-17);
+  line-height: var(--orv-line-height-30);
+  color: var(--orv-text-secondary);
+}
+
+/* The closing line carries the point, so it holds the eye. */
+.statementParagraph:last-child {
+  font-size: var(--orv-font-size-20);
+  color: var(--orv-text-primary);
+}
+
+/* ==========================================
+ * DECISIONS
+ * ========================================== */
+
+.decisions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-24);
+  margin: var(--orv-space-48) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Copy and trade-off sit side by side; the screen runs the full card width
+   beneath them, because a screen shrunk into a column stops being readable. */
+.decision {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: var(--orv-space-32);
+  align-items: start;
+  padding: var(--orv-space-32);
+}
+
+.decisionScreen {
+  grid-column: 1 / -1;
+}
+
+.decision > [class*='screenPair'] {
+  grid-column: 1 / -1;
+}
+
+.decisionMain {
+  min-width: 0;
+}
+
+.tradeOff {
+  padding: var(--orv-space-20);
+  border: 1px solid var(--tone-line);
+  border-left-width: 2px;
+  border-radius: var(--orv-radius-10);
+  background: var(--tone-soft);
+  min-width: 0;
+}
+
+.tradeOffLabel {
+  display: block;
+  font-size: var(--orv-font-size-11);
+  font-weight: var(--orv-font-weight-medium);
+  letter-spacing: var(--orv-letter-spacing-wide-168);
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.tradeOffBody {
+  margin: var(--orv-space-10) 0 0;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-secondary);
+}
+
+/* ==========================================
+ * CONSTRAINTS
+ * ========================================== */
+
+.constraints {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--orv-space-24);
+  margin: var(--orv-space-48) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.constraint {
+  padding: var(--orv-space-32);
+}
+
+.constraintLabel {
+  display: block;
+  margin-bottom: var(--orv-space-12);
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-semibold);
+  letter-spacing: var(--orv-letter-spacing-wide-240);
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+/* ==========================================
+ * ASSUMPTIONS
+ * ========================================== */
+
+.assumptions {
+  display: flex;
+  flex-direction: column;
+  margin: var(--orv-space-48) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--orv-color-alpha-white-8);
+}
+
+.assumption {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: var(--orv-space-24);
+  align-items: baseline;
+  padding: var(--orv-space-24) 0;
+  border-bottom: 1px solid var(--orv-color-alpha-white-8);
+}
+
+.assumptionKey {
+  font-family: var(--orv-font-family-display);
+  font-size: var(--orv-font-size-28);
+  color: var(--tone);
+}
+
+.assumptionBody {
+  margin: 0;
+  font-size: var(--orv-font-size-16);
+  line-height: var(--orv-line-height-28);
+  color: var(--orv-text-secondary);
+  max-width: 72ch;
+}
+
+/* ==========================================
+ * OUTCOME
+ * ========================================== */
+
+.outcome {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--orv-space-24);
+  margin: var(--orv-space-48) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outcomeColumn {
+  padding: var(--orv-space-32);
+}
+
+.outcomeLabel {
+  display: block;
+  font-size: var(--orv-font-size-12);
+  font-weight: var(--orv-font-weight-semibold);
+  letter-spacing: var(--orv-letter-spacing-wide-240);
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.outcomeList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--orv-space-12);
+  margin: var(--orv-space-20) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outcomeItem {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: var(--orv-space-10);
+  align-items: start;
+  font-size: var(--orv-font-size-14);
+  line-height: var(--orv-line-height-24);
+  color: var(--orv-text-tertiary);
+}
+
+.outcomeTick {
+  width: 6px;
+  height: 6px;
+  margin-top: 8px;
+  border-radius: var(--orv-radius-full);
+  background: var(--tone);
+  box-shadow: 0 0 8px 1px var(--tone-glow);
+}
+
+/* ==========================================
+ * RESPONSIVE
+ * ========================================== */
+@media (max-width: 1024px) {
+  .decision,
+  .outcome {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .statement {
+    padding: var(--orv-space-32);
+  }
+}
+
+@media (max-width: 720px) {
+  .constraints {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .assumption {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--orv-space-8);
+  }
+
+  .statementParagraph:last-child {
+    font-size: var(--orv-font-size-17);
+  }
+}
+
+@media (max-width: 600px) {
+  .statement {
+    padding: var(--orv-space-20);
+  }
+
+  .statementBadge {
+    left: var(--orv-space-20);
+  }
+
+  .decision,
+  .constraint,
+  .outcomeColumn {
+    padding: var(--orv-space-20);
+  }
+}

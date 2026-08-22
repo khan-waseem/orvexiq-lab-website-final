@@ -107,12 +107,37 @@
   margin-left: 0;
 }
 
-/* Centred headings get symmetrical ornaments. Left-aligned ones drop the
-   leading segment of both the capsule's tail and the rule, so each starts flush
-   with the headline's left edge instead of being pushed in by it. */
+/* The centred ornaments are symmetrical: dot–line–[pill]–line–dot, and
+   line–dot–line under the headline. Mirroring only the leading half for the
+   left-aligned variant left a trailing tail hanging off the capsule and a lone
+   dot sitting under the headline, which read as stray marks rather than as
+   decoration. Left-aligned headings drop the flanking parts entirely and take a
+   single rule anchored to the text edge — the same treatment the case study
+   intro already uses. */
 .alignLeft .eyebrow > :first-child,
-.alignLeft .rule > .ruleLine:first-child {
+.alignLeft .eyebrow > :last-child {
   display: none;
+}
+
+.alignLeft .rule {
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.alignLeft .rule > .ruleDot,
+.alignLeft .rule > .ruleLine {
+  display: none;
+}
+
+/* One left-anchored hairline replaces the dotted rule. */
+.alignLeft .rule::before,
+.alignLeft .ruleSolid {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  border-radius: var(--orv-radius-full);
+  background: linear-gradient(to right, var(--orv-color-raw-purple-300), rgba(168, 85, 247, 0));
 }
 
 @media (max-width: 1024px) {

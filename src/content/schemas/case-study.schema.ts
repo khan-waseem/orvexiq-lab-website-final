@@ -9,7 +9,17 @@ export const caseStudyOutcomeSchema = z.object({
 export const caseStudySchema = z.object({
   id: z.string(),
   slug: z.string(),
-  category: z.enum(['FINTECH', 'LOGISTICS', 'COMMERCE', 'TREASURY', 'AI', 'GENERAL']),
+  category: z.enum([
+    'FINTECH',
+    'HEALTHCARE',
+    'BRAND',
+    'MOBILE',
+    'LOGISTICS',
+    'COMMERCE',
+    'TREASURY',
+    'AI',
+    'GENERAL',
+  ]),
   title: z.string(),
   subtitle: z.string(),
   /** Anonymised client descriptor shown beside the category tag (Figma 44:46) */

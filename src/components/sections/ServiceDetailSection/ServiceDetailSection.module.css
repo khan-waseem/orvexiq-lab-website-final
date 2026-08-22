@@ -9,8 +9,8 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding-top: var(--orv-space-64);
-  padding-bottom: var(--orv-space-128);
+  padding-top: var(--orv-layout-band-padding);
+  padding-bottom: var(--orv-layout-band-padding);
 }
 
 .blockList {
@@ -219,10 +219,6 @@
 }
 
 @media (max-width: 900px) {
-  .section {
-    padding-top: var(--orv-space-48);
-    padding-bottom: var(--orv-space-72);
-  }
 
   .rule {
     margin-top: var(--orv-space-48);

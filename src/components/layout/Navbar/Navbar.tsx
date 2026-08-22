@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/primitives/Button';
+import { sections } from '@/lib/site';
 import styles from './Navbar.module.css';
 
 export interface NavItem {
@@ -12,13 +13,15 @@ export interface NavItem {
   href: string;
 }
 
+/* Filtered by the section flags in @/lib/site, so switching Blog or Careers
+   back on restores its nav link without a second edit here. */
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Blog', href: '/blog' },
+  ...(sections.blog ? [{ label: 'Blog', href: '/blog' }] : []),
   { label: 'About', href: '/about' },
-  { label: 'Careers', href: '/careers' },
+  ...(sections.careers ? [{ label: 'Careers', href: '/careers' }] : []),
   { label: 'Contact Us', href: '/contact' },
 ];
 

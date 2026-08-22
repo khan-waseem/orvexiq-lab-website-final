@@ -1,8 +1,10 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/layout/Section';
 import { GlowRings } from '@/components/decor/GlowRings';
+import { SectionDots } from '@/components/decor/SectionDots';
 import { PageContainer } from '@/components/layout/Container';
 import { ContactPageContent } from '@/content/schemas/contact-page.schema';
+import { ContactForm } from './ContactForm';
 import styles from './ContactBodySection.module.css';
 
 export interface ContactBodySectionProps {
@@ -20,77 +22,21 @@ export interface ContactBodySectionProps {
  *   textarea 140 tall; submit is the CTA gradient pill
  *
  * SUBMISSION
- * There is no form endpoint yet, so the submit button is disabled and the card
- * states plainly that the form is not connected, pointing at the email address
- * in the info column — which Figma itself calls the fastest route. The fields
- * are real, labelled and typable so the markup is ready to wire to a handler;
- * nothing is collected or sent.
+ * The form itself is a client component (ContactForm) posting to a server
+ * action, which sends the enquiry through the site's own mailbox. This section
+ * stays a server component so the info column and the page's decor are not
+ * shipped to the browser with it.
  */
 export const ContactBodySection: React.FC<ContactBodySectionProps> = ({ form, info }) => {
-  const halfFields = form.fields.filter((f) => f.span === 'half');
-  const fullFields = form.fields.filter((f) => f.span === 'full');
-  const rows: (typeof halfFields)[] = [];
-  for (let i = 0; i < halfFields.length; i += 2) rows.push(halfFields.slice(i, i + 2));
-
   return (
     <SectionWrapper theme="canvas" padding="custom" id="contact-body" className={styles.section}>
       <GlowRings side="left" size={980} />
       <GlowRings side="right" size={860} />
 
+      <SectionDots />
       <PageContainer className={styles.container}>
         <div className={styles.row}>
-          <form className={styles.form} aria-label="Project enquiry">
-            {rows.map((pair) => (
-              <div key={pair.map((f) => f.id).join('-')} className={styles.fieldRow}>
-                {pair.map((f) => (
-                  <div key={f.id} className={styles.field}>
-                    <label className={styles.label} htmlFor={f.id}>
-                      {f.label}
-                    </label>
-                    <input
-                      id={f.id}
-                      name={f.name}
-                      type={f.type === 'email' ? 'email' : 'text'}
-                      autoComplete={f.autoComplete}
-                      placeholder={f.placeholder}
-                      className={styles.input}
-                    />
-                  </div>
-                ))}
-              </div>
-            ))}
-
-            {fullFields.map((f) => (
-              <div key={f.id} className={styles.field}>
-                <label className={styles.label} htmlFor={f.id}>
-                  {f.label}
-                </label>
-                <textarea
-                  id={f.id}
-                  name={f.name}
-                  placeholder={f.placeholder}
-                  className={styles.textarea}
-                  rows={4}
-                />
-              </div>
-            ))}
-
-            {/* The note sits beside the button rather than under it so the
-                disabled state is explained without adding a row to the card. */}
-            <div className={styles.submitRow}>
-              <button
-                type="submit"
-                className={styles.submit}
-                disabled
-                aria-describedby="contact-form-note"
-              >
-                {form.submitLabel}
-              </button>
-              <p id="contact-form-note" className={styles.note}>
-                {form.unavailableNote}
-              </p>
-            </div>
-          </form>
+          <ContactForm form={form} />
 
           <div className={styles.info}>
             {info.map((block) => (

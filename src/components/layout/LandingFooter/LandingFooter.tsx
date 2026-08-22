@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PageContainer } from '@/components/layout/Container';
+import { sections } from '@/lib/site';
 import styles from './LandingFooter.module.css';
 
 export type LandingFooterProps = Record<string, never>;
@@ -80,16 +81,16 @@ const SERVICES_LINKS: FooterLink[] = [
 const COMPANY_LINKS: FooterLink[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Blog & Insights', href: '/blog' },
-  { label: 'Careers', href: '/careers' },
+  ...(sections.blog ? [{ label: 'Blog & Insights', href: '/blog' }] : []),
+  ...(sections.careers ? [{ label: 'Careers', href: '/careers' }] : []),
   { label: 'Contact', href: '/contact' },
 ];
 
 /**
  * LandingFooter — the landing page's own footer panel.
  *
- * The other pages keep the existing site Footer; SiteFooter picks between
- * them by route. The arcs, lit points and divider dots are drawn in markup.
+ * Rendered on every route through SiteFooter. The arcs, lit points and divider
+ * dots are drawn in markup.
  */
 export const LandingFooter: React.FC<LandingFooterProps> = () => {
   const year = new Date().getFullYear();

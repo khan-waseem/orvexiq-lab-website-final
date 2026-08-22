@@ -51,8 +51,6 @@ export default async function ServiceDetailPage({ params }: Params) {
         headline={page.hero.headline}
         subdescription={page.hero.subdescription}
         iconAssetUrl={page.hero.iconAssetUrl}
-        primaryCta={{ label: 'Start a Project', href: '/contact' }}
-        secondaryCta={{ label: 'All services', href: '/services' }}
       />
 
       <ServiceWhySection content={page.why} />
@@ -62,8 +60,7 @@ export default async function ServiceDetailPage({ params }: Params) {
       {page.auditOffer ? <ServiceAuditOfferSection content={page.auditOffer} /> : null}
 
       <ServiceDeliverablesSection content={page.deliverables} />
-
-      <RelatedWorkSection content={page.relatedWork} />
+      {page.relatedWork && <RelatedWorkSection content={page.relatedWork} />}
 
       <LandingFaqSection content={page.faq} />
 

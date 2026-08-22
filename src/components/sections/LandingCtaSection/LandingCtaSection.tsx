@@ -54,13 +54,13 @@ const Spark: React.FC = () => (
 /**
  * LandingCtaSection — landing band eight.
  *
- * One large panel with light raking in from the bottom corners. The shared
- * CtaSection stays in place for the other pages; this is the landing's own
- * oversized treatment.
+ * One large panel with light raking in from the bottom corners. Every page
+ * uses this band — the older CtaSection it replaced is gone, so the closing
+ * call to action looks the same wherever a visitor reaches it.
  */
 export const LandingCtaSection: React.FC<LandingCtaSectionProps> = ({
   content: rawContent,
-  email = 'hello@orvexiq.com',
+  email = 'info@orvexiqlabs.com',
 }) => {
   const content = normalize(rawContent);
 

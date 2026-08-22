@@ -92,14 +92,6 @@
   margin-bottom: var(--orv-space-10);
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: var(--orv-layout-gutter);
-  flex-wrap: wrap;
-  margin-top: var(--orv-space-24);
-}
-
 /* --- 3D mark --- */
 
 .visual {
@@ -189,15 +181,8 @@
     line-height: var(--orv-line-height-25);
   }
 
-  .actions {
-    width: 100%;
-    gap: var(--orv-space-16);
-  }
-
-  .actions > * {
-    flex: 1 1 100%;
-  }
-
+  
+  
   .visual {
     max-width: 260px;
   }

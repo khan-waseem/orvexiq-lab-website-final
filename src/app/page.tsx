@@ -17,11 +17,17 @@ import { LandingCtaSection } from '@/components/sections/LandingCtaSection';
  * the previous build, being replaced one at a time.
  */
 export default async function HomePage() {
-  const [homepageData, featuredCaseStudies, testimonials] = await Promise.all([
+  const [homepageData, featuredCaseStudies, testimonials, caseStudyDetails] = await Promise.all([
     contentRepository.getHomepageData(),
     contentRepository.getFeaturedCaseStudies(),
     contentRepository.getTestimonials(),
+    contentRepository.getCaseStudyDetails(),
   ]);
+
+  /* Only these have a written detail page. Cards for the rest render unlinked,
+     the same way the case studies index handles them, so nothing on the landing
+     can lead to a 404. */
+  const readableSlugs = caseStudyDetails.map((detail) => detail.slug);
 
   /*
    * Client Stories runs on the published flag. The quote currently in
@@ -43,6 +49,7 @@ export default async function HomePage() {
       <SelectedWorkSection
         content={homepageData.selectedWorkSection}
         caseStudies={featuredCaseStudies}
+        readableSlugs={readableSlugs}
       />
 
       {/* What we build — four disciplines on one connector thread */}

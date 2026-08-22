@@ -1,140 +1,82 @@
 [
   {
-    "id": "cs-6",
-    "slug": "trial-coordination",
-    "category": "GENERAL",
-    "title": "Trial coordination console",
-    "subtitle": "Making a missed visit window visible while it can still be prevented.",
-    "description": "Making a missed visit window visible while it can still be prevented.",
+    "id": "cs-1",
+    "slug": "true-available-cash",
+    "category": "FINTECH",
+    "title": "True Available Cash",
+    "subtitle": "A decision layer that tells finance teams what they can actually spend — and why.",
+    "description": "A decision layer that tells finance teams what they can actually spend — and why. Every verdict comes with the reasoning behind it.",
     "clientDescriptor": "Self-initiated concept",
     "year": "2026",
-    "servicesProvided": [
-      "Problem framing",
-      "Product Design",
-      "Design System"
-    ],
+    "servicesProvided": ["Product Strategy", "UX / UI Design", "Design System"],
     "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 1,
     "verification": {
       "isVerified": true,
-      "verificationNotes": "Self-initiated concept. Carries no client name and no measured results, so nothing here is an unverified claim."
+      "verificationNotes": "Self-initiated concept by Orvexiq Lab. Figures are illustrative and labelled as such on the case study page."
     },
-    "publishedAt": "2026-01-01",
-    "published": true
-  },
-  {
-    "id": "cs-1",
-    "slug": "loan-origination-redesign",
-    "category": "FINTECH",
-    "title": "Loan origination redesign",
-    "subtitle": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "description": "Rebuilt the broker console used to originate 40,000 loans a month.",
-    "clientDescriptor": "A UK lending platform",
-    "year": "2025",
-    "servicesProvided": [
-      "Product Design",
-      "Design System"
-    ],
-    "coverScreenAssetUrl": "",
-    "featured": true,
-    "displayOrder": 2,
-    "verification": {
-      "isVerified": false,
-      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
-    },
-    "publishedAt": "2025-01-01",
+    "publishedAt": "2026-05-01",
     "published": true
   },
   {
     "id": "cs-2",
-    "slug": "fleet-dispatch-software",
-    "category": "LOGISTICS",
-    "title": "Fleet dispatch software",
-    "subtitle": "Cut average dispatch time by 34% across a fleet of 1,200 vehicles.",
-    "description": "Cut average dispatch time by 34% across a fleet of 1,200 vehicles.",
-    "clientDescriptor": "A European fleet operator",
+    "slug": "trial-coordination",
+    "category": "HEALTHCARE",
+    "title": "Trial coordination console",
+    "subtitle": "Making a missed visit window visible while it can still be prevented.",
+    "description": "Making a missed visit window visible while it can still be prevented, rather than reporting it after the fact.",
+    "clientDescriptor": "Clinical research network",
     "year": "2025",
-    "servicesProvided": [
-      "UX Research",
-      "Product Design"
-    ],
+    "servicesProvided": ["Product Strategy", "Product Design", "Design System"],
     "coverScreenAssetUrl": "",
     "featured": true,
-    "displayOrder": 3,
+    "displayOrder": 2,
     "verification": {
-      "isVerified": false,
-      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
+      "isVerified": true,
+      "verificationNotes": "Written up in full on the case study page."
     },
     "publishedAt": "2025-01-01",
     "published": true
   },
   {
     "id": "cs-3",
-    "slug": "ai-support-assistant",
-    "category": "AI",
-    "title": "AI support assistant",
-    "subtitle": "An assistant that now resolves 60% of inbound tickets without a human.",
-    "description": "An assistant that now resolves 60% of inbound tickets without a human.",
-    "clientDescriptor": "A B2B SaaS support team",
+    "slug": "rapha-home-health-brand",
+    "category": "BRAND",
+    "title": "Rapha Home Health",
+    "subtitle": "A brand system for a Houston home health provider — logo, print and web.",
+    "description": "A full brand build for a Houston home health provider: identity, brochures and website, delivered as one consistent system.",
+    "clientDescriptor": "Rapha Home Health LLC · Houston, Texas",
+    "year": "2025",
+    "servicesProvided": ["Brand Identity", "Print Design", "Web Design"],
+    "coverScreenAssetUrl": "",
+    "featured": true,
+    "displayOrder": 3,
+    "verification": {
+      "isVerified": false,
+      "verificationNotes": "Real client engagement — the testimonial on the landing page is from this client. Copy here is a placeholder until the write-up is supplied."
+    },
+    "publishedAt": "2025-06-01",
+    "published": true
+  },
+  {
+    "id": "cs-4",
+    "slug": "shiftline-care-app",
+    "category": "MOBILE",
+    "title": "Shiftline",
+    "subtitle": "A scheduling app for care teams who are never at a desk.",
+    "description": "A mobile-first scheduling app for care teams who are never at a desk — shifts, visits and handovers in one place.",
+    "clientDescriptor": "Placeholder — replace with a real project",
     "year": "2026",
-    "servicesProvided": [
-      "AI Experience",
-      "Prototyping"
-    ],
+    "servicesProvided": ["Product Design", "Mobile UX", "Design System"],
     "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 4,
     "verification": {
       "isVerified": false,
-      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
+      "verificationNotes": "PLACEHOLDER. Name and description are invented so the grid holds four slots. Replace with a real mobile project before this site goes live."
     },
     "publishedAt": "2026-01-01",
-    "published": true
-  },
-  {
-    "id": "cs-4",
-    "slug": "ecommerce-replatforming",
-    "category": "COMMERCE",
-    "title": "Ecommerce replatforming",
-    "subtitle": "Merged six regional storefronts into one commerce platform.",
-    "description": "Merged six regional storefronts into one commerce platform.",
-    "clientDescriptor": "A multi-region retailer",
-    "year": "2024",
-    "servicesProvided": [
-      "Design System",
-      "Platform"
-    ],
-    "coverScreenAssetUrl": "",
-    "featured": false,
-    "displayOrder": 5,
-    "verification": {
-      "isVerified": false,
-      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
-    },
-    "publishedAt": "2024-01-01",
-    "published": true
-  },
-  {
-    "id": "cs-5",
-    "slug": "treasury-dashboard-ux",
-    "category": "FINTECH",
-    "title": "Treasury dashboard UX",
-    "subtitle": "Gave finance teams one view of cash across eleven currencies.",
-    "description": "Gave finance teams one view of cash across eleven currencies.",
-    "clientDescriptor": "A treasury software company",
-    "year": "2024",
-    "servicesProvided": [
-      "Product Design"
-    ],
-    "coverScreenAssetUrl": "",
-    "featured": false,
-    "displayOrder": 6,
-    "verification": {
-      "isVerified": false,
-      "verificationNotes": "Figma case-grid copy. Outcome metrics are UNVERIFIED — do not present as validated results."
-    },
-    "publishedAt": "2024-01-01",
     "published": true
   }
 ]

@@ -26,13 +26,15 @@ export async function generateMetadata(): Promise<Metadata> {
  * deliberately left off: it would repeat the landing's verbatim.
  */
 export default async function ServicesPage() {
-  const [servicesPageData, homepageData, caseStudies] = await Promise.all([
+  const [servicesPageData, homepageData, caseStudies, caseStudyDetails] = await Promise.all([
     contentRepository.getServicesPageData(),
     contentRepository.getHomepageData(),
     contentRepository.getCaseStudies(),
+    contentRepository.getCaseStudyDetails(),
   ]);
 
   const featuredCaseStudies = caseStudies.filter((study) => study.featured && study.published);
+  const readableSlugs = caseStudyDetails.map((detail) => detail.slug);
 
   return (
     <>
@@ -42,8 +44,6 @@ export default async function ServicesPage() {
         headline={servicesPageData.hero.headline}
         subdescription={servicesPageData.hero.subdescription}
         iconAssetUrl={servicesPageData.hero.heroIconAssetUrl}
-        primaryCta={{ label: servicesPageData.hero.primaryCtaText, href: '/contact' }}
-        secondaryCta={{ label: servicesPageData.hero.secondaryCtaText, href: '/case-studies' }}
       />
 
       <ServiceDetailSection blocks={servicesPageData.serviceDetail.blocks} />
@@ -53,6 +53,7 @@ export default async function ServicesPage() {
       <SelectedWorkSection
         content={homepageData.selectedWorkSection}
         caseStudies={featuredCaseStudies}
+        readableSlugs={readableSlugs}
         limit={2}
       />
 

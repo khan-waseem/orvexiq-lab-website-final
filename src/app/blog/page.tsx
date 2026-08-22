@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { sections } from '@/lib/site';
 import { contentRepository } from '@/content/repository/local-content-provider';
 import { PageHero } from '@/components/sections/PageHero';
 import { FeaturedPostSection } from '@/components/sections/FeaturedPostSection';
@@ -23,13 +25,18 @@ export async function generateMetadata(): Promise<Metadata> {
  * -> Newsletter -> CTA -> Footer.
  */
 export default async function BlogPage() {
+  if (!sections.blog) notFound();
+
   const [pageData, posts] = await Promise.all([
     contentRepository.getBlogPageData(),
     contentRepository.getBlogPosts(),
   ]);
 
-  const featured = posts.find((p) => p.featured && p.published) ?? null;
-  const gridPosts = posts.filter((p) => p.id !== featured?.id);
+  /* The grid filtered on nothing, so drafts appeared in the list and then
+     404'd — /blog/[slug] has always required `published`. Both now agree. */
+  const livePosts = posts.filter((p) => p.published);
+  const featured = livePosts.find((p) => p.featured) ?? null;
+  const gridPosts = livePosts.filter((p) => p.id !== featured?.id);
 
   return (
     <>
