@@ -312,3 +312,18 @@
   color: var(--orv-text-tertiary);
   white-space: nowrap;
 }
+
+/* The recording keeps its own 16:9 rather than being cropped into the drawn
+   mockup's 3:2. It is a real product capture — trimming 16% off the sides to
+   make it fit cut a KPI card off the right of the dashboard, which is exactly
+   the detail the card is there to show. A slightly shorter well is the cheaper
+   trade; the grid stretches the cards to match anyway. */
+.mockupVideo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--orv-radius-10);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  background: #12081f;
+}

@@ -29,6 +29,10 @@ export const caseStudySchema = z.object({
   description: z.string(),
   servicesProvided: z.array(z.string()),
   coverScreenAssetUrl: z.string(),
+  /** A recording of the product, shown in the card in place of the drawn
+      mockup. Per study rather than per band: each one gets its own once it is
+      recorded, and the drawn mockup stands in until then. */
+  mockupVideoUrl: z.string().optional(),
   featured: z.boolean().default(false),
   displayOrder: z.number().default(0),
   outcomes: z.array(caseStudyOutcomeSchema).optional(),

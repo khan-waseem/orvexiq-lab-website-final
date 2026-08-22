@@ -9,6 +9,7 @@ import { SectionDots } from '@/components/decor/SectionDots';
 import { HomepageContent } from '@/content/schemas/homepage.schema';
 import { CaseStudy } from '@/content/schemas/case-study.schema';
 import { CaseMockup } from './CaseMockup';
+import { HoverVideo } from '@/components/primitives/HoverVideo';
 import { CATEGORY_ICONS } from './CategoryIcons';
 import styles from './SelectedWorkSection.module.css';
 
@@ -94,6 +95,9 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
 
                 <p className={styles.cardBody}>{study.description}</p>
 
+                {/* A real recording of the product where there is one, the
+                    drawn mockup where there is not. The recording rests on its
+                    first frame and runs while the pointer is over the card. */}
                 <div className={styles.mockupWell}>
                   {study.coverScreenAssetUrl ? (
                     <Image
@@ -102,6 +106,12 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
                       width={602}
                       height={300}
                       className={styles.coverImage}
+                    />
+                  ) : study.mockupVideoUrl ? (
+                    <HoverVideo
+                      src={study.mockupVideoUrl}
+                      label={`${study.title} interface walkthrough`}
+                      className={styles.mockupVideo}
                     />
                   ) : (
                     <CaseMockup label={study.title} />

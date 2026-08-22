@@ -8,7 +8,11 @@
     "description": "A decision layer that tells finance teams what they can actually spend — and why. Every verdict comes with the reasoning behind it.",
     "clientDescriptor": "Self-initiated concept",
     "year": "2026",
-    "servicesProvided": ["Product Strategy", "UX / UI Design", "Design System"],
+    "servicesProvided": [
+      "Product Strategy",
+      "UX / UI Design",
+      "Design System"
+    ],
     "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 1,
@@ -17,7 +21,8 @@
       "verificationNotes": "Self-initiated concept by Orvexiq Lab. Figures are illustrative and labelled as such on the case study page."
     },
     "publishedAt": "2026-05-01",
-    "published": true
+    "published": true,
+    "mockupVideoUrl": "/assets/video/case-mockup.mp4"
   },
   {
     "id": "cs-2",
@@ -28,7 +33,11 @@
     "description": "Making a missed visit window visible while it can still be prevented, rather than reporting it after the fact.",
     "clientDescriptor": "Clinical research network",
     "year": "2025",
-    "servicesProvided": ["Product Strategy", "Product Design", "Design System"],
+    "servicesProvided": [
+      "Product Strategy",
+      "Product Design",
+      "Design System"
+    ],
     "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 2,
@@ -48,7 +57,11 @@
     "description": "A full brand build for a Houston home health provider: identity, brochures and website, delivered as one consistent system.",
     "clientDescriptor": "Rapha Home Health LLC · Houston, Texas",
     "year": "2025",
-    "servicesProvided": ["Brand Identity", "Print Design", "Web Design"],
+    "servicesProvided": [
+      "Brand Identity",
+      "Print Design",
+      "Web Design"
+    ],
     "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 3,
@@ -68,7 +81,11 @@
     "description": "A mobile-first scheduling app for care teams who are never at a desk — shifts, visits and handovers in one place.",
     "clientDescriptor": "Placeholder — replace with a real project",
     "year": "2026",
-    "servicesProvided": ["Product Design", "Mobile UX", "Design System"],
+    "servicesProvided": [
+      "Product Design",
+      "Mobile UX",
+      "Design System"
+    ],
     "coverScreenAssetUrl": "",
     "featured": true,
     "displayOrder": 4,
